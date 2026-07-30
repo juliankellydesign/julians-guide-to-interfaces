@@ -1,0 +1,46 @@
+{
+  "$schema": "./foundations.schema.json",
+  "version": "0.1.0",
+  "status": "living",
+  "principle": "Everything in an interface should serve a purpose.",
+  "typography": {
+    "preferredBaseSizesPx": [16, 17],
+    "defaultBaseSizePx": 17,
+    "scale": {
+      "name": "major-second",
+      "ratio": 1.125,
+      "stepsBelow": 3,
+      "stepsAbove": 6,
+      "roundedSizesAt17Px": [12, 13, 15, 17, 19, 22, 24, 27, 31, 34]
+    }
+  },
+  "color": {
+    "space": "oklch",
+    "grayScaleCurve": {
+      "type": "cubic-bezier",
+      "controlPoints": {
+        "x1": 0.35,
+        "y1": 0.2,
+        "x2": 0.55,
+        "y2": 0.6
+      },
+      "note": "A useful starting point; customize when context requires it."
+    }
+  },
+  "layout": {
+    "gridPx": 2,
+    "largeSpacingThresholdPx": 20,
+    "largeSpacingGridPx": 4,
+    "opticalCompensation": true
+  },
+  "motion": {
+    "web": {
+      "typicalMaximumDurationMs": 200,
+      "character": "exceptionally snappy"
+    },
+    "touch": {
+      "character": "slower and more fluid when direct manipulation benefits"
+    },
+    "reducedMotionRequired": true
+  }
+}

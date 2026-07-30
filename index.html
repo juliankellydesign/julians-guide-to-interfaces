@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Julian’s evolving guide to purposeful interface design." />
+    <meta name="theme-color" content="#f2f0e9" />
+    <title>Julian’s Guide to Interfaces</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to guide</a>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Julian’s Guide to Interfaces, home">
+        <span class="wordmark-mark" aria-hidden="true">J</span>
+        <span>Julian’s Guide<br />to Interfaces</span>
+      </a>
+      <div class="header-meta">
+        <span class="status"><i aria-hidden="true"></i> Living handbook</span>
+        <span>v0.1</span>
+      </div>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span>Index</span><i aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <nav class="site-nav" id="site-nav" aria-label="Guide index">
+      <span class="nav-label">Contents</span>
+      <ol>
+        <li><a href="#purpose" data-section="purpose"><span>01</span> Purpose</a></li>
+        <li><a href="#typography" data-section="typography"><span>02</span> Typography</a></li>
+        <li><a href="#gestalt" data-section="gestalt"><span>03</span> Gestalt</a></li>
+        <li><a href="#interface" data-section="interface"><span>04</span> Interface</a></li>
+        <li><a href="#imagery" data-section="imagery"><span>05</span> Imagery</a></li>
+        <li><a href="#motion" data-section="motion"><span>06</span> Motion</a></li>
+      </ol>
+      <p class="nav-note">A repository of everything I know about design. Added to whenever the next thought arrives.</p>
+    </nav>
+
+    <main id="content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-index">Principle № 001</div>
+        <h1 id="hero-title"><span>Everything</span><span>earns its place.</span></h1>
+        <p class="hero-deck">Every element in an interface should serve a purpose.</p>
+        <div class="hero-aside">
+          <p>This is not an argument for stark minimalism. Flourishes are welcome when they communicate something.</p>
+          <a href="#purpose">Read the principle <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="purpose-key" aria-label="Examples of purposeful design choices">
+          <div><span>Weight</span><strong>Hierarchy</strong></div>
+          <div><span>Space</span><strong>Relationship</strong></div>
+          <div><span>Motion</span><strong>Cause + effect</strong></div>
+        </div>
+      </section>
+
+      <section class="chapter thesis" id="purpose" aria-labelledby="purpose-title">
+        <header class="chapter-header">
+          <div><span class="chapter-number">01</span><span class="chapter-type">Core principle</span></div>
+          <h2 id="purpose-title">Purpose before polish.</h2>
+        </header>
+        <div class="thesis-grid">
+          <p class="lead-copy">The question isn’t <em>“Can this be removed?”</em> It’s <em>“What is this doing?”</em></p>
+          <div class="body-copy">
+            <p>Maximalism can be purposeful. So can restraint. A shift in font weight establishes hierarchy. The space between two elements says whether they belong together. A shadow can explain elevation. An animation can preserve continuity.</p>
+            <p>When layout and typography communicate the idea completely, let them. Add another signal only when it contributes new information.</p>
+          </div>
+        </div>
+        <div class="signal-ladder" aria-label="Order of visual communication tools">
+          <span class="ladder-title">Use the quietest sufficient tool</span>
+          <ol>
+            <li style="--level: 1"><span>01</span><strong>Layout</strong><small>Proximity + position</small></li>
+            <li style="--level: 2"><span>02</span><strong>Typography</strong><small>Hierarchy + voice</small></li>
+            <li style="--level: 3"><span>03</span><strong>Color</strong><small>Contrast + status</small></li>
+            <li style="--level: 4"><span>04</span><strong>Depth</strong><small>Layer + focus</small></li>
+            <li style="--level: 5"><span>05</span><strong>Motion</strong><small>Change + continuity</small></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="chapter typography" id="typography" aria-labelledby="typography-title">
+        <header class="chapter-header">
+          <div><span class="chapter-number">02</span><span class="chapter-type">Typography</span></div>
+          <h2 id="typography-title">Begin at the base.</h2>
+        </header>
+        <div class="chapter-intro">
+          <p class="lead-copy">Start at 16 or 17. Then let the system grow from there.</p>
+          <p class="body-copy">A major-second scale creates a quiet, useful hierarchy for interfaces. The math gives the system coherence; judgment decides how each size is used.</p>
+        </div>
+        <div class="type-lab lab-panel">
+          <div class="lab-toolbar">
+            <div>
+              <span class="eyebrow">Live type scale</span>
+              <h3>Major second <code>× 1.125</code></h3>
+            </div>
+            <fieldset class="segmented-control">
+              <legend>Base type size</legend>
+              <button type="button" data-base="16">16</button>
+              <button type="button" data-base="17" class="active" aria-pressed="true">17</button>
+            </fieldset>
+          </div>
+          <div class="type-scale" id="type-scale" aria-live="polite"></div>
+          <p class="formula"><span>size(step)</span> = base × 1.125<sup>step</sup> <i>rounded to whole pixels</i></p>
+        </div>
+      </section>
+
+      <section class="chapter color-system" aria-labelledby="color-title">
+        <header class="chapter-header compact">
+          <div><span class="chapter-number">02.1</span><span class="chapter-type">Color foundation</span></div>
+          <h2 id="color-title">Gray, without the dead zone.</h2>
+        </header>
+        <div class="chapter-intro">
+          <p class="lead-copy">Use OKLCH. Shape the ramp instead of stepping through it blindly.</p>
+          <p class="body-copy">A cubic Bézier curve makes the changes in perceived lightness feel intentional across the full scale. These handles are a starting point, not a law.</p>
+        </div>
+        <div class="gray-lab lab-panel">
+          <div class="curve-panel">
+            <div class="curve-label"><span>Lightness curve</span><code>cubic-bezier(.35, .2, .55, .6)</code></div>
+            <svg id="curve-graph" viewBox="0 0 500 280" role="img" aria-label="Cubic Bézier curve used to distribute the gray scale">
+              <g class="curve-grid" aria-hidden="true">
+                <path d="M0 70H500M0 140H500M0 210H500M125 0V280M250 0V280M375 0V280" />
+              </g>
+              <path class="curve-handles" d="M0 280 L175 224 M275 112 L500 0" />
+              <path class="curve-line" d="M0 280 C175 224 275 112 500 0" />
+              <circle class="curve-point" cx="175" cy="224" r="6" />
+              <circle class="curve-point" cx="275" cy="112" r="6" />
+            </svg>
+          </div>
+          <div class="gray-ramp" id="gray-ramp" aria-label="Generated OKLCH gray scale"></div>
+        </div>
+      </section>
+
+      <section class="chapter gestalt" id="gestalt" aria-labelledby="gestalt-title">
+        <header class="chapter-header">
+          <div><span class="chapter-number">03</span><span class="chapter-type">Gestalt</span></div>
+          <h2 id="gestalt-title">Space is syntax.</h2>
+        </header>
+        <div class="chapter-intro">
+          <p class="lead-copy">Spacing doesn’t decorate a relationship. It creates one.</p>
+          <p class="body-copy">Work on a 2px grid through 20px, then expand to a 4px grid. This preserves precision at small distances and creates rhythm at larger ones.</p>
+        </div>
+        <div class="gestalt-demo">
+          <div class="grid-rule lab-panel">
+            <span class="eyebrow">Spacing rule</span>
+            <div class="grid-statement"><strong>2</strong><span>px grid<br /><i>≤ 20px</i></span><b>→</b><strong>4</strong><span>px grid<br /><i>&gt; 20px</i></span></div>
+            <div class="rhythm-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <figure class="optical-demo lab-panel">
+            <figcaption><span class="eyebrow">Optical alignment</span><strong>Align to what the eye reads.</strong></figcaption>
+            <div class="optical-stage">
+              <span class="floating-label">Label finds the padding</span>
+              <div class="alignment-line" aria-hidden="true"></div>
+              <div class="sample-container"><span>Container content begins here</span><button type="button">Action</button></div>
+            </div>
+            <p>The label’s visible edge aims toward the middle of the container’s padding—not mechanically at its border.</p>
+          </figure>
+        </div>
+      </section>
+
+      <section class="chapter interface" id="interface" aria-labelledby="interface-title">
+        <header class="chapter-header">
+          <div><span class="chapter-number">04</span><span class="chapter-type">Interface</span></div>
+          <h2 id="interface-title">Find the center of gravity.</h2>
+        </header>
+        <div class="chapter-intro">
+          <p class="lead-copy">Begin with a clear problem—or one specific interaction.</p>
+          <p class="body-copy">An interaction can be searching for a problem. That’s okay. The point is to give the work a concrete center before resolving the world around it.</p>
+        </div>
+        <div class="interaction-flow" aria-label="Interface design sequence">
+          <article><span>01 / Frame</span><h3>What problem matters?</h3><p>Name the human need without prescribing the surface.</p></article>
+          <article><span>02 / Act</span><h3>What is the core interaction?</h3><p>Define the action and the response it deserves.</p></article>
+          <article><span>03 / Reveal</span><h3>What must become visible?</h3><p>Choose only the visual elements that make the exchange clear.</p></article>
+        </div>
+      </section>
+
+      <section class="chapter imagery" id="imagery" aria-labelledby="imagery-title">
+        <header class="chapter-header">
+          <div><span class="chapter-number">05</span><span class="chapter-type">Imagery</span></div>
+          <h2 id="imagery-title">A chapter still forming.</h2>
+        </header>
+        <div class="imagery-placeholder">
+          <div class="aperture" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div>
+            <p class="lead-copy">The empty space is intentional.</p>
+            <p class="body-copy">Imagery will cover selection, cropping, art direction, and the job an image does that typography and layout cannot. Until then, this section will not invent an opinion.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter motion" id="motion" aria-labelledby="motion-title">
+        <header class="chapter-header">
+          <div><span class="chapter-number">06</span><span class="chapter-type">Motion</span></div>
+          <h2 id="motion-title">Respect the platform’s pulse.</h2>
+        </header>
+        <div class="chapter-intro">
+          <p class="lead-copy">On the web: incredibly snappy. On touch: slower, fluid, physical.</p>
+          <p class="body-copy">Motion explains continuity, causality, and state. It never earns the right to make an interface feel slow.</p>
+        </div>
+        <div class="motion-lab lab-panel">
+          <div class="motion-track web-motion">
+            <div><span class="eyebrow">Web response</span><strong>&lt; 200ms</strong><small>Immediate acknowledgment</small></div>
+            <button type="button" data-motion="web"><span>Try it</span><i aria-hidden="true"></i></button>
+          </div>
+          <div class="motion-track touch-motion">
+            <div><span class="eyebrow">Touch response</span><strong>Fluid + physical</strong><small>Continuity under the finger</small></div>
+            <button type="button" data-motion="touch"><span>Try it</span><i aria-hidden="true"></i></button>
+          </div>
+          <p class="performance-rule"><span>Performance</span><strong>The feeling of speed trumps all else.</strong></p>
+        </div>
+      </section>
+
+      <section class="field-index" aria-labelledby="index-title">
+        <span class="eyebrow">The working taxonomy</span>
+        <h2 id="index-title">Five ways into the same idea.</h2>
+        <div class="discipline-list">
+          <a href="#typography"><span>01</span><strong>Typography</strong><small>Hierarchy has a voice.</small><i>↗</i></a>
+          <a href="#gestalt"><span>02</span><strong>Gestalt</strong><small>Relationship has a shape.</small><i>↗</i></a>
+          <a href="#interface"><span>03</span><strong>Interface</strong><small>Intent has an action.</small><i>↗</i></a>
+          <a href="#imagery"><span>04</span><strong>Imagery</strong><small>Meaning has an atmosphere.</small><i>↗</i></a>
+          <a href="#motion"><span>05</span><strong>Motion</strong><small>Change has a rhythm.</small><i>↗</i></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-mark">J/GUI</div>
+      <p>An evolving record of interface design.<br />Written as the thinking develops.</p>
+      <a href="#top">Back to the beginning <span>↑</span></a>
+    </footer>
+  </body>
+</html>

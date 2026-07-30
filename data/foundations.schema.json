@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Julian’s Guide to Interfaces — foundations",
+  "type": "object",
+  "required": ["version", "principle", "typography", "color", "layout", "motion"],
+  "properties": {
+    "version": { "type": "string" },
+    "status": { "enum": ["living", "stable", "deprecated"] },
+    "principle": { "type": "string" },
+    "typography": { "type": "object" },
+    "color": { "type": "object" },
+    "layout": { "type": "object" },
+    "motion": { "type": "object" }
+  }
+}
