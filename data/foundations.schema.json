@@ -2,14 +2,19 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Julian’s Guide to Interfaces — foundations",
   "type": "object",
-  "required": ["version", "principle", "typography", "color", "layout", "motion"],
+  "required": ["version", "layer", "prompt", "principle", "content", "process", "typography", "color", "layout", "interface", "motion"],
   "properties": {
     "version": { "type": "string" },
     "status": { "enum": ["living", "stable", "deprecated"] },
+    "layer": { "const": "methods" },
+    "prompt": { "const": "opt-in" },
     "principle": { "type": "string" },
+    "content": { "type": "object" },
+    "process": { "type": "object" },
     "typography": { "type": "object" },
     "color": { "type": "object" },
     "layout": { "type": "object" },
+    "interface": { "type": "object" },
     "motion": { "type": "object" }
   }
 }

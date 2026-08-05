@@ -2,7 +2,7 @@
 
 ## In brief
 
-Motion should communicate continuity, causality, or state change while respecting the platform. Web motion should be exceptionally snappy—often below 200ms. Touch interfaces can support slower, more fluid movement. The feeling of speed wins.
+Motion should communicate continuity, causality, or state change while respecting the platform. It should explain what changed without making the interface feel slow.
 
 ## Motion has a job
 
@@ -20,15 +20,23 @@ If motion does not add understanding, it competes with the interaction.
 
 ### Web
 
-Web interactions should feel immediate. Keep most interface transitions under 200ms. Hover, press, and disclosure responses often benefit from even shorter durations.
+Web interactions should feel immediate. The response should acknowledge the action without delaying the next one.
 
 ### Touch
 
-Touch-based devices can use slower, more fluid animation because direct manipulation creates a stronger physical model. Distance, gesture velocity, and continuity can justify longer timing.
+Touch-based devices can use slower animation when direct manipulation creates a clear physical model. Distance, gesture velocity, and continuity can justify longer timing.
 
-## Performance before flourish
+For concrete duration defaults, see [`../methods/motion/platform-timing.md`](../methods/motion/platform-timing.md).
 
-Never use a sophisticated effect at the expense of responsiveness. A dropped frame or delayed response communicates more loudly than the animation’s intended meaning.
+## Protect performance
+
+Do not use an effect at the expense of responsiveness. Remove or simplify animation that drops frames or delays a response.
+
+## Preserve established systems
+
+When working in an existing interface, use its motion language unless the task is to rebuild it. Apply continuity, causality, responsiveness, and accessibility within that system.
+
+For a concrete complex-animation scaffold, see [`../methods/motion/animation-rhythm-and-swing.md`](../methods/motion/animation-rhythm-and-swing.md).
 
 ## Accessibility
 

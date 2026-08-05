@@ -4,12 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Julian’s evolving guide to purposeful interface design." />
-    <meta name="theme-color" content="#f2f0e9" />
+    <meta name="theme-color" content="#ffffff" />
     <title>Julian’s Guide to Interfaces</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- Interface icons use Lucide's ISC-licensed icon set. -->
+    <svg class="lucide-sprite" aria-hidden="true">
+      <symbol id="lucide-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></symbol>
+      <symbol id="lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></symbol>
+      <symbol id="lucide-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></symbol>
+      <symbol id="lucide-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></symbol>
+      <symbol id="lucide-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></symbol>
+      <symbol id="lucide-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></symbol>
+      <symbol id="lucide-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></symbol>
+      <symbol id="lucide-paperclip" viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></symbol>
+      <symbol id="lucide-plus" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></symbol>
+      <symbol id="lucide-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></symbol>
+    </svg>
     <a class="skip-link" href="#content">Skip to guide</a>
     <header class="site-header">
       <a class="wordmark" href="#top" aria-label="Julian’s Guide to Interfaces, home">
@@ -18,7 +31,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.1</span>
+        <span>v0.17</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -29,23 +42,24 @@
       <span class="nav-label">Contents</span>
       <ol>
         <li><a href="#purpose" data-section="purpose"><span>01</span> Purpose</a></li>
-        <li><a href="#typography" data-section="typography"><span>02</span> Typography</a></li>
-        <li><a href="#gestalt" data-section="gestalt"><span>03</span> Gestalt</a></li>
-        <li><a href="#interface" data-section="interface"><span>04</span> Interface</a></li>
-        <li><a href="#imagery" data-section="imagery"><span>05</span> Imagery</a></li>
-        <li><a href="#motion" data-section="motion"><span>06</span> Motion</a></li>
+        <li><a href="#content-guide" data-section="content-guide"><span>02</span> Content</a></li>
+        <li><a href="#typography" data-section="typography"><span>03</span> Typography</a></li>
+        <li><a href="#rhythm" data-section="rhythm"><span>04</span> Rhythm</a></li>
+        <li><a href="#interface" data-section="interface"><span>05</span> Interface</a></li>
+        <li><a href="#imagery" data-section="imagery"><span>06</span> Imagery</a></li>
+        <li><a href="#motion" data-section="motion"><span>07</span> Motion</a></li>
       </ol>
-      <p class="nav-note">A repository of everything I know about design. Added to whenever the next thought arrives.</p>
+      <p class="nav-note">A working guide to interface design. New principles are added as they are defined.</p>
     </nav>
 
     <main id="content">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-index">Principle № 001</div>
-        <h1 id="hero-title"><span>Everything</span><span>earns its place.</span></h1>
-        <p class="hero-deck">Every element in an interface should serve a purpose.</p>
+        <h1 id="hero-title"><span>Everything</span><span>serves a purpose</span></h1>
+        <p class="hero-deck">Every interface decision should communicate something or help someone complete an action.</p>
         <div class="hero-aside">
-          <p>This is not an argument for stark minimalism. Flourishes are welcome when they communicate something.</p>
-          <a href="#purpose">Read the principle <span aria-hidden="true">↓</span></a>
+          <p>This does not require minimalism. Detail is useful when it has a clear communication role.</p>
+          <a href="#purpose">Read the principle <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-down"></use></svg></a>
         </div>
         <div class="purpose-key" aria-label="Examples of purposeful design choices">
           <div><span>Weight</span><strong>Hierarchy</strong></div>
@@ -54,20 +68,42 @@
         </div>
       </section>
 
+      <section class="guide-layers" aria-labelledby="layers-title">
+        <header>
+          <span class="eyebrow">How to use the guide</span>
+          <h2 id="layers-title">Principles and methods</h2>
+          <p>Principles explain how I approach decisions. Methods explain how I construct specific systems. Separate them so an agent can use the approach without replacing an existing interface’s visual language.</p>
+        </header>
+        <div class="layer-list">
+          <article>
+            <span>Default layer</span>
+            <h3>Principles</h3>
+            <p>Use for critique, iteration, and work inside an established interface. Preserve the product’s existing type, color, spacing, and motion systems.</p>
+            <small>How to decide</small>
+          </article>
+          <article>
+            <span>Opt-in layer</span>
+            <h3>Methods</h3>
+            <p>Use when building a new system, deliberately replacing an existing one, or requesting my preferred recipes and exact starting values.</p>
+            <small>How to construct</small>
+          </article>
+        </div>
+      </section>
+
       <section class="chapter thesis" id="purpose" aria-labelledby="purpose-title">
         <header class="chapter-header">
           <div><span class="chapter-number">01</span><span class="chapter-type">Core principle</span></div>
-          <h2 id="purpose-title">Purpose before polish.</h2>
+          <h2 id="purpose-title">Every element has a job</h2>
         </header>
         <div class="thesis-grid">
-          <p class="lead-copy">The question isn’t <em>“Can this be removed?”</em> It’s <em>“What is this doing?”</em></p>
+          <p class="lead-copy">For every decision, ask <em>“What is this doing?”</em></p>
           <div class="body-copy">
-            <p>Maximalism can be purposeful. So can restraint. A shift in font weight establishes hierarchy. The space between two elements says whether they belong together. A shadow can explain elevation. An animation can preserve continuity.</p>
-            <p>When layout and typography communicate the idea completely, let them. Add another signal only when it contributes new information.</p>
+            <p>A shift in font weight can establish hierarchy. Space can show whether elements belong together. A shadow can explain elevation. Animation can show continuity or cause and effect.</p>
+            <p>Use as many visual elements as the interface requires. Each additional element should contribute information.</p>
           </div>
         </div>
         <div class="signal-ladder" aria-label="Order of visual communication tools">
-          <span class="ladder-title">Use the quietest sufficient tool</span>
+          <span class="ladder-title">Use the simplest sufficient tool</span>
           <ol>
             <li style="--level: 1"><span>01</span><strong>Layout</strong><small>Proximity + position</small></li>
             <li style="--level: 2"><span>02</span><strong>Typography</strong><small>Hierarchy + voice</small></li>
@@ -76,16 +112,92 @@
             <li style="--level: 5"><span>05</span><strong>Motion</strong><small>Change + continuity</small></li>
           </ol>
         </div>
+        <div class="human-judgment lab-panel">
+          <div class="human-judgment-intro">
+            <span class="eyebrow">Human judgment</span>
+            <h3>Use math, then judge the result</h3>
+            <p>Grids, scales, curves, and timing systems establish consistency. They cannot fully model every display, eye, culture, or context.</p>
+          </div>
+          <div class="judgment-domains">
+            <article><span>Type</span><strong>Adjust calculated values when the rendered hierarchy needs optical correction</strong></article>
+            <article><span>Color</span><strong>Adjust tones when the perceived difference is wrong in context</strong></article>
+            <article><span>Layout</span><strong>Break alignment when the content needs a different relationship</strong></article>
+            <article><span>Motion</span><strong>Move keyframes when equal timing feels too mechanical</strong></article>
+          </div>
+          <div class="judgment-rule"><span>Rule</span><strong>Question how it feels, but do not discard how it feels</strong></div>
+        </div>
+      </section>
+
+      <section class="chapter content-guide" id="content-guide" aria-labelledby="content-title">
+        <header class="chapter-header">
+          <div><span class="chapter-number">02</span><span class="chapter-type">Content</span></div>
+          <h2 id="content-title">Write direct, informative content</h2>
+        </header>
+        <div class="chapter-intro">
+          <p class="lead-copy">Every word should help someone understand, decide, or act</p>
+          <p class="body-copy">Content follows the same rule as every other part of the interface. Identify its purpose, state the relevant information clearly, and add style only when the style communicates something.</p>
+        </div>
+        <div class="content-rules" aria-label="Content design rules">
+          <article><span>01</span><h3>Identify the job</h3><p>Decide whether the content names, explains, instructs, confirms, or helps someone recover.</p></article>
+          <article><span>02</span><h3>State the information</h3><p>Put the information needed for the next decision or action first.</p></article>
+          <article><span>03</span><h3>Justify the style</h3><p>Use tone, emphasis, metaphor, or humor only when it adds meaning.</p></article>
+        </div>
+        <div class="case-punctuation lab-panel">
+          <div class="case-punctuation-intro">
+            <span class="eyebrow">Method default</span>
+            <h3>Capitalization and punctuation</h3>
+            <p>Use one scheme consistently. Change capitalization or punctuation only when the change communicates a different role or interaction.</p>
+          </div>
+          <div class="writing-examples" aria-label="Capitalization and punctuation examples">
+            <article><span>Top-level title</span><strong>Julian’s Guide to Interfaces</strong><small>Title Case</small></article>
+            <article><span>Interface heading</span><strong>Choose a font weight</strong><small>Sentence case · no closing punctuation</small></article>
+            <article><span>Body copy</span><strong>Use weight to communicate hierarchy.</strong><small>Sentence case · terminal period</small></article>
+          </div>
+          <div class="interactive-writing">
+            <div>
+              <span>Interactive labels</span>
+              <strong>Continue</strong>
+              <strong>More <i aria-hidden="true">›</i></strong>
+              <strong>Settings...</strong>
+              <strong>Need help?</strong>
+            </div>
+            <p>Buttons and interactive labels do not end with periods. An ellipsis indicates more steps, arrows and chevrons can act like punctuation, and a question mark can identify help or support. Exclamation points are almost never used.</p>
+          </div>
+        </div>
+        <div class="dash-reference lab-panel">
+          <div class="dash-reference-intro">
+            <span class="eyebrow">Dash reference</span>
+            <h3>Choose the dash by function</h3>
+            <p>Use an em dash to change direction, an en dash to communicate a range, and a hyphen to join parts of a word.</p>
+          </div>
+          <div class="dash-examples" aria-label="Em dash, en dash, and hyphen examples">
+            <article>
+              <span>Em dash —</span>
+              <strong>The pattern—once it is established—can be broken.</strong>
+              <p>A pair pushes into an interruption and returns to the original sentence. An em dash followed by a space also attributes a quotation: <q>Quotation text.</q> — Author</p>
+            </article>
+            <article>
+              <span>En dash –</span>
+              <strong>8:00 AM – 6:00 PM<br />pages 24 – 32</strong>
+              <p>An en dash means “through” or “to.” Use thin spaces around it when it connects a range.</p>
+            </article>
+            <article>
+              <span>Hyphen -</span>
+              <strong>purpose-driven<br />re-enter</strong>
+              <p>Use a hyphen inside compound words and required affixes. Do not substitute it for either dash, and avoid word hyphenation in interfaces.</p>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section class="chapter typography" id="typography" aria-labelledby="typography-title">
         <header class="chapter-header">
-          <div><span class="chapter-number">02</span><span class="chapter-type">Typography</span></div>
-          <h2 id="typography-title">Begin at the base.</h2>
+          <div><span class="chapter-number">03</span><span class="chapter-type">Typography</span></div>
+          <h2 id="typography-title">Start with the base size</h2>
         </header>
         <div class="chapter-intro">
-          <p class="lead-copy">Start at 16 or 17. Then let the system grow from there.</p>
-          <p class="body-copy">A major-second scale creates a quiet, useful hierarchy for interfaces. The math gives the system coherence; judgment decides how each size is used.</p>
+          <p class="lead-copy">Use 16px or 17px as the default base size</p>
+          <p class="body-copy">Generate the remaining sizes with a major-second ratio of 1.125. Change weight within a heading or sentence only to indicate interactivity. Judge the rendered hierarchy and adjust optically when needed.</p>
         </div>
         <div class="type-lab lab-panel">
           <div class="lab-toolbar">
@@ -102,16 +214,162 @@
           <div class="type-scale" id="type-scale" aria-live="polite"></div>
           <p class="formula"><span>size(step)</span> = base × 1.125<sup>step</sup> <i>rounded to whole pixels</i></p>
         </div>
+        <div class="tracking-lab lab-panel">
+          <div class="tracking-toolbar">
+            <div>
+              <span class="eyebrow">Tracking curve</span>
+              <h3>Divide the size difference by <code>3</code></h3>
+            </div>
+            <fieldset class="tracking-controls">
+              <legend>Tracking shift</legend>
+              <button type="button" data-tracking-action="decrease" aria-label="Decrease tracking shift by 0.25 percentage points">−0.25</button>
+              <button type="button" data-tracking-action="reset" aria-label="Reset tracking shift"><output id="tracking-shift" aria-live="polite">+0.00%</output></button>
+              <button type="button" data-tracking-action="increase" aria-label="Increase tracking shift by 0.25 percentage points">+0.25</button>
+            </fieldset>
+          </div>
+          <div class="tracking-scale" id="tracking-scale" aria-live="polite"></div>
+          <p class="formula"><span>tracking</span> = shift + tapered raw + caps + manual <i>all caps +4% · manual correction allowed</i></p>
+        </div>
+        <div class="responsive-type-lab lab-panel">
+          <div class="responsive-type-intro">
+            <span class="eyebrow">Responsive typography</span>
+            <h3>Recalculate from the rendered size</h3>
+            <p>Font size, letter spacing, and line height are one system. When the rendered size changes, recalculate the other properties instead of preserving values chosen for a different size.</p>
+          </div>
+          <div class="responsive-type-steps" aria-label="Responsive typography calculation">
+            <article><span>01</span><strong>Read the current size</strong><p>Use the font size that actually renders between the responsive endpoints.</p></article>
+            <article><span>02</span><strong>Recalculate tracking</strong><p>Pass the rendered size through the tracking curve, then apply caps and manual corrections.</p></article>
+            <article><span>03</span><strong>Recalculate line height</strong><p>Preserve the role’s ratio, then snap the line box to the applicable spacing grid.</p></article>
+          </div>
+          <p class="formula"><span>line height</span> = round((rendered size × role ratio) ÷ grid) × grid <i>2px through 20px · 4px above 20px</i></p>
+        </div>
+        <div class="weight-lab lab-panel">
+          <div class="weight-lab-intro">
+            <span class="eyebrow">Font weight roles</span>
+            <h3>Increase weight with function</h3>
+            <p>Begin with regular for body content. Add only enough weight to communicate hierarchy, interactivity, or strong attention.</p>
+          </div>
+          <div class="weight-role-grid" aria-label="Default font weight roles">
+            <article class="weight-regular"><span>Regular</span><strong>Body content</strong><small>Default reading weight</small></article>
+            <article class="weight-medium"><span>Medium</span><strong>Headers</strong><small>Subtle hierarchy or optical correction</small></article>
+            <article class="weight-semibold"><span>Semibold</span><strong>Interactive</strong><small>Buttons and actionable text</small></article>
+            <article class="weight-bold"><span>Bold</span><strong>Attention</strong><small>Reserved for strong emphasis</small></article>
+          </div>
+          <div class="button-weight-rule">
+            <div class="light-button-sample"><span>Button label</span><small>At least medium</small></div>
+            <div class="dark-button-sample"><span>Button label</span><small>White on dark · at least semibold</small></div>
+          </div>
+          <p class="weight-system-note"><span>System rule</span><strong>The typeface, brand, and design system determine how far each role needs to move</strong></p>
+        </div>
+        <div class="caps-lab lab-panel">
+          <div class="caps-lab-intro">
+            <span class="eyebrow">All caps</span>
+            <h3>Use all caps for compact legibility</h3>
+            <p>Use all caps when a label must remain legible at a size where sentence case no longer works. It is a functional response to limited space, not a stylistic choice.</p>
+          </div>
+          <div class="caps-examples" aria-label="Functional uses of all caps">
+            <article>
+              <div class="caps-example-stage diagram-stage"><span class="caps-sample">Primary axis</span></div>
+              <strong>Diagram label</strong>
+              <small>Small text in a constrained graphic</small>
+            </article>
+            <article>
+              <div class="caps-example-stage"><span class="caps-sample dense-control-sample">Show hidden layers</span></div>
+              <strong>Dense control</strong>
+              <small>More text in a limited control area</small>
+            </article>
+            <article>
+              <div class="caps-example-stage time-stage"><span>08:30 <b>AM</b></span><span>05:45 <b>PM</b></span></div>
+              <strong>Time label</strong>
+              <small>Unit or abbreviated time information</small>
+            </article>
+          </div>
+          <p class="caps-spacing-rule"><span>Letter spacing</span><strong>Start with the tracking curve, add a flat 4 percentage points for all caps, then correct individual roles manually when needed.</strong></p>
+        </div>
+        <div class="figure-lab lab-panel">
+          <div class="figure-lab-intro">
+            <span class="eyebrow">Numeric figures</span>
+            <h3>Choose figures by behavior</h3>
+            <p>Tabular and proportional describe width. Lining and oldstyle describe height and vertical position. Most interfaces use lining figures, then choose the width behavior that fits the content.</p>
+          </div>
+          <div class="figure-examples">
+            <article class="tabular-figure-example">
+              <span>Tabular lining</span>
+              <div class="timecode-sample">01:42:08.32</div>
+              <ul class="numeric-table" aria-label="Right-aligned values with aligned decimal points">
+                <li><span>12</span><i>.</i><b>00</b></li>
+                <li><span>9</span><i>.</i><b>50</b></li>
+                <li><span>0</span><i>.</i><b>75</b></li>
+              </ul>
+              <p>Use equal-width figures for changing values and aligned columns. Right-align groups and keep decimal precision consistent.</p>
+            </article>
+            <article class="proportional-figure-example">
+              <span>Proportional lining</span>
+              <p class="inline-number-sample">The 26 selected items will remain in this collection.</p>
+              <p>Use proportional figures when a fixed number appears in text. Align a single value according to its context.</p>
+            </article>
+          </div>
+          <p class="figure-rule"><span>Rule</span><strong>Use tabular lining figures when stability or comparison matters; use proportional lining figures when a fixed number needs to flow with text.</strong></p>
+        </div>
+        <div class="punctuation-lab lab-panel">
+          <div class="punctuation-lab-intro">
+            <span class="eyebrow">Quotation marks, apostrophes, and primes</span>
+            <h3>Use the glyph that matches the function</h3>
+            <p>Quotation marks surround quotations. Apostrophes mark contractions, possession, and omitted characters. Prime marks denote measurements.</p>
+          </div>
+          <div class="punctuation-examples">
+            <article><span>Quotation</span><strong>“ ” &nbsp; ‘ ’</strong><p>Opening and closing quotation marks face opposite directions.</p></article>
+            <article><span>Apostrophe</span><strong>don’t &nbsp; ’26</strong><p>Use the right apostrophe for contractions and truncated years. Do not use <s>‘26</s>.</p></article>
+            <article><span>Prime</span><strong>5′ 11″</strong><p>Use prime and double prime marks for measurements.</p></article>
+          </div>
+          <p class="punctuation-rule"><span>Fallback</span><strong>When correct curly punctuation cannot be guaranteed, use a consistent straight or prime-like mark instead of a curly mark facing the wrong direction.</strong></p>
+        </div>
+        <div class="alignment-lab lab-panel">
+          <div class="alignment-lab-intro">
+            <span class="eyebrow">Left-to-right languages</span>
+            <h3>Align text according to its role</h3>
+            <p>Begin with left alignment. Change alignment when the content’s role or the relationship between elements requires it.</p>
+          </div>
+          <div class="alignment-examples" aria-label="Text alignment examples for left-to-right interfaces">
+            <article class="left-alignment-example">
+              <span>Default</span>
+              <div><strong>Start from a shared left edge</strong><p>Left alignment establishes a consistent reading path for headings, body copy, labels, and controls.</p></div>
+            </article>
+            <article class="numeric-alignment-example">
+              <span>Comparable numbers</span>
+              <ul aria-label="Right-aligned numeric values"><li>1,240.00</li><li>96.50</li><li>8.25</li></ul>
+              <p>Right-align values shown vertically together.</p>
+            </article>
+            <article class="button-alignment-example">
+              <span>Button labels</span>
+              <button type="button">Continue</button>
+              <button type="button"><b>View details</b><i aria-hidden="true">›</i></button>
+              <p>Center a single label. Left-align it when a right-side icon or secondary label provides an anchor.</p>
+            </article>
+          </div>
+          <div class="alignment-transition-example">
+            <div class="centered-title-sample">
+              <span>Centered title block</span>
+              <strong>Introduce a different mode</strong>
+              <p>A title and subtitle can separate the introduction from the content that follows.</p>
+            </div>
+            <div class="left-content-sample">
+              <span>Left-aligned content</span>
+              <strong>Communicate where the alignment changes</strong>
+              <p>Use a horizontal rule or aligned container boundary to connect the centered block to the left-aligned content.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="chapter color-system" aria-labelledby="color-title">
         <header class="chapter-header compact">
-          <div><span class="chapter-number">02.1</span><span class="chapter-type">Color foundation</span></div>
-          <h2 id="color-title">Gray, without the dead zone.</h2>
+          <div><span class="chapter-number">03.1</span><span class="chapter-type">Color foundation</span></div>
+          <h2 id="color-title">Build gray scales perceptually</h2>
         </header>
         <div class="chapter-intro">
-          <p class="lead-copy">Use OKLCH. Shape the ramp instead of stepping through it blindly.</p>
-          <p class="body-copy">A cubic Bézier curve makes the changes in perceived lightness feel intentional across the full scale. These handles are a starting point, not a law.</p>
+          <p class="lead-copy">Use 13 stops from pure white to near-black</p>
+          <p class="body-copy">Use stops 0, 50, 100–900, 950, and 1000. Stop 0 is pure white. Stop 1000 performs the role of black but is never pure black. Use the OKLCH curve as a starting model, then judge the rendered differences on actual displays.</p>
         </div>
         <div class="gray-lab lab-panel">
           <div class="curve-panel">
@@ -126,75 +384,385 @@
               <circle class="curve-point" cx="275" cy="112" r="6" />
             </svg>
           </div>
-          <div class="gray-ramp" id="gray-ramp" aria-label="Generated OKLCH gray scale"></div>
+          <div class="gray-ramp" id="gray-ramp" aria-label="Generated 13-stop OKLCH gray scale"></div>
         </div>
       </section>
 
-      <section class="chapter gestalt" id="gestalt" aria-labelledby="gestalt-title">
+      <section class="chapter rhythm" id="rhythm" aria-labelledby="rhythm-title">
         <header class="chapter-header">
-          <div><span class="chapter-number">03</span><span class="chapter-type">Gestalt</span></div>
-          <h2 id="gestalt-title">Space is syntax.</h2>
+          <div><span class="chapter-number">04</span><span class="chapter-type">Rhythm</span></div>
+          <h2 id="rhythm-title">Use space to show relationships</h2>
         </header>
         <div class="chapter-intro">
-          <p class="lead-copy">Spacing doesn’t decorate a relationship. It creates one.</p>
-          <p class="body-copy">Work on a 2px grid through 20px, then expand to a 4px grid. This preserves precision at small distances and creates rhythm at larger ones.</p>
+          <p class="lead-copy">The distance between elements communicates whether they belong together</p>
+          <p class="body-copy">Use a 2px grid for values through 20px and a 4px grid for larger values. Keep repeated relationships consistent, then compensate optically when geometric alignment looks wrong.</p>
         </div>
-        <div class="gestalt-demo">
+        <div class="rhythm-term lab-panel">
+          <span class="eyebrow">Term</span>
+          <div>
+            <h3>Gestalt means form or shape</h3>
+            <p>Gestalt is a German word and a common design term for how people perceive separate elements as related groups or as a whole. Spacing is one of the clearest ways to communicate those relationships.</p>
+          </div>
+        </div>
+        <div class="rhythm-demo">
           <div class="grid-rule lab-panel">
             <span class="eyebrow">Spacing rule</span>
             <div class="grid-statement"><strong>2</strong><span>px grid<br /><i>≤ 20px</i></span><b>→</b><strong>4</strong><span>px grid<br /><i>&gt; 20px</i></span></div>
             <div class="rhythm-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
           </div>
           <figure class="optical-demo lab-panel">
-            <figcaption><span class="eyebrow">Optical alignment</span><strong>Align to what the eye reads.</strong></figcaption>
+            <figcaption><span class="eyebrow">Optical alignment</span><strong>Adjust geometric alignment when needed</strong></figcaption>
             <div class="optical-stage">
-              <span class="floating-label">Label finds the padding</span>
+              <span class="floating-label">Label aligns to the padding midpoint</span>
               <div class="alignment-line" aria-hidden="true"></div>
               <div class="sample-container"><span>Container content begins here</span><button type="button">Action</button></div>
             </div>
             <p>The label’s visible edge aims toward the middle of the container’s padding—not mechanically at its border.</p>
           </figure>
         </div>
+        <div class="rhythm-swing lab-panel">
+          <div class="rhythm-swing-copy">
+            <span class="eyebrow">Rhythm and swing</span>
+            <h3>Establish the pattern, then break it for a reason</h3>
+            <p><strong>Rhythm</strong> standardizes baselines, grids, tokens, type sizes, spacing, and repeated structures.</p>
+            <p><strong>Swing</strong> changes one item to interrupt monotony or restore attention. If every item is different, there is no rhythm to break.</p>
+            <p>Swing also applies to type, color, and motion when the calculated result does not match human perception.</p>
+          </div>
+          <div class="section-sequence" aria-label="Four sections with the third section using swing to mark a key decision">
+            <article><span>Section 01</span><strong>Shared structure</strong><i aria-hidden="true"></i><i aria-hidden="true"></i></article>
+            <article><span>Section 02</span><strong>Shared structure</strong><i aria-hidden="true"></i><i aria-hidden="true"></i></article>
+            <article class="swing-section"><span>Section 03 · Key decision</span><strong>Purposeful exception</strong><i aria-hidden="true"></i><i aria-hidden="true"></i></article>
+            <article><span>Section 04</span><strong>Shared structure</strong><i aria-hidden="true"></i><i aria-hidden="true"></i></article>
+          </div>
+          <div class="rhythm-swing-rule">
+            <span>Rule</span>
+            <strong>Use the smallest deviation that communicates the reason</strong>
+          </div>
+        </div>
+        <div class="rhythm-meaning lab-panel">
+          <div class="rhythm-meaning-intro">
+            <span class="eyebrow">Repeated gestures</span>
+            <h3>Repetition builds meaning</h3>
+            <p>The same gesture, repeated in comparable contexts with the same outcome, becomes a pattern the person can recognize.</p>
+          </div>
+          <div class="meaning-sequence" aria-label="A repeated down chevron gaining meaning across four consistent uses">
+            <article class="meaning-taught">
+              <span>01 / Teach</span>
+              <div><strong>Open in</strong><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></div>
+              <small>Full meaning</small>
+            </article>
+            <article>
+              <span>02 / Repeat</span>
+              <div><strong>proposal.pdf</strong><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></div>
+              <small>Association repeated</small>
+            </article>
+            <article>
+              <span>03 / Repeat</span>
+              <div><strong>notes.txt</strong><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></div>
+              <small>Pattern recognized</small>
+            </article>
+            <article>
+              <span>04 / Convention</span>
+              <div><strong>archive.zip</strong><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></div>
+              <small>Gesture carries meaning</small>
+            </article>
+          </div>
+          <div class="rhythm-meaning-rule"><span>Rule</span><strong>Preserve the gesture, context, and outcome so each repetition strengthens the convention</strong></div>
+        </div>
+        <div class="rhythm-scope lab-panel">
+          <div class="rhythm-scope-intro">
+            <span class="eyebrow">Contextual grouping</span>
+            <h3>Group actions by scope</h3>
+            <p>Visual grouping implies functional grouping. Actions placed together should share a context, object, or scope.</p>
+          </div>
+          <div class="scope-demonstrations">
+            <article class="onboarding-scope-example">
+              <span>Shared context</span>
+              <div class="onboarding-frame">
+                <button class="skip-action" type="button">Skip</button>
+                <div class="profile-task">
+                  <span>Profile details</span>
+                  <strong>Add your profile details</strong>
+                  <p>Choose how to provide the information for this step.</p>
+                  <div class="profile-actions">
+                    <button class="profile-primary" type="button">Import profile <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-right"></use></svg></button>
+                    <button class="profile-secondary" type="button">Manually enter</button>
+                  </div>
+                </div>
+              </div>
+              <p>Import and manual entry belong together because both add profile details. Skip applies to the broader onboarding flow, so it sits outside that group.</p>
+            </article>
+            <article class="input-scope-example">
+              <span>Interaction sequence</span>
+              <div class="message-example">
+                <label for="rhythm-message">Message</label>
+                <div class="message-composer">
+                  <input id="rhythm-message" type="text" placeholder="Enter a message" />
+                  <button type="button" aria-label="Send message"><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up"></use></svg></button>
+                </div>
+                <div class="flow-order" aria-label="Reading and interaction order">
+                  <div><span>01</span><strong>Enter text</strong></div>
+                  <div><span>02</span><strong>Send</strong></div>
+                </div>
+              </div>
+              <p>The send action stays inside the field’s visual group and follows the input in left-to-right reading order.</p>
+            </article>
+          </div>
+          <div class="rhythm-scope-rule"><span>Rule</span><strong>Make visual relationships match functional relationships</strong></div>
+        </div>
       </section>
 
       <section class="chapter interface" id="interface" aria-labelledby="interface-title">
         <header class="chapter-header">
-          <div><span class="chapter-number">04</span><span class="chapter-type">Interface</span></div>
-          <h2 id="interface-title">Find the center of gravity.</h2>
+          <div><span class="chapter-number">05</span><span class="chapter-type">Interface</span></div>
+          <h2 id="interface-title">Start with the problem or interaction</h2>
         </header>
         <div class="chapter-intro">
-          <p class="lead-copy">Begin with a clear problem—or one specific interaction.</p>
-          <p class="body-copy">An interaction can be searching for a problem. That’s okay. The point is to give the work a concrete center before resolving the world around it.</p>
+          <p class="lead-copy">Define what the interface needs to help someone do</p>
+          <p class="body-copy">A clear problem provides direction. A specific interaction can also be the starting point, even when it is still searching for a problem. Describe the status of the exploration accurately.</p>
         </div>
         <div class="interaction-flow" aria-label="Interface design sequence">
-          <article><span>01 / Frame</span><h3>What problem matters?</h3><p>Name the human need without prescribing the surface.</p></article>
-          <article><span>02 / Act</span><h3>What is the core interaction?</h3><p>Define the action and the response it deserves.</p></article>
-          <article><span>03 / Reveal</span><h3>What must become visible?</h3><p>Choose only the visual elements that make the exchange clear.</p></article>
+          <article><span>01 / Problem</span><h3>Define the problem</h3><p>State the need without prescribing the interface.</p></article>
+          <article><span>02 / Interaction</span><h3>Define the core interaction</h3><p>Specify the action and the interface response.</p></article>
+          <article><span>03 / Visuals</span><h3>Define what must be visible</h3><p>Choose the visual elements required to make the interaction clear.</p></article>
+        </div>
+        <div class="action-hierarchy lab-panel">
+          <div class="action-hierarchy-intro">
+            <span class="eyebrow">Action hierarchy</span>
+            <h3>Make one action primary</h3>
+            <p>A surface can contain as many secondary actions as it needs, but only one action should read as primary. Reduce every other action according to its role.</p>
+          </div>
+          <div class="hierarchy-example">
+            <div class="composer-stage">
+              <div class="composer-shell">
+                <p>Ask a question</p>
+                <div class="composer-actions">
+                  <button class="composer-model" type="button">Model <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></button>
+                  <button class="composer-attach" type="button" aria-label="Attach a file">
+                    <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-paperclip"></use></svg>
+                  </button>
+                  <button class="composer-send" type="button" aria-label="Send message">
+                    <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up"></use></svg>
+                  </button>
+                </div>
+              </div>
+              <small>Each control is 28px high. Fill, contrast, and stroke communicate priority.</small>
+            </div>
+            <div class="hierarchy-key" aria-label="Action hierarchy shown in the composer">
+              <article><span>Primary</span><strong>Send</strong><small>Filled and highest contrast</small></article>
+              <article><span>Secondary</span><strong>Attach</strong><small>Outlined and available</small></article>
+              <article><span>Tertiary</span><strong>Model</strong><small>Quiet supporting control</small></article>
+            </div>
+          </div>
+          <div class="action-attention" aria-label="Order for resolving competing calls for attention">
+            <article><span>01</span><strong>Choose what is primary</strong><p>Do not make several controls look primary because several things matter.</p></article>
+            <article><span>02</span><strong>Use the correct state</strong><p>Communicate errors, warnings, and notifications as states instead of additional primary actions.</p></article>
+            <article><span>03</span><strong>Separate different scopes</strong><p>Use distance, containers, or size when actions belong to different systems.</p></article>
+          </div>
+          <div class="scope-example">
+            <div class="surface-action-sample"><span>Current surface</span><button type="button">Save changes</button></div>
+            <div class="tab-action-sample"><span>Persistent navigation</span><div><i aria-hidden="true"></i><button type="button" aria-label="Create new item"><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-plus"></use></svg></button><i aria-hidden="true"></i></div></div>
+            <p>The tab bar container and size difference separate a persistent highlighted action from the primary action on the current surface.</p>
+          </div>
+        </div>
+        <div class="control-size-guide lab-panel">
+          <div class="control-size-intro">
+            <span class="eyebrow">Method default</span>
+            <h3>Size controls for the input method</h3>
+            <p>Mouse input supports dense controls. Touch input requires a reliable finger-sized target even when the visible affordance is smaller.</p>
+          </div>
+          <div class="control-size-platforms">
+            <article class="mouse-size-guide">
+              <header><span>Mouse controlled</span><strong>24px or 28px base height</strong></header>
+              <div class="mouse-size-scale" aria-label="Mouse control height examples">
+                <div><span>16</span><i style="--control-height: 16px" aria-hidden="true"></i><small>Necessary minimum</small></div>
+                <div><span>20</span><i style="--control-height: 20px" aria-hidden="true"></i><small>Comfortable minimum</small></div>
+                <div><span>24</span><i style="--control-height: 24px" aria-hidden="true"></i><small>Power-user default</small></div>
+                <div><span>28</span><i style="--control-height: 28px" aria-hidden="true"></i><small>Consumer default</small></div>
+                <div><span>&gt;28</span><i style="--control-height: 40px" aria-hidden="true"></i><small>Emphasized exception</small></div>
+              </div>
+              <p>Use larger desktop controls sparingly for a highlighted field, onboarding or marketing action, or a single visible search field.</p>
+            </article>
+            <article class="touch-size-guide">
+              <header><span>Touch controlled</span><strong>44px minimum target</strong></header>
+              <div class="touch-target-example">
+                <div class="touch-target" role="img" aria-label="A 24 pixel visible affordance inside a 44 pixel touch target"><i></i></div>
+                <div><strong>24px affordance</strong><small>44px interactive target</small></div>
+              </div>
+              <div class="touch-size-scale" aria-label="Touch control size examples">
+                <div><i style="--touch-size: 44px" aria-hidden="true"></i><span>44</span><small>Minimum</small></div>
+                <div><i style="--touch-size: 64px" aria-hidden="true"></i><span>64</span><small>Large</small></div>
+                <div><i style="--touch-size: 72px" aria-hidden="true"></i><span>72</span><small>Large</small></div>
+              </div>
+              <p>Do not make affordances below 24px interactive. Keep adjacent targets distinct so a larger hit area does not create mistaps.</p>
+            </article>
+          </div>
+        </div>
+        <div class="action-repetition lab-panel">
+          <div class="action-repetition-intro">
+            <span class="eyebrow">Repeated actions</span>
+            <h3>Repeat actions only when repetition adds meaning</h3>
+            <p>Identical controls with different outcomes create ambiguity. Repetition is useful when the same control preserves one meaning and teaches a convention.</p>
+          </div>
+          <div class="duplicate-action-comparison">
+            <article class="ambiguous-actions">
+              <span>Ambiguous</span>
+              <div><button type="button"><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-plus"></use></svg> Add</button><button type="button"><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-plus"></use></svg> Add</button></div>
+              <p>The same label and icon do not explain whether the action creates a project or a file.</p>
+            </article>
+            <article class="contextual-actions">
+              <span>Contextual</span>
+              <div><section><strong>Projects</strong><button type="button"><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-plus"></use></svg> Add project</button></section><section><strong>Files</strong><button type="button"><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-plus"></use></svg> Add file</button></section></div>
+              <p>Proximity establishes the object. Specific content confirms it.</p>
+            </article>
+          </div>
+          <div class="duplicate-resolution" aria-label="Ways to resolve duplicate actions">
+            <article><span>01</span><strong>Use context</strong><p>Associate the action with its object through proximity or a container.</p></article>
+            <article><span>02</span><strong>Name the object</strong><p>Use “Add project” and “Add file” when both actions remain visible.</p></article>
+            <article><span>03</span><strong>Reveal when relevant</strong><p>Show the secondary action on hover, in a modal, or after selection when its context becomes active.</p></article>
+          </div>
+          <div class="convention-example">
+            <div class="open-in-convention">
+              <button type="button">Open in <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></button>
+              <ul><li><span>proposal.pdf</span><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></li><li><span>notes.txt</span><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></li><li><span>archive.zip</span><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></li></ul>
+            </div>
+            <div><span class="eyebrow">Teach a convention</span><strong>Repeat one meaning consistently</strong><p>The labeled control teaches that the chevron beside each filename means “Open in.” A repeated plus can similarly establish “add or create” throughout an interface.</p></div>
+          </div>
+        </div>
+        <div class="corner-radius-guide lab-panel">
+          <div class="corner-radius-intro">
+            <span class="eyebrow">Corner rounding</span>
+            <h3>Use radius as interface language</h3>
+            <p>The amount of rounding is a matter of taste. Large nested corners need a clearer concentric relationship, and rounded controls can act as familiar shorthand for interactivity.</p>
+          </div>
+          <div class="nested-radius-examples" aria-label="Nested corner radius calculation and optical adjustment">
+            <article>
+              <span>Calculated</span>
+              <div class="radius-modal"><div class="radius-field radius-field-calculated">Text field</div></div>
+              <strong>32px − 20px = 12px</strong>
+              <p>Subtract the inset from the outer radius to align the centers of the two curves.</p>
+            </article>
+            <article>
+              <span>Optically adjusted</span>
+              <div class="radius-modal"><div class="radius-field radius-field-adjusted">Text field</div></div>
+              <strong>16px also works</strong>
+              <p>The formula establishes the relationship. The rendered result determines the final value.</p>
+            </article>
+          </div>
+          <div class="corner-language">
+            <article><span>0px radius</span><button class="square-action" type="button">Continue <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-right"></use></svg></button><p>Square controls can work, but borders, fill, labels, or icons may need to carry more of the interaction signal.</p></article>
+            <article><span>Rounded control</span><button class="rounded-action" type="button">Continue</button><p>Corner rounding is already familiar as a boundary around an interactive element.</p></article>
+          </div>
+        </div>
+        <div class="map-landscape-guide lab-panel">
+          <div class="map-landscape-intro">
+            <span class="eyebrow">Conventions</span>
+            <h3>Design both the map and the landscape</h3>
+            <p>The product’s functionality is the landscape. The interface is the map that explains how to move through it.</p>
+          </div>
+          <div class="map-legend" aria-label="Mappings from product functions to interface conventions">
+            <div class="map-legend-header"><span>Landscape</span><span>Map</span><span>Why it works</span></div>
+            <article><strong>Find content</strong><div><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-search"></use></svg><span>Search</span></div><p>Magnifying glasses already mean search</p></article>
+            <article><strong>Act on a file</strong><div><span>Open in</span><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-down"></use></svg></div><p>The labeled instance teaches the chevron</p></article>
+            <article><strong>Create an object</strong><div><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-plus"></use></svg><span>Add</span></div><p>A repeated plus preserves one meaning</p></article>
+          </div>
+          <div class="convention-order" aria-label="Order for choosing interface conventions">
+            <article><span>01</span><strong>Use a familiar convention</strong><p>Choose existing shorthand when it accurately describes the behavior.</p></article>
+            <article><span>02</span><strong>Define a local convention</strong><p>Create a clear system when the functionality has no familiar shorthand.</p></article>
+            <article><span>03</span><strong>Teach and repeat it</strong><p>Show the full meaning first, then keep the abbreviated signal consistent.</p></article>
+          </div>
+          <p class="map-landscape-rule"><span>Rule</span><strong>Consistency does not make an arbitrary choice universally familiar; it makes the local map learnable</strong></p>
+        </div>
+        <div class="taste-scaffold lab-panel">
+          <div>
+            <span class="eyebrow">Decision scaffolding</span>
+            <h3>Use personal taste to create starting constraints</h3>
+          </div>
+          <p>Design presents too many valid choices to reconsider every decision from zero. A pet font, an animation style, or a meaningful reference can provide a useful default. Keep it when it serves the interface and change it when the context requires something else.</p>
+          <div class="taste-examples" aria-label="Examples of personal taste used as design scaffolding">
+            <span>Pet font</span><span>Motion study</span><span>Meaningful song</span>
+          </div>
         </div>
       </section>
 
       <section class="chapter imagery" id="imagery" aria-labelledby="imagery-title">
         <header class="chapter-header">
-          <div><span class="chapter-number">05</span><span class="chapter-type">Imagery</span></div>
-          <h2 id="imagery-title">A chapter still forming.</h2>
+          <div><span class="chapter-number">06</span><span class="chapter-type">Imagery</span></div>
+          <h2 id="imagery-title">Relate icons to type by function</h2>
         </header>
-        <div class="imagery-placeholder">
-          <div class="aperture" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-          <div>
-            <p class="lead-copy">The empty space is intentional.</p>
-            <p class="body-copy">Imagery will cover selection, cropping, art direction, and the job an image does that typography and layout cannot. Until then, this section will not invent an opinion.</p>
-          </div>
+        <div class="chapter-intro">
+          <p class="lead-copy">Icons sit between type and image, and between content and interface</p>
+          <p class="body-copy">An icon used as interface shorthand should remain visibly distinct from text. A caret, chevron, or arrow used to complete a phrase behaves more like punctuation and should align closely with the typography.</p>
+        </div>
+        <div class="iconography-demo">
+          <figure class="control-padding-demo lab-panel">
+            <figcaption>
+              <span class="eyebrow">Method</span>
+              <strong>Change padding with the content</strong>
+            </figcaption>
+            <div class="control-examples">
+              <article>
+                <div class="control-stage">
+                  <div class="demo-control icon-only-control" role="img" aria-label="Icon-only control with uniform padding">
+                    <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-search"></use></svg>
+                  </div>
+                </div>
+                <span>Icon only</span><small>Equal on all sides</small>
+              </article>
+              <article>
+                <div class="control-stage">
+                  <div class="demo-control text-only-control" role="img" aria-label="Text-only control with more padding on the sides">Continue</div>
+                </div>
+                <span>Text only</span><small>More left and right</small>
+              </article>
+              <article>
+                <div class="control-stage">
+                  <div class="demo-control mixed-control" role="img" aria-label="Text and trailing icon control with additional padding on the left">
+                    <span>Continue</span>
+                    <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-right"></use></svg>
+                  </div>
+                </div>
+                <span>Text and icon</span><small>More on the left</small>
+              </article>
+            </div>
+            <p>Font metrics and icon bounds do not describe the visible shapes completely. Start with these relationships, then adjust optically.</p>
+          </figure>
+
+          <figure class="icon-role-demo lab-panel">
+            <figcaption>
+              <span class="eyebrow">Principle</span>
+              <strong>Match the icon to its role</strong>
+            </figcaption>
+            <div class="icon-role-list">
+              <article>
+                <span>Interface shorthand</span>
+                <div class="interface-icon-example">
+                  <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-search"></use></svg>
+                  <strong>Search</strong>
+                </div>
+                <p>Keep the icon distinct and slightly larger than the text</p>
+              </article>
+              <article>
+                <span>Text decoration</span>
+                <div class="text-icon-examples">
+                  <strong>More <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-chevron-right"></use></svg></strong>
+                  <strong>Website <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-external-link"></use></svg></strong>
+                </div>
+                <p>Treat the icon like punctuation and tune it against the type</p>
+              </article>
+            </div>
+          </figure>
         </div>
       </section>
 
       <section class="chapter motion" id="motion" aria-labelledby="motion-title">
         <header class="chapter-header">
-          <div><span class="chapter-number">06</span><span class="chapter-type">Motion</span></div>
-          <h2 id="motion-title">Respect the platform’s pulse.</h2>
+          <div><span class="chapter-number">07</span><span class="chapter-type">Motion</span></div>
+          <h2 id="motion-title">Match motion to the platform</h2>
         </header>
         <div class="chapter-intro">
-          <p class="lead-copy">On the web: incredibly snappy. On touch: slower, fluid, physical.</p>
-          <p class="body-copy">Motion explains continuity, causality, and state. It never earns the right to make an interface feel slow.</p>
+          <p class="lead-copy">Keep web motion under 200ms in most cases</p>
+          <p class="body-copy">Touch interfaces can use slower motion when it supports direct manipulation and continuity. In every case, motion should explain a change without making the interface feel slow.</p>
         </div>
         <div class="motion-lab lab-panel">
           <div class="motion-track web-motion">
@@ -205,27 +773,73 @@
             <div><span class="eyebrow">Touch response</span><strong>Fluid + physical</strong><small>Continuity under the finger</small></div>
             <button type="button" data-motion="touch"><span>Try it</span><i aria-hidden="true"></i></button>
           </div>
-          <p class="performance-rule"><span>Performance</span><strong>The feeling of speed trumps all else.</strong></p>
+          <p class="performance-rule"><span>Performance</span><strong>Protect responsiveness before adding motion</strong></p>
+        </div>
+        <div class="tempo-lab lab-panel">
+          <div class="tempo-intro">
+            <span class="eyebrow">Complex animation scaffold</span>
+            <h3>48 frames at 60 fps equals 0.8 seconds</h3>
+            <p>This loop corresponds to 75 BPM. Divide it into four 12-frame intervals, then move selected internal keyframes when the motion needs a less mechanical rhythm.</p>
+          </div>
+          <div class="tempo-math" aria-label="Animation timing calculations">
+            <div><span>Loop</span><strong>48 frames</strong><small>0.8s · 800ms</small></div>
+            <div><span>Tempo</span><strong>75 BPM</strong><small>one 0.8s beat</small></div>
+            <div><span>Subdivision</span><strong>12 frames</strong><small>0.2s · 200ms</small></div>
+            <div><span>One frame</span><strong>16.667ms</strong><small>available swing unit</small></div>
+          </div>
+          <ol class="frame-timeline" aria-label="A 48-frame loop with one internal keyframe swung one frame later">
+            <li><i aria-hidden="true"></i><strong>0</strong><span>0.000s</span></li>
+            <li><i aria-hidden="true"></i><strong>12</strong><span>0.200s</span></li>
+            <li class="swung-frame"><i aria-hidden="true"></i><strong>25</strong><span>0.417s · +1 frame</span></li>
+            <li><i aria-hidden="true"></i><strong>36</strong><span>0.600s</span></li>
+            <li><i aria-hidden="true"></i><strong>48</strong><span>0.800s</span></li>
+          </ol>
+          <div class="tempo-rule"><span>Swing</span><strong>Move selected internal keyframes while keeping the full loop aligned to 48 frames</strong></div>
         </div>
       </section>
 
       <section class="field-index" aria-labelledby="index-title">
-        <span class="eyebrow">The working taxonomy</span>
-        <h2 id="index-title">Five ways into the same idea.</h2>
+        <span class="eyebrow">Guide index</span>
+        <h2 id="index-title">Six interface design disciplines</h2>
         <div class="discipline-list">
-          <a href="#typography"><span>01</span><strong>Typography</strong><small>Hierarchy has a voice.</small><i>↗</i></a>
-          <a href="#gestalt"><span>02</span><strong>Gestalt</strong><small>Relationship has a shape.</small><i>↗</i></a>
-          <a href="#interface"><span>03</span><strong>Interface</strong><small>Intent has an action.</small><i>↗</i></a>
-          <a href="#imagery"><span>04</span><strong>Imagery</strong><small>Meaning has an atmosphere.</small><i>↗</i></a>
-          <a href="#motion"><span>05</span><strong>Motion</strong><small>Change has a rhythm.</small><i>↗</i></a>
+          <a href="#content-guide"><span>01</span><strong>Content</strong><small>Words explain and direct</small><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up-right"></use></svg></a>
+          <a href="#typography"><span>02</span><strong>Typography</strong><small>Type establishes hierarchy</small><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up-right"></use></svg></a>
+          <a href="#rhythm"><span>03</span><strong>Rhythm</strong><small>Spacing shows relationships</small><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up-right"></use></svg></a>
+          <a href="#interface"><span>04</span><strong>Interface</strong><small>Interactions help people act</small><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up-right"></use></svg></a>
+          <a href="#imagery"><span>05</span><strong>Imagery</strong><small>Icons bridge type and image</small><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up-right"></use></svg></a>
+          <a href="#motion"><span>06</span><strong>Motion</strong><small>Animation explains change</small><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up-right"></use></svg></a>
+        </div>
+      </section>
+
+      <section class="asides" id="asides" aria-labelledby="asides-title">
+        <header class="asides-header">
+          <div>
+            <span class="eyebrow">Documentation context</span>
+            <h2 id="asides-title">Asides</h2>
+          </div>
+          <p>Asides preserve personal and historical context. They are part of the documentation but are excluded from agent prompts and working guidance.</p>
+        </header>
+        <div class="aside-list">
+          <article>
+            <span>Aside 01</span>
+            <h3>Crystal Silence</h3>
+            <p>I learned Chick Corea’s “Crystal Silence” on vibraphone while growing up. Its approximate 76 BPM tempo is the personal reference behind my 48-frame animation scaffold at 60 fps.</p>
+            <small>Context for a timing default, not a motion rule</small>
+          </article>
+          <article>
+            <span>Aside 02</span>
+            <h3>Study design history</h3>
+            <p>I think the best way to learn design is to study history. Interfaces recombine graphic design and other forms of design. Study manuscripts before printing presses and the way dobby looms encoded repeatable patterns.</p>
+            <small>Historical context, not agent guidance</small>
+          </article>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="footer-mark">J/GUI</div>
-      <p>An evolving record of interface design.<br />Written as the thinking develops.</p>
-      <a href="#top">Back to the beginning <span>↑</span></a>
+      <div class="footer-mark">Julian’s Guide to Interfaces</div>
+      <p>A working guide to interface design<br />Updated as principles are defined</p>
+      <a href="#top">Back to top <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-up"></use></svg></a>
     </footer>
   </body>
 </html>

@@ -1,6 +1,6 @@
 # Julian’s Guide to Interfaces
 
-An evolving record of everything I know about designing interfaces—from first principles to the small optical decisions that make a product feel inevitable.
+An evolving record of what I know about designing interfaces, from first principles to implementation details.
 
 The guide begins with one rule:
 
@@ -10,15 +10,14 @@ This is not an argument for stark minimalism. Flourishes, shadows, movement, and
 
 ## Read the guide
 
-Start with [the core principles](guide/00-core-principles.md), then move through the five working disciplines:
+Start with [the core principles](guide/00-core-principles.md), then choose the layer the task requires:
 
-- [Typography](guide/typography/README.md) — type scales, hierarchy, spacing, and optical judgment
-- [Gestalt](guide/gestalt/README.md) — grouping, alignment, rhythm, and meaning through layout
-- [Interface](guide/interface/README.md) — problems, interactions, systems, and perceived performance
-- [Imagery](guide/imagery/README.md) — a placeholder for principles on image-making and art direction
-- [Motion](guide/motion/README.md) — timing, platform context, continuity, and restraint
+- [Principles](guide/principles/README.md) explain how I approach and judge interface design. Use them by default, including when working inside an existing visual system.
+- [Methods](guide/methods/README.md) explain how I construct type, color, spacing, and motion systems. Use them when building or deliberately replacing a system.
 
-The [guide index](guide/README.md) is optimized for both people and agents. Each file is intentionally narrow in scope and begins with a compact summary.
+The [guide index](guide/README.md) routes both people and agents. Methods and exact foundation values are opt-in so an agent can use the principles without trying to redesign an existing product around my defaults.
+
+[Asides](guide/asides/README.md) preserve personal and historical context for readers. They are deliberately excluded from agent prompts and working guidance.
 
 ## Explore the visual guide
 
@@ -30,7 +29,7 @@ npm run dev
 
 Then open `http://localhost:4173`.
 
-No install step is required. The site uses plain HTML, CSS, and JavaScript.
+No install step is required. The site uses plain HTML, CSS, and JavaScript, with Karl hosted locally in the repository.
 
 ## Repository map
 
@@ -39,13 +38,19 @@ No install step is required. The site uses plain HTML, CSS, and JavaScript.
 ├── AGENTS.md                 # How an agent should navigate and extend the guide
 ├── guide/
 │   ├── 00-core-principles.md # The thesis and default decision rules
+│   ├── 01-human-judgment.md  # Math as a tool and feeling as evidence
+│   ├── asides/                # Context excluded from agent prompts
+│   ├── principles/            # Default retrieval path and principle index
+│   ├── methods/               # Opt-in recipes and numerical defaults
+│   ├── content/              # Interface writing and communication
 │   ├── typography/           # Type and typographic spacing
-│   ├── gestalt/              # Spatial relationships and optical alignment
+│   ├── rhythm/               # Spatial relationships, Gestalt, and optical alignment
 │   ├── interface/            # Interaction-led product design
 │   ├── imagery/              # Image and art-direction principles
 │   └── motion/               # Motion principles by platform
 ├── data/
 │   └── foundations.json      # Machine-readable starting values
+├── fonts/                    # Local Karl font files used by the visual guide
 ├── index.html                # Interactive guide
 ├── styles.css
 └── script.js

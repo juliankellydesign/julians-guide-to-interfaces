@@ -1,8 +1,47 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.1.0",
+  "version": "0.17.0",
   "status": "living",
+  "layer": "methods",
+  "prompt": "opt-in",
   "principle": "Everything in an interface should serve a purpose.",
+  "content": {
+    "default": "direct and informative",
+    "styleRule": "Additional style is used only when it communicates something.",
+    "purposeRequired": true,
+    "capitalizationAndPunctuation": {
+      "topLevelTitleCase": true,
+      "properNounsFollowGrammar": true,
+      "interfaceHeadings": {
+        "case": "sentence",
+        "closingPunctuation": false
+      },
+      "bodyCopy": {
+        "case": "sentence",
+        "terminalPeriod": true
+      },
+      "interactiveLabels": {
+        "terminalPeriod": false,
+        "modalContinuation": "...",
+        "punctuationLikeGlyphsAllowed": ["chevron", "arrow"],
+        "questionMarkUse": "rare; help or support"
+      },
+      "exclamationPoints": "almost never"
+    }
+  },
+  "process": {
+    "personalTasteAsScaffolding": {
+      "purpose": "Reduce decision load by providing meaningful starting constraints.",
+      "examples": ["pet font", "animation style", "music", "personal history"],
+      "mustYieldToContext": true
+    },
+    "humanJudgment": {
+      "principle": "Mathematical systems are tools and imprecise representations of human perception.",
+      "feeling": "Question how something feels, but do not discard the feeling.",
+      "contextFactors": ["display characteristics", "human perception", "surrounding content", "cultural context"],
+      "designFor": "people"
+    }
+  },
   "typography": {
     "preferredBaseSizesPx": [16, 17],
     "defaultBaseSizePx": 17,
@@ -12,10 +51,100 @@
       "stepsBelow": 3,
       "stepsAbove": 6,
       "roundedSizesAt17Px": [12, 13, 15, 17, 19, 22, 24, 27, 31, 34]
-    }
+    },
+    "tracking": {
+      "assumesOpticalSizing": false,
+      "renderedSizeFormula": "round(base * 1.125^step)",
+      "rawDifferenceDivisor": 3,
+      "rawPercentFormula": "(base - renderedSize) / 3",
+      "taperType": "cubic-soft-limit",
+      "taperLimitPercent": 6,
+      "taperExponent": 3,
+      "taperedPercentFormula": "rawPercent / cbrt(1 + (abs(rawPercent) / 6)^3)",
+      "defaultShiftPercent": 0,
+      "allCapsAdditionalPercent": 4,
+      "defaultManualAdjustmentPercent": 0,
+      "trackingFormula": "trackingShift + taperedPercent + allCapsAdjustment + manualAdjustment",
+      "cssEmFormula": "trackingPercent / 100",
+      "baseBehavior": "Tracking equals trackingShift when renderedSize equals base.",
+      "sizeDirection": {
+        "belowBase": "positive tracking",
+        "aboveBase": "negative tracking"
+      },
+      "manualAdjustment": "Apply per role after calculation when the rendered font requires correction.",
+      "visualReviewRequired": true
+    },
+    "responsiveType": {
+      "input": "current computed font size in pixels",
+      "recalculateOn": ["initial render", "font load", "responsive size change"],
+      "trackingBehavior": "Recalculate the tracking curve from the current rendered size.",
+      "lineHeight": {
+        "rawFormula": "renderedSize * lineHeightRatio",
+        "gridThresholdPx": 20,
+        "gridAtOrBelowThresholdPx": 2,
+        "gridAboveThresholdPx": 4,
+        "gridFormula": "renderedSize > 20 ? 4 : 2",
+        "snappedFormula": "round(rawLineHeightPx / lineHeightGridPx) * lineHeightGridPx",
+        "manualAdjustmentAppliedLast": true
+      },
+      "visualReviewRequired": true
+    },
+    "weightRoles": {
+      "bodyAndContent": "regular",
+      "headerStartingPoint": "medium",
+      "opticalCorrection": "medium",
+      "interactiveStartingPoint": "semibold",
+      "buttonLabelMinimum": "medium",
+      "reversedButtonLabelMinimum": "semibold",
+      "strongAttention": "bold",
+      "midStringChangeOnlyFor": "interactivity",
+      "adaptTo": ["design system", "brand", "typeface"]
+    },
+    "opticalAdjustmentAllowed": true
   },
   "color": {
     "space": "oklch",
+    "grayScale": {
+      "stops": [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000],
+      "white": {
+        "stop": 0,
+        "oklch": [1, 0, 0],
+        "pureWhite": true
+      },
+      "black": {
+        "stop": 1000,
+        "nameDescribesRole": true,
+        "pureBlack": false,
+        "defaultLightness": 0.05
+      },
+      "curveInput": "stop / 1000",
+      "lightnessByStop": {
+        "0": 1,
+        "50": 0.97098,
+        "100": 0.93812,
+        "200": 0.86065,
+        "300": 0.76845,
+        "400": 0.66472,
+        "500": 0.55453,
+        "600": 0.4433,
+        "700": 0.33532,
+        "800": 0.23316,
+        "900": 0.13798,
+        "950": 0.0931,
+        "1000": 0.05
+      },
+      "documentationUsage": {
+        "pageBackground": 0,
+        "inverseText": 0,
+        "subtlePanel": 50,
+        "border": 100,
+        "strongBorder": 300,
+        "mutedText": 600,
+        "primaryText": 1000,
+        "darkSurface": 1000
+      },
+      "perceptualReviewRequired": true
+    },
     "grayScaleCurve": {
       "type": "cubic-bezier",
       "controlPoints": {
@@ -31,7 +160,54 @@
     "gridPx": 2,
     "largeSpacingThresholdPx": 20,
     "largeSpacingGridPx": 4,
-    "opticalCompensation": true
+    "opticalCompensation": true,
+    "rhythm": {
+      "standardizeFirst": true,
+      "elements": ["baselines", "grids", "tokens", "type sizes", "spacing", "repeated structures"]
+    },
+    "swing": {
+      "definition": "A limited, purposeful break from an established rhythm.",
+      "purposes": ["interrupt monotony", "restore attention", "communicate importance or change"],
+      "appliesAcross": ["layout", "typography", "color", "motion"],
+      "reasonRequired": true
+    }
+  },
+  "interface": {
+    "controlSizes": {
+      "mouse": {
+        "preferredBaseHeightsPx": [24, 28],
+        "powerUserBaseHeightPx": 24,
+        "consumerBaseHeightPx": 28,
+        "comfortableMinimumHeightPx": 20,
+        "necessaryMinimumHeightPx": 16,
+        "aboveDefaultUseSparingly": true,
+        "largeControlExamples": ["highlighted input", "marketing action", "onboarding action"],
+        "largeSearchRequiresSingleVisibleSearch": true
+      },
+      "touch": {
+        "minimumTargetSizePx": 44,
+        "minimumVisibleInteractiveAffordancePx": 24,
+        "visibleAffordanceMayBeSmallerThanTarget": true,
+        "exampleLargeSizesPx": [64, 72],
+        "hardMaximumSizePx": null,
+        "adjacentTargetsMustRemainDistinct": true,
+        "overlappingTargetsAllowed": false
+      }
+    },
+    "cornerRadii": {
+      "basis": "personal taste",
+      "nestedFormula": "innerRadiusPx = outerRadiusPx - insetPx",
+      "example": {
+        "outerRadiusPx": 32,
+        "insetPx": 20,
+        "calculatedInnerRadiusPx": 12,
+        "acceptableOpticalAdjustmentPx": 16
+      },
+      "containerGenerallyRounderThanContent": true,
+      "largeOuterRadiiRequireMoreConcentricity": true,
+      "smallRadiiAllowLooserMatching": true,
+      "opticalAdjustmentAllowed": true
+    }
   },
   "motion": {
     "web": {
@@ -40,6 +216,18 @@
     },
     "touch": {
       "character": "slower and more fluid when direct manipulation benefits"
+    },
+    "complexAnimationScaffold": {
+      "framesPerSecond": 60,
+      "loopFrames": 48,
+      "loopSeconds": 0.8,
+      "loopMilliseconds": 800,
+      "equivalentTempoBpm": 75,
+      "subdivisionFrames": 12,
+      "subdivisionSeconds": 0.2,
+      "subdivisionMilliseconds": 200,
+      "oneFrameMilliseconds": 16.667,
+      "swing": "Move selected internal keyframes earlier or later while preserving the 48-frame loop."
     },
     "reducedMotionRequired": true
   }
