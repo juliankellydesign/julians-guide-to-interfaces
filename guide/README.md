@@ -40,7 +40,7 @@ Each layer is self-contained so it can be passed to an agent on its own. Three c
 - Interface principles also cover sizing controls for mouse and touch input and deciding when repeated actions clarify or confuse. Load the control-size method only when exact numerical starting points are needed.
 - Corner rounding and interface conventions are principles. Load the radius-scale and nested-radius methods only when constructing or replacing a radius system.
 - Color exists only as methods for now. Load the gray-scale and color-scale methods only when constructing or replacing a color system; the color scales share the gray scale's stops and endpoints but distribute lightness with their own curve.
-- Rhythm principles cover Gestalt, spacing relationships, alignment, contextual action grouping, repetition that builds meaning, and purposeful exceptions. Load the spacing-grid method only when constructing or replacing the spatial system.
+- Rhythm principles cover Gestalt, spacing relationships, alignment, contextual action grouping, repetition that builds meaning, purposeful exceptions, and the 1-3-9 proportion lens. Load the spacing-grid method only when constructing or replacing the spatial system.
 - Content principles explain why capitalization and punctuation should be consistent and functional, including the distinct jobs of em dashes, en dashes, and hyphens. Load the capitalization and punctuation method only when establishing or changing the interface writing system.
 - Find iconography principles under Imagery. Load the control-padding method only when constructing or changing controls.
 

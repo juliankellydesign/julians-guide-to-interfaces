@@ -510,6 +510,18 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .rhythm-swing-rule { grid-column: 1 / -1; display: grid; grid-template-columns: 80px 1fr; align-items: baseline; gap: 24px; padding: 18px 28px; border-top: 1px solid var(--line); }
 .rhythm-swing-rule span { color: var(--signal); font: 10px var(--mono); text-transform: uppercase; }
 .rhythm-swing-rule strong { font-size: 13px; font-weight: 600; }
+.ratio-guide { margin-top: 16px; display: grid; grid-template-columns: .75fr 1.25fr; gap: 32px; padding: 28px; }
+.ratio-intro h3 { margin: 12px 0; font-size: 20px; }
+.ratio-intro p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; max-width: 560px; }
+.ratio-demo { display: flex; flex-direction: column; gap: 24px; }
+.ratio-one { font: 400 34px/1.1 var(--display); }
+.ratio-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ratio-columns article { display: flex; flex-direction: column; gap: 8px; }
+.ratio-columns span { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.ratio-columns i { height: 8px; background: var(--line); }
+.ratio-count { display: flex; align-items: center; gap: 12px; font: 12px var(--mono); color: var(--muted); }
+.ratio-count span { font-size: 16px; color: var(--ink); }
+.ratio-count b { color: var(--signal); font-weight: 400; }
 .rhythm-meaning { margin-top: 16px; }
 .rhythm-meaning-intro { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 28px; }
 .rhythm-meaning-intro .eyebrow { grid-column: 1 / -1; }
@@ -899,7 +911,7 @@ footer a { display: inline-flex; align-items: center; gap: 24px; font-size: 12px
   .figure-examples article, .punctuation-examples article, .alignment-examples article { border-right: 0; border-bottom: 1px solid var(--line); }
   .figure-examples article:last-child, .punctuation-examples article:last-child, .alignment-examples article:last-child { border-bottom: 0; }
   .figure-rule, .punctuation-rule { grid-template-columns: 1fr; }
-  .gray-lab, .rhythm-term, .rhythm-demo { grid-template-columns: 1fr; }
+  .gray-lab, .rhythm-term, .rhythm-demo, .ratio-guide { grid-template-columns: 1fr; }
   .human-judgment-intro { grid-template-columns: 1fr; }
   .judgment-domains { grid-template-columns: repeat(2, 1fr); }
   .judgment-domains article:nth-child(2) { border-right: 0; }

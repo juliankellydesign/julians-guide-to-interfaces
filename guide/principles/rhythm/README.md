@@ -42,6 +42,12 @@ Repeated gestures create rhythm as well as visual consistency. When the same ges
 
 Teach the complete meaning in one clear instance, then preserve the gesture and outcome as it repeats. See [`repetition-builds-meaning.md`](repetition-builds-meaning.md) for the full principle.
 
+## Think in 1-3-9
+
+A 1-3-9 ratio sketches a decisive hierarchy: one dominant element, three supporting elements, nine detail elements—one big heading, three smaller headings, nine lines of body text. Each level steps down roughly by a factor of three, so no level can be confused with another. The same ratio may describe surface area, as an exploratory lens.
+
+Use it to judge whether a hierarchy steps down clearly, not to compute values. See [`one-three-nine.md`](one-three-nine.md) for the full principle.
+
 ## Group actions by scope
 
 Visual grouping implies functional grouping. Actions placed together should share a context, object, or scope. Separate an action when it applies more broadly than the task represented by the group.
@@ -57,6 +63,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Preserve an existing spacing system unless replacing it is part of the task.
 - Apply optical compensation deliberately and document it when encoding a component.
 - Establish a consistent rhythm before introducing variation.
+- Use 1-3-9 as a first proposal for how a hierarchy steps down.
 - Use repeated gestures to build stable meaning across comparable contexts.
 - Keep the outcome of a repeated gesture consistent.
 - Group actions only when they share a context, object, or scope.
