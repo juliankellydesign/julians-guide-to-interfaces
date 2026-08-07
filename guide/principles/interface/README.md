@@ -39,7 +39,7 @@ See [`action-hierarchy.md`](action-hierarchy.md) for the full principle.
 
 Mouse input supports denser controls than touch input. Choose control size according to the actual input method, intended density, and importance of the action. On touch interfaces, the visible affordance can be smaller than its interactive target, but adjacent targets must remain distinct and reliable to hit.
 
-See [`interactive-control-sizing.md`](interactive-control-sizing.md) for the principle. Load [`../methods/interface/control-sizes.md`](../methods/interface/control-sizes.md) only when exact starting values are needed.
+See [`interactive-control-sizing.md`](interactive-control-sizing.md) for the principle. Load [`../methods/interface/control-sizes.md`](../../methods/interface/control-sizes.md) only when exact starting values are needed.
 
 ## Repeat actions when repetition adds meaning
 
@@ -51,7 +51,7 @@ See [`action-repetition.md`](action-repetition.md) for the full principle.
 
 The amount of corner rounding is mostly a matter of taste, but rounded controls have become a familiar signal of interactivity. Nested elements should generally be less rounded than their containers, with more attention paid to concentricity as the outer radius grows.
 
-See [`corner-rounding.md`](corner-rounding.md) for the principle. Load [`../methods/interface/nested-corner-radii.md`](../methods/interface/nested-corner-radii.md) only when constructing or replacing a radius system.
+See [`corner-rounding.md`](corner-rounding.md) for the principle. Load [`../methods/interface/nested-corner-radii.md`](../../methods/interface/nested-corner-radii.md) only when constructing or replacing a radius system.
 
 ## Design both the map and the landscape
 

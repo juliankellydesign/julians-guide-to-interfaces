@@ -26,7 +26,7 @@ Web interactions should feel immediate. The response should acknowledge the acti
 
 Touch-based devices can use slower animation when direct manipulation creates a clear physical model. Distance, gesture velocity, and continuity can justify longer timing.
 
-For concrete duration defaults, see [`../methods/motion/platform-timing.md`](../methods/motion/platform-timing.md).
+For concrete duration defaults, see [`../methods/motion/platform-timing.md`](../../methods/motion/platform-timing.md).
 
 ## Protect performance
 
@@ -36,7 +36,7 @@ Do not use an effect at the expense of responsiveness. Remove or simplify animat
 
 When working in an existing interface, use its motion language unless the task is to rebuild it. Apply continuity, causality, responsiveness, and accessibility within that system.
 
-For a concrete complex-animation scaffold, see [`../methods/motion/animation-rhythm-and-swing.md`](../methods/motion/animation-rhythm-and-swing.md).
+For a concrete complex-animation scaffold, see [`../methods/motion/animation-rhythm-and-swing.md`](../../methods/motion/animation-rhythm-and-swing.md).
 
 ## Accessibility
 

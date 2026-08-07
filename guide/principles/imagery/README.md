@@ -10,7 +10,7 @@ Do not force every icon to behave like a special character from the font. Interf
 
 Carets, chevrons, and certain arrows are different. When they sit inside phrases such as “More” followed by a right chevron or “Website” followed by an up-right arrow, they behave almost like punctuation. Size and position them carefully so they feel integrated with the text.
 
-See [`iconography-and-type.md`](iconography-and-type.md) for the full principle. For control padding patterns, see [`../methods/iconography/control-padding.md`](../methods/iconography/control-padding.md).
+See [`iconography-and-type.md`](iconography-and-type.md) for the full principle. For control padding patterns, see [`../methods/iconography/control-padding.md`](../../methods/iconography/control-padding.md).
 
 ## Image guidance remains undeveloped
 

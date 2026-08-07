@@ -6,7 +6,7 @@ This repository is Julian Kelly’s evolving interface-design handbook. Preserve
 
 Do not read the entire repository by default.
 
-1. Read `guide/00-core-principles.md` for the governing philosophy.
+1. Read `guide/principles/00-core-principles.md` for the governing philosophy.
 2. Read `guide/README.md` to choose the relevant layer.
 3. Read `guide/principles/README.md` and only the relevant principle file(s) for the task.
 4. Read `guide/methods/README.md` only when the task requires constructing or replacing a system, applying Julian’s defaults, or retrieving exact values.
@@ -60,9 +60,19 @@ Once the documentation pass is complete, do not use the original conversational 
 
 ## Principles and methods
 
-Principles explain how Julian approaches and judges interface design. They can guide work without replacing an existing product’s visual system.
+The guide is split into a theory layer and an applied layer, and each layer must remain passable to an agent on its own.
 
-Methods explain how Julian constructs a specific system. They contain recipes, numerical defaults, and implementation starting points. Method files use `type: method` and `prompt: opt-in` in their frontmatter.
+Principles are the theory. They explain how Julian approaches and judges interface design and can guide work without replacing an existing product’s visual system. All principle files live under `guide/principles/`, and that directory is the complete theory layer.
+
+Methods are the applied layer. Together with `data/foundations.json`, they are Julian’s design system: recipes, numerical defaults, and implementation starting points that an agent can execute without reading the theory. Method files use `type: method` and `prompt: opt-in` in their frontmatter.
+
+Three bundles cover how the layers are passed to an agent:
+
+1. Theory only: `guide/principles/`.
+2. Theory plus tokens: `guide/principles/` with `data/foundations.json`, whole or as selected discipline groups.
+3. Design system only: `guide/methods/` with `data/foundations.json`.
+
+Preserve this separability when writing. A principle file must stay understandable without any method, and a method file must stay executable without any principle. Cross-references between layers are pointers for deeper reading, never dependencies. Keep exact values out of principle files, and keep the tokens in `data/foundations.json` grouped by discipline so a subset of groups can be passed on its own.
 
 - Use principles by default for critique, iteration, and work inside an established interface.
 - Add methods for greenfield work, explicit system-building tasks, or when Julian asks for his preferred procedure or values.

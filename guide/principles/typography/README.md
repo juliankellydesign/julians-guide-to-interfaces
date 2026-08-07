@@ -14,7 +14,7 @@ Size is one tool, not the entire hierarchy. Weight, line height, width, alignmen
 
 When working in an existing interface, use its established type roles unless the task is to rebuild them. Apply the principles in this file within that system rather than replacing it with my preferred scale.
 
-For greenfield work or an explicit type-system task, see [`../methods/typography/type-scale.md`](../methods/typography/type-scale.md).
+For greenfield work or an explicit type-system task, see [`../methods/typography/type-scale.md`](../../methods/typography/type-scale.md).
 
 ## Weight carries meaning
 
@@ -34,7 +34,7 @@ The one reason I change weight mid-string is to indicate interactivity. The weig
 
 The amount of weight to add depends on the design system, brand, and typeface. Weight names are not visually consistent across fonts. Choose the smallest increase that creates the intended distinction in the rendered interface.
 
-For my usual starting roles and button-label minimums, see [`../methods/typography/font-weight-roles.md`](../methods/typography/font-weight-roles.md).
+For my usual starting roles and button-label minimums, see [`../methods/typography/font-weight-roles.md`](../../methods/typography/font-weight-roles.md).
 
 ## Spacing follows type
 
@@ -50,7 +50,7 @@ I use all caps when a label must remain legible at a size where sentence case no
 
 All caps is not a stylistic default. Use it for a functional reason or because the brand specifically calls for it. Increase letter spacing whenever text is set in all caps. See [`all-caps.md`](all-caps.md) for the full principle.
 
-When constructing a type system, use [`../methods/typography/tracking-curve.md`](../methods/typography/tracking-curve.md) to derive size-dependent tracking from the major-second scale. Shift the curve’s base amount to suit the font and open it further for all-caps text. Treat the result as a starting point and judge it optically.
+When constructing a type system, use [`../methods/typography/tracking-curve.md`](../../methods/typography/tracking-curve.md) to derive size-dependent tracking from the major-second scale. Shift the curve’s base amount to suit the font and open it further for all-caps text. Treat the result as a starting point and judge it optically.
 
 The default curve is neutral at the base size. It opens text below the base and tightens text above it, then tapers so distant sizes do not accumulate extreme spacing. This creates a consistent direction without allowing the mathematical system to overpower the rendered type.
 

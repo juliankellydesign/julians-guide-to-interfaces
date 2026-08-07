@@ -16,7 +16,7 @@ This guide uses Rhythm as the discipline name because it describes the practical
 
 Use a consistent set of spacing relationships so repeated gaps carry the same meaning. The specific values belong to the interface’s spatial system.
 
-When constructing a new system or explicitly replacing one, see [`../methods/layout/spacing-grid.md`](../methods/layout/spacing-grid.md).
+When constructing a new system or explicitly replacing one, see [`../methods/layout/spacing-grid.md`](../../methods/layout/spacing-grid.md).
 
 ## Use proximity to show relationships
 

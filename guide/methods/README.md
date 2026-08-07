@@ -4,6 +4,8 @@
 
 Methods document how I construct specific interface systems. They contain repeatable procedures, numerical defaults, and implementation starting points. Read them only when the task calls for building or deliberately replacing a system.
 
+This directory plus [`../../data/foundations.json`](../../data/foundations.json) is the applied layer: my design system. The layer stands alone—an agent can implement the system from these files without reading the theory. The principles explain the judgment behind these recipes, but no method depends on them to be executable.
+
 ## Current methods
 
 | Method | Use it for |

@@ -2,16 +2,28 @@
 
 ## In brief
 
-Use this file as a router. Read the core principles, then choose principles or methods based on the task. Principles are the default. Methods are opt-in.
+Use this file as a router. The guide splits into two layers: theory and practice. Principles are the theory—how I approach and judge interface design. Methods and structured foundations are the applied layer—my design system, expressed as recipes and exact values. Read the core principles, then choose the layer the task requires. Theory is the default. The applied layer is opt-in.
 
 ## Two layers
 
-| Layer | Contains | Read it when |
-| --- | --- | --- |
-| [Principles](principles/README.md) | How I approach and judge interface design | Working in an existing interface, critiquing work, or deciding what a choice should communicate |
-| [Methods](methods/README.md) | How I construct systems, including recipes and exact defaults | Building a new system, replacing an existing one deliberately, or requesting my preferred values |
+| Layer | Location | Contains | Read it when |
+| --- | --- | --- | --- |
+| Theory | [`principles/`](principles/README.md) | How I approach and judge interface design | Working in an existing interface, critiquing work, or deciding what a choice should communicate |
+| Applied | [`methods/`](methods/README.md) and [`../data/foundations.json`](../data/foundations.json) | How I construct systems: recipes, exact defaults, and machine-readable tokens | Building a new system, replacing an existing one deliberately, or requesting my preferred values |
 
-The names describe retrieval behavior rather than a permanent taxonomy. They can change as the guide develops.
+The directory names describe retrieval behavior rather than a permanent taxonomy. They can change as the guide develops.
+
+## Composable bundles
+
+Each layer is self-contained so it can be passed to an agent on its own. Three compositions cover the common cases:
+
+| Bundle | Pass | Use it when |
+| --- | --- | --- |
+| Theory only | `guide/principles/` | The agent works inside an existing visual system and needs my judgment, not my values |
+| Theory plus tokens | `guide/principles/` and `data/foundations.json`, whole or as selected groups | The agent should judge like me and start from some or all of my exact values |
+| Design system only | `guide/methods/` and `data/foundations.json` | The agent implements my system as specified and does not need the reasoning behind it |
+
+`data/foundations.json` groups tokens by discipline at the top level—`content`, `process`, `typography`, `color`, `layout`, `interface`, and `motion`. Pass a subset of groups when only some tokens apply.
 
 ## Choose by task
 

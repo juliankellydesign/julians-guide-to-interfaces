@@ -22,7 +22,7 @@ I do not use all caps as a stylistic choice unless the brand specifically calls 
 
 Increase letter spacing when setting text in all caps. The added space should keep the uppercase forms readable at the intended size and in the actual interface.
 
-When constructing a type system, begin with the size-dependent curve in [`../methods/typography/tracking-curve.md`](../methods/typography/tracking-curve.md). Shift the curve’s base amount to suit the font. All-caps text should receive a more open value than the equivalent sentence-case text.
+When constructing a type system, begin with the size-dependent curve in [`../methods/typography/tracking-curve.md`](../../methods/typography/tracking-curve.md). Shift the curve’s base amount to suit the font. All-caps text should receive a more open value than the equivalent sentence-case text.
 
 I use one flat additional amount for all caps after calculating the size-dependent curve. The exact default belongs to the tracking method. Adjust it manually when the font’s uppercase forms need a different result.
 

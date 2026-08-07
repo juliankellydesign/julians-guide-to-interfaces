@@ -32,4 +32,4 @@ On mouse-controlled surfaces, sizes above the normal control range should remain
 - Do not make an affordance interactive when it is too small to communicate that it can be touched.
 - Preserve an existing component system unless changing control sizing is part of the task.
 
-For my numerical starting points, see [`../methods/interface/control-sizes.md`](../methods/interface/control-sizes.md).
+For my numerical starting points, see [`../methods/interface/control-sizes.md`](../../methods/interface/control-sizes.md).
