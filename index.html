@@ -31,7 +31,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.18</span>
+        <span>v0.19</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -370,16 +370,17 @@
         <div class="chapter-intro">
           <p class="lead-copy">Use 13 stops from pure white to near-black</p>
           <p class="body-copy">Use stops 0, 50, 100–900, 950, and 1000. Stop 0 is pure white. Stop 1000 performs the role of black but is never pure black. Use the OKLCH curve as a starting model, then judge the rendered differences on actual displays.</p>
-          <p class="body-copy">The six base color scales—blue, red, orange, yellow, purple, and green—reuse the same stops and lightness curve, hold one hue constant, and shape chroma with a cubic Bézier arch clamped to the sRGB gamut. Equal stops share equal lightness across every scale, including gray.</p>
+          <p class="body-copy">The six base color scales—blue, red, orange, yellow, purple, and green—reuse the same stops and endpoints, hold one hue constant, and shape chroma with a cubic Bézier arch clamped to the sRGB gamut. They share their own lightness curve, which holds midtones lighter than the gray curve because sRGB chroma peaks near L 0.6–0.75. Equal stops share equal lightness across all six scales.</p>
         </div>
         <div class="gray-lab lab-panel">
           <div class="curve-panel">
-            <div class="curve-label"><span>Lightness curve</span><code>cubic-bezier(.35, .2, .55, .6)</code></div>
-            <svg id="curve-graph" viewBox="0 0 500 280" role="img" aria-label="Cubic Bézier curve used to distribute the gray scale">
+            <div class="curve-label"><span>Lightness curves</span><span class="curve-codes"><code>gray (.35, .2, .55, .6)</code><code class="saturated">color (.5, .3, .6, .5)</code></span></div>
+            <svg id="curve-graph" viewBox="0 0 500 280" role="img" aria-label="Cubic Bézier curves used to distribute the gray and color scales">
               <g class="curve-grid" aria-hidden="true">
                 <path d="M0 70H500M0 140H500M0 210H500M125 0V280M250 0V280M375 0V280" />
               </g>
               <path class="curve-handles" d="M0 280 L175 224 M275 112 L500 0" />
+              <path class="curve-line saturated" d="M0 280 C250 196 300 140 500 0" />
               <path class="curve-line" d="M0 280 C175 224 275 112 500 0" />
               <circle class="curve-point" cx="175" cy="224" r="6" />
               <circle class="curve-point" cx="275" cy="112" r="6" />

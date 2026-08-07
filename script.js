@@ -206,17 +206,17 @@ function cubicCoordinate(t, firstHandle, secondHandle) {
   return 3 * inverse ** 2 * t * firstHandle + 3 * inverse * t ** 2 * secondHandle + t ** 3;
 }
 
-function solveCurveAtX(x) {
+function solveCurveAtX(x, curve = GRAY_CURVE) {
   let low = 0;
   let high = 1;
   let t = x;
   for (let index = 0; index < 20; index += 1) {
     t = (low + high) / 2;
-    const estimate = cubicCoordinate(t, GRAY_CURVE.x1, GRAY_CURVE.x2);
+    const estimate = cubicCoordinate(t, curve.x1, curve.x2);
     if (estimate < x) low = t;
     else high = t;
   }
-  return cubicCoordinate(t, GRAY_CURVE.y1, GRAY_CURVE.y2);
+  return cubicCoordinate(t, curve.y1, curve.y2);
 }
 
 function renderGrayRamp() {
@@ -245,6 +245,7 @@ function renderGrayRamp() {
 const COLOR_SCALES = {
   peakChroma: 0.16,
   gamutClampFraction: 0.95,
+  lightnessCurve: { x1: 0.5, y1: 0.3, x2: 0.6, y2: 0.5 },
   hues: { blue: 250, red: 28, orange: 65, yellow: 100, purple: 305, green: 145 }
 };
 
@@ -288,7 +289,7 @@ function renderColorRamps() {
       const position = stop / GRAY_CURVE.maximumStop;
       const isWhite = stop === 0;
       const isBlack = stop === GRAY_CURVE.maximumStop;
-      const generatedLightness = GRAY_CURVE.lightest - solveCurveAtX(position) * (GRAY_CURVE.lightest - GRAY_CURVE.darkest);
+      const generatedLightness = GRAY_CURVE.lightest - solveCurveAtX(position, COLOR_SCALES.lightnessCurve) * (GRAY_CURVE.lightest - GRAY_CURVE.darkest);
       const lightness = isWhite ? GRAY_CURVE.lightest : isBlack ? GRAY_CURVE.darkest : generatedLightness;
       const arch = 4 * position * (1 - position);
       const chroma = Math.min(COLOR_SCALES.peakChroma * arch, COLOR_SCALES.gamutClampFraction * maxSrgbChroma(lightness, hue));

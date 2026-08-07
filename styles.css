@@ -445,6 +445,9 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .curve-panel { padding: 24px; border-right: 1px solid var(--gray-700); }
 .curve-label { display: flex; justify-content: space-between; font-size: 12px; }
 .curve-label code { border-color: var(--gray-700); background: transparent; }
+.curve-codes { display: flex; gap: 8px; }
+.curve-label code.saturated { color: var(--signal); }
+.curve-line.saturated { stroke: var(--signal); stroke-width: 2; }
 #curve-graph { width: 100%; margin-top: 44px; overflow: visible; }
 .curve-grid path { stroke: var(--gray-700); stroke-width: 1; fill: none; }
 .curve-handles { stroke: color-mix(in oklch, var(--signal) 55%, transparent); stroke-width: 1; fill: none; stroke-dasharray: 5 5; }
