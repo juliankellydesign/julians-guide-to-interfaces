@@ -452,6 +452,12 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .curve-point { fill: var(--signal); stroke: var(--gray-900); stroke-width: 3; }
 .gray-ramp { display: flex; flex-direction: column; padding: 24px; }
 .gray-swatch { flex: 1; min-height: 42px; display: flex; justify-content: space-between; align-items: center; padding: 0 12px; font: 9px var(--mono); }
+.color-lab { margin-top: 16px; padding: 24px; display: flex; flex-direction: column; gap: 20px; border-color: var(--gray-700); background: var(--gray-900); }
+.color-ramps { display: flex; flex-direction: column; gap: 10px; }
+.color-scale-row { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: center; }
+.color-scale-name { display: flex; justify-content: space-between; font: 9px var(--mono); letter-spacing: .04em; color: var(--gray-400); }
+.color-scale-swatches { display: flex; height: 32px; }
+.color-scale-swatches i { flex: 1; }
 
 .rhythm-term { display: grid; grid-template-columns: .35fr 1fr; gap: 32px; padding: 24px; }
 .rhythm-term h3 { margin: 0 0 12px; font-size: 20px; }

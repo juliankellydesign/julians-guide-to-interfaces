@@ -242,6 +242,67 @@ function renderGrayRamp() {
   ramp.replaceChildren(...swatches);
 }
 
+const COLOR_SCALES = {
+  peakChroma: 0.16,
+  gamutClampFraction: 0.95,
+  hues: { blue: 250, red: 28, orange: 65, yellow: 100, purple: 305, green: 145 }
+};
+
+function oklchToLinearSrgb(lightness, chroma, hueDegrees) {
+  const hue = (hueDegrees * Math.PI) / 180;
+  const a = chroma * Math.cos(hue);
+  const b = chroma * Math.sin(hue);
+  const long = (lightness + 0.3963377774 * a + 0.2158037573 * b) ** 3;
+  const medium = (lightness - 0.1055613458 * a - 0.0638541728 * b) ** 3;
+  const short = (lightness - 0.0894841775 * a - 1.291485548 * b) ** 3;
+  return [
+    4.0767416621 * long - 3.3077115913 * medium + 0.2309699292 * short,
+    -1.2684380046 * long + 2.6097574011 * medium - 0.3413193965 * short,
+    -0.0041960863 * long - 0.7034186147 * medium + 1.707614701 * short
+  ];
+}
+
+function maxSrgbChroma(lightness, hueDegrees) {
+  let low = 0;
+  let high = 0.5;
+  for (let index = 0; index < 32; index += 1) {
+    const middle = (low + high) / 2;
+    const inGamut = oklchToLinearSrgb(lightness, middle, hueDegrees).every((channel) => channel >= -0.000001 && channel <= 1.000001);
+    if (inGamut) low = middle;
+    else high = middle;
+  }
+  return low;
+}
+
+function renderColorRamps() {
+  const ramps = document.querySelector("#color-ramps");
+  const rows = Object.entries(COLOR_SCALES.hues).map(([name, hue]) => {
+    const row = document.createElement("div");
+    row.className = "color-scale-row";
+    const label = document.createElement("span");
+    label.className = "color-scale-name";
+    label.innerHTML = `<span>${name.toUpperCase()}</span><span>H ${hue}</span>`;
+    const swatches = document.createElement("div");
+    swatches.className = "color-scale-swatches";
+    GRAY_CURVE.stops.forEach((stop) => {
+      const position = stop / GRAY_CURVE.maximumStop;
+      const isWhite = stop === 0;
+      const isBlack = stop === GRAY_CURVE.maximumStop;
+      const generatedLightness = GRAY_CURVE.lightest - solveCurveAtX(position) * (GRAY_CURVE.lightest - GRAY_CURVE.darkest);
+      const lightness = isWhite ? GRAY_CURVE.lightest : isBlack ? GRAY_CURVE.darkest : generatedLightness;
+      const arch = 4 * position * (1 - position);
+      const chroma = Math.min(COLOR_SCALES.peakChroma * arch, COLOR_SCALES.gamutClampFraction * maxSrgbChroma(lightness, hue));
+      const swatch = document.createElement("i");
+      swatch.style.background = `oklch(${lightness} ${chroma.toFixed(4)} ${hue})`;
+      swatch.title = `${name} ${stop} · oklch(${lightness} ${chroma.toFixed(4)} ${hue})`;
+      swatches.append(swatch);
+    });
+    row.append(label, swatches);
+    return row;
+  });
+  ramps.replaceChildren(...rows);
+}
+
 const menuButton = document.querySelector(".menu-button");
 const siteNav = document.querySelector(".site-nav");
 
@@ -285,6 +346,7 @@ document.querySelectorAll("[data-motion]").forEach((button) => {
 renderTypeScale(17);
 renderTrackingScale(17);
 renderGrayRamp();
+renderColorRamps();
 applyDocumentationTypography();
 
 let typographyFrame;

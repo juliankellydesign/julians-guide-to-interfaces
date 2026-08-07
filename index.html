@@ -31,7 +31,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.17</span>
+        <span>v0.18</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -365,11 +365,12 @@
       <section class="chapter color-system" aria-labelledby="color-title">
         <header class="chapter-header compact">
           <div><span class="chapter-number">03.1</span><span class="chapter-type">Color foundation</span></div>
-          <h2 id="color-title">Build gray scales perceptually</h2>
+          <h2 id="color-title">Build gray and color scales perceptually</h2>
         </header>
         <div class="chapter-intro">
           <p class="lead-copy">Use 13 stops from pure white to near-black</p>
           <p class="body-copy">Use stops 0, 50, 100–900, 950, and 1000. Stop 0 is pure white. Stop 1000 performs the role of black but is never pure black. Use the OKLCH curve as a starting model, then judge the rendered differences on actual displays.</p>
+          <p class="body-copy">The six base color scales—blue, red, orange, yellow, purple, and green—reuse the same stops and lightness curve, hold one hue constant, and shape chroma with a cubic Bézier arch clamped to the sRGB gamut. Equal stops share equal lightness across every scale, including gray.</p>
         </div>
         <div class="gray-lab lab-panel">
           <div class="curve-panel">
@@ -385,6 +386,10 @@
             </svg>
           </div>
           <div class="gray-ramp" id="gray-ramp" aria-label="Generated 13-stop OKLCH gray scale"></div>
+        </div>
+        <div class="color-lab lab-panel">
+          <div class="curve-label"><span>Chroma arch</span><code>chroma = 0.16 × 4t(1 − t), clamped to 95% of sRGB</code></div>
+          <div class="color-ramps" id="color-ramps" aria-label="Generated six-hue 13-stop OKLCH color scales"></div>
         </div>
       </section>
 

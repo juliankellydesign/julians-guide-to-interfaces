@@ -16,6 +16,7 @@ This directory plus [`../../data/foundations.json`](../../data/foundations.json)
 | [Recalculate responsive type](typography/responsive-type.md) | Keeping tracking and line height coupled to the current rendered size |
 | [Assign font weights by role](typography/font-weight-roles.md) | Mapping body, header, interactive, and attention roles to weights |
 | [Build gray scales perceptually](color/perceptual-gray-scales.md) | Generating the 13-stop OKLCH neutral scale |
+| [Build color scales perceptually](color/perceptual-color-scales.md) | Generating the six base 13-stop OKLCH hue scales from the gray lightness curve |
 | [Build a spacing grid](layout/spacing-grid.md) | Choosing spacing values on the 2px and 4px grid |
 | [Pad icon and text controls](iconography/control-padding.md) | Balancing icon-only, text-only, and mixed controls |
 | [Choose control sizes by input method](interface/control-sizes.md) | Selecting numerical starting sizes for mouse and touch controls |
