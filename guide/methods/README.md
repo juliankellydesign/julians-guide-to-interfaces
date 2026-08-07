@@ -6,6 +6,8 @@ Methods document how I construct specific interface systems. They contain repeat
 
 This directory plus [`../../data/foundations.json`](../../data/foundations.json) is the applied layer: my design system. The layer stands alone—an agent can implement the system from these files without reading the theory. The principles explain the judgment behind these recipes, but no method depends on them to be executable.
 
+The applied layer works as a scaffold. Its scales and token ladders are meaningful starting constraints that get a new interface up and running quickly; every value remains a starting point that yields to context and optical judgment.
+
 ## Current methods
 
 | Method | Use it for |
@@ -17,9 +19,10 @@ This directory plus [`../../data/foundations.json`](../../data/foundations.json)
 | [Assign font weights by role](typography/font-weight-roles.md) | Mapping body, header, interactive, and attention roles to weights |
 | [Build gray scales perceptually](color/perceptual-gray-scales.md) | Generating the 13-stop OKLCH neutral scale |
 | [Build color scales perceptually](color/perceptual-color-scales.md) | Generating the six base 13-stop OKLCH hue scales from the gray lightness curve |
-| [Build a spacing grid](layout/spacing-grid.md) | Choosing spacing values on the 2px and 4px grid |
+| [Build a spacing grid](layout/spacing-grid.md) | Choosing spacing tokens from the ladder on the 2px and 4px grid |
 | [Pad icon and text controls](iconography/control-padding.md) | Balancing icon-only, text-only, and mixed controls |
 | [Choose control sizes by input method](interface/control-sizes.md) | Selecting numerical starting sizes for mouse and touch controls |
+| [Build a corner-radius scale](interface/corner-radius-scale.md) | Choosing base corner radii from the laddered token scale |
 | [Calculate nested corner radii](interface/nested-corner-radii.md) | Establishing concentric radii for nested containers |
 | [Choose platform motion timing](motion/platform-timing.md) | Selecting default web and touch durations |
 | [Build animation rhythm and swing](motion/animation-rhythm-and-swing.md) | Using the 48-frame timing scaffold for complex animation |

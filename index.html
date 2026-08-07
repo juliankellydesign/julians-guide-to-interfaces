@@ -31,7 +31,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.19</span>
+        <span>v0.20</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -84,7 +84,7 @@
           <article>
             <span>Opt-in layer</span>
             <h3>Methods</h3>
-            <p>Use when building a new system, deliberately replacing an existing one, or requesting my preferred recipes and exact starting values.</p>
+            <p>Use when building a new system, deliberately replacing an existing one, or requesting my preferred recipes and exact starting values. The scales and token ladders scaffold new work so it gets moving quickly.</p>
             <small>How to construct</small>
           </article>
         </div>
@@ -401,7 +401,7 @@
         </header>
         <div class="chapter-intro">
           <p class="lead-copy">The distance between elements communicates whether they belong together</p>
-          <p class="body-copy">Use a 2px grid for values through 20px and a 4px grid for larger values. Keep repeated relationships consistent, then compensate optically when geometric alignment looks wrong.</p>
+          <p class="body-copy">Use a 2px grid for values through 20px and a 4px grid for larger values. Take working tokens from the spacing ladder, which doubles its step as sizes grow. Keep repeated relationships consistent, then compensate optically when geometric alignment looks wrong.</p>
         </div>
         <div class="rhythm-term lab-panel">
           <span class="eyebrow">Term</span>
@@ -415,6 +415,10 @@
             <span class="eyebrow">Spacing rule</span>
             <div class="grid-statement"><strong>2</strong><span>px grid<br /><i>≤ 20px</i></span><b>→</b><strong>4</strong><span>px grid<br /><i>&gt; 20px</i></span></div>
             <div class="rhythm-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="spacing-ladder-wrap">
+              <span class="eyebrow">Spacing ladder</span>
+              <div class="spacing-ladder" id="spacing-ladder" aria-label="Spacing token ladder from 1 to 128 pixels"></div>
+            </div>
           </div>
           <figure class="optical-demo lab-panel">
             <figcaption><span class="eyebrow">Optical alignment</span><strong>Adjust geometric alignment when needed</strong></figcaption>
@@ -658,6 +662,11 @@
           <div class="corner-language">
             <article><span>0px radius</span><button class="square-action" type="button">Continue <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-right"></use></svg></button><p>Square controls can work, but borders, fill, labels, or icons may need to carry more of the interaction signal.</p></article>
             <article><span>Rounded control</span><button class="rounded-action" type="button">Continue</button><p>Corner rounding is already familiar as a boundary around an interactive element.</p></article>
+          </div>
+          <div class="radius-ladder-wrap">
+            <span class="eyebrow">Radius ladder</span>
+            <div class="radius-ladder" id="radius-ladder" aria-label="Corner radius token ladder from 0 to 32 pixels plus full"></div>
+            <p>Base radii follow the spacing ladder’s scheme, doubling the step as values grow. 0 and full are semantic endpoints: square corners and pills. Nested inner radii come from the concentric formula and may leave the ladder.</p>
           </div>
         </div>
         <div class="map-landscape-guide lab-panel">

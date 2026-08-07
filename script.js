@@ -304,6 +304,37 @@ function renderColorRamps() {
   ramps.replaceChildren(...rows);
 }
 
+const SPACING_LADDER = [1, 2, 4, 6, 8, 10, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 96, 112, 128];
+const RADIUS_LADDER = [0, 1, 2, 4, 6, 8, 10, 12, 16, 20, 24, 28, 32];
+
+function renderSpacingLadder() {
+  const ladder = document.querySelector("#spacing-ladder");
+  const rows = SPACING_LADDER.map((value) => {
+    const row = document.createElement("div");
+    const bar = document.createElement("i");
+    bar.style.width = `${value}px`;
+    const label = document.createElement("span");
+    label.textContent = value;
+    row.append(bar, label);
+    return row;
+  });
+  ladder.replaceChildren(...rows);
+}
+
+function renderRadiusLadder() {
+  const ladder = document.querySelector("#radius-ladder");
+  const tiles = RADIUS_LADDER.map((value) => {
+    const tile = document.createElement("div");
+    tile.style.borderRadius = `${value}px`;
+    tile.innerHTML = `<span>${value}</span>`;
+    return tile;
+  });
+  const full = document.createElement("div");
+  full.className = "full";
+  full.innerHTML = "<span>FULL</span>";
+  ladder.replaceChildren(...tiles, full);
+}
+
 const menuButton = document.querySelector(".menu-button");
 const siteNav = document.querySelector(".site-nav");
 
@@ -348,6 +379,8 @@ renderTypeScale(17);
 renderTrackingScale(17);
 renderGrayRamp();
 renderColorRamps();
+renderSpacingLadder();
+renderRadiusLadder();
 applyDocumentationTypography();
 
 let typographyFrame;

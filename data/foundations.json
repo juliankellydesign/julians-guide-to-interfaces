@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -235,6 +235,19 @@
     "gridPx": 2,
     "largeSpacingThresholdPx": 20,
     "largeSpacingGridPx": 4,
+    "spacingLadder": {
+      "px": [1, 2, 4, 6, 8, 10, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 96, 112, 128],
+      "stepBands": [
+        { "stepPx": 2, "throughPx": 12 },
+        { "stepPx": 4, "throughPx": 32 },
+        { "stepPx": 8, "throughPx": 64 },
+        { "stepPx": 16, "throughPx": 128 }
+      ],
+      "extendRule": "Continue doubling the step past 128.",
+      "hairlinePx": 1,
+      "hairlineUse": "Borders, dividers, and optical nudges; not layout spacing.",
+      "offLadderValues": "Recorded optical corrections on the grid only."
+    },
     "opticalCompensation": true,
     "rhythm": {
       "standardizeFirst": true,
@@ -271,6 +284,19 @@
     },
     "cornerRadii": {
       "basis": "personal taste",
+      "scale": {
+        "px": [0, 1, 2, 4, 6, 8, 10, 12, 16, 20, 24, 28, 32],
+        "stepBands": [
+          { "stepPx": 2, "throughPx": 12 },
+          { "stepPx": 4, "throughPx": 32 }
+        ],
+        "extendRule": "Continue doubling the step past 32: 40, 48, 56, 64.",
+        "endpoints": {
+          "square": 0,
+          "full": "Arbitrarily large radius; resolves to half the element's smaller dimension for pills and circles."
+        },
+        "nestedInnerRadiiMayLeaveScale": true
+      },
       "nestedFormula": "innerRadiusPx = outerRadiusPx - insetPx",
       "example": {
         "outerRadiusPx": 32,
