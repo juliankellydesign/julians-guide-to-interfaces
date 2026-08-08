@@ -67,7 +67,8 @@ The agent should:
 7. Reread the updated guide files, then derive the website and structured data from those files rather than the original note.
 8. Update `data/foundations.json` only when a documented method or exact foundation changes.
 9. Avoid inventing guidance where Julian has not formed an opinion.
-10. Put material Julian identifies as an aside in `asides/` and exclude it from prompts, summaries, working rules, and structured foundations.
-11. Split mixed notes into normative guidance and aside context. Ask Julian when the distinction is unclear and would change agent behavior.
+10. Ask follow-up questions when a note is ambiguous, and especially when it appears to contradict a documented principle or method. Raise the tension instead of silently resolving it; Julian decides whether the older guidance is revised or the conflict stays documented as open.
+11. Put material Julian identifies as an aside in `asides/` and exclude it from prompts, summaries, working rules, and structured foundations.
+12. Split mixed notes into normative guidance and aside context. Ask Julian when the distinction is unclear and would change agent behavior.
 
 This order is mandatory. The separation tests whether the guide documentation is precise enough to propagate into the website without relying on the original conversation.

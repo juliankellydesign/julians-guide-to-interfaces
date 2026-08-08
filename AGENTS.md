@@ -43,7 +43,8 @@ When Julian provides unstructured notes or a stream-of-consciousness explanation
 6. Add or update method Markdown after the principle pass when the note includes a recipe, generated system, or exact default.
 7. After the guide Markdown is complete, reread the updated guide files and use them—not Julian’s original prompt—as the source for website copy, examples, and structured data.
 8. Update structured foundations and the website only from the completed guide documentation.
-9. Preserve uncertainty. Do not complete an unfinished opinion on Julian’s behalf.
+9. Ask follow-up questions while converting a note—especially when it appears incongruous with a documented principle or method. Do not silently harmonize a conflict or pick a side: a resolved contradiction may deliberately revise the older guidance, and an unresolved one is preserved as an open question.
+10. Preserve uncertainty. Do not complete an unfinished opinion on Julian’s behalf.
 
 ## Documentation-first propagation
 
