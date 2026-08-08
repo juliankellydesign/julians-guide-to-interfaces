@@ -744,6 +744,19 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
   20% { opacity: .7; }
   100% { transform: scale(1); opacity: 0; }
 }
+.button-scaffold { margin-top: 16px; }
+.button-scaffold-intro { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 28px; }
+.button-scaffold-intro .eyebrow { grid-column: 1 / -1; }
+.button-scaffold-intro h3 { margin: 0; font-size: clamp(24px, 2.5vw, 38px); line-height: 1.08; }
+.button-scaffold-intro p { max-width: 560px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.button-sizes { display: flex; align-items: flex-end; gap: 12px; margin: 0 28px; padding-bottom: 2px; border-bottom: 1px dashed var(--signal); flex-wrap: wrap; }
+.button-sizes button { padding: 0 14px; border: 1px solid var(--ink); border-radius: 8px; background: var(--paper); font: 600 11px var(--font); }
+.button-styles { display: flex; gap: 12px; margin: 20px 28px; flex-wrap: wrap; }
+.button-styles button { height: 40px; padding: 0 18px; border-radius: 8px; font: 600 12px var(--font); }
+.btn-primary { border: 1px solid var(--signal); background: var(--signal); color: var(--gray-0); }
+.btn-secondary { border: 1px solid var(--gray-200); background: var(--gray-100); color: var(--ink); }
+.btn-tertiary { border: 1px solid var(--ink); background: transparent; color: var(--ink); }
+.button-scaffold .morph-rule { padding: 0 28px 28px; }
 .taste-scaffold { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; margin-top: 16px; padding: 28px; }
 .taste-scaffold h3 { max-width: 520px; margin: 32px 0 0; font-size: clamp(24px, 2.5vw, 38px); line-height: 1.08; }
 .taste-scaffold > p { max-width: 580px; margin: 28px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
@@ -968,7 +981,7 @@ footer a { display: inline-flex; align-items: center; gap: 24px; font-size: 12px
   .figure-examples article, .punctuation-examples article, .alignment-examples article { border-right: 0; border-bottom: 1px solid var(--line); }
   .figure-examples article:last-child, .punctuation-examples article:last-child, .alignment-examples article:last-child { border-bottom: 0; }
   .figure-rule, .punctuation-rule { grid-template-columns: 1fr; }
-  .gray-lab, .rhythm-term, .rhythm-demo, .ratio-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro { grid-template-columns: 1fr; }
+  .gray-lab, .rhythm-term, .rhythm-demo, .ratio-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro { grid-template-columns: 1fr; }
   .human-judgment-intro { grid-template-columns: 1fr; }
   .judgment-domains { grid-template-columns: repeat(2, 1fr); }
   .judgment-domains article:nth-child(2) { border-right: 0; }

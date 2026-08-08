@@ -1,6 +1,7 @@
 ---
 type: method
 prompt: opt-in
+scaffold: true
 ---
 
 # Build a corner-radius scale

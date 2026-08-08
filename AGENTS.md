@@ -61,19 +61,15 @@ Once the documentation pass is complete, do not use the original conversational 
 
 ## Principles and methods
 
-The guide is split into a theory layer and an applied layer, and each layer must remain passable to an agent on its own.
+The guide is split into two modules—principles and methods—and each must remain passable to an agent on its own.
 
-Principles are the theory. They explain how Julian approaches and judges interface design and can guide work without replacing an existing product’s visual system. All principle files live under `guide/principles/`, and that directory is the complete theory layer.
+Principles explain how Julian approaches and judges interface design and can guide work without replacing an existing product’s visual system. All principle files live under `guide/principles/`, and that directory is the complete principles module.
 
-Methods are the applied layer. Together with `data/foundations.json`, they are Julian’s design system: recipes, numerical defaults, and implementation starting points that an agent can execute without reading the theory. Method files use `type: method` and `prompt: opt-in` in their frontmatter.
+Methods explain how Julian constructs systems. Together with `data/foundations.json`, they are recipes, scaffold values, and implementation starting points that an agent can execute without reading the principles. Method files use `type: method` and `prompt: opt-in` in their frontmatter. Pass the principles alone for work inside an existing visual system, the methods alone to build from Julian’s starting values, or both for greenfield work in his style.
 
-Three bundles cover how the layers are passed to an agent:
+When a method explicitly lays out a system—the type scale, the gray curve, the ladders, button sizes—its exact values are a scaffold: a starting point, labeled with `scaffold: true` in the method’s frontmatter. A design system slotted in alongside the guide overrules scaffold values wherever they conflict; the principles and the method’s reasoning continue to apply. Never treat a scaffold value as a migration requirement, and never let a scaffold value override the tokens of a design system the user has provided.
 
-1. Theory only: `guide/principles/`.
-2. Theory plus tokens: `guide/principles/` with `data/foundations.json`, whole or as selected discipline groups.
-3. Design system only: `guide/methods/` with `data/foundations.json`.
-
-Preserve this separability when writing. A principle file must stay understandable without any method, and a method file must stay executable without any principle. Cross-references between layers are pointers for deeper reading, never dependencies. Keep exact values out of principle files, and keep the tokens in `data/foundations.json` grouped by discipline so a subset of groups can be passed on its own.
+Preserve this separability when writing. A principle file must stay understandable without any method, and a method file must stay executable without any principle. Cross-references between modules are pointers for deeper reading, never dependencies. Keep exact values out of principle files, and keep `data/foundations.json` grouped by discipline so a subset can be passed on its own.
 
 - Use principles by default for critique, iteration, and work inside an established interface.
 - Add methods for greenfield work, explicit system-building tasks, or when Julian asks for his preferred procedure or values.

@@ -15,7 +15,7 @@ Start with [the core principles](guide/principles/00-core-principles.md), then c
 - [Principles](guide/principles/README.md) are the theory: how I approach and judge interface design. Use them by default, including when working inside an existing visual system.
 - [Methods](guide/methods/README.md) and [structured foundations](data/foundations.json) are the applied layer: my design system, expressed as recipes for type, color, spacing, and motion plus machine-readable tokens. Use them when building or deliberately replacing a system. The layer works as a scaffold for getting new work up and running quickly.
 
-The [guide index](guide/README.md) routes both people and agents. Each layer is self-contained, so an agent can receive just the theory, the theory plus some or all of the tokens, or just the design system. Methods and exact foundation values are opt-in so an agent can use the principles without trying to redesign an existing product around my defaults.
+The [guide index](guide/README.md) routes both people and agents. Each module is self-contained, so an agent can receive just the principles, just the methods, or both. Explicit values in methods are scaffolds—starting points that a slotted-in design system overrules—and methods are opt-in so an agent can use the principles without trying to redesign an existing product around my defaults.
 
 [Asides](guide/asides/README.md) preserve personal and historical context for readers. They are deliberately excluded from agent prompts and working guidance.
 

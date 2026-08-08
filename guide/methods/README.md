@@ -4,9 +4,11 @@
 
 Methods document how I construct specific interface systems. They contain repeatable procedures, numerical defaults, and implementation starting points. Read them only when the task calls for building or deliberately replacing a system.
 
-This directory plus [`../../data/foundations.json`](../../data/foundations.json) is the applied layer: my design system. The layer stands alone—an agent can implement the system from these files without reading the theory. The principles explain the judgment behind these recipes, but no method depends on them to be executable.
+This directory plus [`../../data/foundations.json`](../../data/foundations.json) is the methods module: my design system as recipes and starting values. The module stands alone—an agent can implement the system from these files without reading the principles. The principles explain the judgment behind these recipes, but no method depends on them to be executable.
 
-The applied layer works as a scaffold. Its scales and token ladders are meaningful starting constraints that get a new interface up and running quickly; every value remains a starting point that yields to context and optical judgment.
+## Scaffolds
+
+When a method explicitly lays out a system—the type scale, the gray curve, the ladders, the button sizes—those exact values are a **scaffold**: a starting point that gets a new interface up and running quickly, marked with `scaffold: true` in the method's frontmatter. A design system slotted in alongside the guide overrules scaffold values wherever they conflict. The recipes' reasoning and the principles still apply; only the numbers yield. Every scaffold value also remains subject to context and optical judgment.
 
 ## Current methods
 
@@ -23,6 +25,7 @@ The applied layer works as a scaffold. Its scales and token ladders are meaningf
 | [Pad icon and text controls](iconography/control-padding.md) | Balancing icon-only, text-only, and mixed controls |
 | [Choose control sizes by input method](interface/control-sizes.md) | Selecting numerical starting sizes for mouse and touch controls |
 | [Build a corner-radius scale](interface/corner-radius-scale.md) | Choosing base corner radii from the laddered token scale |
+| [Size and style buttons with t-shirt sizes](interface/button-sizes-and-styles.md) | The five button sizes and three styles, with finite ranges as the alarm |
 | [Calculate nested corner radii](interface/nested-corner-radii.md) | Establishing concentric radii for nested containers |
 | [Choose platform motion timing](motion/platform-timing.md) | Selecting default web and touch durations |
 | [Build animation rhythm and swing](motion/animation-rhythm-and-swing.md) | Using the 48-frame timing scaffold for complex animation |

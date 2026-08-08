@@ -42,6 +42,12 @@ Repeated gestures create rhythm as well as visual consistency. When the same ges
 
 Teach the complete meaning in one clear instance, then preserve the gesture and outcome as it repeats. See [`repetition-builds-meaning.md`](repetition-builds-meaning.md) for the full principle.
 
+## Keep elements consistent so variation carries meaning
+
+Elements should share consistent style, sizing, and spacing—tokens make this practical. Too many sizes add visual noise, while consistently sized elements fall onto shared keylines (the invisible lines that align elements) and reduce cognitive overhead. Color follows the same logic in both directions: every button the same color is as confusing as every button a different color. Vary size and color only to communicate importance, function, or context.
+
+See [`consistency-and-keylines.md`](consistency-and-keylines.md) for the full principle.
+
 ## Offset the padding of scrolling layers
 
 When content scrolls under a fixed element, the two layers should not share the exact same edge padding. Coincident edges meet as the content passes—a 16px-padded result hitting a 16px-padded nav button—and the accidental join reads as designed, then breaks. Offset one layer decisively and judge the relationship in motion. Shared edges remain the rule within a single plane.
@@ -65,6 +71,8 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Use spacing to express grouping before adding dividers or boxes.
 - Use Gestalt principles to judge how spacing and other visual relationships group elements.
 - Make repeated gaps consistent so exceptions carry meaning.
+- Size elements from a shared token set so they fall onto shared keylines.
+- Vary size and color only to communicate importance, function, or context.
 - Align to shared axes whenever elements should feel related.
 - Offset the edge padding of layers that scroll under each other.
 - Preserve an existing spacing system unless replacing it is part of the task.

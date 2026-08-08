@@ -4,26 +4,20 @@
 
 Use this file as a router. The guide splits into two layers: theory and practice. Principles are the theory—how I approach and judge interface design. Methods and structured foundations are the applied layer—my design system, expressed as recipes and exact values. Read the core principles, then choose the layer the task requires. Theory is the default. The applied layer is opt-in.
 
-## Two layers
+## Two modules
 
-| Layer | Location | Contains | Read it when |
+| Module | Location | Contains | Read it when |
 | --- | --- | --- | --- |
-| Theory | [`principles/`](principles/README.md) | How I approach and judge interface design | Working in an existing interface, critiquing work, or deciding what a choice should communicate |
-| Applied | [`methods/`](methods/README.md) and [`../data/foundations.json`](../data/foundations.json) | How I construct systems: recipes, exact defaults, and machine-readable tokens | Building a new system, replacing an existing one deliberately, or requesting my preferred values |
+| Principles | [`principles/`](principles/README.md) | How I approach and judge interface design | Working in an existing interface, critiquing work, or deciding what a choice should communicate |
+| Methods | [`methods/`](methods/README.md) with [`../data/foundations.json`](../data/foundations.json) | How I construct systems: recipes, scaffold values, and their machine-readable form | Building a new system, replacing an existing one deliberately, or requesting my preferred starting values |
 
-The directory names describe retrieval behavior rather than a permanent taxonomy. They can change as the guide develops.
+Each module is self-contained. Pass an agent the principles alone for judgment inside an existing visual system, the methods alone to build from my starting values, or both for greenfield work in my style.
 
-## Composable bundles
+## Scaffolds
 
-Each layer is self-contained so it can be passed to an agent on its own. Three compositions cover the common cases:
+When a method explicitly lays out a system—the type scale, the gray curve, the spacing ladder, button sizes—those exact values are a scaffold: a starting point, not a requirement. Method files carry `scaffold: true` in their frontmatter, and `data/foundations.json` is the machine-readable form of the scaffold values, grouped by discipline.
 
-| Bundle | Pass | Use it when |
-| --- | --- | --- |
-| Theory only | `guide/principles/` | The agent works inside an existing visual system and needs my judgment, not my values |
-| Theory plus tokens | `guide/principles/` and `data/foundations.json`, whole or as selected groups | The agent should judge like me and start from some or all of my exact values |
-| Design system only | `guide/methods/` and `data/foundations.json` | The agent implements my system as specified and does not need the reasoning behind it |
-
-`data/foundations.json` groups tokens by discipline at the top level—`content`, `process`, `typography`, `color`, `layout`, `interface`, and `motion`. Pass a subset of groups when only some tokens apply.
+A design system slotted in alongside the guide overrules scaffold values wherever they conflict. The principles and each method's reasoning still apply; only the numbers yield.
 
 ## Choose by task
 
@@ -41,7 +35,8 @@ Each layer is self-contained so it can be passed to an agent on its own. Three c
 - Interface principles also treat empty states, 404s, and no-network pages as opportunities for delight and user education.
 - Corner rounding and interface conventions are principles. Load the radius-scale and nested-radius methods only when constructing or replacing a radius system.
 - Color exists only as methods for now. Load the gray-scale and color-scale methods only when constructing or replacing a color system; the color scales share the gray scale's stops and endpoints but distribute lightness with their own curve.
-- Rhythm principles cover Gestalt, spacing relationships, alignment, contextual action grouping, repetition that builds meaning, purposeful exceptions, the 1-3-9 proportion lens, and offsetting the padding of layers that scroll under each other. Load the spacing-grid method only when constructing or replacing the spatial system.
+- Rhythm principles cover Gestalt, spacing relationships, alignment, contextual action grouping, repetition that builds meaning, purposeful exceptions, the 1-3-9 proportion lens, offsetting the padding of layers that scroll under each other, and keeping elements consistent so keylines emerge and variation carries meaning. Load the spacing-grid method only when constructing or replacing the spatial system.
+- Load the button-scaffold method only when sizing or styling buttons from my starting values: five t-shirt sizes and three styles.
 - Content principles explain why capitalization and punctuation should be consistent and functional, including the distinct jobs of em dashes, en dashes, and hyphens. Load the capitalization and punctuation method only when establishing or changing the interface writing system.
 - Find iconography principles under Imagery. Load the control-padding method only when constructing or changing controls.
 - Motion principles cover continuity, causality, responsiveness, accessibility, continuously transitioning only between elements that do or mean the same thing, and animating only the level that changes. Load the timing and animation-scaffold methods only when exact durations or the 48-frame structure are needed.
