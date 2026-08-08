@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.31.0",
+  "version": "0.33.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -551,6 +551,27 @@
       "styleRangeIsAlarm": "Needing a Quaternary style signals too many styles.",
       "onePrimaryPerSurface": true,
       "webDesktopNudging": "Heights are nudged per screen on web and desktop; a nudge changes a role's value, never adds a role."
+    }
+  },
+  "imagery": {
+    "iconography": {
+      "sizesPx": {
+        "workhorse": 20,
+        "sprinkled": [
+          16,
+          24
+        ],
+        "rare": [
+          12,
+          32
+        ]
+      },
+      "frequencyTaper": "The further a size sits from the workhorse, the less often it should appear.",
+      "textPairingsPx": {
+        "20": 16
+      },
+      "pairingRule": "One icon size per text size, held consistent everywhere it appears.",
+      "chevronArrowException": "Chevrons and arrows completing a phrase are tuned optically against the text and may leave the pairing."
     }
   },
   "motion": {

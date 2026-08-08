@@ -39,7 +39,7 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 - Rhythm principles cover Gestalt, spacing relationships, alignment, contextual action grouping, repetition that builds meaning, purposeful exceptions, the 1-3-9 proportion lens, offsetting the padding of layers that scroll under each other, and keeping elements consistent so keylines emerge and variation carries meaning. Load the spacing-grid method only when constructing or replacing the spatial system.
 - Load the button-scaffold method only when sizing or styling buttons from my starting values: five t-shirt sizes and three styles.
 - Content principles explain why capitalization and punctuation should be consistent and functional, including the distinct jobs of em dashes, en dashes, and hyphens. Load the capitalization and punctuation method only when establishing or changing the interface writing system.
-- Find iconography principles under Imagery. Load the control-padding method only when constructing or changing controls.
+- Find iconography principles under Imagery, including tapered icon sizing paired consistently with text. Load the control-padding method only when constructing or changing controls, and the icon-size method only when my exact sizes and pairings are needed.
 - Motion principles cover continuity, causality, responsiveness, accessibility, continuously transitioning only between elements that do or mean the same thing, and animating only the level that changes. Load the timing and animation-scaffold methods only when exact durations or the 48-frame structure are needed.
 
 The prose remains the source of truth. Structured foundations are an opt-in representation of methods.

@@ -23,6 +23,7 @@ When a method explicitly lays out a system—the type scale, the gray curve, the
 | [Build color scales perceptually](color/perceptual-color-scales.md) | Generating the six base 13-stop OKLCH hue scales from the gray lightness curve |
 | [Build a spacing grid](layout/spacing-grid.md) | Choosing spacing tokens from the ladder on the 2px and 4px grid |
 | [Pad icon and text controls](iconography/control-padding.md) | Balancing icon-only, text-only, and mixed controls |
+| [Size icons from the tapering scale](iconography/icon-sizes.md) | The workhorse icon size, its tapering companions, and text pairings |
 | [Choose control sizes by input method](interface/control-sizes.md) | Selecting numerical starting sizes for mouse and touch controls |
 | [Build a corner-radius scale](interface/corner-radius-scale.md) | Choosing base corner radii from the laddered token scale |
 | [Size and style buttons with t-shirt sizes](interface/button-sizes-and-styles.md) | The five button sizes and three styles, with finite ranges as the alarm |
