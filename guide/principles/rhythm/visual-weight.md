@@ -2,11 +2,19 @@
 
 ## In brief
 
-When I start a design, I pick the most important thing, then the second most important thing, then the third. The most important thing gets decisively more visual weight than anything else—nine times, not slightly more. Visual weight is not size: a small but brightly colored button can be the loudest element on the screen. And as elements cover more real estate, their visual prominence should decrease.
+When I start a design, I pick the most important thing, then the second most important thing, then the third. The most important thing gets decisively more visual weight than anything else—nine times, not slightly more. Size is one source of visual weight; color and motion are others—a small but brightly colored button can be the loudest element on the screen. Spend the sources deliberately and balance the whole composition: maxing every source on one element leaves it with nothing to play against.
 
-## Weight is not area
+## Weight has several sources
 
-A primary button can be physically small and still dominate through color, contrast, and isolation. Body text covers most of the screen and stays quiet. The two move in opposite directions: concentrate weight in small places, and spread calm across large ones. If prominence grew with area, the largest element would always win, and the interface could never point at what matters.
+Size—the area an element covers—is a form of visual weight. Color is another. Motion is another. A small button becomes the loudest element on screen through color alone. A large surface carries weight through sheer area even in quiet grays. A moving element draws the eye regardless of its size.
+
+Because the sources add up, spend them deliberately. A large, bright, moving element has maxed out its visual weight—and it has no interplay with the other elements in view. Nothing on the screen can answer it. It is better compositionally balanced with other elements: let the leading element spend one or two sources, and leave the rest of the register for the composition.
+
+## Balance the composition
+
+An element that covers a lot of real estate already carries weight through its area, so its other sources should stay quiet—body text is vast, gray, and still. An element that must lead from a small footprint spends color or motion instead. The composition reads correctly when each element's total weight matches its rank, whatever mix of sources produces it.
+
+White space is an element too. An empty region has weight in the balance, and it can offset a loud element as effectively as another object can. Use it as a compositional counterweight, not as leftover room.
 
 ## Rank first, then assign weight
 
@@ -22,7 +30,9 @@ Visual weight has no unit. Exact type sizes come from the type scale, spacing fr
 
 - Start every design by ranking importance: first, second, third.
 - Give the most important element decisively more visual weight than anything else—an order of magnitude, not an increment.
-- Use color, contrast, and isolation to make small elements loud; size is only one source of weight.
-- Decrease visual prominence as an element's real estate grows.
+- Treat size, color, and motion as sources of weight that add up; spend one or two per element, not all of them.
+- Quiet the other sources of a large element; its area already carries weight.
+- Never max every source on one element—balance it against the rest of the composition.
+- Use white space as a compositional counterweight with weight of its own.
 - Step weight down the ranking so no level can be confused with its neighbors.
 - Derive exact values from the applicable system; weight is a judgment, not a computation.

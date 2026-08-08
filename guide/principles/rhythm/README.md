@@ -56,7 +56,7 @@ See [`scroll-under-alignment.md`](scroll-under-alignment.md) for the full princi
 
 ## Concentrate visual weight by importance
 
-Start a design by ranking importance: the most important thing, then the second, then the third. The most important element gets decisively more visual weight than anything else—an order of magnitude, not an increment—and weight is not size: a small but brightly colored button can be the loudest element on screen. As elements cover more real estate, their prominence decreases; the largest surfaces stay quietest.
+Start a design by ranking importance: the most important thing, then the second, then the third. The most important element gets decisively more visual weight than anything else—an order of magnitude, not an increment. Size, color, and motion are all sources of weight that add up: a small but brightly colored button can be the loudest element on screen, and a large surface carries weight through area alone, so its other sources stay quiet. Never max every source on one element—it loses all interplay with the composition—and use white space as a counterweight with weight of its own.
 
 See [`visual-weight.md`](visual-weight.md) for the full principle.
 
@@ -79,7 +79,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Apply optical compensation deliberately and document it when encoding a component.
 - Establish a consistent rhythm before introducing variation.
 - Rank importance first, then give the top of the ranking decisively more visual weight.
-- Decrease visual prominence as an element's real estate grows.
+- Spend weight sources—size, color, motion—one or two per element, and balance the composition with white space.
 - Use repeated gestures to build stable meaning across comparable contexts.
 - Keep the outcome of a repeated gesture consistent.
 - Group actions only when they share a context, object, or scope.
