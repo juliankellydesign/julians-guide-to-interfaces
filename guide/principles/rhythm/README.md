@@ -50,7 +50,7 @@ See [`scroll-under-alignment.md`](scroll-under-alignment.md) for the full princi
 
 ## Think in 1-3-9
 
-A 1-3-9 ratio sketches a decisive hierarchy: one dominant element, three supporting elements, nine detail elements—one big heading, three smaller headings, nine lines of body text. Each level steps down roughly by a factor of three, so no level can be confused with another. The same ratio may describe surface area, as an exploratory lens.
+A 1-3-9 ratio sketches a decisive hierarchy: one dominant element, three supporting elements, nine detail elements—one big heading, three smaller headings, nine lines of body text. Each level steps down roughly by a factor of three, so no level can be confused with another. The ratio is a visual shorthand that reads most naturally as area: text boxes are wider than they are tall, so a restrained type-size step still produces a decisive step in area.
 
 Treat it as scaffolding: start a composition from the ratio to make early decisions fast, let the content reshape it, and use it to judge whether the hierarchy steps down clearly—never to compute values. See [`one-three-nine.md`](one-three-nine.md) for the full principle.
 

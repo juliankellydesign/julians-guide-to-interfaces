@@ -10,9 +10,11 @@ Imagine one big heading, three smaller headings, and nine lines of body text. Th
 
 The ratio is a compositional sketch, not a census. A page does not need exactly three subheadings and nine lines; it needs the proportional feeling that each level steps down decisively from the one above.
 
-## It may also describe area
+## The ratio reads as area
 
-The same ratio can describe surface area: a dominant surface, supporting surfaces at around a third of its area, and detail elements at around a ninth. I have not settled how far this application extends—treat it as a lens to try against a layout, not as a rule.
+1-3-9 is a visual shorthand, and it makes the most sense in terms of area: a dominant surface, supporting surfaces at around a third of its area, and detail elements at around a ninth.
+
+Area is also how the ratio coexists with a restrained type scale. Font size is measured by height, and text boxes are almost always wider than they are tall, so a major-second step of 1.125 in height produces a much larger step in occupied area. A hierarchy whose sizes step gently can still step decisively in area—and area is the axis 1-3-9 reads.
 
 ## Start from it as scaffolding
 
@@ -30,5 +32,5 @@ Scaffolding yields. Keep the ratio while it helps the composition, and let the c
 - Let the content reshape the ratio; the scaffold makes early decisions fast rather than constraining the final layout.
 - Check a composition that feels flat or crowded against the ratio; its levels may be too close in count or size.
 - Aim for the proportional feeling rather than exact counts.
-- Treat the surface-area application as an exploratory lens rather than a settled rule.
+- Read the ratio as a visual shorthand for area; height-based measures like font size understate the step.
 - Derive exact values from the applicable system, not from the ratio.

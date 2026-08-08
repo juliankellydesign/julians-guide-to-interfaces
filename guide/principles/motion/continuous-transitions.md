@@ -18,6 +18,8 @@ The transition works because the chip *is* the composer in a compact state. The 
 
 In the same moment, the tab bar moves down and out of the way to make room. It stays the tab bar for its whole exit—no transition connects it to the composer, because tapping the tab bar does something different. Each element's motion tells its own story: the chip expands because it is the composer; the tab bar is simply leaving.
 
+The size relationship is what makes all of this legible. The tab bar and the composer are the same size and occupy the same slot between the same neighbors; as two static designs side by side, nothing would explain how one becomes the other. The chip is visibly smaller than both, so its expansion reads unmistakably as one element growing into place. The transition carries information the static frames cannot.
+
 ## When the elements do different things
 
 Do not connect elements that do different things with a continuous transition. Let one leave and the other arrive—a fade, a push, a replacement—so each element keeps its own identity through the change. The weaker transition is the honest one.
@@ -28,6 +30,7 @@ Do not connect elements that do different things with a continuous transition. L
 - Use a compact and expanded form of the same element to teach that two surfaces are one object.
 - Keep the action consistent across both forms; whatever tapping meant before the transition, it means after.
 - Carry a shared label or visual signature through the transition when one fits.
+- Let a visible change such as size carry the identity; two same-size forms read as a swap, not a transformation.
 - Use a fade, push, or replacement—not a continuous transition—when the elements do different things.
 - Let an element that is only making room move away as itself.
 - Respect reduced-motion preferences; the state change must survive without the transition.

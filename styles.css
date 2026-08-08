@@ -805,7 +805,7 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .morph-stage { position: relative; height: 132px; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--gray-50); overflow: hidden; }
 .morph-el { position: absolute; left: 50%; z-index: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; font-size: 11px; font-weight: 600; border: 1px solid var(--ink); animation: morph-cycle 4s cubic-bezier(.3, 0, .2, 1) infinite; }
 .morph-el span { padding: 0 14px; }
-.morph-tabbar { position: absolute; bottom: 16px; left: 50%; display: flex; gap: 14px; align-items: center; padding: 8px 16px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--paper); animation: morph-tab-cycle 4s cubic-bezier(.3, 0, .2, 1) infinite; }
+.morph-tabbar { position: absolute; bottom: 16px; left: 50%; box-sizing: border-box; width: min(86%, 420px); height: 46px; display: flex; gap: 14px; align-items: center; justify-content: space-around; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--paper); animation: morph-tab-cycle 4s cubic-bezier(.3, 0, .2, 1) infinite; }
 .morph-tabbar i { width: 14px; height: 14px; border: 1px solid var(--muted); border-radius: 999px; }
 @keyframes morph-tab-cycle {
   0%, 40% { transform: translate(-50%, 0); opacity: 1; }
