@@ -21,13 +21,14 @@ When a method explicitly lays out a system—the type scale, the gray curve, the
 | [Assign font weights by role](typography/font-weight-roles.md) | Mapping body, header, interactive, and attention roles to weights |
 | [Build gray scales perceptually](color/perceptual-gray-scales.md) | Generating the 13-stop OKLCH neutral scale |
 | [Build color scales perceptually](color/perceptual-color-scales.md) | Generating the six base 13-stop OKLCH hue scales from the gray lightness curve |
+| [Generate transparent twins of the gray scale](color/transparent-scales.md) | Alpha whites and alpha near-blacks that visually match the opaque stops |
 | [Build a spacing grid](layout/spacing-grid.md) | Choosing spacing tokens from the ladder on the 2px and 4px grid |
 | [Pad icon and text controls](iconography/control-padding.md) | Balancing icon-only, text-only, and mixed controls |
 | [Size icons from the tapering scale](iconography/icon-sizes.md) | The workhorse icon size, its tapering companions, and text pairings |
 | [Choose control sizes by input method](interface/control-sizes.md) | Selecting numerical starting sizes for mouse and touch controls |
 | [Build a corner-radius scale](interface/corner-radius-scale.md) | Choosing base corner radii from the laddered token scale |
 | [Size and style buttons with t-shirt sizes](interface/button-sizes-and-styles.md) | The five button sizes and three styles, with finite ranges as the alarm |
-| [Dim content beneath modals](interface/modal-dimming.md) | The background-opacity default that pairs with a modal's shadow |
+| [Dim beneath modals with a scrim](interface/scrim.md) | The 20% white scrim that pairs with a modal's shadow |
 | [Calculate nested corner radii](interface/nested-corner-radii.md) | Establishing concentric radii for nested containers |
 | [Choose platform motion timing](motion/platform-timing.md) | Selecting default web and touch durations |
 | [Build animation rhythm and swing](motion/animation-rhythm-and-swing.md) | Using the 48-frame timing scaffold for complex animation |

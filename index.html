@@ -32,7 +32,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.37</span>
+        <span>v0.38</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -393,6 +393,10 @@
           <div class="curve-label"><span>Chroma arch</span><code>chroma = 0.16 × 4t(1 − t), clamped to 95% of sRGB</code></div>
           <div class="color-ramps" id="color-ramps" aria-label="Generated six-hue 13-stop OKLCH color scales"></div>
         </div>
+        <div class="alpha-lab lab-panel">
+          <div class="curve-label"><span>Transparent twins</span><code>white α + black α = 1 per stop · seams vanish when the match holds</code></div>
+          <div class="alpha-rows" id="alpha-rows" aria-label="Transparent white and transparent black scales visually matching the opaque grays"></div>
+        </div>
       </section>
 
       <section class="chapter rhythm" id="rhythm" aria-labelledby="rhythm-title">
@@ -715,7 +719,7 @@
             <p>Shadows are a tool, not a theme—never all-or-nothing. Hold one meaning per shadow everywhere it applies and leave everything else flat; strokes follow the same selective consistency. A shadow must also read apart from its container: 20% black around a container at 20% lightness lands on the container’s own color, and the interface goes muddy. Tonality can be painterly, but hard edges keep the definition—when the two blend, ask whether the shadow is needed at all.</p>
           </div>
           <div class="shadow-uses" aria-label="When an element gets a shadow">
-            <div><span>On top</span><strong>Sheets + modals, with dimming</strong></div>
+            <div><span>On top</span><strong>Sheets + modals, with a scrim</strong></div>
             <div><span>On media</span><strong>Controls over imagery</strong></div>
             <div><span>Physical</span><strong>Draggable elements</strong></div>
             <div><span>Attention</span><strong>Applied type-wide</strong></div>

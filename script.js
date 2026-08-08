@@ -377,8 +377,60 @@ document.querySelectorAll("[data-motion]").forEach((button) => {
 
 renderTypeScale(17);
 renderTrackingScale(17);
+function gammaEncode(value) {
+  const channel = Math.min(1, Math.max(0, value));
+  return channel <= 0.0031308 ? 12.92 * channel : 1.055 * channel ** (1 / 2.4) - 0.055;
+}
+
+function renderAlphaRows() {
+  const wrap = document.querySelector("#alpha-rows");
+  const grayLightness = (stop) => {
+    if (stop === 0) return GRAY_CURVE.lightest;
+    if (stop === GRAY_CURVE.maximumStop) return GRAY_CURVE.darkest;
+    return GRAY_CURVE.lightest - solveCurveAtX(stop / GRAY_CURVE.maximumStop) * (GRAY_CURVE.lightest - GRAY_CURVE.darkest);
+  };
+  const srgbOf = (lightness) => gammaEncode(lightness ** 3);
+  const nearBlack = srgbOf(GRAY_CURVE.darkest);
+  const nearBlackCss = `oklch(${GRAY_CURVE.darkest} ${GRAY_CURVE.chroma} ${GRAY_CURVE.hue})`;
+  const nearBlackRgb = Math.round(nearBlack * 255);
+  const rows = [
+    {
+      label: "Transparent whites over gray 1000",
+      background: nearBlackCss,
+      alphaColor: (alphaWhite) => `rgba(255, 255, 255, ${alphaWhite.toFixed(3)})`
+    },
+    {
+      label: "Transparent blacks over white",
+      background: "#fff",
+      alphaColor: (alphaWhite) => `rgba(${nearBlackRgb}, ${nearBlackRgb}, ${nearBlackRgb}, ${(1 - alphaWhite).toFixed(3)})`
+    }
+  ];
+  const built = rows.map((row) => {
+    const strip = document.createElement("div");
+    strip.className = "alpha-row";
+    const label = document.createElement("span");
+    label.textContent = row.label;
+    const cells = document.createElement("div");
+    cells.className = "alpha-strip";
+    cells.style.background = row.background;
+    GRAY_CURVE.stops.forEach((stop) => {
+      const lightness = grayLightness(stop);
+      const alphaWhite = (srgbOf(lightness) - nearBlack) / (1 - nearBlack);
+      const opaque = stop === 0 ? "oklch(1 0 0)" : `oklch(${lightness} ${GRAY_CURVE.chroma} ${GRAY_CURVE.hue})`;
+      const cell = document.createElement("i");
+      cell.style.background = `linear-gradient(to bottom, ${opaque} 0 50%, ${row.alphaColor(alphaWhite)} 50% 100%)`;
+      cell.title = `${stop} · opaque above, alpha twin below`;
+      cells.append(cell);
+    });
+    strip.append(label, cells);
+    return strip;
+  });
+  wrap.replaceChildren(...built);
+}
+
 renderGrayRamp();
 renderColorRamps();
+renderAlphaRows();
 renderSpacingLadder();
 renderRadiusLadder();
 applyDocumentationTypography();

@@ -12,12 +12,12 @@ Strokes follow the same rule: be consistent in how strokes are applied and what 
 
 ## When an element gets a shadow
 
-- **It sits on top of other content.** A sheet or a modal appearing over another element gets a shadow; the shadow communicates what is on top. For modals I often pair the shadow with a slight dimming of the background content beneath it.
+- **It sits on top of other content.** A sheet or a modal appearing over another element gets a shadow; the shadow communicates what is on top. For modals I often pair the shadow with a scrim—a slight dimming of the content beneath.
 - **It sits on media.** A button or container on top of media or a complex background gets a shadow to hold its edge against the noise.
 - **It has physical properties.** When something can be directly manipulated—dragged, for instance—a shadow communicates that physicality.
 - **It needs attention.** A shadow can call attention to something, applied as a stylistic rule for all elements of that type—never as a one-off on a single instance.
 
-For the exact modal dimming starting point, see [`../../methods/interface/modal-dimming.md`](../../methods/interface/modal-dimming.md).
+For the exact scrim starting point, see [`../../methods/interface/scrim.md`](../../methods/interface/scrim.md).
 
 ## Keep the shadow distinct from its container
 

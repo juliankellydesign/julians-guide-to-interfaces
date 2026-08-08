@@ -36,6 +36,10 @@ cubic-bezier(0.35, 0.2, 0.55, 0.6)
 
 The handles can change when the context requires a different distribution. The 13 stop names and endpoint rules remain fixed unless there is a specific reason to change the system.
 
+## Generate the transparent twins
+
+Whenever the gray scale is generated, also generate its transparent twins: scales of transparent whites and transparent blacks that visually match the opaque stops, for scrims and elements over content. See [`transparent-scales.md`](transparent-scales.md).
+
 ## Judge the rendered scale
 
 The curve is a model of perceived lightness, not a complete representation of vision. Displays can reproduce dark tones differently, and the human eye may distinguish parts of the scale differently depending on surrounding colors and viewing conditions.
@@ -64,6 +68,7 @@ Accent colors remain separate because they communicate emphasis and section iden
 ## Working rules
 
 - Always generate all 13 stops when this method is selected.
+- Generate the transparent twins alongside the opaque scale.
 - Keep stop `0` pure white.
 - Keep stop `1000` near-black rather than pure black.
 - Use OKLCH so changes are based on perceived lightness.

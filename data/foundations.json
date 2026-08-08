@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.37.0",
+  "version": "0.38.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -374,6 +374,52 @@
         }
       },
       "perceptualReviewRequired": true
+    },
+    "transparentScales": {
+      "basis": "Generated alongside the gray scale; blacks are built from gray 1000, never pure black.",
+      "compositingSpace": "gamma-encoded sRGB, as browsers composite rgba",
+      "alphaWhiteFormula": "(s(stop) - s(1000)) / (1 - s(1000))",
+      "alphaBlackFormula": "(1 - s(stop)) / (1 - s(1000))",
+      "alphasSumToOne": true,
+      "alphaWhiteByStop": {
+        "0": 1,
+        "50": 0.962,
+        "100": 0.919,
+        "200": 0.819,
+        "300": 0.704,
+        "400": 0.578,
+        "500": 0.449,
+        "600": 0.326,
+        "700": 0.213,
+        "800": 0.115,
+        "900": 0.032,
+        "950": 0.009,
+        "1000": 0
+      },
+      "alphaBlackByStop": {
+        "0": 0,
+        "50": 0.038,
+        "100": 0.081,
+        "200": 0.181,
+        "300": 0.296,
+        "400": 0.422,
+        "500": 0.551,
+        "600": 0.674,
+        "700": 0.787,
+        "800": 0.885,
+        "900": 0.968,
+        "950": 0.991,
+        "1000": 1
+      },
+      "referenceBackgrounds": {
+        "whites": "gray 1000",
+        "blacks": "white"
+      },
+      "uses": [
+        "scrims",
+        "overlays on media",
+        "borders over imagery"
+      ]
     }
   },
   "layout": {
@@ -553,12 +599,15 @@
       "webDesktopNudging": "Heights are nudged per screen on web and desktop; a nudge changes a role's value, never adds a role.",
       "referByName": "Sizes are referred to by name, never numeric value, so the values stay free to change."
     },
-    "modalDimming": {
-      "backgroundContentOpacityPercent": {
-        "from": 100,
-        "to": 80
+    "scrim": {
+      "term": "Scrim, from theater: a translucent layer laid over the background content.",
+      "overlay": {
+        "color": "white",
+        "opacityPercent": 20
       },
+      "implementation": "One overlay element; the content beneath renders untouched.",
       "pairsWithShadow": true,
+      "drawnFrom": "color.transparentScales.alphaWhiteByStop",
       "note": "Slight by design; the content beneath stays legible and reads as inactive, not removed."
     }
   },

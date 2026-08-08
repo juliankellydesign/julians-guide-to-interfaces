@@ -63,7 +63,7 @@ See [`corner-rounding.md`](corner-rounding.md) for the principle. Load [`../meth
 
 Shadows are a tool, not a theme—never all-or-nothing. Hold one meaning per shadow everywhere it applies and leave everything else flat: overlays get shadows, elements on media get shadows, physically manipulable elements get shadows, and an attention shadow applies to every element of its type. Strokes follow the same selective consistency. A shadow must also read apart from its container—a 20% black shadow around a 20%-lightness container blends muddily, and an unreadable shadow gets questioned before it gets tuned.
 
-See [`shadows.md`](shadows.md) for the full principle. Load [`../methods/interface/modal-dimming.md`](../../methods/interface/modal-dimming.md) only for the exact dimming default.
+See [`shadows.md`](shadows.md) for the full principle. Load [`../../methods/interface/scrim.md`](../../methods/interface/scrim.md) only for the exact scrim default.
 
 ## Design both the map and the landscape
 
