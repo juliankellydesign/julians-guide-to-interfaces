@@ -59,6 +59,12 @@ The amount of corner rounding is mostly a matter of taste, but rounded controls 
 
 See [`corner-rounding.md`](corner-rounding.md) for the principle. Load [`../methods/interface/nested-corner-radii.md`](../../methods/interface/nested-corner-radii.md) only when constructing or replacing a radius system.
 
+## Keep shadows distinct from their containers
+
+A shadow works only when it reads apart from the container casting it. A 20% black shadow around a container at 20% lightness blends into it—the edge disappears and the interface looks mushy. When shadow and container are close enough to blend, ask whether the container needs a shadow at all before tuning it.
+
+See [`shadows.md`](shadows.md) for the full principle.
+
 ## Design both the map and the landscape
 
 The product’s functionality is the landscape and the interface is the map that explains it. Use familiar conventions when they describe the behavior accurately. When no established shorthand exists, define a local convention, teach it clearly, and apply it consistently.
