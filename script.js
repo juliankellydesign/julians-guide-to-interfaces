@@ -39,8 +39,8 @@ const GRAY_CURVE = {
   maximumStop: 1000,
   lightest: 1,
   darkest: 0.05,
-  chroma: 0.008,
-  hue: 95
+  chroma: 0,
+  hue: 0
 };
 
 const typeScaleElement = document.querySelector("#type-scale");

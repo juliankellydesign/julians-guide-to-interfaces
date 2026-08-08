@@ -63,7 +63,7 @@ This documentation site uses the same gray scale for its neutral interface color
 | Muted text | `600` |
 | Primary text and dark surfaces | `1000` |
 
-Accent colors remain separate because they communicate emphasis and section identity rather than neutral hierarchy.
+The interface itself stays pure gray. Diagrams take their accent from the blue scale at stop `500`; accent colors remain separate from the neutral hierarchy because they communicate emphasis and identity.
 
 ## Working rules
 

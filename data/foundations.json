@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.38.0",
+  "version": "0.40.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -196,7 +196,8 @@
         "strongBorder": 300,
         "mutedText": 600,
         "primaryText": 1000,
-        "darkSurface": 1000
+        "darkSurface": 1000,
+        "diagramAccent": "blue 500; diagrams only, interface chrome stays pure gray"
       },
       "perceptualReviewRequired": true
     },
