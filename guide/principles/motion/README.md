@@ -18,7 +18,7 @@ If motion does not add understanding, it competes with the interaction.
 
 ## Morph only between elements that share a meaning
 
-A continuous transition is a claim of identity: when one element morphs into another, the person carries everything the first form meant onto the second. Morph only when the two elements do the same thing or mean the same thing—a floating chip becoming the reply bar it abbreviates. When the arriving element behaves differently, use a fade, push, or replacement instead.
+A continuous transition is a claim of identity: when one element morphs into another, the person carries everything the first form meant onto the second. Morph only when the two elements do the same thing or mean the same thing—a floating chip becoming the reply bar it abbreviates. When the arriving element behaves differently, use a fade, push, or replacement instead. Position does not carry identity: a tab bar can slide out of the exact spot the composer takes without becoming it, and both transitions can happen honestly in the same moment.
 
 See [`continuous-transitions.md`](continuous-transitions.md) for the full principle.
 
