@@ -59,11 +59,11 @@ The amount of corner rounding is mostly a matter of taste, but rounded controls 
 
 See [`corner-rounding.md`](corner-rounding.md) for the principle. Load [`../methods/interface/nested-corner-radii.md`](../../methods/interface/nested-corner-radii.md) only when constructing or replacing a radius system.
 
-## Keep shadows distinct from their containers
+## Use shadows as a tool
 
-A shadow works only when it reads apart from the container casting it. A 20% black shadow around a container at 20% lightness blends into it—the edge disappears and the interface looks mushy. When shadow and container are close enough to blend, ask whether the container needs a shadow at all before tuning it.
+Shadows are a tool, not a theme—never all-or-nothing. Hold one meaning per shadow everywhere it applies and leave everything else flat: overlays get shadows, elements on media get shadows, physically manipulable elements get shadows, and an attention shadow applies to every element of its type. Strokes follow the same selective consistency. A shadow must also read apart from its container—a 20% black shadow around a 20%-lightness container blends muddily, and an unreadable shadow gets questioned before it gets tuned.
 
-See [`shadows.md`](shadows.md) for the full principle.
+See [`shadows.md`](shadows.md) for the full principle. Load [`../methods/interface/modal-dimming.md`](../../methods/interface/modal-dimming.md) only for the exact dimming default.
 
 ## Design both the map and the landscape
 
