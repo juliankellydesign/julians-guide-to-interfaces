@@ -48,6 +48,12 @@ Elements should share consistent style, sizing, and spacing—tokens make this p
 
 See [`consistency-and-keylines.md`](consistency-and-keylines.md) for the full principle.
 
+## Ask twice before adding a style
+
+A new style gets two questions: have I seen something similar elsewhere in this interface, and can the new thing be repurposed elsewhere. The first reuses and strengthens an existing pattern; the second designs the addition as a type rather than a one-off. Treatments bind to types, never to instances—the rule that attention shadows, icon sizes, and color meanings each enforce in their own discipline.
+
+See [`adding-styles.md`](adding-styles.md) for the full principle.
+
 ## Offset the padding of scrolling layers
 
 When content scrolls under a fixed element, the two layers should not share the exact same edge padding. Coincident edges meet as the content passes—a 16px-padded result hitting a 16px-padded nav button—and the accidental join reads as designed, then breaks. Offset one layer decisively and judge the relationship in motion. Shared edges remain the rule within a single plane.
@@ -73,6 +79,8 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Make repeated gaps consistent so exceptions carry meaning.
 - Size elements from a shared token set so they fall onto shared keylines.
 - Vary size and color only to communicate importance, function, or context.
+- Reuse a similar existing treatment before adding a style, and design new styles for repurposing.
+- Bind treatments to types, never to instances.
 - Align to shared axes whenever elements should feel related.
 - Offset the edge padding of layers that scroll under each other.
 - Preserve an existing spacing system unless replacing it is part of the task.

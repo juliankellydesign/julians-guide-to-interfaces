@@ -1014,7 +1014,7 @@ footer a { display: inline-flex; align-items: center; gap: 24px; font-size: 12px
   .figure-examples article, .punctuation-examples article, .alignment-examples article { border-right: 0; border-bottom: 1px solid var(--line); }
   .figure-examples article:last-child, .punctuation-examples article:last-child, .alignment-examples article:last-child { border-bottom: 0; }
   .figure-rule, .punctuation-rule { grid-template-columns: 1fr; }
-  .gray-lab, .rhythm-term, .rhythm-demo, .weight-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro, .icon-taper-intro, .shadow-intro, .shadow-compare { grid-template-columns: 1fr; }
+  .gray-lab, .rhythm-term, .rhythm-demo, .weight-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro, .icon-taper-intro, .shadow-intro, .shadow-compare, .add-style-intro, .add-style-questions { grid-template-columns: 1fr; }
   .shadow-uses { grid-template-columns: 1fr 1fr; }
   .human-judgment-intro { grid-template-columns: 1fr; }
   .judgment-domains { grid-template-columns: repeat(2, 1fr); }
