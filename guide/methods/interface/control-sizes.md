@@ -1,6 +1,7 @@
 ---
 type: method
 prompt: opt-in
+scaffold: true
 ---
 
 # Choose control sizes by input method

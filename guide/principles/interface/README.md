@@ -2,7 +2,7 @@
 
 ## In brief
 
-Start with a clear problem or a specific interaction. Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, control size, repetition, corner language, conventions, responsiveness, and perceived speed all communicate how the interface should be used.
+Start with a clear problem or a specific interaction. Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, control size, repetition, corner language, conventions, responsiveness, perceived speed, and deliberate empty and error states all communicate how the interface should be used.
 
 ## Start with the problem or interaction
 
@@ -39,7 +39,13 @@ See [`action-hierarchy.md`](action-hierarchy.md) for the full principle.
 
 Mouse input supports denser controls than touch input. Choose control size according to the actual input method, intended density, and importance of the action. On touch interfaces, the visible affordance can be smaller than its interactive target, but adjacent targets must remain distinct and reliable to hit.
 
-See [`interactive-control-sizing.md`](interactive-control-sizing.md) for the principle. Load [`../methods/interface/control-sizes.md`](../methods/interface/control-sizes.md) only when exact starting values are needed.
+See [`interactive-control-sizing.md`](interactive-control-sizing.md) for the principle. Load [`../methods/interface/control-sizes.md`](../../methods/interface/control-sizes.md) only when exact starting values are needed.
+
+## Match the interface to the fidelity of the input
+
+Adaptation is an obligation, not an allowance. Desktop products built with mobile values feel mushy—animations too long, buttons too big—because the input got more precise while the interface stayed the same. Control sizes, density, and motion timing should change with input method and screen size; roles, hierarchy, and meaning stay constant.
+
+See [`input-fidelity.md`](input-fidelity.md) for the full principle.
 
 ## Repeat actions when repetition adds meaning
 
@@ -51,7 +57,13 @@ See [`action-repetition.md`](action-repetition.md) for the full principle.
 
 The amount of corner rounding is mostly a matter of taste, but rounded controls have become a familiar signal of interactivity. Nested elements should generally be less rounded than their containers, with more attention paid to concentricity as the outer radius grows.
 
-See [`corner-rounding.md`](corner-rounding.md) for the principle. Load [`../methods/interface/nested-corner-radii.md`](../methods/interface/nested-corner-radii.md) only when constructing or replacing a radius system.
+See [`corner-rounding.md`](corner-rounding.md) for the principle. Load [`../methods/interface/nested-corner-radii.md`](../../methods/interface/nested-corner-radii.md) only when constructing or replacing a radius system.
+
+## Use shadows as a tool
+
+Shadows are a tool, not a theme—never all-or-nothing. Hold one meaning per shadow everywhere it applies and leave everything else flat: overlays get shadows, elements on media get shadows, physically manipulable elements get shadows, and an attention shadow applies to every element of its type. Strokes follow the same selective consistency. A shadow must also read apart from its container—a 20% black shadow around a 20%-lightness container blends muddily, and an unreadable shadow gets questioned before it gets tuned.
+
+See [`shadows.md`](shadows.md) for the full principle. Load [`../../methods/interface/scrim.md`](../../methods/interface/scrim.md) only for the exact scrim default.
 
 ## Design both the map and the landscape
 
@@ -62,6 +74,12 @@ See [`map-and-landscape.md`](map-and-landscape.md) for the full principle.
 ## Design for perceived speed
 
 Immediate acknowledgment, stable layout, clear sequencing, and short transitions affect how fast an interface feels. Protect responsiveness before adding visual effects.
+
+## Treat empty and error states as opportunities
+
+Empty states, 404s, and no-network pages are opportunities for a little delight and for user education. Soften the dead end, teach what the state means and what to do next, and let the explanation lead the flourish. The no-network page deserves particular care—I usually invest in a really great animation there, since the person is waiting with nothing to do.
+
+See [`empty-and-error-states.md`](empty-and-error-states.md) for the full principle.
 
 ## Use personal taste as scaffolding
 

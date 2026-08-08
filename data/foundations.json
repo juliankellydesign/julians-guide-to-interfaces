@@ -1,9 +1,11 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.17.0",
+  "version": "0.40.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
+  "role": "scaffold",
+  "scaffoldNote": "Starting values. A design system slotted in alongside the guide overrules these wherever they conflict.",
   "principle": "Everything in an interface should serve a purpose.",
   "content": {
     "default": "direct and informative",
@@ -23,7 +25,10 @@
       "interactiveLabels": {
         "terminalPeriod": false,
         "modalContinuation": "...",
-        "punctuationLikeGlyphsAllowed": ["chevron", "arrow"],
+        "punctuationLikeGlyphsAllowed": [
+          "chevron",
+          "arrow"
+        ],
         "questionMarkUse": "rare; help or support"
       },
       "exclamationPoints": "almost never"
@@ -32,25 +37,49 @@
   "process": {
     "personalTasteAsScaffolding": {
       "purpose": "Reduce decision load by providing meaningful starting constraints.",
-      "examples": ["pet font", "animation style", "music", "personal history"],
+      "examples": [
+        "pet font",
+        "animation style",
+        "music",
+        "personal history"
+      ],
       "mustYieldToContext": true
     },
     "humanJudgment": {
       "principle": "Mathematical systems are tools and imprecise representations of human perception.",
       "feeling": "Question how something feels, but do not discard the feeling.",
-      "contextFactors": ["display characteristics", "human perception", "surrounding content", "cultural context"],
+      "contextFactors": [
+        "display characteristics",
+        "human perception",
+        "surrounding content",
+        "cultural context"
+      ],
       "designFor": "people"
     }
   },
   "typography": {
-    "preferredBaseSizesPx": [16, 17],
+    "preferredBaseSizesPx": [
+      16,
+      17
+    ],
     "defaultBaseSizePx": 17,
     "scale": {
       "name": "major-second",
       "ratio": 1.125,
       "stepsBelow": 3,
       "stepsAbove": 6,
-      "roundedSizesAt17Px": [12, 13, 15, 17, 19, 22, 24, 27, 31, 34]
+      "roundedSizesAt17Px": [
+        12,
+        13,
+        15,
+        17,
+        19,
+        22,
+        24,
+        27,
+        31,
+        34
+      ]
     },
     "tracking": {
       "assumesOpticalSizing": false,
@@ -76,7 +105,11 @@
     },
     "responsiveType": {
       "input": "current computed font size in pixels",
-      "recalculateOn": ["initial render", "font load", "responsive size change"],
+      "recalculateOn": [
+        "initial render",
+        "font load",
+        "responsive size change"
+      ],
       "trackingBehavior": "Recalculate the tracking curve from the current rendered size.",
       "lineHeight": {
         "rawFormula": "renderedSize * lineHeightRatio",
@@ -98,17 +131,39 @@
       "reversedButtonLabelMinimum": "semibold",
       "strongAttention": "bold",
       "midStringChangeOnlyFor": "interactivity",
-      "adaptTo": ["design system", "brand", "typeface"]
+      "adaptTo": [
+        "design system",
+        "brand",
+        "typeface"
+      ]
     },
     "opticalAdjustmentAllowed": true
   },
   "color": {
     "space": "oklch",
     "grayScale": {
-      "stops": [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000],
+      "stops": [
+        0,
+        50,
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900,
+        950,
+        1000
+      ],
       "white": {
         "stop": 0,
-        "oklch": [1, 0, 0],
+        "oklch": [
+          1,
+          0,
+          0
+        ],
         "pureWhite": true
       },
       "black": {
@@ -141,7 +196,8 @@
         "strongBorder": 300,
         "mutedText": 600,
         "primaryText": 1000,
-        "darkSurface": 1000
+        "darkSurface": 1000,
+        "diagramAccent": "blue 500; diagrams only, interface chrome stays pure gray"
       },
       "perceptualReviewRequired": true
     },
@@ -154,41 +210,324 @@
         "y2": 0.6
       },
       "note": "A useful starting point; customize when context requires it."
+    },
+    "colorScales": {
+      "sharesGrayScaleStops": true,
+      "sharesGrayScaleEndpoints": true,
+      "sharesGrayScaleLightness": false,
+      "hueConstantPerScale": true,
+      "peakChroma": 0.16,
+      "gamut": "srgb",
+      "gamutClampFraction": 0.95,
+      "curveInput": "stop / 1000",
+      "lightnessCurve": {
+        "type": "cubic-bezier",
+        "controlPoints": {
+          "x1": 0.5,
+          "y1": 0.3,
+          "x2": 0.6,
+          "y2": 0.5
+        },
+        "note": "Shared by all six saturated scales. Holds midtones lighter than the gray curve because sRGB chroma peaks near L 0.6 to 0.75."
+      },
+      "lightnessByStop": {
+        "0": 1,
+        "50": 0.97103,
+        "100": 0.94102,
+        "200": 0.87712,
+        "300": 0.80638,
+        "400": 0.72628,
+        "500": 0.63419,
+        "600": 0.52906,
+        "700": 0.41332,
+        "800": 0.29211,
+        "900": 0.17012,
+        "950": 0.10973,
+        "1000": 0.05
+      },
+      "chromaArch": {
+        "type": "cubic-bezier",
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          1,
+          0
+        ],
+        "controlPoints": {
+          "x1": 0.3333,
+          "y1": 1.3333,
+          "x2": 0.6667,
+          "y2": 1.3333
+        },
+        "evaluatesTo": "4 * t * (1 - t)"
+      },
+      "chromaFormula": "min(peakChroma * 4 * t * (1 - t), gamutClampFraction * maxSrgbChroma(lightness, hue))",
+      "scales": {
+        "blue": {
+          "hue": 250,
+          "chromaByStop": {
+            "0": 0,
+            "50": 0.0135,
+            "100": 0.0278,
+            "200": 0.0594,
+            "300": 0.0962,
+            "400": 0.1403,
+            "500": 0.16,
+            "600": 0.1423,
+            "700": 0.1111,
+            "800": 0.0786,
+            "900": 0.0458,
+            "950": 0.0295,
+            "1000": 0
+          }
+        },
+        "red": {
+          "hue": 28,
+          "chromaByStop": {
+            "0": 0,
+            "50": 0.0135,
+            "100": 0.0282,
+            "200": 0.0621,
+            "300": 0.1047,
+            "400": 0.1536,
+            "500": 0.16,
+            "600": 0.1536,
+            "700": 0.1344,
+            "800": 0.1024,
+            "900": 0.0576,
+            "950": 0.0304,
+            "1000": 0
+          }
+        },
+        "orange": {
+          "hue": 65,
+          "chromaByStop": {
+            "0": 0,
+            "50": 0.0182,
+            "100": 0.0378,
+            "200": 0.0825,
+            "300": 0.1344,
+            "400": 0.1536,
+            "500": 0.1352,
+            "600": 0.1128,
+            "700": 0.0881,
+            "800": 0.0623,
+            "900": 0.0363,
+            "950": 0.0234,
+            "1000": 0
+          }
+        },
+        "yellow": {
+          "hue": 100,
+          "chromaByStop": {
+            "0": 0,
+            "50": 0.0304,
+            "100": 0.0576,
+            "200": 0.1024,
+            "300": 0.1344,
+            "400": 0.1434,
+            "500": 0.1253,
+            "600": 0.1045,
+            "700": 0.0816,
+            "800": 0.0577,
+            "900": 0.0336,
+            "950": 0.0217,
+            "1000": 0
+          }
+        },
+        "purple": {
+          "hue": 305,
+          "chromaByStop": {
+            "0": 0,
+            "50": 0.0162,
+            "100": 0.0333,
+            "200": 0.0713,
+            "300": 0.1159,
+            "400": 0.1536,
+            "500": 0.16,
+            "600": 0.1536,
+            "700": 0.1344,
+            "800": 0.1024,
+            "900": 0.0576,
+            "950": 0.0304,
+            "1000": 0
+          }
+        },
+        "green": {
+          "hue": 145,
+          "chromaByStop": {
+            "0": 0,
+            "50": 0.0304,
+            "100": 0.0576,
+            "200": 0.1024,
+            "300": 0.1344,
+            "400": 0.1536,
+            "500": 0.16,
+            "600": 0.1536,
+            "700": 0.1235,
+            "800": 0.0873,
+            "900": 0.0508,
+            "950": 0.0304,
+            "1000": 0
+          }
+        }
+      },
+      "perceptualReviewRequired": true
+    },
+    "transparentScales": {
+      "basis": "Generated alongside the gray scale; blacks are built from gray 1000, never pure black.",
+      "compositingSpace": "gamma-encoded sRGB, as browsers composite rgba",
+      "alphaWhiteFormula": "(s(stop) - s(1000)) / (1 - s(1000))",
+      "alphaBlackFormula": "(1 - s(stop)) / (1 - s(1000))",
+      "alphasSumToOne": true,
+      "alphaWhiteByStop": {
+        "0": 1,
+        "50": 0.962,
+        "100": 0.919,
+        "200": 0.819,
+        "300": 0.704,
+        "400": 0.578,
+        "500": 0.449,
+        "600": 0.326,
+        "700": 0.213,
+        "800": 0.115,
+        "900": 0.032,
+        "950": 0.009,
+        "1000": 0
+      },
+      "alphaBlackByStop": {
+        "0": 0,
+        "50": 0.038,
+        "100": 0.081,
+        "200": 0.181,
+        "300": 0.296,
+        "400": 0.422,
+        "500": 0.551,
+        "600": 0.674,
+        "700": 0.787,
+        "800": 0.885,
+        "900": 0.968,
+        "950": 0.991,
+        "1000": 1
+      },
+      "referenceBackgrounds": {
+        "whites": "gray 1000",
+        "blacks": "white"
+      },
+      "uses": [
+        "scrims",
+        "overlays on media",
+        "borders over imagery"
+      ]
     }
   },
   "layout": {
     "gridPx": 2,
     "largeSpacingThresholdPx": 20,
     "largeSpacingGridPx": 4,
+    "spacingLadder": {
+      "px": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        40,
+        48,
+        56,
+        64,
+        80,
+        96,
+        112,
+        128
+      ],
+      "stepBands": [
+        {
+          "stepPx": 2,
+          "throughPx": 12
+        },
+        {
+          "stepPx": 4,
+          "throughPx": 32
+        },
+        {
+          "stepPx": 8,
+          "throughPx": 64
+        },
+        {
+          "stepPx": 16,
+          "throughPx": 128
+        }
+      ],
+      "extendRule": "Continue doubling the step past 128.",
+      "hairlinePx": 1,
+      "hairlineUse": "Borders, dividers, and optical nudges; not layout spacing.",
+      "offLadderValues": "Recorded optical corrections on the grid only."
+    },
     "opticalCompensation": true,
     "rhythm": {
       "standardizeFirst": true,
-      "elements": ["baselines", "grids", "tokens", "type sizes", "spacing", "repeated structures"]
+      "elements": [
+        "baselines",
+        "grids",
+        "tokens",
+        "type sizes",
+        "spacing",
+        "repeated structures"
+      ]
     },
     "swing": {
       "definition": "A limited, purposeful break from an established rhythm.",
-      "purposes": ["interrupt monotony", "restore attention", "communicate importance or change"],
-      "appliesAcross": ["layout", "typography", "color", "motion"],
+      "purposes": [
+        "interrupt monotony",
+        "restore attention",
+        "communicate importance or change"
+      ],
+      "appliesAcross": [
+        "layout",
+        "typography",
+        "color",
+        "motion"
+      ],
       "reasonRequired": true
     }
   },
   "interface": {
     "controlSizes": {
       "mouse": {
-        "preferredBaseHeightsPx": [24, 28],
+        "preferredBaseHeightsPx": [
+          24,
+          28
+        ],
         "powerUserBaseHeightPx": 24,
         "consumerBaseHeightPx": 28,
         "comfortableMinimumHeightPx": 20,
         "necessaryMinimumHeightPx": 16,
         "aboveDefaultUseSparingly": true,
-        "largeControlExamples": ["highlighted input", "marketing action", "onboarding action"],
+        "largeControlExamples": [
+          "highlighted input",
+          "marketing action",
+          "onboarding action"
+        ],
         "largeSearchRequiresSingleVisibleSearch": true
       },
       "touch": {
         "minimumTargetSizePx": 44,
         "minimumVisibleInteractiveAffordancePx": 24,
         "visibleAffordanceMayBeSmallerThanTarget": true,
-        "exampleLargeSizesPx": [64, 72],
+        "exampleLargeSizesPx": [
+          64,
+          72
+        ],
         "hardMaximumSizePx": null,
         "adjacentTargetsMustRemainDistinct": true,
         "overlappingTargetsAllowed": false
@@ -196,6 +535,39 @@
     },
     "cornerRadii": {
       "basis": "personal taste",
+      "scale": {
+        "px": [
+          0,
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32
+        ],
+        "stepBands": [
+          {
+            "stepPx": 2,
+            "throughPx": 12
+          },
+          {
+            "stepPx": 4,
+            "throughPx": 32
+          }
+        ],
+        "extendRule": "Continue doubling the step past 32: 40, 48, 56, 64.",
+        "endpoints": {
+          "square": 0,
+          "full": "Arbitrarily large radius; resolves to half the element's smaller dimension for pills and circles."
+        },
+        "nestedInnerRadiiMayLeaveScale": true
+      },
       "nestedFormula": "innerRadiusPx = outerRadiusPx - insetPx",
       "example": {
         "outerRadiusPx": 32,
@@ -207,6 +579,58 @@
       "largeOuterRadiiRequireMoreConcentricity": true,
       "smallRadiiAllowLooserMatching": true,
       "opticalAdjustmentAllowed": true
+    },
+    "buttons": {
+      "sizesPx": {
+        "xs": 24,
+        "s": 32,
+        "m": 40,
+        "l": 48,
+        "xl": 56
+      },
+      "sizeNaming": "t-shirt",
+      "sizeRangeIsAlarm": "Needing a size outside the t-shirt range signals too many sizes.",
+      "styles": {
+        "primary": "highlight color",
+        "secondary": "gray",
+        "tertiary": "outlined or text only"
+      },
+      "styleRangeIsAlarm": "Needing a Quaternary style signals too many styles.",
+      "onePrimaryPerSurface": true,
+      "webDesktopNudging": "Heights are nudged per screen on web and desktop; a nudge changes a role's value, never adds a role.",
+      "referByName": "Sizes are referred to by name, never numeric value, so the values stay free to change."
+    },
+    "scrim": {
+      "term": "Scrim, from theater: a translucent layer laid over the background content.",
+      "overlay": {
+        "color": "white",
+        "opacityPercent": 20
+      },
+      "implementation": "One overlay element; the content beneath renders untouched.",
+      "pairsWithShadow": true,
+      "drawnFrom": "color.transparentScales.alphaWhiteByStop",
+      "note": "Slight by design; the content beneath stays legible and reads as inactive, not removed."
+    }
+  },
+  "imagery": {
+    "iconography": {
+      "sizesPx": {
+        "workhorse": 20,
+        "sprinkled": [
+          16,
+          24
+        ],
+        "rare": [
+          12,
+          32
+        ]
+      },
+      "frequencyTaper": "The further a size sits from the workhorse, the less often it should appear.",
+      "textPairingsPx": {
+        "20": 16
+      },
+      "pairingRule": "One icon size per text size, held consistent everywhere it appears.",
+      "chevronArrowException": "Chevrons and arrows completing a phrase are tuned optically against the text and may leave the pairing."
     }
   },
   "motion": {

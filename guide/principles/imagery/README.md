@@ -10,7 +10,13 @@ Do not force every icon to behave like a special character from the font. Interf
 
 Carets, chevrons, and certain arrows are different. When they sit inside phrases such as “More” followed by a right chevron or “Website” followed by an up-right arrow, they behave almost like punctuation. Size and position them carefully so they feel integrated with the text.
 
-See [`iconography-and-type.md`](iconography-and-type.md) for the full principle. For control padding patterns, see [`../methods/iconography/control-padding.md`](../methods/iconography/control-padding.md).
+See [`iconography-and-type.md`](iconography-and-type.md) for the full principle. For control padding patterns, see [`../../methods/iconography/control-padding.md`](../../methods/iconography/control-padding.md).
+
+## Icon sizing
+
+Icon sizes follow a tapering frequency: mostly one workhorse size, a few in a second, one or two in a third. Icons that accompany text derive their size from that text, and each pairing holds everywhere it appears—chevrons and arrows excepted, since they tune optically against their phrase.
+
+See [`icon-sizing.md`](icon-sizing.md) for the full principle. Load [`../../methods/iconography/icon-sizes.md`](../../methods/iconography/icon-sizes.md) only when my exact sizes and pairings are needed.
 
 ## Image guidance remains undeveloped
 

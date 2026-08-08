@@ -1,6 +1,7 @@
 ---
 type: method
 prompt: opt-in
+scaffold: true
 ---
 
 # Choose platform motion timing

@@ -6,7 +6,7 @@ This repository is Julian Kelly’s evolving interface-design handbook. Preserve
 
 Do not read the entire repository by default.
 
-1. Read `guide/00-core-principles.md` for the governing philosophy.
+1. Read `guide/principles/00-core-principles.md` for the governing philosophy.
 2. Read `guide/README.md` to choose the relevant layer.
 3. Read `guide/principles/README.md` and only the relevant principle file(s) for the task.
 4. Read `guide/methods/README.md` only when the task requires constructing or replacing a system, applying Julian’s defaults, or retrieving exact values.
@@ -43,7 +43,8 @@ When Julian provides unstructured notes or a stream-of-consciousness explanation
 6. Add or update method Markdown after the principle pass when the note includes a recipe, generated system, or exact default.
 7. After the guide Markdown is complete, reread the updated guide files and use them—not Julian’s original prompt—as the source for website copy, examples, and structured data.
 8. Update structured foundations and the website only from the completed guide documentation.
-9. Preserve uncertainty. Do not complete an unfinished opinion on Julian’s behalf.
+9. Ask follow-up questions while converting a note—especially when it appears incongruous with a documented principle or method. Do not silently harmonize a conflict or pick a side: a resolved contradiction may deliberately revise the older guidance, and an unresolved one is preserved as an open question.
+10. Preserve uncertainty. Do not complete an unfinished opinion on Julian’s behalf.
 
 ## Documentation-first propagation
 
@@ -60,9 +61,15 @@ Once the documentation pass is complete, do not use the original conversational 
 
 ## Principles and methods
 
-Principles explain how Julian approaches and judges interface design. They can guide work without replacing an existing product’s visual system.
+The guide is split into two modules—principles and methods—and each must remain passable to an agent on its own.
 
-Methods explain how Julian constructs a specific system. They contain recipes, numerical defaults, and implementation starting points. Method files use `type: method` and `prompt: opt-in` in their frontmatter.
+Principles explain how Julian approaches and judges interface design and can guide work without replacing an existing product’s visual system. All principle files live under `guide/principles/`, and that directory is the complete principles module.
+
+Methods explain how Julian constructs systems. Together with `data/foundations.json`, they are recipes, scaffold values, and implementation starting points that an agent can execute without reading the principles. Method files use `type: method` and `prompt: opt-in` in their frontmatter. Pass the principles alone for work inside an existing visual system, the methods alone to build from Julian’s starting values, or both for greenfield work in his style.
+
+When a method explicitly lays out a system—the type scale, the gray curve, the ladders, button sizes—its exact values are a scaffold: a starting point, labeled with `scaffold: true` in the method’s frontmatter. A design system slotted in alongside the guide overrules scaffold values wherever they conflict; the principles and the method’s reasoning continue to apply. Never treat a scaffold value as a migration requirement, and never let a scaffold value override the tokens of a design system the user has provided.
+
+Preserve this separability when writing. A principle file must stay understandable without any method, and a method file must stay executable without any principle. Cross-references between modules are pointers for deeper reading, never dependencies. Keep exact values out of principle files, and keep `data/foundations.json` grouped by discipline so a subset can be passed on its own.
 
 - Use principles by default for critique, iteration, and work inside an established interface.
 - Add methods for greenfield work, explicit system-building tasks, or when Julian asks for his preferred procedure or values.

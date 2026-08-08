@@ -6,6 +6,7 @@
     <meta name="description" content="Julian’s evolving guide to purposeful interface design." />
     <meta name="theme-color" content="#ffffff" />
     <title>Julian’s Guide to Interfaces</title>
+    <link rel="preconnect" href="https://jfk.works" crossorigin />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
@@ -31,7 +32,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.17</span>
+        <span>v0.40</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -84,7 +85,7 @@
           <article>
             <span>Opt-in layer</span>
             <h3>Methods</h3>
-            <p>Use when building a new system, deliberately replacing an existing one, or requesting my preferred recipes and exact starting values.</p>
+            <p>Use when building a new system, deliberately replacing an existing one, or requesting my preferred recipes and exact starting values. The scales and token ladders scaffold new work so it gets moving quickly.</p>
             <small>How to construct</small>
           </article>
         </div>
@@ -365,26 +366,36 @@
       <section class="chapter color-system" aria-labelledby="color-title">
         <header class="chapter-header compact">
           <div><span class="chapter-number">03.1</span><span class="chapter-type">Color foundation</span></div>
-          <h2 id="color-title">Build gray scales perceptually</h2>
+          <h2 id="color-title">Build gray and color scales perceptually</h2>
         </header>
         <div class="chapter-intro">
           <p class="lead-copy">Use 13 stops from pure white to near-black</p>
           <p class="body-copy">Use stops 0, 50, 100–900, 950, and 1000. Stop 0 is pure white. Stop 1000 performs the role of black but is never pure black. Use the OKLCH curve as a starting model, then judge the rendered differences on actual displays.</p>
+          <p class="body-copy">The six base color scales—blue, red, orange, yellow, purple, and green—reuse the same stops and endpoints, hold one hue constant, and shape chroma with a cubic Bézier arch clamped to the sRGB gamut. They share their own lightness curve, which holds midtones lighter than the gray curve because sRGB chroma peaks near L 0.6–0.75. Equal stops share equal lightness across all six scales.</p>
         </div>
         <div class="gray-lab lab-panel">
           <div class="curve-panel">
-            <div class="curve-label"><span>Lightness curve</span><code>cubic-bezier(.35, .2, .55, .6)</code></div>
-            <svg id="curve-graph" viewBox="0 0 500 280" role="img" aria-label="Cubic Bézier curve used to distribute the gray scale">
+            <div class="curve-label"><span>Lightness curves</span><span class="curve-codes"><code>gray (.35, .2, .55, .6)</code><code class="saturated">color (.5, .3, .6, .5)</code></span></div>
+            <svg id="curve-graph" viewBox="0 0 500 280" role="img" aria-label="Cubic Bézier curves used to distribute the gray and color scales">
               <g class="curve-grid" aria-hidden="true">
                 <path d="M0 70H500M0 140H500M0 210H500M125 0V280M250 0V280M375 0V280" />
               </g>
               <path class="curve-handles" d="M0 280 L175 224 M275 112 L500 0" />
+              <path class="curve-line saturated" d="M0 280 C250 196 300 140 500 0" />
               <path class="curve-line" d="M0 280 C175 224 275 112 500 0" />
               <circle class="curve-point" cx="175" cy="224" r="6" />
               <circle class="curve-point" cx="275" cy="112" r="6" />
             </svg>
           </div>
           <div class="gray-ramp" id="gray-ramp" aria-label="Generated 13-stop OKLCH gray scale"></div>
+        </div>
+        <div class="color-lab lab-panel">
+          <div class="curve-label"><span>Chroma arch</span><code>chroma = 0.16 × 4t(1 − t), clamped to 95% of sRGB</code></div>
+          <div class="color-ramps" id="color-ramps" aria-label="Generated six-hue 13-stop OKLCH color scales"></div>
+        </div>
+        <div class="alpha-lab lab-panel">
+          <div class="curve-label"><span>Transparent twins</span><code>white α + black α = 1 per stop · seams vanish when the match holds</code></div>
+          <div class="alpha-rows" id="alpha-rows" aria-label="Transparent white and transparent black scales visually matching the opaque grays"></div>
         </div>
       </section>
 
@@ -395,7 +406,7 @@
         </header>
         <div class="chapter-intro">
           <p class="lead-copy">The distance between elements communicates whether they belong together</p>
-          <p class="body-copy">Use a 2px grid for values through 20px and a 4px grid for larger values. Keep repeated relationships consistent, then compensate optically when geometric alignment looks wrong.</p>
+          <p class="body-copy">Use a 2px grid for values through 20px and a 4px grid for larger values. Take working tokens from the spacing ladder, which doubles its step as sizes grow. Keep repeated relationships consistent, then compensate optically when geometric alignment looks wrong.</p>
         </div>
         <div class="rhythm-term lab-panel">
           <span class="eyebrow">Term</span>
@@ -409,6 +420,10 @@
             <span class="eyebrow">Spacing rule</span>
             <div class="grid-statement"><strong>2</strong><span>px grid<br /><i>≤ 20px</i></span><b>→</b><strong>4</strong><span>px grid<br /><i>&gt; 20px</i></span></div>
             <div class="rhythm-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="spacing-ladder-wrap">
+              <span class="eyebrow">Spacing ladder</span>
+              <div class="spacing-ladder" id="spacing-ladder" aria-label="Spacing token ladder from 1 to 128 pixels"></div>
+            </div>
           </div>
           <figure class="optical-demo lab-panel">
             <figcaption><span class="eyebrow">Optical alignment</span><strong>Adjust geometric alignment when needed</strong></figcaption>
@@ -438,6 +453,56 @@
             <span>Rule</span>
             <strong>Use the smallest deviation that communicates the reason</strong>
           </div>
+        </div>
+        <div class="weight-guide lab-panel">
+          <div class="weight-intro">
+            <span class="eyebrow">Visual weight</span>
+            <h3>Concentrate visual weight by importance</h3>
+            <p>Start a design by ranking importance: the most important thing, then the second, then the third. The most important element gets decisively more visual weight—an order of magnitude, not an increment. Size, color, and motion are all sources of weight that add up: a small but brightly colored button can be the loudest element on screen, while a large surface carries weight through area alone and keeps its other sources quiet. Maxing every source on one element leaves it nothing to play against—balance the composition, with white space as a counterweight of its own.</p>
+          </div>
+          <div class="weight-demo">
+            <div class="weight-stage" aria-label="A large quiet content area with a small brightly colored button carrying the most visual weight">
+              <div class="weight-copy" aria-hidden="true"><i style="width:88%"></i><i style="width:76%"></i><i style="width:82%"></i><i style="width:64%"></i><i style="width:71%"></i></div>
+              <button type="button" class="weight-primary">Buy now</button>
+            </div>
+            <p class="morph-rule"><span>Rule</span><strong>Most real estate, quietest voice; least real estate, loudest voice</strong></p>
+          </div>
+        </div>
+        <div class="scroll-under-guide lab-panel">
+          <div class="scroll-under-intro">
+            <span class="eyebrow">Scrolling layers</span>
+            <h3>Offset the padding of scrolling layers</h3>
+            <p>When content scrolls under a fixed element, the two layers should not share the exact same edge padding. On a 402px-wide device, search results padded 16px scroll under nav circles inset 16px—the edges perfectly hit, and the accidental join reads as designed, then breaks. Offset one layer decisively and judge it in motion. Within a single plane, shared edges remain the rule.</p>
+          </div>
+          <div class="scroll-under-compare" aria-label="Equal padding creating an awkward join versus offset padding passing cleanly">
+            <figure>
+              <figcaption><span>Equal padding</span><strong>16 under 16—the edges kiss</strong></figcaption>
+              <div class="device-mock same">
+                <b class="join-flag" aria-hidden="true"></b>
+                <div class="mock-nav" aria-hidden="true"><i></i><i></i></div>
+                <div class="mock-card">Search result scrolling under the nav</div>
+              </div>
+            </figure>
+            <figure>
+              <figcaption><span>Offset padding</span><strong>16 under 24—the edges pass</strong></figcaption>
+              <div class="device-mock offset">
+                <div class="mock-nav" aria-hidden="true"><i></i><i></i></div>
+                <div class="mock-card">Search result scrolling under the nav</div>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <div class="add-style-guide lab-panel">
+          <div class="add-style-intro">
+            <span class="eyebrow">Adding a style</span>
+            <h3>Ask twice before adding a style</h3>
+            <p>A new style gets two questions. The first looks backward and reuses an already-taught pattern; the second designs the addition as a type that earns its future uses. Attention shadows, icon sizes, and color meanings all enforce the same underlying rule in their own disciplines.</p>
+          </div>
+          <div class="add-style-questions">
+            <article><span>01 / Backward</span><strong>Have I seen something similar elsewhere in this interface?</strong><p>Reuse it and strengthen the pattern.</p></article>
+            <article><span>02 / Forward</span><strong>Can the new thing be repurposed elsewhere?</strong><p>Design it as a type, not a one-off.</p></article>
+          </div>
+          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Treatments bind to types, never to instances</strong></p>
         </div>
         <div class="rhythm-meaning lab-panel">
           <div class="rhythm-meaning-intro">
@@ -569,7 +634,7 @@
           <div class="control-size-intro">
             <span class="eyebrow">Method default</span>
             <h3>Size controls for the input method</h3>
-            <p>Mouse input supports dense controls. Touch input requires a reliable finger-sized target even when the visible affordance is smaller.</p>
+            <p>Mouse input supports dense controls. Touch input requires a reliable finger-sized target even when the visible affordance is smaller. Adaptation is an obligation: mobile sizes carried onto desktop feel mushy, and desktop density carried onto touch is hostile. Roles stay constant; values change with the input.</p>
           </div>
           <div class="control-size-platforms">
             <article class="mouse-size-guide">
@@ -653,6 +718,34 @@
             <article><span>0px radius</span><button class="square-action" type="button">Continue <svg class="lucide-icon" aria-hidden="true"><use href="#lucide-arrow-right"></use></svg></button><p>Square controls can work, but borders, fill, labels, or icons may need to carry more of the interaction signal.</p></article>
             <article><span>Rounded control</span><button class="rounded-action" type="button">Continue</button><p>Corner rounding is already familiar as a boundary around an interactive element.</p></article>
           </div>
+          <div class="radius-ladder-wrap">
+            <span class="eyebrow">Radius ladder</span>
+            <div class="radius-ladder" id="radius-ladder" aria-label="Corner radius token ladder from 0 to 32 pixels plus full"></div>
+            <p>Base radii follow the spacing ladder’s scheme, doubling the step as values grow. 0 and full are semantic endpoints: square corners and pills. Nested inner radii come from the concentric formula and may leave the ladder.</p>
+          </div>
+        </div>
+        <div class="shadow-guide lab-panel">
+          <div class="shadow-intro">
+            <span class="eyebrow">Shadows</span>
+            <h3>Use shadows as a tool</h3>
+            <p>Shadows are a tool, not a theme—never all-or-nothing. Hold one meaning per shadow everywhere it applies and leave everything else flat; strokes follow the same selective consistency. A shadow must also read apart from its container: 20% black around a container at 20% lightness lands on the container’s own color, and the interface goes muddy. Tonality can be painterly, but hard edges keep the definition—when the two blend, ask whether the shadow is needed at all.</p>
+          </div>
+          <div class="shadow-uses" aria-label="When an element gets a shadow">
+            <div><span>On top</span><strong>Sheets + modals, with a scrim</strong></div>
+            <div><span>On media</span><strong>Controls over imagery</strong></div>
+            <div><span>Physical</span><strong>Draggable elements</strong></div>
+            <div><span>Attention</span><strong>Applied type-wide</strong></div>
+          </div>
+          <div class="shadow-compare">
+            <figure>
+              <figcaption><span>Blended</span><strong>20% black on a 20-lightness container: muddy</strong></figcaption>
+              <div class="shadow-stage"><div class="shadow-card shadow-muddy">Container</div></div>
+            </figure>
+            <figure>
+              <figcaption><span>Questioned</span><strong>Does it need a shadow at all?</strong></figcaption>
+              <div class="shadow-stage"><div class="shadow-card">Container</div></div>
+            </figure>
+          </div>
         </div>
         <div class="map-landscape-guide lab-panel">
           <div class="map-landscape-intro">
@@ -672,6 +765,62 @@
             <article><span>03</span><strong>Teach and repeat it</strong><p>Show the full meaning first, then keep the abbreviated signal consistent.</p></article>
           </div>
           <p class="map-landscape-rule"><span>Rule</span><strong>Consistency does not make an arbitrary choice universally familiar; it makes the local map learnable</strong></p>
+        </div>
+        <div class="state-guide lab-panel">
+          <div class="state-intro">
+            <span class="eyebrow">Empty and error states</span>
+            <h3>Treat dead ends as opportunities</h3>
+            <p>Empty states, 404s, and no-network pages can offer a little delight and teach how the product works. The explanation leads; the flourish softens the moment. The no-network page deserves particular care—the person is waiting with nothing to do, so I usually invest in a really great animation there.</p>
+          </div>
+          <div class="state-examples" aria-label="An empty state, a 404 page, and a no-network page designed deliberately">
+            <article>
+              <span>Empty state</span>
+              <div class="state-card">
+                <strong>No projects yet</strong>
+                <p>Projects you create will appear here.</p>
+                <button type="button">New project</button>
+              </div>
+              <p>Teach what will fill the space and how to fill it.</p>
+            </article>
+            <article>
+              <span>404</span>
+              <div class="state-card">
+                <b class="state-404">404</b>
+                <p>This page doesn’t exist.</p>
+                <a href="#top">Back to home</a>
+              </div>
+              <p>Explain that the destination is gone and offer a way back.</p>
+            </article>
+            <article>
+              <span>No network</span>
+              <div class="state-card">
+                <div class="state-rings" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+                <strong>You’re offline</strong>
+                <p>We’ll reconnect automatically.</p>
+              </div>
+              <p>The wait can absorb a really great animation. Reduced motion is respected.</p>
+            </article>
+          </div>
+        </div>
+        <div class="button-scaffold lab-panel">
+          <div class="button-scaffold-intro">
+            <span class="eyebrow">Token scaffold</span>
+            <h3>Five sizes, three styles</h3>
+            <p>Consistent sizing keeps elements on shared keylines and out of each other’s way; consistent color keeps meaning attached to emphasis. My button scaffold: heights 24, 32, 40, 48, 56—XS through XL—and Primary, Secondary, Tertiary styles. The finite ranges are the alarm: needing a sixth size or a Quaternary style means too many variants. On web and desktop the heights get nudged to fit the screen—a nudge changes a value, never adds a role. A slotted-in design system overrules these values.</p>
+          </div>
+          <div class="button-sizes" aria-label="Five button sizes from 24 to 56 pixels aligned on a shared keyline">
+            <button type="button" style="height:24px">XS · 24</button>
+            <button type="button" style="height:32px">S · 32</button>
+            <button type="button" style="height:40px">M · 40</button>
+            <button type="button" style="height:48px">L · 48</button>
+            <button type="button" style="height:56px">XL · 56</button>
+          </div>
+          <div class="button-styles" aria-label="Primary, secondary, and tertiary button styles">
+            <button type="button" class="btn-primary">Primary</button>
+            <button type="button" class="btn-secondary">Secondary</button>
+            <button type="button" class="btn-tertiary">Tertiary</button>
+          </div>
+          <p class="morph-rule"><span>Rule</span><strong>Needing Quaternary means you’re too far out in the woods</strong></p>
         </div>
         <div class="taste-scaffold lab-panel">
           <div>
@@ -753,6 +902,24 @@
             </div>
           </figure>
         </div>
+        <div class="icon-taper-guide lab-panel">
+          <div class="icon-taper-intro">
+            <span class="eyebrow">Icon sizes</span>
+            <h3>Mostly 20, tapering off</h3>
+            <p>Icon sizes follow a tapering frequency: mostly one workhorse size, a few in a second, one or two in a third. I use 20 for most icons, sprinkle in 16 and 24, and keep 12 and 32 rare. An icon that accompanies text derives its size from that text and holds the pairing everywhere—a 20 icon always goes with 16 text—unless it’s a chevron or arrow being tuned optically against its phrase.</p>
+          </div>
+          <div class="icon-taper-row" aria-label="Icon sizes 12 through 32 with tapering frequency">
+            <div><svg class="lucide-icon" style="width:12px;height:12px" aria-hidden="true"><use href="#lucide-search"></use></svg><span>12</span><small>Rare</small></div>
+            <div><svg class="lucide-icon" style="width:16px;height:16px" aria-hidden="true"><use href="#lucide-search"></use></svg><span>16</span><small>Sprinkled</small></div>
+            <div class="workhorse-size"><svg class="lucide-icon" style="width:20px;height:20px" aria-hidden="true"><use href="#lucide-search"></use></svg><span>20</span><small>Mostly</small></div>
+            <div><svg class="lucide-icon" style="width:24px;height:24px" aria-hidden="true"><use href="#lucide-search"></use></svg><span>24</span><small>Sprinkled</small></div>
+            <div><svg class="lucide-icon" style="width:32px;height:32px" aria-hidden="true"><use href="#lucide-search"></use></svg><span>32</span><small>Rare</small></div>
+          </div>
+          <div class="icon-pairing">
+            <span class="pairing-sample"><svg class="lucide-icon" style="width:20px;height:20px" aria-hidden="true"><use href="#lucide-search"></use></svg><b>Search settings</b></span>
+            <small>A 20 icon with 16 text, held consistent everywhere the pair appears</small>
+          </div>
+        </div>
       </section>
 
       <section class="chapter motion" id="motion" aria-labelledby="motion-title">
@@ -762,7 +929,7 @@
         </header>
         <div class="chapter-intro">
           <p class="lead-copy">Keep web motion under 200ms in most cases</p>
-          <p class="body-copy">Touch interfaces can use slower motion when it supports direct manipulation and continuity. In every case, motion should explain a change without making the interface feel slow.</p>
+          <p class="body-copy">Touch interfaces can use slower motion when it supports direct manipulation and continuity. In every case, motion should explain a change without making the interface feel slow. Adapting is an obligation: touch timing carried onto desktop reads as mushy.</p>
         </div>
         <div class="motion-lab lab-panel">
           <div class="motion-track web-motion">
@@ -774,6 +941,39 @@
             <button type="button" data-motion="touch"><span>Try it</span><i aria-hidden="true"></i></button>
           </div>
           <p class="performance-rule"><span>Performance</span><strong>Protect responsiveness before adding motion</strong></p>
+          <p class="performance-rule"><span>Input fidelity</span><strong>The fidelity of the input must match the user interface</strong></p>
+        </div>
+        <div class="morph-guide lab-panel">
+          <div class="morph-intro">
+            <span class="eyebrow">Continuous transitions</span>
+            <h3>Continuously transition only between elements that do the same thing</h3>
+            <p>A continuous transition communicates that an element is the same—it is just moving, growing, or changing form. The floating chip and the reply bar are one object: tapping either begins a reply that refines the search, so the chip becomes the bar. The tab bar does something different, so no transition connects it to the composer—it makes room by moving out of the way, staying itself the whole time. The tab bar and the composer are the same size, so static designs could never explain how one replaces the other; the chip’s change in size is what makes the transition legible.</p>
+          </div>
+          <div class="morph-demo">
+            <div class="morph-stage" aria-label="A floating chip morphing into the reply bar while the tab bar slides out of the same position">
+              <div class="morph-tabbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <div class="morph-el"><span>Refine search</span></div>
+            </div>
+            <p class="morph-rule"><span>Rule</span><strong>The chip becomes the composer because they do the same thing; the tab bar just moves out of the way</strong></p>
+          </div>
+        </div>
+        <div class="level-guide lab-panel">
+          <div class="level-intro">
+            <span class="eyebrow">Transition levels</span>
+            <h3>Animate the level that changes</h3>
+            <p>A tab switch fades through with a small x translation, giving sibling tabs a spatial relationship. The search bar searches the whole app, so it does not fade or move when the tab changes—it sits at a level above the content, just like the tab bar. What moves reads as content; what stays reads as structure.</p>
+          </div>
+          <div class="level-demo">
+            <div class="level-stage" aria-label="Tab content fading through with a horizontal translation while the search bar and tab bar stay still">
+              <div class="level-search" aria-hidden="true"><b></b><span>Search everything</span></div>
+              <div class="level-content" aria-hidden="true">
+                <div class="level-page page-a"><i style="width:72%"></i><i style="width:88%"></i><i style="width:64%"></i></div>
+                <div class="level-page page-b"><i style="width:84%"></i><i style="width:58%"></i><i style="width:76%"></i></div>
+              </div>
+              <div class="level-tabs" aria-hidden="true"><u></u><i></i><i></i><i></i><i></i></div>
+            </div>
+            <p class="morph-rule"><span>Rule</span><strong>The search bar doesn’t move because it doesn’t belong to the tab</strong></p>
+          </div>
         </div>
         <div class="tempo-lab lab-panel">
           <div class="tempo-intro">

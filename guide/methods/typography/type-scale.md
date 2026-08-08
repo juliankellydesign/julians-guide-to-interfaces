@@ -1,6 +1,7 @@
 ---
 type: method
 prompt: opt-in
+scaffold: true
 ---
 
 # Generate a type scale
@@ -28,7 +29,7 @@ Starting at 17px and rounding to whole pixels produces:
 | Base | 17 |
 | Larger | 19, 22, 24, 27, 31, 34 |
 
-The scale is deliberately restrained. Interface hierarchy rarely needs dramatic jumps between every level.
+The scale is deliberately restrained. Interface hierarchy rarely needs dramatic jumps between every level. A step that looks small as a height change still produces a much larger change in occupied area, because text boxes are almost always wider than they are tall.
 
 ## Derive tracking from the same steps
 

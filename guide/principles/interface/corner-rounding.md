@@ -22,7 +22,7 @@ This relationship matters less at small radii. A subtle corner does not call eno
 
 The calculated concentric radius is a scaffold. The nested element’s size, border, fill, surrounding content, and visual weight can make a nearby value look better.
 
-Use the formula to establish the relationship, then judge the rendered corners. See [`../methods/interface/nested-corner-radii.md`](../methods/interface/nested-corner-radii.md) for the calculation.
+Use the formula to establish the relationship, then judge the rendered corners. See [`../../methods/interface/nested-corner-radii.md`](../../methods/interface/nested-corner-radii.md) for the calculation, and [`../../methods/interface/corner-radius-scale.md`](../../methods/interface/corner-radius-scale.md) for my ladder of starting radii when constructing a radius system.
 
 ## Working rules
 

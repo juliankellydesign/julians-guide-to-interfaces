@@ -43,7 +43,7 @@ Choose a capitalization and punctuation scheme and apply it consistently through
 
 Punctuation is part of the interaction language. It can complete a statement, indicate that an action has more steps, or frame a route to help. Do not add it as decoration.
 
-When establishing or changing an interface writing system, use [`../methods/content/capitalization-and-punctuation.md`](../methods/content/capitalization-and-punctuation.md) for my default scheme.
+When establishing or changing an interface writing system, use [`../methods/content/capitalization-and-punctuation.md`](../../methods/content/capitalization-and-punctuation.md) for my default scheme.
 
 ## Use each dash by function
 

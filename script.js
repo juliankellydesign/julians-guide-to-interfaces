@@ -39,8 +39,8 @@ const GRAY_CURVE = {
   maximumStop: 1000,
   lightest: 1,
   darkest: 0.05,
-  chroma: 0.008,
-  hue: 95
+  chroma: 0,
+  hue: 0
 };
 
 const typeScaleElement = document.querySelector("#type-scale");
@@ -206,17 +206,17 @@ function cubicCoordinate(t, firstHandle, secondHandle) {
   return 3 * inverse ** 2 * t * firstHandle + 3 * inverse * t ** 2 * secondHandle + t ** 3;
 }
 
-function solveCurveAtX(x) {
+function solveCurveAtX(x, curve = GRAY_CURVE) {
   let low = 0;
   let high = 1;
   let t = x;
   for (let index = 0; index < 20; index += 1) {
     t = (low + high) / 2;
-    const estimate = cubicCoordinate(t, GRAY_CURVE.x1, GRAY_CURVE.x2);
+    const estimate = cubicCoordinate(t, curve.x1, curve.x2);
     if (estimate < x) low = t;
     else high = t;
   }
-  return cubicCoordinate(t, GRAY_CURVE.y1, GRAY_CURVE.y2);
+  return cubicCoordinate(t, curve.y1, curve.y2);
 }
 
 function renderGrayRamp() {
@@ -240,6 +240,99 @@ function renderGrayRamp() {
     return swatch;
   });
   ramp.replaceChildren(...swatches);
+}
+
+const COLOR_SCALES = {
+  peakChroma: 0.16,
+  gamutClampFraction: 0.95,
+  lightnessCurve: { x1: 0.5, y1: 0.3, x2: 0.6, y2: 0.5 },
+  hues: { blue: 250, red: 28, orange: 65, yellow: 100, purple: 305, green: 145 }
+};
+
+function oklchToLinearSrgb(lightness, chroma, hueDegrees) {
+  const hue = (hueDegrees * Math.PI) / 180;
+  const a = chroma * Math.cos(hue);
+  const b = chroma * Math.sin(hue);
+  const long = (lightness + 0.3963377774 * a + 0.2158037573 * b) ** 3;
+  const medium = (lightness - 0.1055613458 * a - 0.0638541728 * b) ** 3;
+  const short = (lightness - 0.0894841775 * a - 1.291485548 * b) ** 3;
+  return [
+    4.0767416621 * long - 3.3077115913 * medium + 0.2309699292 * short,
+    -1.2684380046 * long + 2.6097574011 * medium - 0.3413193965 * short,
+    -0.0041960863 * long - 0.7034186147 * medium + 1.707614701 * short
+  ];
+}
+
+function maxSrgbChroma(lightness, hueDegrees) {
+  let low = 0;
+  let high = 0.5;
+  for (let index = 0; index < 32; index += 1) {
+    const middle = (low + high) / 2;
+    const inGamut = oklchToLinearSrgb(lightness, middle, hueDegrees).every((channel) => channel >= -0.000001 && channel <= 1.000001);
+    if (inGamut) low = middle;
+    else high = middle;
+  }
+  return low;
+}
+
+function renderColorRamps() {
+  const ramps = document.querySelector("#color-ramps");
+  const rows = Object.entries(COLOR_SCALES.hues).map(([name, hue]) => {
+    const row = document.createElement("div");
+    row.className = "color-scale-row";
+    const label = document.createElement("span");
+    label.className = "color-scale-name";
+    label.innerHTML = `<span>${name.toUpperCase()}</span><span>H ${hue}</span>`;
+    const swatches = document.createElement("div");
+    swatches.className = "color-scale-swatches";
+    GRAY_CURVE.stops.forEach((stop) => {
+      const position = stop / GRAY_CURVE.maximumStop;
+      const isWhite = stop === 0;
+      const isBlack = stop === GRAY_CURVE.maximumStop;
+      const generatedLightness = GRAY_CURVE.lightest - solveCurveAtX(position, COLOR_SCALES.lightnessCurve) * (GRAY_CURVE.lightest - GRAY_CURVE.darkest);
+      const lightness = isWhite ? GRAY_CURVE.lightest : isBlack ? GRAY_CURVE.darkest : generatedLightness;
+      const arch = 4 * position * (1 - position);
+      const chroma = Math.min(COLOR_SCALES.peakChroma * arch, COLOR_SCALES.gamutClampFraction * maxSrgbChroma(lightness, hue));
+      const swatch = document.createElement("i");
+      swatch.style.background = `oklch(${lightness} ${chroma.toFixed(4)} ${hue})`;
+      swatch.title = `${name} ${stop} · oklch(${lightness} ${chroma.toFixed(4)} ${hue})`;
+      swatches.append(swatch);
+    });
+    row.append(label, swatches);
+    return row;
+  });
+  ramps.replaceChildren(...rows);
+}
+
+const SPACING_LADDER = [1, 2, 4, 6, 8, 10, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 96, 112, 128];
+const RADIUS_LADDER = [0, 1, 2, 4, 6, 8, 10, 12, 16, 20, 24, 28, 32];
+
+function renderSpacingLadder() {
+  const ladder = document.querySelector("#spacing-ladder");
+  const rows = SPACING_LADDER.map((value) => {
+    const row = document.createElement("div");
+    const bar = document.createElement("i");
+    bar.style.width = `${value}px`;
+    const label = document.createElement("span");
+    label.textContent = value;
+    row.append(bar, label);
+    return row;
+  });
+  ladder.replaceChildren(...rows);
+}
+
+function renderRadiusLadder() {
+  const ladder = document.querySelector("#radius-ladder");
+  const tiles = RADIUS_LADDER.map((value) => {
+    const tile = document.createElement("div");
+    tile.style.borderRadius = `${value}px`;
+    tile.innerHTML = `<span>${value}</span>`;
+    return tile;
+  });
+  const full = document.createElement("div");
+  full.className = "full";
+  full.innerHTML = "<span>FULL</span>";
+  ladder.replaceChildren(...tiles, full);
 }
 
 const menuButton = document.querySelector(".menu-button");
@@ -284,7 +377,62 @@ document.querySelectorAll("[data-motion]").forEach((button) => {
 
 renderTypeScale(17);
 renderTrackingScale(17);
+function gammaEncode(value) {
+  const channel = Math.min(1, Math.max(0, value));
+  return channel <= 0.0031308 ? 12.92 * channel : 1.055 * channel ** (1 / 2.4) - 0.055;
+}
+
+function renderAlphaRows() {
+  const wrap = document.querySelector("#alpha-rows");
+  const grayLightness = (stop) => {
+    if (stop === 0) return GRAY_CURVE.lightest;
+    if (stop === GRAY_CURVE.maximumStop) return GRAY_CURVE.darkest;
+    return GRAY_CURVE.lightest - solveCurveAtX(stop / GRAY_CURVE.maximumStop) * (GRAY_CURVE.lightest - GRAY_CURVE.darkest);
+  };
+  const srgbOf = (lightness) => gammaEncode(lightness ** 3);
+  const nearBlack = srgbOf(GRAY_CURVE.darkest);
+  const nearBlackCss = `oklch(${GRAY_CURVE.darkest} ${GRAY_CURVE.chroma} ${GRAY_CURVE.hue})`;
+  const nearBlackRgb = Math.round(nearBlack * 255);
+  const rows = [
+    {
+      label: "Transparent whites over gray 1000",
+      background: nearBlackCss,
+      alphaColor: (alphaWhite) => `rgba(255, 255, 255, ${alphaWhite.toFixed(3)})`
+    },
+    {
+      label: "Transparent blacks over white",
+      background: "#fff",
+      alphaColor: (alphaWhite) => `rgba(${nearBlackRgb}, ${nearBlackRgb}, ${nearBlackRgb}, ${(1 - alphaWhite).toFixed(3)})`
+    }
+  ];
+  const built = rows.map((row) => {
+    const strip = document.createElement("div");
+    strip.className = "alpha-row";
+    const label = document.createElement("span");
+    label.textContent = row.label;
+    const cells = document.createElement("div");
+    cells.className = "alpha-strip";
+    cells.style.background = row.background;
+    GRAY_CURVE.stops.forEach((stop) => {
+      const lightness = grayLightness(stop);
+      const alphaWhite = (srgbOf(lightness) - nearBlack) / (1 - nearBlack);
+      const opaque = stop === 0 ? "oklch(1 0 0)" : `oklch(${lightness} ${GRAY_CURVE.chroma} ${GRAY_CURVE.hue})`;
+      const cell = document.createElement("i");
+      cell.style.background = `linear-gradient(to bottom, ${opaque} 0 50%, ${row.alphaColor(alphaWhite)} 50% 100%)`;
+      cell.title = `${stop} · opaque above, alpha twin below`;
+      cells.append(cell);
+    });
+    strip.append(label, cells);
+    return strip;
+  });
+  wrap.replaceChildren(...built);
+}
+
 renderGrayRamp();
+renderColorRamps();
+renderAlphaRows();
+renderSpacingLadder();
+renderRadiusLadder();
 applyDocumentationTypography();
 
 let typographyFrame;
