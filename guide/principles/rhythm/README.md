@@ -46,7 +46,7 @@ Teach the complete meaning in one clear instance, then preserve the gesture and 
 
 A 1-3-9 ratio sketches a decisive hierarchy: one dominant element, three supporting elements, nine detail elements—one big heading, three smaller headings, nine lines of body text. Each level steps down roughly by a factor of three, so no level can be confused with another. The same ratio may describe surface area, as an exploratory lens.
 
-Use it to judge whether a hierarchy steps down clearly, not to compute values. See [`one-three-nine.md`](one-three-nine.md) for the full principle.
+Treat it as scaffolding: start a composition from the ratio to make early decisions fast, let the content reshape it, and use it to judge whether the hierarchy steps down clearly—never to compute values. See [`one-three-nine.md`](one-three-nine.md) for the full principle.
 
 ## Group actions by scope
 
