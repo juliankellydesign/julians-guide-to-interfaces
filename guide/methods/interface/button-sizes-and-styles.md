@@ -32,6 +32,12 @@ T-shirt sizes are nice here because the vocabulary is finite. If I need to add s
 
 If I have to add Quaternary, I usually know I'm too far out in the woods. The three styles map onto the action hierarchy: one primary action per surface, secondary actions as needed, tertiary for everything that should recede.
 
+## Nudge the values on web and desktop
+
+The five roles are the invariant; the exact heights are not. On web and desktop I often nudge the sizes around to fit the screen better—a denser layout or a wider viewport can pull a role a few pixels off its scaffold value. The mouse base heights in [`control-sizes.md`](control-sizes.md), `24` and `28`, are an example: `28` is a nudged consumer base living inside the same role structure, not a sixth size.
+
+A nudge adjusts a role's value; it does not add a role. The alarm still fires on new names, not new numbers.
+
 ## Choosing within the scaffold
 
 Choose a size by input method and density: the smaller sizes suit dense mouse interfaces, and touch needs its target minimums even when the visible control is smaller. See [`control-sizes.md`](control-sizes.md) for the input-method starting points.
@@ -41,6 +47,7 @@ These values are a scaffold. A design system slotted in alongside the guide over
 ## Working rules
 
 - Use the five t-shirt sizes; treat a needed sixth size as a signal to consolidate.
+- Nudge a role's height on web and desktop to fit the screen; a nudge changes a value, never adds a role.
 - Use Primary, Secondary, and Tertiary; treat a needed Quaternary the same way.
 - Keep one Primary action per surface, consistent with the action hierarchy.
 - Choose sizes within the range by input method and density.
