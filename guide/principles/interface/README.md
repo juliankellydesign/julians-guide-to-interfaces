@@ -41,6 +41,12 @@ Mouse input supports denser controls than touch input. Choose control size accor
 
 See [`interactive-control-sizing.md`](interactive-control-sizing.md) for the principle. Load [`../methods/interface/control-sizes.md`](../../methods/interface/control-sizes.md) only when exact starting values are needed.
 
+## Match the interface to the fidelity of the input
+
+Adaptation is an obligation, not an allowance. Desktop products built with mobile values feel mushy—animations too long, buttons too big—because the input got more precise while the interface stayed the same. Control sizes, density, and motion timing should change with input method and screen size; roles, hierarchy, and meaning stay constant.
+
+See [`input-fidelity.md`](input-fidelity.md) for the full principle.
+
 ## Repeat actions when repetition adds meaning
 
 Avoid showing identical controls at the same time when they perform different actions. Use proximity, containers, specific labels, or progressive disclosure to make their context clear. Repeat controls deliberately when the repeated meaning is consistent and teaches a reusable convention.

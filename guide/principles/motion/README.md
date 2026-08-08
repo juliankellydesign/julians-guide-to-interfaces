@@ -38,6 +38,8 @@ Web interactions should feel immediate. The response should acknowledge the acti
 
 Touch-based devices can use slower animation when direct manipulation creates a clear physical model. Distance, gesture velocity, and continuity can justify longer timing.
 
+Adapting is an obligation, not an allowance: touch timing carried onto desktop reads as mushy. The fidelity of the input must match the interface—see [`../interface/input-fidelity.md`](../interface/input-fidelity.md).
+
 For concrete duration defaults, see [`../methods/motion/platform-timing.md`](../../methods/motion/platform-timing.md).
 
 ## Protect performance

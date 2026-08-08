@@ -32,7 +32,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.31</span>
+        <span>v0.32</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -620,7 +620,7 @@
           <div class="control-size-intro">
             <span class="eyebrow">Method default</span>
             <h3>Size controls for the input method</h3>
-            <p>Mouse input supports dense controls. Touch input requires a reliable finger-sized target even when the visible affordance is smaller.</p>
+            <p>Mouse input supports dense controls. Touch input requires a reliable finger-sized target even when the visible affordance is smaller. Adaptation is an obligation: mobile sizes carried onto desktop feel mushy, and desktop density carried onto touch is hostile. Roles stay constant; values change with the input.</p>
           </div>
           <div class="control-size-platforms">
             <article class="mouse-size-guide">
@@ -874,7 +874,7 @@
         </header>
         <div class="chapter-intro">
           <p class="lead-copy">Keep web motion under 200ms in most cases</p>
-          <p class="body-copy">Touch interfaces can use slower motion when it supports direct manipulation and continuity. In every case, motion should explain a change without making the interface feel slow.</p>
+          <p class="body-copy">Touch interfaces can use slower motion when it supports direct manipulation and continuity. In every case, motion should explain a change without making the interface feel slow. Adapting is an obligation: touch timing carried onto desktop reads as mushy.</p>
         </div>
         <div class="motion-lab lab-panel">
           <div class="motion-track web-motion">
@@ -886,6 +886,7 @@
             <button type="button" data-motion="touch"><span>Try it</span><i aria-hidden="true"></i></button>
           </div>
           <p class="performance-rule"><span>Performance</span><strong>Protect responsiveness before adding motion</strong></p>
+          <p class="performance-rule"><span>Input fidelity</span><strong>The fidelity of the input must match the user interface</strong></p>
         </div>
         <div class="morph-guide lab-panel">
           <div class="morph-intro">

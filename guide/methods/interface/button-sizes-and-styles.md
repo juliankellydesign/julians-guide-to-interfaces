@@ -10,6 +10,8 @@ scaffold: true
 
 Use five button sizes—`24`, `32`, `40`, `48`, `56`—named XS, S, M, L, and XL, and three styles: Primary, Secondary, and Tertiary. The ranges are deliberately finite, and the naming is the alarm system: needing a size outside the t-shirt range, or a Quaternary style, is the system telling you it has too many variants.
 
+This scaffold is newer than the others and still settling; expect its values to keep moving.
+
 ## The sizes
 
 | Name | Height |
