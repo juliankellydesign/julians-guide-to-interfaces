@@ -42,6 +42,12 @@ Repeated gestures create rhythm as well as visual consistency. When the same ges
 
 Teach the complete meaning in one clear instance, then preserve the gesture and outcome as it repeats. See [`repetition-builds-meaning.md`](repetition-builds-meaning.md) for the full principle.
 
+## Offset the padding of scrolling layers
+
+When content scrolls under a fixed element, the two layers should not share the exact same edge padding. Coincident edges meet as the content passes—a 16px-padded result hitting a 16px-padded nav button—and the accidental join reads as designed, then breaks. Offset one layer decisively and judge the relationship in motion. Shared edges remain the rule within a single plane.
+
+See [`scroll-under-alignment.md`](scroll-under-alignment.md) for the full principle.
+
 ## Think in 1-3-9
 
 A 1-3-9 ratio sketches a decisive hierarchy: one dominant element, three supporting elements, nine detail elements—one big heading, three smaller headings, nine lines of body text. Each level steps down roughly by a factor of three, so no level can be confused with another. The same ratio may describe surface area, as an exploratory lens.
@@ -60,6 +66,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Use Gestalt principles to judge how spacing and other visual relationships group elements.
 - Make repeated gaps consistent so exceptions carry meaning.
 - Align to shared axes whenever elements should feel related.
+- Offset the edge padding of layers that scroll under each other.
 - Preserve an existing spacing system unless replacing it is part of the task.
 - Apply optical compensation deliberately and document it when encoding a component.
 - Establish a consistent rhythm before introducing variation.

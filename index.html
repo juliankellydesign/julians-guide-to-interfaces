@@ -31,7 +31,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.23</span>
+        <span>v0.24</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -463,6 +463,30 @@
               <article><span>Headings</span><i></i><i></i><i></i></article>
             </div>
             <div class="ratio-count" aria-hidden="true"><span>1</span><b>×3</b><span>3</span><b>×3</b><span>9</span></div>
+          </div>
+        </div>
+        <div class="scroll-under-guide lab-panel">
+          <div class="scroll-under-intro">
+            <span class="eyebrow">Scrolling layers</span>
+            <h3>Offset the padding of scrolling layers</h3>
+            <p>When content scrolls under a fixed element, the two layers should not share the exact same edge padding. On a 402px-wide device, search results padded 16px scroll under nav circles inset 16px—the edges perfectly hit, and the accidental join reads as designed, then breaks. Offset one layer decisively and judge it in motion. Within a single plane, shared edges remain the rule.</p>
+          </div>
+          <div class="scroll-under-compare" aria-label="Equal padding creating an awkward join versus offset padding passing cleanly">
+            <figure>
+              <figcaption><span>Equal padding</span><strong>16 under 16—the edges kiss</strong></figcaption>
+              <div class="device-mock same">
+                <b class="join-flag" aria-hidden="true"></b>
+                <div class="mock-nav" aria-hidden="true"><i></i><i></i></div>
+                <div class="mock-card">Search result scrolling under the nav</div>
+              </div>
+            </figure>
+            <figure>
+              <figcaption><span>Offset padding</span><strong>16 under 24—the edges pass</strong></figcaption>
+              <div class="device-mock offset">
+                <div class="mock-nav" aria-hidden="true"><i></i><i></i></div>
+                <div class="mock-card">Search result scrolling under the nav</div>
+              </div>
+            </figure>
           </div>
         </div>
         <div class="rhythm-meaning lab-panel">
