@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.33.0",
+  "version": "0.34.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -550,7 +550,8 @@
       },
       "styleRangeIsAlarm": "Needing a Quaternary style signals too many styles.",
       "onePrimaryPerSurface": true,
-      "webDesktopNudging": "Heights are nudged per screen on web and desktop; a nudge changes a role's value, never adds a role."
+      "webDesktopNudging": "Heights are nudged per screen on web and desktop; a nudge changes a role's value, never adds a role.",
+      "referByName": "Sizes are referred to by name, never numeric value, so the values stay free to change."
     }
   },
   "imagery": {

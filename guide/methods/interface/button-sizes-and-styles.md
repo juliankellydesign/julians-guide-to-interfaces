@@ -22,7 +22,7 @@ This scaffold is newer than the others and still settling; expect its values to 
 | L | `48px` |
 | XL | `56px` |
 
-T-shirt sizes are nice here because the vocabulary is finite. If I need to add sizes outside that range, I know I've got too many. All five heights land on the spacing ladder, so buttons share their rhythm with the rest of the layout.
+T-shirt sizes are useful shorthand for two reasons. The vocabulary is finite—if I need to add sizes outside that range, I know I've got too many. And names decouple the reference from the value: we don't refer to sizes by their numeric value, so the values can change underneath. A spec that says M doesn't break when M's height nudges. All five heights land on the spacing ladder, so buttons share their rhythm with the rest of the layout.
 
 ## The styles
 
@@ -50,6 +50,7 @@ These values are a scaffold. A design system slotted in alongside the guide over
 
 - Use the five t-shirt sizes; treat a needed sixth size as a signal to consolidate.
 - Nudge a role's height on web and desktop to fit the screen; a nudge changes a value, never adds a role.
+- Refer to sizes by name, never by numeric value, so the values stay free to change.
 - Use Primary, Secondary, and Tertiary; treat a needed Quaternary the same way.
 - Keep one Primary action per surface, consistent with the action hierarchy.
 - Choose sizes within the range by input method and density.

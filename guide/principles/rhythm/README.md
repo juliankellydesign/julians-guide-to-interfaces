@@ -54,11 +54,11 @@ When content scrolls under a fixed element, the two layers should not share the 
 
 See [`scroll-under-alignment.md`](scroll-under-alignment.md) for the full principle.
 
-## Think in 1-3-9
+## Concentrate visual weight by importance
 
-A 1-3-9 ratio sketches a decisive hierarchy: one dominant element, three supporting elements, nine detail elements—one big heading, three smaller headings, nine lines of body text. Each level steps down roughly by a factor of three, so no level can be confused with another. The ratio is a visual shorthand that reads most naturally as area: text boxes are wider than they are tall, so a restrained type-size step still produces a decisive step in area.
+Start a design by ranking importance: the most important thing, then the second, then the third. The most important element gets decisively more visual weight than anything else—an order of magnitude, not an increment—and weight is not size: a small but brightly colored button can be the loudest element on screen. As elements cover more real estate, their prominence decreases; the largest surfaces stay quietest.
 
-Treat it as scaffolding: start a composition from the ratio to make early decisions fast, let the content reshape it, and use it to judge whether the hierarchy steps down clearly—never to compute values. See [`one-three-nine.md`](one-three-nine.md) for the full principle.
+See [`visual-weight.md`](visual-weight.md) for the full principle.
 
 ## Group actions by scope
 
@@ -78,7 +78,8 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Preserve an existing spacing system unless replacing it is part of the task.
 - Apply optical compensation deliberately and document it when encoding a component.
 - Establish a consistent rhythm before introducing variation.
-- Use 1-3-9 as a first proposal for how a hierarchy steps down.
+- Rank importance first, then give the top of the ranking decisively more visual weight.
+- Decrease visual prominence as an element's real estate grows.
 - Use repeated gestures to build stable meaning across comparable contexts.
 - Keep the outcome of a repeated gesture consistent.
 - Group actions only when they share a context, object, or scope.
