@@ -22,6 +22,12 @@ A continuous transition communicates that an element is the same—it is just mo
 
 See [`continuous-transitions.md`](continuous-transitions.md) for the full principle.
 
+## Animate the level that changes
+
+Transitions communicate structure. A tab switch fades through with a small x translation, giving sibling tabs a spatial relationship—while the search bar that searches the whole app, and the tab bar itself, hold still because they sit at a level above the changing content. Stillness communicates scope: what moves reads as content, what stays reads as structure. Animate an element only with its own level's transitions.
+
+See [`transition-levels.md`](transition-levels.md) for the full principle.
+
 ## Respect the platform
 
 ### Web

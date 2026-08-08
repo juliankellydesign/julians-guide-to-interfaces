@@ -44,7 +44,7 @@ Each layer is self-contained so it can be passed to an agent on its own. Three c
 - Rhythm principles cover Gestalt, spacing relationships, alignment, contextual action grouping, repetition that builds meaning, purposeful exceptions, the 1-3-9 proportion lens, and offsetting the padding of layers that scroll under each other. Load the spacing-grid method only when constructing or replacing the spatial system.
 - Content principles explain why capitalization and punctuation should be consistent and functional, including the distinct jobs of em dashes, en dashes, and hyphens. Load the capitalization and punctuation method only when establishing or changing the interface writing system.
 - Find iconography principles under Imagery. Load the control-padding method only when constructing or changing controls.
-- Motion principles cover continuity, causality, responsiveness, accessibility, and continuously transitioning only between elements that do or mean the same thing. Load the timing and animation-scaffold methods only when exact durations or the 48-frame structure are needed.
+- Motion principles cover continuity, causality, responsiveness, accessibility, continuously transitioning only between elements that do or mean the same thing, and animating only the level that changes. Load the timing and animation-scaffold methods only when exact durations or the 48-frame structure are needed.
 
 The prose remains the source of truth. Structured foundations are an opt-in representation of methods.
 
