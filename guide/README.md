@@ -38,6 +38,7 @@ Each layer is self-contained so it can be passed to an agent on its own. Three c
 - Text-alignment principles assume a left-to-right language. Adapt the starting edge and reading flow for other writing directions.
 - Interface principles define how primary, secondary, and tertiary actions communicate priority. Apply that hierarchy through the product’s established control styles.
 - Interface principles also cover sizing controls for mouse and touch input and deciding when repeated actions clarify or confuse. Load the control-size method only when exact numerical starting points are needed.
+- Interface principles also treat empty states, 404s, and no-network pages as opportunities for delight and user education.
 - Corner rounding and interface conventions are principles. Load the radius-scale and nested-radius methods only when constructing or replacing a radius system.
 - Color exists only as methods for now. Load the gray-scale and color-scale methods only when constructing or replacing a color system; the color scales share the gray scale's stops and endpoints but distribute lightness with their own curve.
 - Rhythm principles cover Gestalt, spacing relationships, alignment, contextual action grouping, repetition that builds meaning, purposeful exceptions, and the 1-3-9 proportion lens. Load the spacing-grid method only when constructing or replacing the spatial system.

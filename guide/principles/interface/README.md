@@ -2,7 +2,7 @@
 
 ## In brief
 
-Start with a clear problem or a specific interaction. Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, control size, repetition, corner language, conventions, responsiveness, and perceived speed all communicate how the interface should be used.
+Start with a clear problem or a specific interaction. Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, control size, repetition, corner language, conventions, responsiveness, perceived speed, and deliberate empty and error states all communicate how the interface should be used.
 
 ## Start with the problem or interaction
 
@@ -62,6 +62,12 @@ See [`map-and-landscape.md`](map-and-landscape.md) for the full principle.
 ## Design for perceived speed
 
 Immediate acknowledgment, stable layout, clear sequencing, and short transitions affect how fast an interface feels. Protect responsiveness before adding visual effects.
+
+## Treat empty and error states as opportunities
+
+Empty states, 404s, and no-network pages are opportunities for a little delight and for user education. Soften the dead end, teach what the state means and what to do next, and let the explanation lead the flourish. The no-network page deserves particular care—I usually invest in a really great animation there, since the person is waiting with nothing to do.
+
+See [`empty-and-error-states.md`](empty-and-error-states.md) for the full principle.
 
 ## Use personal taste as scaffolding
 
