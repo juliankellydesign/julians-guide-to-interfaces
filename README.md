@@ -29,7 +29,7 @@ npm run dev
 
 Then open `http://localhost:4173`.
 
-No install step is required. The site uses plain HTML, CSS, and JavaScript, with Karl hosted locally in the repository.
+No install step is required. The site uses plain HTML, CSS, and JavaScript, with Karl loaded from [jfk.works](https://jfk.works) rather than shipped in the repository.
 
 ## Repository map
 
@@ -50,7 +50,6 @@ No install step is required. The site uses plain HTML, CSS, and JavaScript, with
 │   └── methods/              # The applied layer: opt-in recipes and numerical defaults
 ├── data/
 │   └── foundations.json      # Machine-readable tokens, grouped by discipline
-├── fonts/                    # Local Karl font files used by the visual guide
 ├── index.html                # Interactive guide
 ├── styles.css
 └── script.js

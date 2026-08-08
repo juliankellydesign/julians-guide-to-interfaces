@@ -1,83 +1,43 @@
+/* Karl is loaded from jfk.works rather than shipped in this repository.
+   Italic faces are not hosted there; browsers synthesize the few italic spots. */
 @font-face {
   font-family: "Karl";
-  src: url("fonts/KarlST_Regular.otf") format("opentype");
+  src: url("https://jfk.works/karl-regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "Karl";
-  src: url("fonts/KarlST_RegularItalic.otf") format("opentype");
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Karl";
-  src: url("fonts/KarlST_Medium.otf") format("opentype");
+  src: url("https://jfk.works/karl-medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: "Karl";
-  src: url("fonts/KarlST_MediumItalic.otf") format("opentype");
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Karl";
-  src: url("fonts/KarlST_Medium.otf") format("opentype");
+  src: url("https://jfk.works/karl-medium.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
 }
 @font-face {
   font-family: "Karl";
-  src: url("fonts/KarlST_MediumItalic.otf") format("opentype");
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Karl";
-  src: url("fonts/KarlST_Bold.otf") format("opentype");
+  src: url("https://jfk.works/karl-bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: "Karl";
-  src: url("fonts/KarlST_BoldItalic.otf") format("opentype");
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Karl";
-  src: url("fonts/KarlST_Black.otf") format("opentype");
+  src: url("https://jfk.works/karl-black.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
 }
 @font-face {
   font-family: "Karl";
-  src: url("fonts/KarlST_BlackItalic.otf") format("opentype");
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Karl";
-  src: url("fonts/KarlST_BlackItalic.otf") format("opentype");
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Karl";
-  src: url("fonts/KarlST_UltraBlack.otf") format("opentype");
+  src: url("https://jfk.works/karl-ultrablack.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -836,6 +796,23 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .performance-rule { display: flex; justify-content: space-between; gap: 24px; margin: 28px 0 0; }
 .performance-rule span { font: 10px var(--mono); color: var(--signal); text-transform: uppercase; }
 .performance-rule strong { font: 400 24px var(--display); }
+.morph-guide { margin-top: 16px; }
+.morph-intro { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 28px; }
+.morph-intro .eyebrow { grid-column: 1 / -1; }
+.morph-intro h3 { margin: 0; font-size: clamp(24px, 2.5vw, 38px); line-height: 1.08; }
+.morph-intro p { max-width: 560px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.morph-demo { display: flex; flex-direction: column; gap: 16px; padding: 0 28px 28px; }
+.morph-stage { position: relative; height: 132px; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--gray-50); overflow: hidden; }
+.morph-el { position: absolute; left: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; font-size: 11px; font-weight: 600; border: 1px solid var(--ink); animation: morph-cycle 4s cubic-bezier(.3, 0, .2, 1) infinite; }
+.morph-el span { padding: 0 14px; }
+@keyframes morph-cycle {
+  0%, 40% { width: 124px; height: 30px; bottom: 68px; border-radius: 999px; background: var(--ink); color: var(--paper); transform: translateX(-50%); }
+  50%, 90% { width: min(86%, 420px); height: 46px; bottom: 16px; border-radius: 12px; background: var(--paper); color: var(--muted); transform: translateX(-50%); }
+  100% { width: 124px; height: 30px; bottom: 68px; border-radius: 999px; background: var(--ink); color: var(--paper); transform: translateX(-50%); }
+}
+.morph-rule { display: flex; align-items: center; gap: 16px; margin: 0; }
+.morph-rule span { color: var(--signal); font-size: 10px; text-transform: uppercase; }
+.morph-rule strong { font-size: 14px; font-weight: 500; }
 .tempo-lab { margin-top: 16px; }
 .tempo-intro { display: grid; grid-template-columns: .4fr 1fr 1fr; gap: 32px; align-items: start; padding: 28px; border-bottom: 1px solid var(--line); }
 .tempo-intro h3 { margin: 0; font-size: clamp(24px, 2.5vw, 38px); line-height: 1.08; }
@@ -952,7 +929,7 @@ footer a { display: inline-flex; align-items: center; gap: 24px; font-size: 12px
   .figure-examples article, .punctuation-examples article, .alignment-examples article { border-right: 0; border-bottom: 1px solid var(--line); }
   .figure-examples article:last-child, .punctuation-examples article:last-child, .alignment-examples article:last-child { border-bottom: 0; }
   .figure-rule, .punctuation-rule { grid-template-columns: 1fr; }
-  .gray-lab, .rhythm-term, .rhythm-demo, .ratio-guide, .scroll-under-intro, .scroll-under-compare { grid-template-columns: 1fr; }
+  .gray-lab, .rhythm-term, .rhythm-demo, .ratio-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro { grid-template-columns: 1fr; }
   .human-judgment-intro { grid-template-columns: 1fr; }
   .judgment-domains { grid-template-columns: repeat(2, 1fr); }
   .judgment-domains article:nth-child(2) { border-right: 0; }

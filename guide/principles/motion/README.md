@@ -16,6 +16,12 @@ An extra animation must mean something. Useful purposes include:
 
 If motion does not add understanding, it competes with the interaction.
 
+## Morph only between elements that share a meaning
+
+A continuous transition is a claim of identity: when one element morphs into another, the person carries everything the first form meant onto the second. Morph only when the two elements do the same thing or mean the same thing—a floating chip becoming the reply bar it abbreviates. When the arriving element behaves differently, use a fade, push, or replacement instead.
+
+See [`continuous-transitions.md`](continuous-transitions.md) for the full principle.
+
 ## Respect the platform
 
 ### Web
