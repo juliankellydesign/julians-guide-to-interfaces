@@ -20,7 +20,7 @@ This directory is the complete theory layer. It is self-contained: pass it to an
 | [Rhythm](rhythm/README.md) | Layout, grouping, alignment, spatial rhythm | Gestalt, proximity, optical alignment, contextual action grouping, repeated meaning, rhythm, swing, 1-3-9 proportion, scroll-layer offsets |
 | [Interface](interface/README.md) | Product framing and interaction design | Problems, interactions, action hierarchy, input sizing, repeated actions, corner rounding, conventions, perceived speed, empty and error states, personal taste as scaffolding |
 | [Imagery](imagery/README.md) | Iconography, image selection, and art direction | Icons in relation to type; broader image guidance remains undeveloped |
-| [Motion](motion/README.md) | Animation purpose and platform behavior | Continuity, causality, responsiveness, accessibility, morphing only between equivalent elements |
+| [Motion](motion/README.md) | Animation purpose and platform behavior | Continuity, causality, responsiveness, accessibility, continuous transitions only between equivalent elements |
 
 ## Existing interfaces
 
