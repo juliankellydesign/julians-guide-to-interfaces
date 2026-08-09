@@ -56,7 +56,7 @@ See [`adding-styles.md`](adding-styles.md) for the full principle.
 
 ## Keep padding consistent
 
-Margins and padding do different jobs when the screen changes. Padding is part of a component's identity and usually stays consistent across screens; margins, gutters, and layout absorb the change in available space. A padding change reads as a different component—make it deliberately or not at all. Consistency also runs across components: components of the same size share the same padding, so their contents land on the same keylines.
+Margins and padding do different jobs when the screen changes. Padding is part of a component's identity and usually stays consistent across screens; margins, gutters, and layout absorb the change in available space. A padding change reads as a different component—make it deliberately or not at all. Consistency also runs across components: components of the same size share the same padding, so their contents land on the same keylines. Text follows the same rule—same-size text keeps consistent gaps between inline strings and between lines and blocks—with one deliberate asymmetry: headings take more space above than below, so proximity binds them to the content they introduce.
 
 See [`margins-and-padding.md`](margins-and-padding.md) for the full principle.
 
@@ -85,6 +85,8 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Make repeated gaps consistent so exceptions carry meaning.
 - Keep component padding consistent across screens; let margins absorb the change.
 - Give same-size components the same padding so their contents share keylines.
+- Keep gaps between same-size text consistent on both axes.
+- Give headings more space above than below.
 - Size elements from a shared token set so they fall onto shared keylines.
 - Vary size and color only to communicate importance, function, or context.
 - Reuse a similar existing treatment before adding a style, and design new styles for repurposing.
