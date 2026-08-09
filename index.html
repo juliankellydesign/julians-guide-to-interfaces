@@ -32,7 +32,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.43</span>
+        <span>v0.44</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -862,6 +862,24 @@
           </div>
           <p class="morph-rule"><span>Rule</span><strong>Needing Quaternary means you’re too far out in the woods</strong></p>
         </div>
+        <div class="nest-guide lab-panel">
+          <div class="nest-intro">
+            <span class="eyebrow">Musing</span>
+            <h3>Nesting buttons in inputs</h3>
+            <p>An open lean, not a settled principle: I often wonder whether the right move is to nest a button inside an input or have it exist outside. Buttons are best nested inside inputs when they take action on the content within. Nesting is the strongest grouping claim an interface can make—placing a button inside the input’s boundary says this button acts on this content—so a button whose action reaches beyond the input stays outside.</p>
+          </div>
+          <div class="nest-compare">
+            <figure>
+              <figcaption><span>Acts on the content within</span><strong>Nest it</strong></figcaption>
+              <div class="nest-stage"><div class="nest-input"><i style="width:52%"></i><b class="nest-btn">Send</b></div></div>
+            </figure>
+            <figure>
+              <figcaption><span>Acts beyond the input</span><strong>Keep it outside</strong></figcaption>
+              <div class="nest-stage"><div class="nest-row"><div class="nest-input"><i style="width:60%"></i></div><b class="nest-btn nest-outside">Filters</b></div></div>
+            </figure>
+          </div>
+          <p class="morph-rule add-style-rule"><span>Musing</span><strong>Nested means “this button acts on this content”</strong></p>
+        </div>
         <div class="taste-scaffold lab-panel">
           <div>
             <span class="eyebrow">Decision scaffolding</span>
@@ -1014,6 +1032,24 @@
             </div>
             <p class="morph-rule"><span>Rule</span><strong>The search bar doesn’t move because it doesn’t belong to the tab</strong></p>
           </div>
+        </div>
+        <div class="press-guide lab-panel">
+          <div class="press-intro">
+            <span class="eyebrow">Press states</span>
+            <h3>Give controls a juicy press state</h3>
+            <p>A press state is the interface acknowledging contact, and it is so often overlooked. It matters most on touch, where there is no hover—press is the only feedback between intent and result, and a control without one feels dead under the finger. The response is immediate; the juice comes from the quality of the motion, not its duration.</p>
+          </div>
+          <div class="press-compare">
+            <figure>
+              <figcaption><span>Overlooked</span><strong>No press state—dead under the finger</strong></figcaption>
+              <div class="press-stage" aria-label="A touch point lands on a button that does not respond"><span class="press-dot" aria-hidden="true"></span><button type="button" class="press-btn press-none">Send</button></div>
+            </figure>
+            <figure>
+              <figcaption><span>Juicy</span><strong>The surface yields under pressure</strong></figcaption>
+              <div class="press-stage" aria-label="A touch point lands on a button that scales down to 0.9 while pressed"><span class="press-dot" aria-hidden="true"></span><button type="button" class="press-btn press-juicy">Send</button></div>
+            </figure>
+          </div>
+          <p class="morph-rule add-style-rule"><span>Scaffold</span><strong>Scale a pressed control down to 0.9</strong></p>
         </div>
         <div class="tempo-lab lab-panel">
           <div class="tempo-intro">

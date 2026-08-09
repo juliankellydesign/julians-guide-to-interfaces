@@ -28,6 +28,12 @@ Transitions communicate structure. A tab switch fades through with a small x tra
 
 See [`transition-levels.md`](transition-levels.md) for the full principle.
 
+## Give controls a juicy press state
+
+A press state is the interface acknowledging contact, and it is so often overlooked. It matters most on touch, where there is no hover—press is the only feedback between intent and result, and a control without one feels dead under the finger. The response is immediate; the juice comes from the quality of the motion, not its duration.
+
+See [`press-states.md`](press-states.md) for the full principle. Load [`../methods/motion/press-scale.md`](../../methods/motion/press-scale.md) only for the exact scale default.
+
 ## Respect the platform
 
 ### Web

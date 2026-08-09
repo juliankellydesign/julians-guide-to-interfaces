@@ -41,7 +41,8 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 - Load the button-scaffold method only when sizing or styling buttons from my starting values: five t-shirt sizes and three styles.
 - Content principles explain why capitalization and punctuation should be consistent and functional, including the distinct jobs of em dashes, en dashes, and hyphens. Load the capitalization and punctuation method only when establishing or changing the interface writing system.
 - Find iconography principles under Imagery, including tapered icon sizing paired consistently with text. Load the control-padding method only when constructing or changing controls, and the icon-size method only when my exact sizes and pairings are needed.
-- Motion principles cover continuity, causality, responsiveness, accessibility, continuously transitioning only between elements that do or mean the same thing, and animating only the level that changes. Load the timing and animation-scaffold methods only when exact durations or the 48-frame structure are needed.
+- Motion principles cover continuity, causality, responsiveness, accessibility, continuously transitioning only between elements that do or mean the same thing, animating only the level that changes, and giving every control a juicy press state—most important on touch, where there is no hover. Load the timing and animation-scaffold methods only when exact durations or the 48-frame structure are needed, and the press-scale method only for the exact pressed-scale default.
+- One interface note is an open musing rather than a settled principle: lean toward nesting a button inside an input only when it acts on the input's content, and keep it outside otherwise.
 
 The prose remains the source of truth. Structured foundations are an opt-in representation of methods.
 

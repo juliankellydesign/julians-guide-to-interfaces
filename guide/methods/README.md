@@ -32,6 +32,7 @@ When a method explicitly lays out a system—the type scale, the gray curve, the
 | [Calculate nested corner radii](interface/nested-corner-radii.md) | Establishing concentric radii for nested containers |
 | [Choose platform motion timing](motion/platform-timing.md) | Selecting default web and touch durations |
 | [Build animation rhythm and swing](motion/animation-rhythm-and-swing.md) | Using the 48-frame timing scaffold for complex animation |
+| [Scale controls on press](motion/press-scale.md) | Applying the press-state scale default |
 
 ## Retrieval rules
 

@@ -81,6 +81,12 @@ Empty states, 404s, and no-network pages are opportunities for a little delight 
 
 See [`empty-and-error-states.md`](empty-and-error-states.md) for the full principle.
 
+## A musing: nesting buttons in inputs
+
+An open lean rather than a settled principle: buttons are best nested inside inputs when they take action on the content within—a send button in a composer, a submit in a search field. Nesting is the strongest grouping claim an interface can make, so a button whose action reaches beyond the input's content stays outside.
+
+See [`nesting-buttons-in-inputs.md`](nesting-buttons-in-inputs.md) for the musing and its status.
+
 ## Use personal taste as scaffolding
 
 Personal references and preferences can reduce decision load and provide useful starting constraints. They can include a pet font, an animation style worth exploring, or a meaningful piece of music used to establish timing.

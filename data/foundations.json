@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.40.0",
+  "version": "0.41.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -640,6 +640,10 @@
     },
     "touch": {
       "character": "slower and more fluid when direct manipulation benefits"
+    },
+    "press": {
+      "pressedScale": 0.9,
+      "character": "juicy; most important on touch, where there is no hover"
     },
     "complexAnimationScaffold": {
       "framesPerSecond": 60,
