@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MethodSection<Content: View>: View {
+  @Environment(\.guideColors) private var colors
   var title: String
   var note: String
   @ViewBuilder var content: Content
@@ -12,12 +13,12 @@ struct MethodSection<Content: View>: View {
           .font(.headline)
         Text(note)
           .font(.subheadline)
-          .foregroundStyle(.secondary)
+          .foregroundStyle(colors.mutedText)
       }
       content
     }
     .frame(maxWidth: .infinity, alignment: .leading)
     .padding(16)
-    .background(.background.secondary, in: RoundedRectangle(cornerRadius: 20))
+    .background(colors.subtlePanel, in: RoundedRectangle(cornerRadius: 20))
   }
 }

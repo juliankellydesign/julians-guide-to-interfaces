@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MethodCategoryCard: View {
+  @Environment(\.guideColors) private var colors
   var category: MethodCategory
 
   var body: some View {
@@ -16,13 +17,13 @@ struct MethodCategoryCard: View {
           .font(.headline)
         Text(category.summary)
           .font(.subheadline)
-          .foregroundStyle(.secondary)
+          .foregroundStyle(colors.mutedText)
           .fixedSize(horizontal: false, vertical: true)
       }
     }
     .frame(maxWidth: .infinity, minHeight: 154, alignment: .topLeading)
     .padding(16)
-    .background(.background.secondary, in: RoundedRectangle(cornerRadius: 20))
+    .background(colors.subtlePanel, in: RoundedRectangle(cornerRadius: 20))
     .contentShape(RoundedRectangle(cornerRadius: 20))
   }
 }

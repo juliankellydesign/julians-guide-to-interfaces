@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct TypographyMethodView: View {
+  @Environment(\.guideColors) private var colors
   @State private var baseSize = 17.0
   @State private var isUppercase = false
 
@@ -19,7 +20,7 @@ struct TypographyMethodView: View {
           }
           Text("Base \(Int(baseSize)) pt")
             .font(.caption.monospacedDigit())
-            .foregroundStyle(.secondary)
+            .foregroundStyle(colors.mutedText)
 
           ForEach(steps.reversed(), id: \.self) { step in
             let size = renderedSize(step)
@@ -32,7 +33,7 @@ struct TypographyMethodView: View {
               Spacer()
               Text("\(Int(size))")
                 .font(.caption.monospacedDigit())
-                .foregroundStyle(.secondary)
+                .foregroundStyle(colors.mutedText)
             }
           }
         }
@@ -45,7 +46,7 @@ struct TypographyMethodView: View {
             Text(tracking(for: baseSize), format: .number.precision(.fractionLength(2)))
               .monospacedDigit()
             Text("%")
-              .foregroundStyle(.secondary)
+              .foregroundStyle(colors.mutedText)
           }
         }
       }

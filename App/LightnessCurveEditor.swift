@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LightnessCurveEditor: View {
+  @Environment(\.guideColors) private var colors
   var title: String
   @Binding var x1: Double
   @Binding var y1: Double
@@ -36,7 +37,7 @@ struct LightnessCurveEditor: View {
       var grid = Path()
       grid.move(to: CGPoint(x: frame.minX, y: frame.maxY))
       grid.addLine(to: CGPoint(x: frame.maxX, y: frame.minY))
-      context.stroke(grid, with: .color(.secondary.opacity(0.2)), style: StrokeStyle(lineWidth: 1, dash: [4]))
+      context.stroke(grid, with: .color(colors.strongBorder), style: StrokeStyle(lineWidth: 1, dash: [4]))
 
       var path = Path()
       for index in 0...80 {
@@ -51,7 +52,8 @@ struct LightnessCurveEditor: View {
     }
     .frame(height: 120)
     .padding(12)
-    .background(.background, in: RoundedRectangle(cornerRadius: 12))
+    .background(colors.pageBackground, in: RoundedRectangle(cornerRadius: 12))
+    .overlay { RoundedRectangle(cornerRadius: 12).stroke(colors.border) }
     .accessibilityElement(children: .ignore)
     .accessibilityLabel("\(title) preview")
     .accessibilityValue("Control points \(x1.formatted()), \(y1.formatted()), \(x2.formatted()), \(y2.formatted())")
@@ -61,7 +63,7 @@ struct LightnessCurveEditor: View {
     VStack(alignment: .leading, spacing: 8) {
       Text(title)
         .font(.caption.weight(.medium))
-        .foregroundStyle(.secondary)
+        .foregroundStyle(colors.mutedText)
       coordinateSlider(label: "X", value: x)
       coordinateSlider(label: "Y", value: y)
     }

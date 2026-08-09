@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MotionMethodView: View {
+  @Environment(\.guideColors) private var colors
   @Environment(\.accessibilityReduceMotion) private var reduceMotion
   @State private var phase = false
   @State private var swing = 0.0
@@ -26,7 +27,7 @@ struct MotionMethodView: View {
             }
           }
           .font(.caption.monospacedDigit())
-          .foregroundStyle(.secondary)
+          .foregroundStyle(colors.mutedText)
         }
 
         MethodSection(title: "Swing", note: "Move internal beats by a frame or two while preserving the loop boundary.") {

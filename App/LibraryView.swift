@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LibraryView: View {
+  @Environment(\.guideColors) private var colors
   private var columns = [GridItem(.adaptive(minimum: 156), spacing: 12)]
 
   var body: some View {
@@ -11,7 +12,7 @@ struct LibraryView: View {
             Text("A working playground for the systems behind the guide.")
               .font(.title2.weight(.medium))
             Text("Values are scaffolds. Change them, compare the result, and judge what the interface communicates.")
-              .foregroundStyle(.secondary)
+              .foregroundStyle(colors.mutedText)
           }
 
           LazyVGrid(columns: columns, spacing: 12) {

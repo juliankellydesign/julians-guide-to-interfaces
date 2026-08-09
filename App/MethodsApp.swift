@@ -5,6 +5,7 @@ struct MethodsApp: App {
   var body: some Scene {
     WindowGroup {
       LibraryView()
+        .guideColorSystem()
     }
   }
 }

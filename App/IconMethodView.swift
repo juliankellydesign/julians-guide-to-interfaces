@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct IconMethodView: View {
+  @Environment(\.guideColors) private var colors
   private var sizes = [12, 16, 20, 24, 32]
 
   var body: some View {
@@ -12,11 +13,11 @@ struct IconMethodView: View {
               VStack(spacing: 10) {
                 Image(systemName: "circle.grid.2x2.fill")
                   .font(.system(size: CGFloat(size)))
-                  .foregroundStyle(size == 20 ? AnyShapeStyle(.tint) : AnyShapeStyle(.primary))
+                  .foregroundStyle(size == 20 ? AnyShapeStyle(.tint) : AnyShapeStyle(colors.primaryText))
                   .frame(maxWidth: .infinity, minHeight: 40)
                 Text("\(size)")
                   .font(.caption.monospacedDigit())
-                  .foregroundStyle(.secondary)
+                  .foregroundStyle(colors.mutedText)
               }
             }
           }

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SpacingMethodView: View {
+  @Environment(\.guideColors) private var colors
   private var values = [1, 2, 4, 6, 8, 10, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 96, 112, 128]
 
   var body: some View {
@@ -11,7 +12,7 @@ struct SpacingMethodView: View {
             HStack(spacing: 12) {
               Text("\(value)")
                 .font(.caption.monospacedDigit())
-                .foregroundStyle(.secondary)
+                .foregroundStyle(colors.mutedText)
                 .frame(width: 28, alignment: .trailing)
               Capsule()
                 .fill(.tint)

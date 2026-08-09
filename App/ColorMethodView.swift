@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ColorMethodView: View {
+  @Environment(\.guideColors) private var colors
   @AppStorage("colorScale.family") private var family = ColorScale.blue
   @AppStorage("colorScale.hue") private var hue = ColorScale.blue.hue
   @AppStorage("colorScale.peakChroma") private var peakChroma = 0.16
@@ -59,7 +60,7 @@ struct ColorMethodView: View {
             VStack(alignment: .leading, spacing: 6) {
               Text(scale.title)
                 .font(.caption.weight(.medium))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(colors.mutedText)
               swatchRow(colors: colors(hue: scale.hue, peakChroma: 0.16, gamutClamp: 0.95))
             }
           }
@@ -106,18 +107,18 @@ struct ColorMethodView: View {
       Text("1000")
     }
     .font(.caption.monospacedDigit())
-    .foregroundStyle(.secondary)
+    .foregroundStyle(colors.mutedText)
   }
 
-  private func swatchRow(colors: [Color]) -> some View {
+  private func swatchRow(colors swatches: [Color]) -> some View {
     HStack(spacing: 2) {
-      ForEach(Array(colors.enumerated()), id: \.offset) { _, color in
+      ForEach(Array(swatches.enumerated()), id: \.offset) { _, color in
         Rectangle().fill(color)
       }
     }
     .frame(height: 44)
     .clipShape(RoundedRectangle(cornerRadius: 10))
-    .overlay { RoundedRectangle(cornerRadius: 10).stroke(.primary.opacity(0.08)) }
+    .overlay { RoundedRectangle(cornerRadius: 10).stroke(colors.border) }
   }
 
   private func colors(hue: Double, peakChroma: Double, gamutClamp: Double) -> [Color] {

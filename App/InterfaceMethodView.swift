@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct InterfaceMethodView: View {
+  @Environment(\.guideColors) private var colors
   @State private var selectedSize = ButtonSize.medium
   @State private var outerRadius = 32.0
   @State private var inset = 20.0
@@ -61,18 +62,30 @@ struct InterfaceMethodView: View {
     Button {} label: {
       Text(title)
         .font(.system(size: selectedSize.labelSize, weight: .semibold))
-        .foregroundStyle(style.foregroundStyle)
+        .foregroundStyle(foregroundStyle(for: style))
         .frame(maxWidth: .infinity)
         .frame(height: selectedSize.height)
-        .background(style.backgroundStyle, in: RoundedRectangle(cornerRadius: selectedSize.radius))
+        .background(backgroundStyle(for: style), in: RoundedRectangle(cornerRadius: selectedSize.radius))
         .overlay {
           if style == .tertiary {
             RoundedRectangle(cornerRadius: selectedSize.radius)
-              .stroke(.primary.opacity(0.18))
+              .stroke(colors.strongBorder)
           }
         }
     }
     .buttonStyle(.plain)
+  }
+
+  private func foregroundStyle(for style: MethodButtonStyle) -> AnyShapeStyle {
+    style == .primary ? AnyShapeStyle(colors.inverseText) : AnyShapeStyle(colors.primaryText)
+  }
+
+  private func backgroundStyle(for style: MethodButtonStyle) -> AnyShapeStyle {
+    switch style {
+    case .primary: AnyShapeStyle(.tint)
+    case .secondary: AnyShapeStyle(colors.border)
+    case .tertiary: AnyShapeStyle(.clear)
+    }
   }
 }
 
@@ -97,19 +110,4 @@ private enum ButtonSize: String, CaseIterable, Identifiable {
 
 private enum MethodButtonStyle {
   case primary, secondary, tertiary
-
-  var foregroundStyle: AnyShapeStyle {
-    switch self {
-    case .primary: AnyShapeStyle(.white)
-    case .secondary, .tertiary: AnyShapeStyle(.primary)
-    }
-  }
-
-  var backgroundStyle: AnyShapeStyle {
-    switch self {
-    case .primary: AnyShapeStyle(.tint)
-    case .secondary: AnyShapeStyle(.primary.opacity(0.1))
-    case .tertiary: AnyShapeStyle(.clear)
-    }
-  }
 }
