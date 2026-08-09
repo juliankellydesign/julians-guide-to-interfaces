@@ -529,6 +529,17 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .pad-card.narrow { width: 56%; }
 .pad-card i { height: 10px; border-radius: 4px; background: var(--gray-200); }
 .pad-line { position: absolute; inset: 20px; border: 1px dashed color-mix(in srgb, var(--signal) 55%, transparent); border-radius: 4px; pointer-events: none; }
+.pad-siblings { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 24px 28px; border-bottom: 1px solid var(--line); }
+.pad-siblings-caption span { display: block; color: var(--signal); font-size: 10px; text-transform: uppercase; }
+.pad-siblings-caption strong { display: block; margin-top: 6px; font-size: 15px; font-weight: 500; }
+.pad-siblings-stage { gap: 16px; align-items: center; padding: 24px 0; }
+.pad-control { position: relative; display: flex; align-items: center; height: 48px; padding: 0 16px; border-radius: 10px; }
+.pad-control-button { background: var(--gray-900); }
+.pad-control-button i { background: var(--gray-400); }
+.pad-control-button .pad-line { border-color: color-mix(in srgb, #ffffff 65%, transparent); }
+.pad-control-input { border: 1px solid var(--line-strong); background: var(--paper); }
+.pad-control i { height: 10px; border-radius: 4px; background: var(--gray-200); }
+.pad-control .pad-line { inset: 8px 16px; }
 .rhythm-meaning { margin-top: 16px; }
 .rhythm-meaning-intro { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 28px; }
 .rhythm-meaning-intro .eyebrow { grid-column: 1 / -1; }
@@ -1045,7 +1056,7 @@ footer a { display: inline-flex; align-items: center; gap: 24px; font-size: 12px
   .figure-examples article, .punctuation-examples article, .alignment-examples article { border-right: 0; border-bottom: 1px solid var(--line); }
   .figure-examples article:last-child, .punctuation-examples article:last-child, .alignment-examples article:last-child { border-bottom: 0; }
   .figure-rule, .punctuation-rule { grid-template-columns: 1fr; }
-  .gray-lab, .rhythm-term, .rhythm-demo, .weight-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro, .icon-taper-intro, .shadow-intro, .shadow-compare, .add-style-intro, .add-style-questions, .pad-intro, .pad-compare { grid-template-columns: 1fr; }
+  .gray-lab, .rhythm-term, .rhythm-demo, .weight-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro, .icon-taper-intro, .shadow-intro, .shadow-compare, .add-style-intro, .add-style-questions, .pad-intro, .pad-compare, .pad-siblings { grid-template-columns: 1fr; }
   .shadow-uses { grid-template-columns: 1fr 1fr; }
   .human-judgment-intro { grid-template-columns: 1fr; }
   .judgment-domains { grid-template-columns: repeat(2, 1fr); }

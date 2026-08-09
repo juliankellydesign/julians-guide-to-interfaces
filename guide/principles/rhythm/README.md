@@ -54,9 +54,9 @@ A new style gets two questions: have I seen something similar elsewhere in this 
 
 See [`adding-styles.md`](adding-styles.md) for the full principle.
 
-## Keep padding consistent across screens
+## Keep padding consistent
 
-Margins and padding do different jobs when the screen changes. Padding is part of a component's identity and usually stays consistent across screens; margins, gutters, and layout absorb the change in available space. A padding change reads as a different component—make it deliberately or not at all.
+Margins and padding do different jobs when the screen changes. Padding is part of a component's identity and usually stays consistent across screens; margins, gutters, and layout absorb the change in available space. A padding change reads as a different component—make it deliberately or not at all. Consistency also runs across components: components of the same size share the same padding, so their contents land on the same keylines.
 
 See [`margins-and-padding.md`](margins-and-padding.md) for the full principle.
 
@@ -84,6 +84,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Use Gestalt principles to judge how spacing and other visual relationships group elements.
 - Make repeated gaps consistent so exceptions carry meaning.
 - Keep component padding consistent across screens; let margins absorb the change.
+- Give same-size components the same padding so their contents share keylines.
 - Size elements from a shared token set so they fall onto shared keylines.
 - Vary size and color only to communicate importance, function, or context.
 - Reuse a similar existing treatment before adding a style, and design new styles for repurposing.

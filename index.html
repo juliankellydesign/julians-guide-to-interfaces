@@ -32,7 +32,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.41</span>
+        <span>v0.42</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -507,8 +507,8 @@
         <div class="pad-guide lab-panel">
           <div class="pad-intro">
             <span class="eyebrow">Margins and padding</span>
-            <h3>Keep padding consistent across screens</h3>
-            <p>Padding is part of a component’s identity: the same card keeps the same interior space on every screen, so its rhythm and keylines hold. The change in available space belongs to margins and layout—gutters compress and columns drop while the inside of components stays put.</p>
+            <h3>Keep padding consistent</h3>
+            <p>Padding is part of a component’s identity: the same card keeps the same interior space on every screen, so its rhythm and keylines hold. The change in available space belongs to margins and layout—gutters compress and columns drop while the inside of components stays put. The same consistency runs across components: two elements of the same size share the same padding, so their contents land on the same keylines.</p>
           </div>
           <div class="pad-compare">
             <figure>
@@ -520,7 +520,14 @@
               <div class="pad-stage"><div class="pad-card narrow"><span class="pad-line"></span><i style="width:64%"></i><i style="width:84%"></i><i style="width:52%"></i></div></div>
             </figure>
           </div>
-          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Margins absorb the screen; padding belongs to the component</strong></p>
+          <div class="pad-siblings">
+            <figcaption class="pad-siblings-caption"><span>Same size, same padding</span><strong>A button and an input at the same size hold their contents with the same interior space</strong></figcaption>
+            <div class="pad-stage pad-siblings-stage">
+              <div class="pad-control pad-control-button"><span class="pad-line"></span><i style="width:56px"></i></div>
+              <div class="pad-control pad-control-input"><span class="pad-line"></span><i style="width:96px"></i></div>
+            </div>
+          </div>
+          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Margins absorb the screen; padding belongs to the component—and to the size</strong></p>
         </div>
         <div class="rhythm-meaning lab-panel">
           <div class="rhythm-meaning-intro">
