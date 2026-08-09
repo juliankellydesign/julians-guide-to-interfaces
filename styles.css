@@ -513,6 +513,22 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .add-style-questions strong { max-width: 420px; margin-top: 10px; font-size: 17px; font-weight: 500; }
 .add-style-questions p { margin: 10px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
 .add-style-rule { padding: 20px 28px; }
+.pad-guide { margin-top: 16px; }
+.pad-intro { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 28px; }
+.pad-intro .eyebrow { grid-column: 1 / -1; }
+.pad-intro h3 { margin: 0; font-size: clamp(24px, 2.5vw, 38px); line-height: 1.08; }
+.pad-intro p { max-width: 560px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.pad-compare { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pad-compare figure { display: flex; flex-direction: column; gap: 20px; margin: 0; padding: 24px; border-right: 1px solid var(--line); }
+.pad-compare figure:last-child { border-right: 0; }
+.pad-compare figcaption span { display: block; color: var(--signal); font-size: 10px; text-transform: uppercase; }
+.pad-compare figcaption strong { display: block; margin-top: 6px; font-size: 15px; font-weight: 500; }
+.pad-stage { display: flex; justify-content: center; padding: 24px 0; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--gray-50); }
+.pad-card { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 20px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--paper); }
+.pad-card.wide { width: 82%; }
+.pad-card.narrow { width: 56%; }
+.pad-card i { height: 10px; border-radius: 4px; background: var(--gray-200); }
+.pad-line { position: absolute; inset: 20px; border: 1px dashed color-mix(in srgb, var(--signal) 55%, transparent); border-radius: 4px; pointer-events: none; }
 .rhythm-meaning { margin-top: 16px; }
 .rhythm-meaning-intro { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 28px; }
 .rhythm-meaning-intro .eyebrow { grid-column: 1 / -1; }
@@ -1029,7 +1045,7 @@ footer a { display: inline-flex; align-items: center; gap: 24px; font-size: 12px
   .figure-examples article, .punctuation-examples article, .alignment-examples article { border-right: 0; border-bottom: 1px solid var(--line); }
   .figure-examples article:last-child, .punctuation-examples article:last-child, .alignment-examples article:last-child { border-bottom: 0; }
   .figure-rule, .punctuation-rule { grid-template-columns: 1fr; }
-  .gray-lab, .rhythm-term, .rhythm-demo, .weight-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro, .icon-taper-intro, .shadow-intro, .shadow-compare, .add-style-intro, .add-style-questions { grid-template-columns: 1fr; }
+  .gray-lab, .rhythm-term, .rhythm-demo, .weight-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro, .icon-taper-intro, .shadow-intro, .shadow-compare, .add-style-intro, .add-style-questions, .pad-intro, .pad-compare { grid-template-columns: 1fr; }
   .shadow-uses { grid-template-columns: 1fr 1fr; }
   .human-judgment-intro { grid-template-columns: 1fr; }
   .judgment-domains { grid-template-columns: repeat(2, 1fr); }

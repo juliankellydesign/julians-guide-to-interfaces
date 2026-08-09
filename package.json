@@ -1,6 +1,6 @@
 {
   "name": "julians-guide-to-interfaces",
-  "version": "0.40.0",
+  "version": "0.41.0",
   "private": true,
   "description": "An evolving, agent-friendly handbook of interface design principles.",
   "scripts": {
