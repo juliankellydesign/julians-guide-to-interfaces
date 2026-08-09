@@ -1,0 +1,31 @@
+{
+  "name": "Methods",
+  "options": {
+    "bundleIdPrefix": "com.juliankelly",
+    "deploymentTarget": {
+      "iOS": "18.0"
+    }
+  },
+  "targets": {
+    "Methods": {
+      "type": "application",
+      "platform": "iOS",
+      "sources": ["App"],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "com.juliankelly.methods",
+          "TARGETED_DEVICE_FAMILY": "1,2",
+          "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
+          "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor"
+        }
+      },
+      "info": {
+        "path": "App/Info.plist",
+        "properties": {
+          "UILaunchScreen": {},
+          "CFBundleDisplayName": "Methods"
+        }
+      }
+    }
+  }
+}
