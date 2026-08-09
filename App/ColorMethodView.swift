@@ -5,20 +5,56 @@ struct ColorMethodView: View {
   @AppStorage("colorScale.hue") private var hue = ColorScale.blue.hue
   @AppStorage("colorScale.peakChroma") private var peakChroma = 0.16
   @AppStorage("colorScale.gamutClamp") private var gamutClamp = 0.95
+  @AppStorage("colorScale.grayX1") private var grayX1 = 0.35
+  @AppStorage("colorScale.grayY1") private var grayY1 = 0.2
+  @AppStorage("colorScale.grayX2") private var grayX2 = 0.55
+  @AppStorage("colorScale.grayY2") private var grayY2 = 0.6
+  @AppStorage("colorScale.saturatedX1") private var saturatedX1 = 0.5
+  @AppStorage("colorScale.saturatedY1") private var saturatedY1 = 0.3
+  @AppStorage("colorScale.saturatedX2") private var saturatedX2 = 0.6
+  @AppStorage("colorScale.saturatedY2") private var saturatedY2 = 0.5
 
   private var stops = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000]
-  private var grayLightness = [1.0, 0.97098, 0.93812, 0.86065, 0.76845, 0.66472, 0.55453, 0.4433, 0.33532, 0.23316, 0.13798, 0.0931, 0.05]
-  private var colorLightness = [1.0, 0.97103, 0.94102, 0.87712, 0.80638, 0.72628, 0.63419, 0.52906, 0.41332, 0.29211, 0.17012, 0.10973, 0.05]
+
+  private var grayCurve: CubicBezierCurve {
+    CubicBezierCurve(x1: grayX1, y1: grayY1, x2: grayX2, y2: grayY2)
+  }
+
+  private var saturatedCurve: CubicBezierCurve {
+    CubicBezierCurve(x1: saturatedX1, y1: saturatedY1, x2: saturatedX2, y2: saturatedY2)
+  }
 
   var body: some View {
     ScrollView {
       VStack(spacing: 16) {
         MethodSection(title: "Perceptual gray", note: "Thirteen OKLCH stops run from pure white to near-black—not literal black.") {
-          swatchRow(colors: grayLightness.map { OKLCHColor(lightness: $0, chroma: 0, hue: 0).color })
+          swatchRow(colors: stops.map { OKLCHColor(lightness: lightness(at: $0, curve: grayCurve), chroma: 0, hue: 0).color })
           labels
         }
 
-        MethodSection(title: "Documented scales", note: "Six OKLCH families use the guide’s hues, shared lightness curve, 0.16 chroma arch, and 95% sRGB clamp.") {
+        MethodSection(title: "Lightness curves", note: "The curve controls how quickly each scale travels from white to near-black. Both endpoints remain fixed.") {
+          LightnessCurveEditor(
+            title: "Gray · cubic-bezier",
+            x1: $grayX1,
+            y1: $grayY1,
+            x2: $grayX2,
+            y2: $grayY2,
+            reset: resetGrayCurve
+          )
+
+          Divider()
+
+          LightnessCurveEditor(
+            title: "Saturated · cubic-bezier",
+            x1: $saturatedX1,
+            y1: $saturatedY1,
+            x2: $saturatedX2,
+            y2: $saturatedY2,
+            reset: resetSaturatedCurve
+          )
+        }
+
+        MethodSection(title: "Color families", note: "All six families respond to the saturated curve above while sharing hues, stops, and endpoints.") {
           ForEach(ColorScale.allCases) { scale in
             VStack(alignment: .leading, spacing: 6) {
               Text(scale.title)
@@ -85,13 +121,32 @@ struct ColorMethodView: View {
   }
 
   private func colors(hue: Double, peakChroma: Double, gamutClamp: Double) -> [Color] {
-    zip(stops, colorLightness).map { stop, lightness in
+    stops.map { stop in
+      let lightness = lightness(at: stop, curve: saturatedCurve)
       let t = Double(stop) / 1000
       let requestedChroma = peakChroma * 4 * t * (1 - t)
       let maximumChroma = OKLCHColor.maximumSRGBChroma(lightness: lightness, hue: hue)
       let chroma = min(requestedChroma, gamutClamp * maximumChroma)
       return OKLCHColor(lightness: lightness, chroma: chroma, hue: hue).color
     }
+  }
+
+  private func lightness(at stop: Int, curve: CubicBezierCurve) -> Double {
+    1 - 0.95 * curve.value(atX: Double(stop) / 1000)
+  }
+
+  private func resetGrayCurve() {
+    grayX1 = 0.35
+    grayY1 = 0.2
+    grayX2 = 0.55
+    grayY2 = 0.6
+  }
+
+  private func resetSaturatedCurve() {
+    saturatedX1 = 0.5
+    saturatedY1 = 0.3
+    saturatedX2 = 0.6
+    saturatedY2 = 0.5
   }
 
   private func valueSlider(
