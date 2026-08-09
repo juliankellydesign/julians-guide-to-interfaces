@@ -15,15 +15,10 @@ struct InterfaceMethodView: View {
           .pickerStyle(.segmented)
 
           VStack(spacing: 10) {
-            Button("Primary action") {}
-              .buttonStyle(.borderedProminent)
-            Button("Secondary action") {}
-              .buttonStyle(.bordered)
-            Button("Tertiary action") {}
-              .buttonStyle(.plain)
+            methodButton("Primary action", style: .primary)
+            methodButton("Secondary action", style: .secondary)
+            methodButton("Tertiary action", style: .tertiary)
           }
-          .fontWeight(.semibold)
-          .controlSize(selectedSize.controlSize)
           .frame(maxWidth: .infinity)
         }
 
@@ -61,6 +56,24 @@ struct InterfaceMethodView: View {
     }
     .navigationTitle("Interface")
   }
+
+  private func methodButton(_ title: String, style: MethodButtonStyle) -> some View {
+    Button {} label: {
+      Text(title)
+        .font(.system(size: selectedSize.labelSize, weight: .semibold))
+        .foregroundStyle(style.foregroundStyle)
+        .frame(maxWidth: .infinity)
+        .frame(height: selectedSize.height)
+        .background(style.backgroundStyle, in: RoundedRectangle(cornerRadius: selectedSize.radius))
+        .overlay {
+          if style == .tertiary {
+            RoundedRectangle(cornerRadius: selectedSize.radius)
+              .stroke(.primary.opacity(0.18))
+          }
+        }
+    }
+    .buttonStyle(.plain)
+  }
 }
 
 private enum ButtonSize: String, CaseIterable, Identifiable {
@@ -68,12 +81,35 @@ private enum ButtonSize: String, CaseIterable, Identifiable {
 
   var id: Self { self }
   var title: String { ["XS", "S", "M", "L", "XL"][Self.allCases.firstIndex(of: self)!] }
-  var controlSize: ControlSize {
+  var height: CGFloat {
     switch self {
-    case .extraSmall: .mini
-    case .small: .small
-    case .medium: .regular
-    case .large, .extraLarge: .extraLarge
+    case .extraSmall: 24
+    case .small: 32
+    case .medium: 40
+    case .large: 48
+    case .extraLarge: 56
+    }
+  }
+
+  var labelSize: CGFloat { height < 40 ? 13 : height < 56 ? 15 : 17 }
+  var radius: CGFloat { min(14, height / 3) }
+}
+
+private enum MethodButtonStyle {
+  case primary, secondary, tertiary
+
+  var foregroundStyle: AnyShapeStyle {
+    switch self {
+    case .primary: AnyShapeStyle(.white)
+    case .secondary, .tertiary: AnyShapeStyle(.primary)
+    }
+  }
+
+  var backgroundStyle: AnyShapeStyle {
+    switch self {
+    case .primary: AnyShapeStyle(.tint)
+    case .secondary: AnyShapeStyle(.primary.opacity(0.1))
+    case .tertiary: AnyShapeStyle(.clear)
     }
   }
 }
