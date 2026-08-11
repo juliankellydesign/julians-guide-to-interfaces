@@ -44,7 +44,7 @@ Teach the complete meaning in one clear instance, then preserve the gesture and 
 
 ## Keep elements consistent so variation carries meaning
 
-Elements should share consistent style, sizing, and spacing—tokens make this practical. Too many sizes add visual noise, while consistently sized elements fall onto shared keylines (the invisible lines that align elements) and reduce cognitive overhead. Color follows the same logic in both directions: every button the same color is as confusing as every button a different color. Vary size and color only to communicate importance, function, or context.
+Elements should share consistent style, sizing, and spacing—tokens make this practical. Too many sizes add visual noise, while consistently sized elements fall onto shared keylines (the invisible lines that align elements) and reduce cognitive overhead. The rhythm covers even elements that seem unrelated: interfaces get rearranged, and elements sized to one rhythm align the moment they meet. Color follows the same logic in both directions: every button the same color is as confusing as every button a different color. Vary size and color only to communicate importance, function, or context.
 
 See [`consistency-and-keylines.md`](consistency-and-keylines.md) for the full principle.
 
@@ -88,6 +88,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Keep gaps between same-size text consistent on both axes.
 - Give headings more space above than below.
 - Size elements from a shared token set so they fall onto shared keylines.
+- Size even seemingly unrelated elements to the same rhythm; later alignment comes almost free.
 - Vary size and color only to communicate importance, function, or context.
 - Reuse a similar existing treatment before adding a style, and design new styles for repurposing.
 - Bind treatments to types, never to instances.
