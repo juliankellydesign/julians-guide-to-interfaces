@@ -56,7 +56,7 @@ See [`adding-styles.md`](adding-styles.md) for the full principle.
 
 ## Keep padding consistent
 
-Margins and padding do different jobs when the screen changes. Padding is part of a component's identity and usually stays consistent across screens; margins, gutters, and layout absorb the change in available space. A padding change reads as a different component—make it deliberately or not at all. Consistency also runs across components: components of the same size share the same padding, so their contents land on the same keylines. Text follows the same rule—same-size text keeps consistent gaps between inline strings and between lines and blocks—with one deliberate asymmetry: headings take more space above than below, so proximity binds them to the content they introduce.
+Margins and padding do different jobs when the screen changes. Padding is part of a component's identity and usually stays consistent across screens; margins, gutters, and layout absorb the change in available space. A padding change reads as a different component—make it deliberately or not at all. Consistency also runs across components: components of the same size share the same padding, so their contents land on the same keylines. Text follows the same rule—same-size text keeps consistent gaps between inline strings and between lines and blocks—with one deliberate asymmetry: headings take more space above than below, so proximity binds them to the content they introduce. The same logic runs one level deeper: a title sits closer to its subtitle than the subtitle sits to the body text, because gaps grow as the relationship loosens.
 
 See [`margins-and-padding.md`](margins-and-padding.md) for the full principle.
 
@@ -87,6 +87,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Give same-size components the same padding so their contents share keylines.
 - Keep gaps between same-size text consistent on both axes.
 - Give headings more space above than below.
+- Put less space between a title and its subtitle than between the subtitle and the body text.
 - Size elements from a shared token set so they fall onto shared keylines.
 - Size even seemingly unrelated elements to the same rhythm; later alignment comes almost free.
 - Vary size and color only to communicate importance, function, or context.

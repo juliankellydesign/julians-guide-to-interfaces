@@ -547,6 +547,8 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .pad-doc-inline i { width: 44px; height: 8px; border-radius: 4px; background: var(--gray-300); }
 .pad-doc-line { height: 8px; border-radius: 4px; background: var(--gray-200); }
 .pad-doc-heading { height: 12px; border-radius: 4px; background: var(--gray-800); }
+.pad-doc-title { height: 14px; border-radius: 4px; background: var(--gray-900); }
+.pad-doc-subtitle { height: 10px; border-radius: 4px; background: var(--gray-500); }
 .pad-gap { border-radius: 3px; background: color-mix(in srgb, var(--signal) 14%, transparent); }
 .pad-gap-above { height: 24px; }
 .pad-gap-below { height: 8px; }

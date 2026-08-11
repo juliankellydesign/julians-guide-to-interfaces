@@ -24,6 +24,10 @@ Spacing between text of the same size should generally be consistent, on both ax
 
 The deliberate asymmetry: a heading should have more space above it than below it. A heading belongs to the content that follows, and proximity is what communicates that—the smaller gap binds the heading to its section, the larger gap separates it from the previous one. Equal space above and below leaves a heading floating between sections, attached to neither.
 
+## Title, subtitle, body
+
+When a title, subtitle, and body text stack, you usually put less space between the title and subtitle, and more space between the subtitle and the body text. The title and subtitle describe the same thing—they read as one cluster—while the body is what the cluster introduces. This is the same proximity logic as heading asymmetry, one level deeper: gaps grow as the relationship loosens, and the whole cluster still takes its largest space above, where the previous section ends.
+
 ## The usual exceptions
 
 "Usually" is deliberate. When a component genuinely changes role or density between platforms—a control adapting from touch to pointer fidelity—its values may nudge, padding included. That is platform adaptation, a different axis than screen width. Within one platform, across responsive widths, padding holds.
@@ -34,6 +38,7 @@ The deliberate asymmetry: a heading should have more space above it than below i
 - Give components of the same size the same padding; bind padding to the size, not the individual component.
 - Keep gaps between same-size text consistent, horizontally between inline strings and vertically between lines and blocks.
 - Give headings more space above than below so they bind to the content they introduce.
+- Put less space between a title and its subtitle than between the subtitle and the body text.
 - Absorb screen-size changes with margins, gutters, and layout changes—not with component interiors.
 - Expect a padding change to read as a different component, and make it deliberately or not at all.
 - Nudge padding only as platform adaptation, not as responsive squeezing.
