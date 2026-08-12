@@ -32,6 +32,7 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 - Text-alignment principles assume a left-to-right language. Adapt the starting edge and reading flow for other writing directions.
 - Interface principles define how primary, secondary, and tertiary actions communicate priority. Apply that hierarchy through the product’s established control styles.
 - Interface principles also cover sizing controls for mouse and touch input and deciding when repeated actions clarify or confuse. Load the control-size method only when exact numerical starting points are needed.
+- Interface principles put broader navigation, settings, and wayfinding content at the top of a screen or container, and primary actions—submit, save, continue, send—at the bottom, so the vertical order runs orient, act, complete.
 - Interface principles require the interface to match the fidelity of the input: control sizes, density, and motion timing change with input method and screen size, while roles and hierarchy stay constant.
 - Interface principles also treat empty states, 404s, and no-network pages as opportunities for delight and user education.
 - Corner rounding and interface conventions are principles. Load the radius-scale and nested-radius methods only when constructing or replacing a radius system.

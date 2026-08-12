@@ -2,7 +2,7 @@
 
 ## In brief
 
-Start with a clear problem or a specific interaction. Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, control size, repetition, corner language, conventions, responsiveness, perceived speed, and deliberate empty and error states all communicate how the interface should be used.
+Start with a clear problem or a specific interaction. Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, vertical placement, control size, repetition, corner language, conventions, responsiveness, perceived speed, and deliberate empty and error states all communicate how the interface should be used.
 
 ## Start with the problem or interaction
 
@@ -46,6 +46,12 @@ See [`interactive-control-sizing.md`](interactive-control-sizing.md) for the pri
 Adaptation is an obligation, not an allowance. Desktop products built with mobile values feel mushy—animations too long, buttons too big—because the input got more precise while the interface stayed the same. Control sizes, density, and motion timing should change with input method and screen size; roles, hierarchy, and meaning stay constant.
 
 See [`input-fidelity.md`](input-fidelity.md) for the full principle.
+
+## Put wayfinding at the top and primary actions at the bottom
+
+A rule of thumb for the vertical anatomy of a screen or container: broader navigation controls, settings, and wayfinding content—anything answering "where am I"—go at the top. Primary actions—submit, save, continue, send—go at the bottom, where the task ends. Orient at the top, complete at the bottom, and the same holds inside a modal.
+
+See [`top-and-bottom.md`](top-and-bottom.md) for the full principle.
 
 ## Repeat actions when repetition adds meaning
 
