@@ -28,6 +28,7 @@ When a method explicitly lays out a system—the type scale, the gray curve, the
 | [Choose control sizes by input method](interface/control-sizes.md) | Selecting numerical starting sizes for mouse and touch controls |
 | [Build a corner-radius scale](interface/corner-radius-scale.md) | Choosing base corner radii from the laddered token scale |
 | [Size and style buttons with t-shirt sizes](interface/button-sizes-and-styles.md) | The five button sizes and three styles, with finite ranges as the alarm |
+| [Pad modal interiors more generously](interface/modal-padding.md) | Applying the modal interior padding default |
 | [Dim beneath modals with a scrim](interface/scrim.md) | The 20% white scrim that pairs with a modal's shadow |
 | [Calculate nested corner radii](interface/nested-corner-radii.md) | Establishing concentric radii for nested containers |
 | [Choose platform motion timing](motion/platform-timing.md) | Selecting default web and touch durations |

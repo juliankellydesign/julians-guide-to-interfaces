@@ -540,6 +540,12 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .pad-control-input { border: 1px solid var(--line-strong); background: var(--paper); }
 .pad-control i { height: 10px; border-radius: 4px; background: var(--gray-200); }
 .pad-control .pad-line { inset: 8px 16px; }
+.pad-modal { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 24px 28px; border-bottom: 1px solid var(--line); }
+.pad-modal-stage { gap: 24px; align-items: center; padding: 28px 0; }
+.pad-modal .pad-card { width: 32%; }
+.pad-modal-el { position: relative; display: flex; flex-direction: column; gap: 12px; width: 36%; padding: 24px; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--paper); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14); }
+.pad-modal-el i { height: 10px; border-radius: 4px; background: var(--gray-200); }
+.pad-line-24 { inset: 24px; }
 .pad-text { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; padding: 24px 28px; border-bottom: 1px solid var(--line); }
 .pad-text-stage { padding: 28px 0; }
 .pad-doc { display: flex; flex-direction: column; gap: 6px; width: 68%; }
@@ -1124,7 +1130,7 @@ footer a { display: inline-flex; align-items: center; gap: 24px; font-size: 12px
   .figure-examples article, .punctuation-examples article, .alignment-examples article { border-right: 0; border-bottom: 1px solid var(--line); }
   .figure-examples article:last-child, .punctuation-examples article:last-child, .alignment-examples article:last-child { border-bottom: 0; }
   .figure-rule, .punctuation-rule { grid-template-columns: 1fr; }
-  .gray-lab, .rhythm-term, .rhythm-demo, .weight-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro, .icon-taper-intro, .shadow-intro, .shadow-compare, .add-style-intro, .add-style-questions, .pad-intro, .pad-compare, .pad-siblings, .pad-text, .press-intro, .press-compare, .nest-intro, .nest-compare, .size-rhythm-intro, .size-rhythm-compare { grid-template-columns: 1fr; }
+  .gray-lab, .rhythm-term, .rhythm-demo, .weight-guide, .scroll-under-intro, .scroll-under-compare, .morph-intro, .level-intro, .button-scaffold-intro, .icon-taper-intro, .shadow-intro, .shadow-compare, .add-style-intro, .add-style-questions, .pad-intro, .pad-compare, .pad-siblings, .pad-modal, .pad-text, .press-intro, .press-compare, .nest-intro, .nest-compare, .size-rhythm-intro, .size-rhythm-compare { grid-template-columns: 1fr; }
   .shadow-uses { grid-template-columns: 1fr 1fr; }
   .human-judgment-intro { grid-template-columns: 1fr; }
   .judgment-domains { grid-template-columns: repeat(2, 1fr); }

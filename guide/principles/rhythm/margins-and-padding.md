@@ -16,6 +16,10 @@ The outer spaces are where responsive change belongs. Margins and gutters can co
 
 Consistency also runs across components. Two components of the same size should share the same padding: a 40px button and a 40px input hold their contents with the same interior space. Padding binds to the size, not to the individual component. This is what makes keylines emerge—same-size elements with matching interiors put their contents on the same invisible lines—and it keeps a size meaning one thing wherever it appears. A same-size component with different padding reads as a mistake or, worse, as a signal that means nothing.
 
+## Modals breathe a little more
+
+Padding binds to the component type as well as the size, and some types carry a more generous level: inside modals I usually add a little more padding than inside inline components. The consistency rules still hold—every modal gets the same interior, on every screen. For the exact starting value, see [`../../methods/interface/modal-padding.md`](../../methods/interface/modal-padding.md).
+
 ## Text spacing follows the same rule
 
 Spacing between text of the same size should generally be consistent, on both axes. Inline strings sitting in a row share one horizontal gap between them; lines and blocks of the same size share one vertical rhythm. Uneven gaps between same-size text either read as accidental or imply groupings that do not exist.
@@ -36,6 +40,7 @@ When a title, subtitle, and body text stack, you usually put less space between 
 
 - Keep a component's padding consistent across screen sizes.
 - Give components of the same size the same padding; bind padding to the size, not the individual component.
+- Give modal interiors a little more padding than inline components, held consistent across modals.
 - Keep gaps between same-size text consistent, horizontally between inline strings and vertically between lines and blocks.
 - Give headings more space above than below so they bind to the content they introduce.
 - Put less space between a title and its subtitle than between the subtitle and the body text.

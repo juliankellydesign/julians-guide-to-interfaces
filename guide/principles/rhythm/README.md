@@ -84,6 +84,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Use Gestalt principles to judge how spacing and other visual relationships group elements.
 - Make repeated gaps consistent so exceptions carry meaning.
 - Keep component padding consistent across screens; let margins absorb the change.
+- Give modal interiors a little more padding than inline components.
 - Give same-size components the same padding so their contents share keylines.
 - Keep gaps between same-size text consistent on both axes.
 - Give headings more space above than below.

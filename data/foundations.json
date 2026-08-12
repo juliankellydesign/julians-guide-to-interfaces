@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.41.0",
+  "version": "0.42.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -599,6 +599,10 @@
       "onePrimaryPerSurface": true,
       "webDesktopNudging": "Heights are nudged per screen on web and desktop; a nudge changes a role's value, never adds a role.",
       "referByName": "Sizes are referred to by name, never numeric value, so the values stay free to change."
+    },
+    "modal": {
+      "interiorPaddingPx": 24,
+      "note": "A little more generous than inline components; taken from the spacing ladder and held consistent across modals."
     },
     "scrim": {
       "term": "Scrim, from theater: a translucent layer laid over the background content.",
