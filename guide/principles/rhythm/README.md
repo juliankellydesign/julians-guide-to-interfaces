@@ -72,6 +72,12 @@ Start a design by ranking importance: the most important thing, then the second,
 
 See [`visual-weight.md`](visual-weight.md) for the full principle.
 
+## Balance a left-heavy layout with one right-aligned element
+
+When a card needs to be left aligned and filling the width would be too much—common in chat interfaces—a column of left-aligned cards can look really left-heavy. A single element aligned to the right balances the composition; in a chat interface, that is often the chat bubble. One counterweight is enough.
+
+See [`balancing-left-heavy-layouts.md`](balancing-left-heavy-layouts.md) for the full principle.
+
 ## Group actions by scope
 
 Visual grouping implies functional grouping. Actions placed together should share a context, object, or scope. Separate an action when it applies more broadly than the task represented by the group.
@@ -101,6 +107,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Establish a consistent rhythm before introducing variation.
 - Rank importance first, then give the top of the ranking decisively more visual weight.
 - Spend weight sources—size, color, motion—one or two per element, and balance the composition with white space.
+- Balance a left-heavy layout with a single right-aligned element rather than stretching cards full width.
 - Use repeated gestures to build stable meaning across comparable contexts.
 - Keep the outcome of a repeated gesture consistent.
 - Group actions only when they share a context, object, or scope.
