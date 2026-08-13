@@ -32,7 +32,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.44</span>
+        <span>v0.50</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -468,6 +468,44 @@
             <p class="morph-rule"><span>Rule</span><strong>Most real estate, quietest voice; least real estate, loudest voice</strong></p>
           </div>
         </div>
+        <div class="balance-guide lab-panel">
+          <div class="balance-intro">
+            <span class="eyebrow">Balancing alignment</span>
+            <h3>One right-aligned element fixes a left-heavy layout</h3>
+            <p>In conversational AI interfaces, the user’s message sits in a bubble and the AI’s reply floats as free text. When a reply needs to render a card with controls, full width would be too much card—but left aligned it can look really left-heavy. The fix is simple: a single thing aligned to the right balances the composition, and it’s often the chat bubble that’s already there.</p>
+          </div>
+          <div class="balance-compare">
+            <figure>
+              <figcaption><span>Left-heavy</span><strong>The contained card tips the layout</strong></figcaption>
+              <div class="balance-stage" aria-label="Free-floating reply text and a left-aligned card with controls, leaving the right side empty">
+                <div class="balance-col">
+                  <i class="balance-text" style="width:92%"></i>
+                  <i class="balance-text" style="width:84%"></i>
+                  <i class="balance-text" style="width:58%"></i>
+                  <div class="balance-card" style="width:62%">
+                    <i style="width:78%"></i><i style="width:54%"></i>
+                    <div class="balance-controls"><b></b><b class="balance-primary"></b></div>
+                  </div>
+                </div>
+              </div>
+            </figure>
+            <figure>
+              <figcaption><span>Balanced</span><strong>The user’s bubble is the counterweight</strong></figcaption>
+              <div class="balance-stage" aria-label="The same reply balanced by the user's right-aligned chat bubble above it">
+                <div class="balance-col">
+                  <div class="balance-bubble" style="width:44%"><i style="width:82%"></i></div>
+                  <i class="balance-text" style="width:92%"></i>
+                  <i class="balance-text" style="width:84%"></i>
+                  <div class="balance-card" style="width:62%">
+                    <i style="width:78%"></i><i style="width:54%"></i>
+                    <div class="balance-controls"><b></b><b class="balance-primary"></b></div>
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <p class="morph-rule add-style-rule"><span>Rule</span><strong>One counterweight is enough—often it’s the chat bubble</strong></p>
+        </div>
         <div class="scroll-under-guide lab-panel">
           <div class="scroll-under-intro">
             <span class="eyebrow">Scrolling layers</span>
@@ -527,6 +565,13 @@
               <div class="pad-control pad-control-input"><span class="pad-line"></span><i style="width:96px"></i></div>
             </div>
           </div>
+          <div class="pad-modal">
+            <figcaption class="pad-siblings-caption"><span>Modals</span><strong>A little more interior padding than inline components—24 to this card’s 20</strong></figcaption>
+            <div class="pad-stage pad-modal-stage">
+              <div class="pad-card"><span class="pad-line"></span><i style="width:72%"></i><i style="width:52%"></i></div>
+              <div class="pad-modal-el"><span class="pad-line pad-line-24"></span><i style="width:72%"></i><i style="width:52%"></i></div>
+            </div>
+          </div>
           <div class="pad-text">
             <figcaption class="pad-siblings-caption"><span>Text spacing</span><strong>Same-size text keeps consistent gaps on both axes; headings take more space above than below</strong></figcaption>
             <div class="pad-stage pad-text-stage">
@@ -542,7 +587,51 @@
               </div>
             </div>
           </div>
+          <div class="pad-text">
+            <figcaption class="pad-siblings-caption"><span>Title, subtitle, body</span><strong>Less space between title and subtitle; more before the body—gaps grow as the relationship loosens</strong></figcaption>
+            <div class="pad-stage pad-text-stage">
+              <div class="pad-doc">
+                <b class="pad-doc-title" style="width:56%"></b>
+                <span class="pad-gap pad-gap-below"></span>
+                <b class="pad-doc-subtitle" style="width:42%"></b>
+                <span class="pad-gap pad-gap-above"></span>
+                <i class="pad-doc-line" style="width:86%"></i>
+                <i class="pad-doc-line" style="width:78%"></i>
+                <i class="pad-doc-line" style="width:64%"></i>
+              </div>
+            </div>
+          </div>
           <p class="morph-rule add-style-rule"><span>Rule</span><strong>Margins absorb the screen; padding belongs to the component—and to the size</strong></p>
+        </div>
+        <div class="size-rhythm-guide lab-panel">
+          <div class="size-rhythm-intro">
+            <span class="eyebrow">Sizing rhythm</span>
+            <h3>Size even unrelated elements to one rhythm</h3>
+            <p>An avatar, a button, and a card thumbnail may never sit in the same group today, but interfaces get rearranged. When sizes already share a rhythm, seemingly unrelated elements fall onto the same keylines the moment they meet—aligning them later is much easier. Sizing to the rhythm is an investment in layouts that don’t exist yet.</p>
+          </div>
+          <div class="size-rhythm-compare">
+            <figure>
+              <figcaption><span>Arbitrary sizes</span><strong>Aligned by hand, edge by edge</strong></figcaption>
+              <div class="size-stage" aria-label="Three unrelated elements with arbitrary heights missing the keylines">
+                <div class="size-grid">
+                  <span class="size-avatar" style="height:27px;width:27px"></span>
+                  <span class="size-button" style="height:41px;width:104px"></span>
+                  <span class="size-card" style="height:57px;width:88px"></span>
+                </div>
+              </div>
+            </figure>
+            <figure>
+              <figcaption><span>One rhythm</span><strong>Edges land on the keylines the moment they meet</strong></figcaption>
+              <div class="size-stage" aria-label="Three unrelated elements sized 32, 48, and 64 landing on shared keylines">
+                <div class="size-grid">
+                  <span class="size-avatar" style="height:32px;width:32px"></span>
+                  <span class="size-button" style="height:48px;width:104px"></span>
+                  <span class="size-card" style="height:64px;width:88px"></span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Elements that share a sizing rhythm align themselves later</strong></p>
         </div>
         <div class="rhythm-meaning lab-panel">
           <div class="rhythm-meaning-intro">
@@ -733,6 +822,27 @@
             </div>
             <div><span class="eyebrow">Teach a convention</span><strong>Repeat one meaning consistently</strong><p>The labeled control teaches that the chevron beside each filename means “Open in.” A repeated plus can similarly establish “add or create” throughout an interface.</p></div>
           </div>
+        </div>
+        <div class="anatomy-guide lab-panel">
+          <div class="anatomy-intro">
+            <span class="eyebrow">Top and bottom</span>
+            <h3>Wayfinding at the top, primary actions at the bottom</h3>
+            <p>A rule of thumb for the vertical anatomy of a screen or container: broader navigation controls, settings, and anything answering “where am I” go at the top. Primary actions—submit, save, continue, send—go at the bottom, where the task ends. Reading order becomes interaction order: orient, act, complete. The same holds inside a modal.</p>
+          </div>
+          <div class="anatomy-demo">
+            <div class="anatomy-labels">
+              <div class="anatomy-label"><span>Top</span><strong>Broader navigation, settings, and wayfinding—where am I</strong></div>
+              <div class="anatomy-label"><span>Bottom</span><strong>Primary actions—submit, save, continue, send</strong></div>
+            </div>
+            <div class="anatomy-stage">
+              <div class="anatomy-screen" aria-label="A screen with navigation and title at the top, content in the middle, and a primary action at the bottom">
+                <div class="anatomy-top"><b class="anatomy-chevron"></b><i class="anatomy-title"></i><b class="anatomy-gear"></b></div>
+                <div class="anatomy-body"><i style="width:88%"></i><i style="width:74%"></i><i style="width:82%"></i><i style="width:60%"></i></div>
+                <div class="anatomy-bottom"><span class="anatomy-cta">Continue</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Orient at the top, complete at the bottom</strong></p>
         </div>
         <div class="corner-radius-guide lab-panel">
           <div class="corner-radius-intro">

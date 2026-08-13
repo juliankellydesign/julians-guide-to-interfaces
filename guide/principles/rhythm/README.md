@@ -44,7 +44,7 @@ Teach the complete meaning in one clear instance, then preserve the gesture and 
 
 ## Keep elements consistent so variation carries meaning
 
-Elements should share consistent style, sizing, and spacing—tokens make this practical. Too many sizes add visual noise, while consistently sized elements fall onto shared keylines (the invisible lines that align elements) and reduce cognitive overhead. Color follows the same logic in both directions: every button the same color is as confusing as every button a different color. Vary size and color only to communicate importance, function, or context.
+Elements should share consistent style, sizing, and spacing—tokens make this practical. Too many sizes add visual noise, while consistently sized elements fall onto shared keylines (the invisible lines that align elements) and reduce cognitive overhead. The rhythm covers even elements that seem unrelated: interfaces get rearranged, and elements sized to one rhythm align the moment they meet. Color follows the same logic in both directions: every button the same color is as confusing as every button a different color. Vary size and color only to communicate importance, function, or context.
 
 See [`consistency-and-keylines.md`](consistency-and-keylines.md) for the full principle.
 
@@ -56,7 +56,7 @@ See [`adding-styles.md`](adding-styles.md) for the full principle.
 
 ## Keep padding consistent
 
-Margins and padding do different jobs when the screen changes. Padding is part of a component's identity and usually stays consistent across screens; margins, gutters, and layout absorb the change in available space. A padding change reads as a different component—make it deliberately or not at all. Consistency also runs across components: components of the same size share the same padding, so their contents land on the same keylines. Text follows the same rule—same-size text keeps consistent gaps between inline strings and between lines and blocks—with one deliberate asymmetry: headings take more space above than below, so proximity binds them to the content they introduce.
+Margins and padding do different jobs when the screen changes. Padding is part of a component's identity and usually stays consistent across screens; margins, gutters, and layout absorb the change in available space. A padding change reads as a different component—make it deliberately or not at all. Consistency also runs across components: components of the same size share the same padding, so their contents land on the same keylines. Text follows the same rule—same-size text keeps consistent gaps between inline strings and between lines and blocks—with one deliberate asymmetry: headings take more space above than below, so proximity binds them to the content they introduce. The same logic runs one level deeper: a title sits closer to its subtitle than the subtitle sits to the body text, because gaps grow as the relationship loosens.
 
 See [`margins-and-padding.md`](margins-and-padding.md) for the full principle.
 
@@ -72,6 +72,12 @@ Start a design by ranking importance: the most important thing, then the second,
 
 See [`visual-weight.md`](visual-weight.md) for the full principle.
 
+## Balance a left-heavy layout with one right-aligned element
+
+When a card needs to be left aligned and filling the width would be too much—common in conversational AI interfaces, where the user's message sits in a bubble, the AI's reply floats as free text, and a reply that renders a card with controls would look awkward full width—the card can look really left-heavy. A single element aligned to the right balances the composition; often that is the chat bubble already there. One counterweight is enough.
+
+See [`balancing-left-heavy-layouts.md`](balancing-left-heavy-layouts.md) for the full principle.
+
 ## Group actions by scope
 
 Visual grouping implies functional grouping. Actions placed together should share a context, object, or scope. Separate an action when it applies more broadly than the task represented by the group.
@@ -84,10 +90,13 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Use Gestalt principles to judge how spacing and other visual relationships group elements.
 - Make repeated gaps consistent so exceptions carry meaning.
 - Keep component padding consistent across screens; let margins absorb the change.
+- Give modal interiors a little more padding than inline components.
 - Give same-size components the same padding so their contents share keylines.
 - Keep gaps between same-size text consistent on both axes.
 - Give headings more space above than below.
+- Put less space between a title and its subtitle than between the subtitle and the body text.
 - Size elements from a shared token set so they fall onto shared keylines.
+- Size even seemingly unrelated elements to the same rhythm; later alignment comes almost free.
 - Vary size and color only to communicate importance, function, or context.
 - Reuse a similar existing treatment before adding a style, and design new styles for repurposing.
 - Bind treatments to types, never to instances.
@@ -98,6 +107,7 @@ Keep a completion action close to the input it acts on, and arrange the group so
 - Establish a consistent rhythm before introducing variation.
 - Rank importance first, then give the top of the ranking decisively more visual weight.
 - Spend weight sources—size, color, motion—one or two per element, and balance the composition with white space.
+- Balance a left-heavy layout with a single right-aligned element rather than stretching cards full width.
 - Use repeated gestures to build stable meaning across comparable contexts.
 - Keep the outcome of a repeated gesture consistent.
 - Group actions only when they share a context, object, or scope.
