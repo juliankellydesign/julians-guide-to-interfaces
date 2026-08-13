@@ -587,8 +587,12 @@ code { font: 10px var(--mono); padding: 4px 6px; border: 1px solid var(--line); 
 .balance-compare figcaption strong { display: block; margin-top: 6px; font-size: 15px; font-weight: 500; }
 .balance-stage { display: flex; justify-content: center; padding: 24px 0; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--gray-50); }
 .balance-col { display: flex; flex-direction: column; gap: 12px; width: 80%; }
-.balance-card { display: flex; flex-direction: column; gap: 8px; align-self: flex-start; padding: 12px 14px; border: 1px solid var(--line-strong); border-radius: 12px; border-bottom-left-radius: 4px; background: var(--paper); }
+.balance-card { display: flex; flex-direction: column; gap: 8px; align-self: flex-start; padding: 12px 14px; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--paper); }
 .balance-card i { height: 8px; border-radius: 4px; background: var(--gray-200); }
+.balance-text { height: 8px; border-radius: 4px; background: var(--gray-200); }
+.balance-controls { display: flex; gap: 8px; margin-top: 4px; }
+.balance-controls b { height: 20px; width: 56px; border-radius: 6px; border: 1px solid var(--line-strong); background: var(--gray-50); }
+.balance-controls .balance-primary { border: 0; background: var(--gray-900); }
 .balance-bubble { display: flex; flex-direction: column; gap: 8px; align-self: flex-end; padding: 12px 14px; border-radius: 12px; border-bottom-right-radius: 4px; background: var(--gray-900); }
 .balance-bubble i { height: 8px; border-radius: 4px; background: var(--gray-400); }
 

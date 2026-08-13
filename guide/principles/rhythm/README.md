@@ -74,7 +74,7 @@ See [`visual-weight.md`](visual-weight.md) for the full principle.
 
 ## Balance a left-heavy layout with one right-aligned element
 
-When a card needs to be left aligned and filling the width would be too much—common in chat interfaces—a column of left-aligned cards can look really left-heavy. A single element aligned to the right balances the composition; in a chat interface, that is often the chat bubble. One counterweight is enough.
+When a card needs to be left aligned and filling the width would be too much—common in conversational AI interfaces, where the user's message sits in a bubble, the AI's reply floats as free text, and a reply that renders a card with controls would look awkward full width—the card can look really left-heavy. A single element aligned to the right balances the composition; often that is the chat bubble already there. One counterweight is enough.
 
 See [`balancing-left-heavy-layouts.md`](balancing-left-heavy-layouts.md) for the full principle.
 

@@ -32,7 +32,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.49</span>
+        <span>v0.50</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -472,26 +472,34 @@
           <div class="balance-intro">
             <span class="eyebrow">Balancing alignment</span>
             <h3>One right-aligned element fixes a left-heavy layout</h3>
-            <p>Sometimes a card needs to left align, and filling the width would be too much—common in chat interfaces. A column of left-aligned cards can look really left-heavy. The fix is simple: a single thing aligned to the right balances the composition. In a chat interface, that’s often the chat bubble itself.</p>
+            <p>In conversational AI interfaces, the user’s message sits in a bubble and the AI’s reply floats as free text. When a reply needs to render a card with controls, full width would be too much card—but left aligned it can look really left-heavy. The fix is simple: a single thing aligned to the right balances the composition, and it’s often the chat bubble that’s already there.</p>
           </div>
           <div class="balance-compare">
             <figure>
-              <figcaption><span>Left-heavy</span><strong>All the weight on one edge</strong></figcaption>
-              <div class="balance-stage" aria-label="Three left-aligned cards leaving the right side empty">
+              <figcaption><span>Left-heavy</span><strong>The contained card tips the layout</strong></figcaption>
+              <div class="balance-stage" aria-label="Free-floating reply text and a left-aligned card with controls, leaving the right side empty">
                 <div class="balance-col">
-                  <div class="balance-card" style="width:64%"><i style="width:80%"></i><i style="width:56%"></i></div>
-                  <div class="balance-card" style="width:58%"><i style="width:72%"></i><i style="width:48%"></i></div>
-                  <div class="balance-card" style="width:66%"><i style="width:84%"></i><i style="width:52%"></i></div>
+                  <i class="balance-text" style="width:92%"></i>
+                  <i class="balance-text" style="width:84%"></i>
+                  <i class="balance-text" style="width:58%"></i>
+                  <div class="balance-card" style="width:62%">
+                    <i style="width:78%"></i><i style="width:54%"></i>
+                    <div class="balance-controls"><b></b><b class="balance-primary"></b></div>
+                  </div>
                 </div>
               </div>
             </figure>
             <figure>
-              <figcaption><span>Balanced</span><strong>The chat bubble is the counterweight</strong></figcaption>
-              <div class="balance-stage" aria-label="The same left-aligned cards balanced by one right-aligned chat bubble">
+              <figcaption><span>Balanced</span><strong>The user’s bubble is the counterweight</strong></figcaption>
+              <div class="balance-stage" aria-label="The same reply balanced by the user's right-aligned chat bubble above it">
                 <div class="balance-col">
-                  <div class="balance-card" style="width:64%"><i style="width:80%"></i><i style="width:56%"></i></div>
-                  <div class="balance-bubble" style="width:46%"><i style="width:82%"></i><i style="width:58%"></i></div>
-                  <div class="balance-card" style="width:58%"><i style="width:72%"></i><i style="width:48%"></i></div>
+                  <div class="balance-bubble" style="width:44%"><i style="width:82%"></i></div>
+                  <i class="balance-text" style="width:92%"></i>
+                  <i class="balance-text" style="width:84%"></i>
+                  <div class="balance-card" style="width:62%">
+                    <i style="width:78%"></i><i style="width:54%"></i>
+                    <div class="balance-controls"><b></b><b class="balance-primary"></b></div>
+                  </div>
                 </div>
               </div>
             </figure>
