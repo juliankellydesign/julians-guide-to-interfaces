@@ -19,6 +19,10 @@ When a method explicitly lays out a system—the type scale, the gray curve, the
 
 A design system slotted in alongside the guide overrules scaffold values wherever they conflict. The principles and each method's reasoning still apply; only the numbers yield.
 
+## Design system components
+
+The methods module now has an applied edge: a basic set of design system components in [`design-system/`](design-system/README.md). Each component is a written visual spec assembled from the methods' values, plus a reference implementation built on Base UI (`@base-ui/react`) in [`/design-system/`](../design-system/) at the repository root. The spec is the contract; on platforms where the implementation cannot run, implement the spec natively. Load component specs only when building or restyling those components.
+
 ## Choose by task
 
 - For an existing product, read the relevant principles and preserve its established visual system.
