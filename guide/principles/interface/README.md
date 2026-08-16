@@ -15,7 +15,7 @@ An interaction may initially be searching for a problem. That is acceptable when
 
 ## Every element earns its spot
 
-Leaning on conventions versus diverging from them is a delicate, temporal dance—patterns become conventions and the line moves. When a conventional interface gains novel elements, introduce them one at a time and require each to prove itself. Never admit a pattern because it is shorthand for the technology behind it; if the capability is weak, fix the capability. The worked example: let search be search, then let conversational elements in one by one as they earn it.
+Leaning on conventions versus diverging from them is a delicate, temporal dance—patterns become conventions and the line moves. When a conventional interface gains novel elements, introduce them one at a time and require each to prove itself. Never admit a pattern because it is shorthand for the technology behind it; if the capability is weak, fix the capability. The example: let search be search, then let conversational elements in one by one as they earn it.
 
 See [`every-element-earns-its-spot.md`](every-element-earns-its-spot.md) for the full principle.
 

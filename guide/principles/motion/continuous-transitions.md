@@ -20,6 +20,8 @@ In the same moment, the tab bar moves down and out of the way to make room. It s
 
 The size relationship is what makes all of this legible. The tab bar and the composer are the same size and occupy the same slot between the same neighbors; as two static designs side by side, nothing would explain how one becomes the other. The chip is visibly smaller than both, so its expansion reads unmistakably as one element growing into place. The transition carries information the static frames cannot.
 
+**Transferable point:** connect elements with a continuous transition only when they do the same thing; let everything else move as itself.
+
 ## When the elements do different things
 
 Do not connect elements that do different things with a continuous transition. Let one leave and the other arrive—a fade, a push, a replacement—so each element keeps its own identity through the change. The weaker transition is the honest one.

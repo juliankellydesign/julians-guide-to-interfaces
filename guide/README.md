@@ -23,6 +23,10 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 
 The methods module now has an applied edge: a basic set of design system components in [`design-system/`](design-system/README.md). Each component is a written visual spec assembled from the methods' values, plus a reference implementation built on Base UI (`@base-ui/react`) in [`/design-system/`](../design-system/) at the repository root. The spec is the contract; on platforms where the implementation cannot run, implement the spec natively. Load component specs only when building or restyling those components.
 
+## Rules and examples
+
+Each principle file has one normative kernel: its working rules. Everything else—prose, comparisons, examples—is explanation and illustration. Substantial examples sit under an `## Example:` heading and end with a transferable point naming the abstraction they teach; extract that structure, never the surface. An example's verdict is an application of the rules at a point in time, not a rule itself—verdicts that depend on what users currently understand carry an "as of" year, and the conventions principle explains why that line moves. Inline illustrations woven into prose follow the same contract: illustrative, never normative.
+
 ## Choose by task
 
 - Foundations now include process principles: change altitude deliberately (make at low altitude, edit at high; be harsh on the work, gentle on yourself), hold the designer's role as the voice of the user against the engineering and business voices, and treat simple results as earned by exploration—the crazy versions get explored and shown.

@@ -24,6 +24,7 @@ Do not read `guide/asides/` by default. Asides provide context for people but ar
 - Classify guidance about how to judge or approach a decision as a principle. Classify a repeatable recipe, generated system, or exact default as a method.
 - Keep one primary idea per file. Split a file before it becomes expensive for an agent to retrieve.
 - Prefer exact values, examples, and comparisons over vague adjectives.
+- Keep working rules as the only normative kernel of a file. Examples are illustrative applications, never rules: put substantial ones under an `## Example:` heading, end each with a one-line transferable point naming the abstraction it teaches, and never cite an example's verdict as a rule—verdicts that depend on what users currently understand carry an "as of" year, because conventions move.
 - Write direct, informative content. Add style only when it communicates something.
 - Preserve first-person claims when they express Julian’s taste or process.
 - Mark undeveloped areas as placeholders; do not invent Julian’s opinions.
