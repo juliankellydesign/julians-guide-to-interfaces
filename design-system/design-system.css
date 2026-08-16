@@ -1,0 +1,189 @@
+/* Julian's Guide to Interfaces — design system reference implementation.
+   Implements the specs in guide/design-system/; the specs are the source of truth.
+   Every value is a scaffold: a slotted-in design system overrules it. */
+
+:root {
+  /* Gray scale (methods/color/perceptual-gray-scales) */
+  --gray-0: oklch(1 0 0);
+  --gray-50: oklch(0.97098 0 0);
+  --gray-100: oklch(0.93812 0 0);
+  --gray-200: oklch(0.86065 0 0);
+  --gray-300: oklch(0.76845 0 0);
+  --gray-400: oklch(0.66472 0 0);
+  --gray-500: oklch(0.55453 0 0);
+  --gray-600: oklch(0.4433 0 0);
+  --gray-700: oklch(0.33532 0 0);
+  --gray-800: oklch(0.23316 0 0);
+  --gray-900: oklch(0.13798 0 0);
+  --gray-950: oklch(0.0931 0 0);
+  --gray-1000: oklch(0.05 0 0);
+
+  /* Highlight (scaffold: blue 500/600 from methods/color/perceptual-color-scales) */
+  --highlight: oklch(0.634 0.16 250);
+  --highlight-strong: oklch(0.523 0.16 250);
+
+  /* Scrim (methods/interface/scrim): 20% white from the transparent-white scale */
+  --scrim: rgb(255 255 255 / 0.2);
+
+  /* Control shape (design-system/button spec) */
+  --control-radius: 10px;
+
+  /* Press (methods/motion/press-scale) */
+  --press-scale: 0.9;
+
+  /* Modal (design-system/modal spec) */
+  --modal-padding: 24px;
+  --modal-radius: 16px;
+  --modal-shadow: 0 12px 32px rgb(0 0 0 / 0.14);
+
+  --font: "Karl", -apple-system, sans-serif;
+}
+
+/* ---------- Button ---------- */
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: var(--control-radius);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.1s ease, background-color 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-button:active { transform: scale(var(--press-scale)); }
+.ds-button:focus-visible { outline: 2px solid var(--highlight); outline-offset: 2px; }
+.ds-button:disabled { opacity: 0.4; cursor: default; }
+.ds-button:disabled:active { transform: none; }
+
+/* Sizes: XS 24 · S 32 · M 40 (default) · L 48 · XL 56 */
+.ds-button-xs { height: 24px; padding: 0 8px; font-size: 14px; }
+.ds-button-s { height: 32px; padding: 0 12px; font-size: 14px; }
+.ds-button-m { height: 40px; padding: 0 16px; font-size: 16px; }
+.ds-button-l { height: 48px; padding: 0 20px; font-size: 16px; }
+.ds-button-xl { height: 56px; padding: 0 24px; font-size: 17px; }
+
+/* Styles: one primary per surface */
+.ds-button-primary { background: var(--highlight); color: var(--gray-0); font-weight: 600; }
+.ds-button-secondary { background: var(--gray-100); color: var(--gray-900); }
+.ds-button-tertiary { background: transparent; color: var(--gray-900); box-shadow: inset 0 0 0 1px var(--gray-300); }
+.ds-button-ghost { background: transparent; color: var(--gray-900); }
+
+@media (hover: hover) {
+  .ds-button-primary:hover:not(:disabled) { background: var(--highlight-strong); }
+  .ds-button-secondary:hover:not(:disabled) { background: var(--gray-200); }
+  .ds-button-tertiary:hover:not(:disabled), .ds-button-ghost:hover:not(:disabled) { background: var(--gray-50); }
+}
+
+/* ---------- Input ---------- */
+
+.ds-input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--control-radius);
+  background: var(--gray-0);
+  color: var(--gray-1000);
+  font-family: var(--font);
+  font-weight: 400;
+}
+.ds-input::placeholder { color: var(--gray-500); }
+.ds-input:focus { outline: 2px solid var(--highlight); outline-offset: 0; border-color: var(--highlight); }
+.ds-input:disabled { background: var(--gray-50); opacity: 0.4; }
+
+.ds-input-s { height: 32px; padding: 0 12px; font-size: 14px; }
+.ds-input-m { height: 40px; padding: 0 16px; font-size: 16px; }
+.ds-input-l { height: 48px; padding: 0 20px; font-size: 16px; }
+
+/* Nested action: button insets 4 inside the input; radius 10 - 4 = 6 */
+.ds-input-group { position: relative; display: flex; align-items: center; }
+.ds-input-group .ds-input { padding-right: 76px; }
+.ds-input-group .ds-button {
+  position: absolute;
+  right: 4px;
+  border-radius: 6px;
+}
+.ds-input-group-m .ds-button { height: 32px; padding: 0 12px; font-size: 14px; }
+
+/* ---------- Modal ---------- */
+
+.ds-scrim {
+  position: fixed;
+  inset: 0;
+  background: var(--scrim);
+  transition: opacity 0.16s ease;
+}
+.ds-scrim[data-starting-style], .ds-scrim[data-ending-style] { opacity: 0; }
+
+.ds-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: min(480px, calc(100vw - 32px));
+  padding: var(--modal-padding);
+  border-radius: var(--modal-radius);
+  background: var(--gray-0);
+  box-shadow: var(--modal-shadow);
+  font-family: var(--font);
+  color: var(--gray-1000);
+  transition: transform 0.16s ease, opacity 0.16s ease;
+}
+.ds-modal[data-starting-style], .ds-modal[data-ending-style] {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.96);
+}
+
+/* Anatomy: title top, body middle, primary action bottom.
+   Title sits closer to its subtitle than the subtitle sits to the body. */
+.ds-modal-title { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.2; }
+.ds-modal-subtitle { margin: 6px 0 0; font-size: 14px; color: var(--gray-600); line-height: 1.5; }
+.ds-modal-body { margin: 16px 0 0; font-size: 16px; line-height: 1.55; color: var(--gray-800); }
+.ds-modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-modal, .ds-scrim { transition: none; }
+  .ds-modal[data-starting-style], .ds-modal[data-ending-style] { transform: translate(-50%, -50%); }
+}
+
+/* ---------- Switch ---------- */
+
+.ds-switch {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  width: 40px;
+  height: 24px;
+  padding: 2px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--gray-300);
+  cursor: pointer;
+  transition: background-color 0.16s ease, transform 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-switch[data-checked] { background: var(--highlight); }
+.ds-switch:active { transform: scale(var(--press-scale)); }
+.ds-switch:focus-visible { outline: 2px solid var(--highlight); outline-offset: 2px; }
+
+.ds-switch-thumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gray-0);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+  transition: transform 0.16s ease;
+}
+.ds-switch[data-checked] .ds-switch-thumb { transform: translateX(16px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-switch, .ds-switch-thumb { transition: none; }
+}

@@ -35,6 +35,10 @@ When a method explicitly lays out a system—the type scale, the gray curve, the
 | [Build animation rhythm and swing](motion/animation-rhythm-and-swing.md) | Using the 48-frame timing scaffold for complex animation |
 | [Scale controls on press](motion/press-scale.md) | Applying the press-state scale default |
 
+## Design system components
+
+The applied edge of this module: component specs and a Base UI reference implementation live in [`../design-system/`](../design-system/README.md)—Button, Input, Modal, and Switch, assembled entirely from the methods above. Load a component spec only when building or restyling that component.
+
 ## Retrieval rules
 
 - Do not read methods by default.

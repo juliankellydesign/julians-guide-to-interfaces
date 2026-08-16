@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.42.0",
+  "version": "0.43.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -662,5 +662,22 @@
       "swing": "Move selected internal keyframes earlier or later while preserving the 48-frame loop."
     },
     "reducedMotionRequired": true
+  },
+  "designSystem": {
+    "status": "starting set",
+    "components": [
+      "button",
+      "input",
+      "modal",
+      "switch"
+    ],
+    "specPath": "guide/design-system/",
+    "specsAreSourceOfTruth": true,
+    "referenceImplementation": {
+      "library": "@base-ui/react",
+      "role": "headless behavior and accessibility",
+      "path": "design-system/",
+      "note": "Visual values live in the specs and design-system.css; on platforms where the implementation cannot run, the specs are the visual contract."
+    }
   }
 }
