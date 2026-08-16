@@ -31,6 +31,16 @@ Before visual styling, identify:
 2. The core interaction a person will perform.
 3. The core visual elements needed to make that interaction legible.
 
+## Interrogate the ask
+
+When the work arrives as someone else's brief, the same discipline applies from a higher altitude. An ask arrives at some elevation—"design a chat interface for this bot" prescribes the interface; "add AI to my product" prescribes almost nothing. Either way, step back and work the chain in order:
+
+1. **What is the value?** "We want a chat interface" → why? What is it for? "Add AI" → what value does the AI actually provide to the people using this product?
+2. **What are the capabilities?** Capabilities are the things a user wants done by the system that it can now do. The value names them.
+3. **What interface surfaces them best?** Only now choose. A prescribed interface might ultimately be the right approach—treat it as one candidate, not the requirement. Once the surface is chosen, keep asking the same questions at each lower altitude: a chat surface still has to decide between traditional message bubbles and a turn-by-turn treatment that is less obviously a chat.
+
+If the underlying capability is weak, fix the capability—do not dress it in a novel interface.
+
 ## Use the simplest sufficient tool
 
 If a relationship can be communicated purely with layout and typography, communicate it with layout and typography. Effects are added only when those tools cannot express the idea as clearly.

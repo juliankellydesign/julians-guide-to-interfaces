@@ -26,7 +26,7 @@ The methods module now has an applied edge: a basic set of design system compone
 ## Choose by task
 
 - Foundations now include process principles: change altitude deliberately (make at low altitude, edit at high; be harsh on the work, gentle on yourself), hold the designer's role as the voice of the user against the engineering and business voices, and treat simple results as earned by exploration—the crazy versions get explored and shown.
-- Interface principles interrogate the ask before accepting the interface: work from the ask to the value to the capabilities—the things a user wants done by the system—before choosing the surface, treating a prescribed interface as one candidate.
+- Core principles interrogate the ask before accepting the interface: work from the ask to the value to the capabilities—the things a user wants done by the system—before choosing the surface, treating a prescribed interface as one candidate.
 - Interface principles require novel elements added to a conventional interface to earn their spot one at a time, with proof; a pattern is never admitted because it is shorthand for the technology behind it, and a weak capability gets fixed rather than dressed in a novel interface.
 - For an existing product, read the relevant principles and preserve its established visual system.
 - For greenfield work, read the relevant principles, then add only the methods needed to build the system.
@@ -38,7 +38,7 @@ The methods module now has an applied edge: a basic set of design system compone
 - Typography principles also cover numeric figure styles, numeric alignment, quotation marks, apostrophes, and primes. Apply these within the existing type system.
 - Text-alignment principles assume a left-to-right language. Adapt the starting edge and reading flow for other writing directions.
 - Interface principles define how primary, secondary, and tertiary actions communicate priority. Apply that hierarchy through the product’s established control styles.
-- Interface principles also cover sizing controls for mouse and touch input and deciding when repeated actions clarify or confuse. Load the control-size method only when exact numerical starting points are needed.
+- Interface principles also cover sizing controls for mouse and touch input. Load the control-size method only when exact numerical starting points are needed. Deciding when repeated controls clarify or confuse lives in rhythm's repetition principle.
 - Interface principles put broader navigation, settings, and wayfinding content at the top of a screen or container, and primary actions—submit, save, continue, send—at the bottom, so the vertical order runs orient, act, complete.
 - Interface principles require the interface to match the fidelity of the input: control sizes, density, and motion timing change with input method and screen size, while roles and hierarchy stay constant.
 - Interface principles also treat empty states, 404s, and no-network pages as opportunities for delight and user education.

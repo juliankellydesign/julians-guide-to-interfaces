@@ -14,7 +14,7 @@ Because the sources add up, spend them deliberately. A large, bright, moving ele
 
 An element that covers a lot of real estate already carries weight through its area, so its other sources should stay quiet—body text is vast, gray, and still. An element that must lead from a small footprint spends color or motion instead. The composition reads correctly when each element's total weight matches its rank, whatever mix of sources produces it.
 
-White space is an element too. An empty region has weight in the balance, and it can offset a loud element as effectively as another object can. Use it as a compositional counterweight, not as leftover room.
+White space is an element too. An empty region has weight in the balance, and it can offset a loud element as effectively as another object can. Use it as a compositional counterweight, not as leftover room. For the specific case of a left-aligned card tipping a layout—and one right-aligned element restoring the balance—see [`balancing-left-heavy-layouts.md`](balancing-left-heavy-layouts.md).
 
 ## Rank first, then assign weight
 

@@ -22,3 +22,5 @@ The same rule already runs through the guide in different coats: an attention sh
 - When adding a genuinely new style, design it to be repurposed rather than fitted to one instance.
 - Bind every treatment to a type; never style a single instance.
 - Treat a growing number of one-off styles as a sign the two questions are being skipped.
+
+The same rigor at the scale of whole interaction patterns—novel elements entering a conventional interface with proof—is [`../interface/every-element-earns-its-spot.md`](../interface/every-element-earns-its-spot.md).

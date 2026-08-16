@@ -6,7 +6,7 @@ As the voice of the user, one of the tensions you manage is where to leverage wh
 
 ## Conventions are a moving target
 
-Lean on a convention when it describes the behavior accurately and users already carry the understanding. Break it to call attention to something genuinely new. But the line moves: something that seemed to warrant a novel interface may turn out to be best served by a conventional one, and a novel pattern that earns adoption elsewhere becomes tomorrow's convention. Judge against what users understand now, not against what was true when the pattern was named.
+When to lean on a convention is the map-and-landscape question—use it when it describes the behavior accurately and users already carry the understanding (see [`map-and-landscape.md`](map-and-landscape.md)). This principle governs the departure: break a convention to call attention to something genuinely new, and know that the line moves. Something that seemed to warrant a novel interface may turn out to be best served by a conventional one, and a novel pattern that earns adoption elsewhere becomes tomorrow's convention. Judge against what users understand now, not against what was true when the pattern was named.
 
 ## A worked example: let search be search
 
@@ -16,7 +16,7 @@ The proposal instead: **let it be search.** Then bring in elements from conversa
 
 ## The rigor
 
-The alternative is wholesale replacement: everything comes over from the chat interface, and nobody can say why any given piece is there. The rigor is the opposite—each novel element added to a conventional interface (or wilder interface) carries its proof. This is the ask-twice discipline applied across whole interfaces: reuse what users already understand, and make every departure demonstrate the value that justifies it.
+The alternative is wholesale replacement: everything comes over from the chat interface, and nobody can say why any given piece is there. The rigor is the opposite—each novel element added to a conventional interface (or wilder interface) carries its proof. This is the ask-twice discipline (see [`../rhythm/adding-styles.md`](../rhythm/adding-styles.md)) applied across whole interfaces: reuse what users already understand, and make every departure demonstrate the value that justifies it.
 
 ## Working rules
 

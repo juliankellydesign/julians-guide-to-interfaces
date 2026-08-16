@@ -6,7 +6,7 @@ Design is a cool profession—you get to create totally new interactions and def
 
 ## Exploration is the job, not a detour
 
-Explore the wild ideas even when the conventional answer looks likely. A reliable sign of burnout is when the exploration stops—when the goal quietly becomes the least effort that gets an acceptable result. That framing belongs to the voice of the business, not the voice of the user.
+Explore the wild ideas even when the conventional answer looks likely. A reliable sign of burnout is when the exploration stops—when the goal quietly becomes the least effort that gets an acceptable result, which is the business voice speaking through you (see [`03-voice-of-the-user.md`](03-voice-of-the-user.md)).
 
 ## The simple result is the result of the exploration
 
