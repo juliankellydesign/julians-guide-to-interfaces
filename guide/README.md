@@ -25,6 +25,9 @@ The methods module now has an applied edge: a basic set of design system compone
 
 ## Choose by task
 
+- Foundations now include process principles: change altitude deliberately (make at low altitude, edit at high; be harsh on the work, gentle on yourself), hold the designer's role as the voice of the user against the engineering and business voices, and treat simple results as earned by exploration—the crazy versions get explored and shown.
+- Interface principles interrogate the ask before accepting the interface: work from the ask to the value to the capabilities—the things a user wants done by the system—before choosing the surface, treating a prescribed interface as one candidate.
+- Interface principles require novel elements added to a conventional interface to earn their spot one at a time, with proof; a pattern is never admitted because it is shorthand for the technology behind it, and a weak capability gets fixed rather than dressed in a novel interface.
 - For an existing product, read the relevant principles and preserve its established visual system.
 - For greenfield work, read the relevant principles, then add only the methods needed to build the system.
 - To retrieve exact defaults, select the relevant method before reading [`../data/foundations.json`](../data/foundations.json).

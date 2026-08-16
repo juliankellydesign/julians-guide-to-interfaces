@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.43.0",
+  "version": "0.44.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -55,6 +55,25 @@
         "cultural context"
       ],
       "designFor": "people"
+    },
+    "altitude": {
+      "principle": "Jump between the narrow view and the wide view; the ability to change elevation is a core design skill.",
+      "makeAt": "low altitude, close to the pixels",
+      "editAt": "high altitude, against what people actually want",
+      "critique": "Harsh on the work, gentle on the maker; making is hard and ideas are fragile."
+    },
+    "voiceOfTheUser": {
+      "archetypes": {
+        "engineering": "how will we build this",
+        "product": "how will this work toward our business goals",
+        "design": "how will this be the best experience for the people who use it"
+      },
+      "tensionIsHealthy": true,
+      "costMinimizingFraming": "belongs to the business voice, not the designer"
+    },
+    "earnedSimplicity": {
+      "principle": "Simple, obvious results are earned by exploration, even when the simple result was the first thing tried.",
+      "explorationStoppingIsAWarningSign": true
     }
   },
   "typography": {

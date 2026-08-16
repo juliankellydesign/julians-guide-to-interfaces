@@ -13,6 +13,18 @@ The best interfaces begin from one of two places:
 
 An interaction may initially be searching for a problem. That is acceptable when the work is described as an exploration.
 
+## Interrogate the ask
+
+An ask arrives at some altitude—"design a chat interface for this bot" prescribes the interface; "add AI to my product" prescribes almost nothing. Either way, step back and work the chain: what is the actual value, what capabilities does it give users (the things they want done by the system), and only then, what interface surfaces those capabilities best. A prescribed interface is one candidate, not the requirement.
+
+See [`interrogate-the-ask.md`](interrogate-the-ask.md) for the full principle.
+
+## Every element earns its spot
+
+Leaning on conventions versus diverging from them is a delicate, temporal dance—patterns become conventions and the line moves. When a conventional interface gains novel elements, introduce them one at a time and require each to prove itself. Never admit a pattern because it is shorthand for the technology behind it; if the capability is weak, fix the capability. The worked example: let search be search, then let conversational elements in one by one as they earn it.
+
+See [`every-element-earns-its-spot.md`](every-element-earns-its-spot.md) for the full principle.
+
 ## Core interaction, core visuals
 
 Before expanding the system, name:
