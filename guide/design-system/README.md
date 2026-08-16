@@ -8,12 +8,12 @@ Every value here is assembled from the methods module: the gray and color scales
 
 ## Components
 
-| Component | Spec | Built on |
-| --- | --- | --- |
-| Button | [`button.md`](button.md) | `@base-ui/react/button` |
-| Input | [`input.md`](input.md) | `@base-ui/react/input` |
-| Modal | [`modal.md`](modal.md) | `@base-ui/react/dialog` |
-| Switch | [`switch.md`](switch.md) | `@base-ui/react/switch` |
+| Component | Use it when | Spec | Built on |
+| --- | --- | --- | --- |
+| Button | A discrete action—submit, save, continue, send | [`button.md`](button.md) | `@base-ui/react/button` |
+| Input | Freeform text entered or edited | [`input.md`](input.md) | `@base-ui/react/input` |
+| Modal | A focused interruption that must resolve before continuing | [`modal.md`](modal.md) | `@base-ui/react/dialog` |
+| Switch | A binary setting that takes effect immediately | [`switch.md`](switch.md) | `@base-ui/react/switch` |
 
 ## Reference implementation
 
@@ -29,6 +29,7 @@ Rebuild the bundle after editing `app.jsx`: `npm run build:ds`.
 ## Rules
 
 - The spec files are the source of truth; the CSS implements them, never the reverse.
+- Every spec opens with a "When to use it" section—selection guidance is what an agent needs from a spec, and the table above carries the one-line form.
 - Components take exact values only from `data/foundations.json` and these specs.
-- Behavior, focus management, and accessibility come from Base UI; the guide does not restyle its logic.
+- Behavior, focus management, and accessibility come from Base UI; the guide neither restyles nor re-documents it. What a component does is static—the spec covers when to reach for it and what it looks like.
 - A platform that cannot run the implementation follows the spec visually, using its native equivalents for behavior.

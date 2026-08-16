@@ -6,6 +6,10 @@ scaffold: true
 
 # Modal
 
+## When to use it
+
+For a focused interruption: a decision or small task that must resolve before the person continues, where the content beneath becomes temporarily not the subject. If the person should keep their context and the task can happen in place, do not reach for a modal.
+
 ## Sources
 
 Interior padding from the modal-padding method; scrim from the scrim method; shadow use from the shadows principle; title placement and action placement from top-and-bottom; title/subtitle/body gaps from the padding principle.

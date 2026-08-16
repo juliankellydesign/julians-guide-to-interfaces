@@ -6,6 +6,10 @@ scaffold: true
 
 # Input
 
+## When to use it
+
+For freeform text the person enters or edits—search queries, replies, names, values. Nest a button inside only when it acts on the content within; an action that reaches beyond the input sits outside it.
+
 ## Sources
 
 Heights shared with the button scaffold (same size, same padding); nested action from the nesting musing and the nested-radius formula; text sizes from the button spec's pairings.
