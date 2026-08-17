@@ -23,6 +23,21 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 
 The methods module now has an applied edge: a basic set of design system components in [`design-system/`](design-system/README.md). Each component is a written visual spec assembled from the methods' values, plus a reference implementation built on Base UI (`@base-ui/react`) in [`/design-system/`](../design-system/) at the repository root. The spec is the contract; on platforms where the implementation cannot run, implement the spec natively. Load component specs only when building or restyling those components.
 
+## Reading path for people
+
+Agents get routed by task below; a person learning interaction design reads in order, because each layer builds on the ones before it:
+
+1. **Stance** — [`principles/00-core-principles.md`](principles/00-core-principles.md) (everything serves a purpose; begin with the problem; interrogate the ask), then [`01-human-judgment.md`](principles/01-human-judgment.md), [`02-altitude.md`](principles/02-altitude.md), [`03-voice-of-the-user.md`](principles/03-voice-of-the-user.md), and [`04-earned-simplicity.md`](principles/04-earned-simplicity.md). How to approach the work before any pixels.
+2. **Content** — the interface's words come before its visuals: [`principles/content/`](principles/content/README.md).
+3. **Typography** — hierarchy and type relationships: [`principles/typography/`](principles/typography/README.md).
+4. **Rhythm** — space, grouping, alignment, and weight: [`principles/rhythm/`](principles/rhythm/README.md).
+5. **Interface** — actions, controls, conventions, and states: [`principles/interface/`](principles/interface/README.md).
+6. **Imagery** — icons in relation to type: [`principles/imagery/`](principles/imagery/README.md).
+7. **Motion** — continuity, causality, and platform: [`principles/motion/`](principles/motion/README.md).
+8. **The applied layer, last** — [`methods/`](methods/README.md) and the [design system components](design-system/README.md) show the principles compiled into one working system.
+
+The website presents the same material in the same order with live demos—read a discipline, then study its panels. [Asides](asides/README.md) add the personal and historical context that the working guidance omits.
+
 ## Rules and examples
 
 Each principle file has one normative kernel: its working rules. Everything else—prose, comparisons, examples—is explanation and illustration. Substantial examples sit under an `## Example:` heading and end with a transferable point naming the abstraction they teach; extract that structure, never the surface. An example's verdict is an application of the rules at a point in time, not a rule itself—verdicts that depend on what users currently understand carry an "as of" year, and the conventions principle explains why that line moves. Inline illustrations woven into prose follow the same contract: illustrative, never normative.

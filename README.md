@@ -12,7 +12,7 @@ This is not an argument for stark minimalism. Flourishes, shadows, movement, and
 
 ## Read the guide
 
-Start with [the core principles](guide/principles/00-core-principles.md), then choose the layer the task requires:
+A person learning interaction design follows the [reading path](guide/README.md#reading-path-for-people)—stance first, then the disciplines in order, the applied layer last. An agent (or a reader with a task in hand) starts with [the core principles](guide/principles/00-core-principles.md), then chooses the layer the task requires:
 
 - [Principles](guide/principles/README.md) are the theory: how I approach and judge interface design. Use them by default, including when working inside an existing visual system.
 - [Methods](guide/methods/README.md) and [structured foundations](data/foundations.json) are the applied layer: my design system, expressed as recipes for type, color, spacing, and motion plus machine-readable tokens. Use them when building or deliberately replacing a system. The layer works as a scaffold for getting new work up and running quickly.
