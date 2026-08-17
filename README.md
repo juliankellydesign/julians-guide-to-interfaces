@@ -2,6 +2,8 @@
 
 An evolving record of what I know about designing interfaces, from first principles to implementation details.
 
+The guide serves two purposes deliberately. It is a **tool for working with agents**: each module is self-contained, so an agent can receive just the principles for judgment inside an existing system, or the principles and methods together to build in my style. And it is a **teaching guide**: the same material—principles, examples, demos, and the website—supports teaching an introduction to interaction design. The two readings share one source: working rules and specs are the normative kernel agents consume; prose, examples, and demos carry the teaching.
+
 The guide begins with one rule:
 
 > Everything in an interface should serve a purpose.

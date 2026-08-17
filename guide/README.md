@@ -2,7 +2,7 @@
 
 ## In brief
 
-Use this file as a router. The guide splits into two layers: theory and practice. Principles are the theory—how I approach and judge interface design. Methods and structured foundations are the applied layer—my design system, expressed as recipes and exact values. Read the core principles, then choose the layer the task requires. Theory is the default. The applied layer is opt-in.
+Use this file as a router. The guide is deliberately dual-purpose: a tool for agents (pass the principles alone, or principles and methods together) and a teaching guide for humans learning interaction design—working rules and specs are the agent-facing kernel, while prose, examples, and the website carry the teaching. The guide splits into two layers: theory and practice. Principles are the theory—how I approach and judge interface design. Methods and structured foundations are the applied layer—my design system, expressed as recipes and exact values. Read the core principles, then choose the layer the task requires. Theory is the default. The applied layer is opt-in.
 
 ## Two modules
 
