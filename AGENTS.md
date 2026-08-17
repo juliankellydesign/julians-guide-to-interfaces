@@ -2,6 +2,8 @@
 
 This repository is Julian Kelly’s evolving interface-design handbook. Preserve his point of view: opinionated, concrete, purposeful, and open to revision.
 
+**Mode check:** if this repository is vendored inside (or beside) another project and your task is to design or restyle that project—not to edit the guide—follow [`APPLY.md`](APPLY.md) instead of this file.
+
 ## Reading order
 
 Do not read the entire repository by default.
