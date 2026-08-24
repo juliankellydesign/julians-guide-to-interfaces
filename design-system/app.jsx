@@ -78,6 +78,64 @@ function Inputs() {
           </div>
         </div>
       </Row>
+      <Row label="Complete field states">
+        <div className="sheet-col">
+          <label className="ds-field">
+            <span className="ds-label">Project name</span>
+            <Input className="ds-input ds-input-m" defaultValue="Interface guide" />
+            <span className="ds-help">Visible to everyone in the workspace.</span>
+          </label>
+          <label className="ds-field">
+            <span className="ds-label">Description</span>
+            <textarea className="ds-input ds-textarea" placeholder="What is this for?" />
+          </label>
+          <label className="ds-field">
+            <span className="ds-label">Access</span>
+            <span className="ds-select-wrap">
+              <select className="ds-input ds-input-m ds-select" defaultValue="team">
+                <option value="private">Only me</option><option value="team">My team</option><option value="public">Everyone</option>
+              </select>
+            </span>
+          </label>
+          <label className="ds-field">
+            <span className="ds-label">Workspace URL</span>
+            <Input className="ds-input ds-input-m" aria-invalid="true" defaultValue="spaces here" />
+            <span className="ds-help ds-help-danger">Use letters, numbers, and hyphens only.</span>
+          </label>
+        </div>
+      </Row>
+      <Row label="Choices">
+        <label className="ds-choice"><input type="checkbox" defaultChecked /> Weekly summary</label>
+        <label className="ds-choice"><input type="radio" name="density" defaultChecked /> Comfortable</label>
+        <label className="ds-choice"><input type="radio" name="density" /> Compact</label>
+      </Row>
+    </Section>
+  );
+}
+
+function ContentComponents() {
+  const [tab, setTab] = React.useState("Overview");
+  return (
+    <Section eyebrow="Content" title="Grouping, navigation, and status" note="Semantic roles keep meaning stable while density changes between desktop and touch.">
+      <Row label="Card and badges">
+        <article className="ds-card">
+          <div style={{display: "flex", gap: 8, marginBottom: 12}}><span className="ds-badge ds-badge-success">Ready</span><span className="ds-badge">Draft</span></div>
+          <h3>Color foundations</h3><p>Thirteen perceptual stops mapped into component roles.</p>
+        </article>
+      </Row>
+      <Row label="Tabs">
+        <div style={{width: "100%"}}>
+          <div className="ds-tabs" role="tablist">
+            {["Overview", "Tokens", "Components", "Accessibility"].map(label => <button key={label} className="ds-tab" role="tab" aria-selected={tab === label} onClick={() => setTab(label)}>{label}</button>)}
+          </div>
+          <p style={{fontSize: 14}}>Showing {tab.toLowerCase()}.</p>
+        </div>
+      </Row>
+      <Row label="Status">
+        <span className="ds-badge ds-badge-warning">Needs review</span>
+        <span className="ds-badge ds-badge-danger">Blocked</span>
+        <div className="ds-alert"><strong>Couldn’t save.</strong> Check the project name and try again.</div>
+      </Row>
     </Section>
   );
 }
@@ -161,6 +219,7 @@ function App() {
       <Inputs />
       <Modal />
       <Switches />
+      <ContentComponents />
     </main>
   );
 }

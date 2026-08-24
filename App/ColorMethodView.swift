@@ -14,6 +14,7 @@ struct ColorMethodView: View {
   @AppStorage("colorScale.saturatedY1") private var saturatedY1 = 0.3
   @AppStorage("colorScale.saturatedX2") private var saturatedX2 = 0.6
   @AppStorage("colorScale.saturatedY2") private var saturatedY2 = 0.5
+  @AppStorage("colorScale.locked") private var paletteLocked = false
 
   private var stops = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000]
 
@@ -28,6 +29,15 @@ struct ColorMethodView: View {
   var body: some View {
     ScrollView {
       VStack(spacing: 16) {
+        MethodSection(title: "Working palette", note: "Lock the current values before testing components. The lock persists when the app closes.") {
+          Toggle(isOn: $paletteLocked) {
+            Label(paletteLocked ? "Palette locked" : "Palette unlocked", systemImage: paletteLocked ? "lock.fill" : "lock.open")
+          }
+          .tint(colors.actionPrimary)
+          ShareLink(item: paletteSummary) {
+            Label("Share token values", systemImage: "square.and.arrow.up")
+          }
+        }
         MethodSection(title: "Perceptual gray", note: "Thirteen OKLCH stops run from pure white to near-black—not literal black.") {
           swatchRow(colors: stops.map { OKLCHColor(lightness: lightness(at: $0, curve: grayCurve), chroma: 0, hue: 0).color })
           labels
@@ -42,6 +52,7 @@ struct ColorMethodView: View {
             y2: $grayY2,
             reset: resetGrayCurve
           )
+          .disabled(paletteLocked)
 
           Divider()
 
@@ -53,6 +64,7 @@ struct ColorMethodView: View {
             y2: $saturatedY2,
             reset: resetSaturatedCurve
           )
+          .disabled(paletteLocked)
         }
 
         MethodSection(title: "Color families", note: "All six families respond to the saturated curve above while sharing hues, stops, and endpoints.") {
@@ -91,11 +103,16 @@ struct ColorMethodView: View {
           }
           .buttonStyle(.bordered)
         }
+        .disabled(paletteLocked)
       }
       .frame(maxWidth: .infinity)
       .padding()
     }
     .navigationTitle("Color")
+  }
+
+  private var paletteSummary: String {
+    "Action: oklch(0.634 \(peakChroma.formatted(.number.precision(.fractionLength(2)))) \(Int(hue))); gray curve: cubic-bezier(\(grayX1), \(grayY1), \(grayX2), \(grayY2)); saturated curve: cubic-bezier(\(saturatedX1), \(saturatedY1), \(saturatedX2), \(saturatedY2)); gamut clamp: \(gamutClamp)"
   }
 
   private var labels: some View {

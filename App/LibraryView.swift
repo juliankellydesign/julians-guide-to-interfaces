@@ -15,6 +15,15 @@ struct LibraryView: View {
               .foregroundStyle(colors.mutedText)
           }
 
+          NavigationLink {
+            DesignSystemPlaygroundView()
+          } label: {
+            Label("Test the component system", systemImage: "hammer.fill")
+              .font(.headline)
+              .frame(maxWidth: .infinity, minHeight: 48)
+          }
+          .buttonStyle(.borderedProminent)
+
           LazyVGrid(columns: columns, spacing: 12) {
             ForEach(MethodCategory.allCases) { category in
               NavigationLink {

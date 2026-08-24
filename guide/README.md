@@ -21,7 +21,7 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 
 ## Design system components
 
-The methods module now has an applied edge: a basic set of design system components in [`design-system/`](design-system/README.md). Each component is a written visual spec assembled from the methods' values, plus a reference implementation built on Base UI (`@base-ui/react`) in [`/design-system/`](../design-system/) at the repository root. The spec is the contract; on platforms where the implementation cannot run, implement the spec natively. Load component specs only when building or restyling those components.
+The methods module now has an applied edge: semantic tokens and a cross-platform set of design system components in [`design-system/`](design-system/README.md). Each component is a written visual spec assembled from the methods' values, plus a web reference implementation in [`/design-system/`](../design-system/) and a native iOS playground in [`/App/`](../App/). The spec is the contract; on platforms where an implementation cannot run, implement the spec natively. Load component specs only when building or restyling those components.
 
 ## Choose by task
 

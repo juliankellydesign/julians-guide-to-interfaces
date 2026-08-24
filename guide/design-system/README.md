@@ -6,6 +6,8 @@ A basic set of design system components, expressed twice: as written visual spec
 
 Every value here is assembled from the methods module: the gray and color scales, the spacing ladder, the radius scale, button sizes and styles, control padding, icon pairings, modal padding, the scrim, and the press scale. Where a component needed a value the methods do not yet document, the spec says so and marks it as a first pass. Like everything in the methods layer, all of it is scaffold—a slotted-in design system overrules it.
 
+[`semantic-tokens.md`](semantic-tokens.md) defines the boundary between primitive scales and components. Numbered scale values exist only in the definition layer; every component consumes a semantic role.
+
 ## Components
 
 | Component | Spec | Built on |
@@ -14,6 +16,8 @@ Every value here is assembled from the methods module: the gray and color scales
 | Input | [`input.md`](input.md) | `@base-ui/react/input` |
 | Modal | [`modal.md`](modal.md) | `@base-ui/react/dialog` |
 | Switch | [`switch.md`](switch.md) | `@base-ui/react/switch` |
+| Text area, Select, Checkbox, Radio | [`field-controls.md`](field-controls.md) | Native HTML controls in the reference sheet |
+| Card, Tabs, Badge, Alert | [`content-components.md`](content-components.md) | Native HTML semantics in the reference sheet |
 
 ## Reference implementation
 
@@ -30,5 +34,6 @@ Rebuild the bundle after editing `app.jsx`: `npm run build:ds`.
 
 - The spec files are the source of truth; the CSS implements them, never the reverse.
 - Components take exact values only from `data/foundations.json` and these specs.
+- Components never consume raw numbered color tokens. They consume semantic or component-role aliases.
 - Behavior, focus management, and accessibility come from Base UI; the guide does not restyle its logic.
 - A platform that cannot run the implementation follows the spec visually, using its native equivalents for behavior.

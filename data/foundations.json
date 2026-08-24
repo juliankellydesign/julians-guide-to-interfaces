@@ -1,6 +1,6 @@
 {
   "$schema": "./foundations.schema.json",
-  "version": "0.43.0",
+  "version": "0.52.0",
   "status": "living",
   "layer": "methods",
   "prompt": "opt-in",
@@ -668,8 +668,16 @@
     "components": [
       "button",
       "input",
+      "textarea",
+      "select",
+      "checkbox",
+      "radio",
+      "switch",
       "modal",
-      "switch"
+      "card",
+      "tabs",
+      "badge",
+      "alert"
     ],
     "specPath": "guide/design-system/",
     "specsAreSourceOfTruth": true,
@@ -678,6 +686,48 @@
       "role": "headless behavior and accessibility",
       "path": "design-system/",
       "note": "Visual values live in the specs and design-system.css; on platforms where the implementation cannot run, the specs are the visual contract."
+    },
+    "colorContract": {
+      "rawScaleTokensAllowedInComponents": false,
+      "definitionLayer": "color scales",
+      "componentLayer": "semantic and component-role aliases",
+      "semanticColors": {
+        "canvas": "gray.50",
+        "surface": "gray.0",
+        "surfaceSubtle": "gray.50",
+        "surfaceDisabled": "gray.100",
+        "surfaceInverse": "gray.1000",
+        "textPrimary": "gray.1000",
+        "textSecondary": "gray.600",
+        "textPlaceholder": "gray.500",
+        "textDisabled": "gray.500",
+        "textInverse": "gray.0",
+        "borderSubtle": "gray.100",
+        "borderDefault": "gray.300",
+        "borderStrong": "gray.500",
+        "borderFocus": "blue.500",
+        "actionPrimary": "blue.500",
+        "actionPrimaryHover": "blue.600",
+        "actionSecondary": "gray.100",
+        "actionSecondaryHover": "gray.200",
+        "actionQuietHover": "gray.50",
+        "success": "green.600",
+        "successSubtle": "green.100",
+        "warning": "orange.700",
+        "warningSubtle": "yellow.100",
+        "danger": "red.600",
+        "dangerSubtle": "red.100"
+      }
+    },
+    "platforms": {
+      "desktop": {
+        "defaultControlHeightPx": 40,
+        "minimumChoiceTargetPx": 32
+      },
+      "touch": {
+        "defaultControlHeightPx": 48,
+        "minimumChoiceTargetPx": 44
+      }
     }
   }
 }
