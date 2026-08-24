@@ -91,9 +91,13 @@ Thirty-six components covering Base UI's basic set. Every spec opens with "When 
 The implementation lives in [`/design-system/`](../../design-system/) at the repository root:
 
 - `design-system.css` — the visual spec as CSS, tokens first, one section per component
-- `app.jsx` — the demo page source, using Base UI for behavior and accessibility
+- `sheet.jsx` — the demo page's own chrome (Section, Row, Col); not part of any component spec
+- `parts/*.jsx` — the demos, one file per component group
+- `app.jsx` — composes the parts into the sheet
 - `app.js` — the committed bundle (esbuild), so the page serves statically with no build step
 - `components.html` — the rendered component sheet
+
+Two colours the methods do not yet document are scoped locally rather than promoted to tokens, and marked in the CSS as slot-in points: a red at the 600 stop for validation errors and destructive menu items, and a warning colour for a meter past its threshold. When a semantic colour set is documented, those scoped blocks come out.
 
 Rebuild the bundle after editing `app.jsx`: `npm run build:ds`.
 
