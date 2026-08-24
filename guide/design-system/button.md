@@ -6,6 +6,10 @@ scaffold: true
 
 # Button
 
+## When to use it
+
+For a discrete action the person takes—submit, save, continue, send, and their kin. Style ranks the action: one primary per surface, secondary for the rest, tertiary or text-only when the action should recede. If the element's job is entering content rather than acting on it, it is an input, not a button.
+
 ## Sources
 
 Sizes and styles from the button scaffold; padding pattern from control padding; icon pairings from icon sizes; press from the press scale; label weight from font-weight roles.

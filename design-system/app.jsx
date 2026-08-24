@@ -8,28 +8,14 @@ import { Button } from "@base-ui/react/button";
 import { Input } from "@base-ui/react/input";
 import { Dialog } from "@base-ui/react/dialog";
 import { Switch } from "@base-ui/react/switch";
-
-function Section({ eyebrow, title, note, children }) {
-  return (
-    <section className="sheet-section">
-      <header>
-        <span className="eyebrow">{eyebrow}</span>
-        <h2>{title}</h2>
-        {note ? <p>{note}</p> : null}
-      </header>
-      {children}
-    </section>
-  );
-}
-
-function Row({ label, align = "center", children }) {
-  return (
-    <figure className="sheet-row">
-      <figcaption>{label}</figcaption>
-      <div className="sheet-stage" style={{ alignItems: align }}>{children}</div>
-    </figure>
-  );
-}
+import { Section, Row } from "./sheet.jsx";
+import { SelectionSection } from "./parts/selection.jsx";
+import { ChoosersSection } from "./parts/choosers.jsx";
+import { FormSection } from "./parts/form.jsx";
+import { OverlaysSection } from "./parts/overlays.jsx";
+import { MenusSection } from "./parts/menus.jsx";
+import { DisclosureSection } from "./parts/disclosure.jsx";
+import { FeedbackSection } from "./parts/feedback.jsx";
 
 function Buttons() {
   return (
@@ -209,15 +195,22 @@ function App() {
         <span className="eyebrow">Julian’s Guide to Interfaces</span>
         <h1>Design system components</h1>
         <p>
-          A basic set, built on Base UI and styled entirely from the guide’s methods.
-          The written specs in <code>guide/design-system/</code> are the source of
-          truth—on platforms where this code can’t run, they are the visual spec to
-          implement natively. Every value is a scaffold.
+          Thirty-six components covering Base UI’s basic set, styled entirely from
+          the guide’s methods. The written specs in <code>guide/design-system/</code>
+          are the source of truth—on platforms where this code can’t run, they are
+          the visual spec to implement natively. Every value is a scaffold.
         </p>
       </header>
       <Buttons />
       <Inputs />
+      <SelectionSection />
+      <ChoosersSection />
+      <FormSection />
       <Modal />
+      <OverlaysSection />
+      <MenusSection />
+      <DisclosureSection />
+      <FeedbackSection />
       <Switches />
       <ContentComponents />
     </main>

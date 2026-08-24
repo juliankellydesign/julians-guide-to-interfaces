@@ -2,7 +2,7 @@
 
 ## In brief
 
-Use this file as a router. The guide splits into two layers: theory and practice. Principles are the theory—how I approach and judge interface design. Methods and structured foundations are the applied layer—my design system, expressed as recipes and exact values. Read the core principles, then choose the layer the task requires. Theory is the default. The applied layer is opt-in.
+Use this file as a router. The guide is deliberately dual-purpose: a tool for agents (pass the principles alone, or principles and methods together) and a teaching guide for humans learning interaction design—working rules and specs are the agent-facing kernel, while prose, examples, and the website carry the teaching. The guide splits into two layers: theory and practice. Principles are the theory—how I approach and judge interface design. Methods and structured foundations are the applied layer—my design system, expressed as recipes and exact values. Read the core principles, then choose the layer the task requires. Theory is the default. The applied layer is opt-in.
 
 ## Two modules
 
@@ -23,8 +23,31 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 
 The methods module now has an applied edge: semantic tokens and a cross-platform set of design system components in [`design-system/`](design-system/README.md). Each component is a written visual spec assembled from the methods' values, plus a web reference implementation in [`/design-system/`](../design-system/) and a native iOS playground in [`/App/`](../App/). The spec is the contract; on platforms where an implementation cannot run, implement the spec natively. Load component specs only when building or restyling those components.
 
+## Reading path for people
+
+Agents get routed by task below; a person learning interaction design reads in concept order—each concept builds on the ones before it, so the sequence crosses disciplines where the dependencies do:
+
+1. **Stance** — how to approach the work before any pixels. [`principles/00-core-principles.md`](principles/00-core-principles.md) (everything serves a purpose; begin with the problem; interrogate the ask), then [`01-human-judgment.md`](principles/01-human-judgment.md), [`02-altitude.md`](principles/02-altitude.md), [`03-voice-of-the-user.md`](principles/03-voice-of-the-user.md), and [`04-earned-simplicity.md`](principles/04-earned-simplicity.md).
+2. **Words** — the interface's words come before its visuals: [`principles/content/`](principles/content/README.md) for purpose-driven writing, directness, capitalization, and punctuation, with [`dashes.md`](principles/content/dashes.md) as the worked case.
+3. **How people see** — perception before construction. Gestalt and proximity in the [rhythm README](principles/rhythm/README.md), then [`visual-weight.md`](principles/rhythm/visual-weight.md) (weight and its sources), [`balancing-left-heavy-layouts.md`](principles/rhythm/balancing-left-heavy-layouts.md) (weight balancing a composition), [`consistency-and-keylines.md`](principles/rhythm/consistency-and-keylines.md) (why consistency reads as calm), and [`repetition-builds-meaning.md`](principles/rhythm/repetition-builds-meaning.md) (how patterns teach).
+4. **Typography** — hierarchy is visual weight applied to words: the [typography README](principles/typography/README.md) for hierarchy and weight, then [`text-alignment.md`](principles/typography/text-alignment.md), [`all-caps.md`](principles/typography/all-caps.md), [`responsive-type.md`](principles/typography/responsive-type.md), and the numeric and punctuation details ([`numeric-figures.md`](principles/typography/numeric-figures.md), [`quotation-apostrophe-prime-marks.md`](principles/typography/quotation-apostrophe-prime-marks.md)).
+5. **Space in practice** — the spatial system at work: spacing and optical alignment in the [rhythm README](principles/rhythm/README.md), then [`margins-and-padding.md`](principles/rhythm/margins-and-padding.md) (padding, text spacing, heading asymmetry), [`rhythm-and-swing.md`](principles/rhythm/rhythm-and-swing.md) (breaking rhythm on purpose), [`scroll-under-alignment.md`](principles/rhythm/scroll-under-alignment.md) (layers in motion), and [`adding-styles.md`](principles/rhythm/adding-styles.md) (when the system grows).
+6. **Interface** — actions and controls: [`action-hierarchy.md`](principles/interface/action-hierarchy.md), then [`group-actions-by-scope.md`](principles/rhythm/group-actions-by-scope.md) (grouping is an action concept, filed under rhythm), [`interactive-control-sizing.md`](principles/interface/interactive-control-sizing.md) with [`input-fidelity.md`](principles/interface/input-fidelity.md), [`top-and-bottom.md`](principles/interface/top-and-bottom.md), [`corner-rounding.md`](principles/interface/corner-rounding.md), [`shadows.md`](principles/interface/shadows.md), then conventions—[`map-and-landscape.md`](principles/interface/map-and-landscape.md) and [`every-element-earns-its-spot.md`](principles/interface/every-element-earns-its-spot.md)—and finally [`empty-and-error-states.md`](principles/interface/empty-and-error-states.md), [`personal-taste-as-scaffolding.md`](principles/interface/personal-taste-as-scaffolding.md), and the [nesting musing](principles/interface/nesting-buttons-in-inputs.md).
+7. **Icons** — images that behave like type: [`iconography-and-type.md`](principles/imagery/iconography-and-type.md), then [`icon-sizing.md`](principles/imagery/icon-sizing.md).
+8. **Motion** — the last channel, because it depends on everything else: the [motion README](principles/motion/README.md) for purpose and platform, then [`continuous-transitions.md`](principles/motion/continuous-transitions.md), [`transition-levels.md`](principles/motion/transition-levels.md), and [`press-states.md`](principles/motion/press-states.md).
+9. **The applied layer, last** — [`methods/`](methods/README.md) and the [design system components](design-system/README.md) show the principles compiled into one working system.
+
+The website presents the same material with live demos—read a concept, then study its panel. [Asides](asides/README.md) add the personal and historical context that the working guidance omits.
+
+## Rules and examples
+
+Each principle file has one normative kernel: its working rules. Everything else—prose, comparisons, examples—is explanation and illustration. Substantial examples sit under an `## Example:` heading and end with a transferable point naming the abstraction they teach; extract that structure, never the surface. An example's verdict is an application of the rules at a point in time, not a rule itself—verdicts that depend on what users currently understand carry an "as of" year, and the conventions principle explains why that line moves. Inline illustrations woven into prose follow the same contract: illustrative, never normative.
+
 ## Choose by task
 
+- Foundations now include process principles: change altitude deliberately (make at low altitude, edit at high; be harsh on the work, gentle on yourself), hold the designer's role as the voice of the user against the engineering and business voices, and treat simple results as earned by exploration—the crazy versions get explored and shown.
+- Core principles interrogate the ask before accepting the interface: work from the ask to the value to the capabilities—the things a user wants done by the system—before choosing the surface, treating a prescribed interface as one candidate.
+- Interface principles require novel elements added to a conventional interface to earn their spot one at a time, with proof; a pattern is never admitted because it is shorthand for the technology behind it, and a weak capability gets fixed rather than dressed in a novel interface.
 - For an existing product, read the relevant principles and preserve its established visual system.
 - For greenfield work, read the relevant principles, then add only the methods needed to build the system.
 - To retrieve exact defaults, select the relevant method before reading [`../data/foundations.json`](../data/foundations.json).
@@ -35,7 +58,7 @@ The methods module now has an applied edge: semantic tokens and a cross-platform
 - Typography principles also cover numeric figure styles, numeric alignment, quotation marks, apostrophes, and primes. Apply these within the existing type system.
 - Text-alignment principles assume a left-to-right language. Adapt the starting edge and reading flow for other writing directions.
 - Interface principles define how primary, secondary, and tertiary actions communicate priority. Apply that hierarchy through the product’s established control styles.
-- Interface principles also cover sizing controls for mouse and touch input and deciding when repeated actions clarify or confuse. Load the control-size method only when exact numerical starting points are needed.
+- Interface principles also cover sizing controls for mouse and touch input. Load the control-size method only when exact numerical starting points are needed. Deciding when repeated controls clarify or confuse lives in rhythm's repetition principle.
 - Interface principles put broader navigation, settings, and wayfinding content at the top of a screen or container, and primary actions—submit, save, continue, send—at the bottom, so the vertical order runs orient, act, complete.
 - Interface principles require the interface to match the fidelity of the input: control sizes, density, and motion timing change with input method and screen size, while roles and hierarchy stay constant.
 - Interface principles also treat empty states, 404s, and no-network pages as opportunities for delight and user education.

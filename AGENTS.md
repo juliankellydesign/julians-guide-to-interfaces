@@ -2,6 +2,8 @@
 
 This repository is Julian Kelly’s evolving interface-design handbook. Preserve his point of view: opinionated, concrete, purposeful, and open to revision.
 
+**Mode check:** if this repository is vendored inside (or beside) another project and your task is to design or restyle that project—not to edit the guide—follow [`APPLY.md`](APPLY.md) instead of this file.
+
 ## Reading order
 
 Do not read the entire repository by default.
@@ -24,7 +26,9 @@ Do not read `guide/asides/` by default. Asides provide context for people but ar
 - Classify guidance about how to judge or approach a decision as a principle. Classify a repeatable recipe, generated system, or exact default as a method.
 - Keep one primary idea per file. Split a file before it becomes expensive for an agent to retrieve.
 - Prefer exact values, examples, and comparisons over vague adjectives.
+- Keep working rules as the only normative kernel of a file. Examples are illustrative applications, never rules: put substantial ones under an `## Example:` heading, end each with a one-line transferable point naming the abstraction it teaches, and never cite an example's verdict as a rule—verdicts that depend on what users currently understand carry an "as of" year, because conventions move.
 - Write direct, informative content. Add style only when it communicates something.
+- Write for both audiences at once: the guide is an agent tool and a teaching guide. Working rules and specs serve agents; prose, examples, and website demos teach humans. Keep the prose good enough to teach from—compressing it to save agent tokens is not a goal, because the rules already carry the normative kernel.
 - Preserve first-person claims when they express Julian’s taste or process.
 - Mark undeveloped areas as placeholders; do not invent Julian’s opinions.
 - Update `guide/README.md` whenever files are added, moved, or renamed.

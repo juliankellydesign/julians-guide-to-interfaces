@@ -4,9 +4,11 @@
 
 When an element scrolls under another element, do not give both layers the exact same edge padding. Edges that coincide exactly meet as the content passes, and the two independent layers read as one awkward join. Offset one layer's padding so the edges clearly pass each other.
 
-## The awkward join
+## Example: the awkward join
 
 Imagine a 402px-wide device with search results padded 16px on the left and right. The results scroll under a nav containing circle buttons that also sit 16px from the screen edges. The moment a result passes the nav, the edges of the circle buttons perfectly hit the edges of the search results—two unrelated shapes kiss, and the coincidence reads as a designed connection that then breaks as scrolling continues.
+
+**Transferable point:** layers that scroll past each other must not share exact edge padding; offset one decisively and judge the pair in motion.
 
 ## Why coincident edges fail between layers
 

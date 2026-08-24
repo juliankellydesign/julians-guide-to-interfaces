@@ -10,7 +10,7 @@ Free text does not tip a layout; a contained card does. In a conversational inte
 
 ## One counterweight is enough
 
-The fix does not require symmetry or stretching the card full width. A single element aligned to the right restores the balance—and a conversational interface usually has one already: the user's bubble. Everything else sits left; the bubble is the counterweight. This is visual weight doing composition work—one deliberate weight on the opposite edge, not an equal amount of stuff on both sides.
+The fix does not require symmetry or stretching the card full width. A single element aligned to the right restores the balance—and a conversational interface usually has one already: the user's bubble. Everything else sits left; the bubble is the counterweight. This is visual weight doing composition work (see [`visual-weight.md`](visual-weight.md))—one deliberate weight on the opposite edge, not an equal amount of stuff on both sides.
 
 ## Working rules
 

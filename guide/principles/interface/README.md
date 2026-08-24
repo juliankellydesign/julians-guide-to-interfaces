@@ -2,7 +2,7 @@
 
 ## In brief
 
-Start with a clear problem or a specific interaction. Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, vertical placement, control size, repetition, corner language, conventions, responsiveness, perceived speed, and deliberate empty and error states all communicate how the interface should be used.
+Start with a clear problem or a specific interaction—and when the work is someone else's brief, interrogate the ask first (see [`../00-core-principles.md`](../00-core-principles.md)). Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, vertical placement, control size, corner language, conventions, responsiveness, perceived speed, and deliberate empty and error states all communicate how the interface should be used. Repeating controls is governed by rhythm's repetition principle: repetition clarifies when meaning stays consistent (see [`../rhythm/repetition-builds-meaning.md`](../rhythm/repetition-builds-meaning.md)).
 
 ## Start with the problem or interaction
 
@@ -12,6 +12,12 @@ The best interfaces begin from one of two places:
 - A specific interaction worth exploring.
 
 An interaction may initially be searching for a problem. That is acceptable when the work is described as an exploration.
+
+## Every element earns its spot
+
+Leaning on conventions versus diverging from them is a delicate, temporal dance—patterns become conventions and the line moves. When a conventional interface gains novel elements, introduce them one at a time and require each to prove itself. Never admit a pattern because it is shorthand for the technology behind it; if the capability is weak, fix the capability. The example: let search be search, then let conversational elements in one by one as they earn it.
+
+See [`every-element-earns-its-spot.md`](every-element-earns-its-spot.md) for the full principle.
 
 ## Core interaction, core visuals
 
@@ -52,12 +58,6 @@ See [`input-fidelity.md`](input-fidelity.md) for the full principle.
 A rule of thumb for the vertical anatomy of a screen or container: broader navigation controls, settings, and wayfinding content—anything answering "where am I"—go at the top. Primary actions—submit, save, continue, send—go at the bottom, where the task ends. Orient at the top, complete at the bottom, and the same holds inside a modal.
 
 See [`top-and-bottom.md`](top-and-bottom.md) for the full principle.
-
-## Repeat actions when repetition adds meaning
-
-Avoid showing identical controls at the same time when they perform different actions. Use proximity, containers, specific labels, or progressive disclosure to make their context clear. Repeat controls deliberately when the repeated meaning is consistent and teaches a reusable convention.
-
-See [`action-repetition.md`](action-repetition.md) for the full principle.
 
 ## Use corner rounding as interface language
 

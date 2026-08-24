@@ -2,6 +2,10 @@
 
 An evolving record of what I know about designing interfaces, from first principles to implementation details.
 
+The guide serves two purposes deliberately. It is a **tool for working with agents**: each module is self-contained, so an agent can receive just the principles for judgment inside an existing system, or the principles and methods together to build in my style. And it is a **teaching guide**: the same material—principles, examples, demos, and the website—supports teaching an introduction to interaction design. The two readings share one source: working rules and specs are the normative kernel agents consume; prose, examples, and demos carry the teaching.
+
+To use it as a drop-in, clone or vendor this repository into a project and point an agent at [`APPLY.md`](APPLY.md)—the playbook for restyling a host project until it looks like something Julian designed.
+
 The guide begins with one rule:
 
 > Everything in an interface should serve a purpose.
@@ -10,7 +14,7 @@ This is not an argument for stark minimalism. Flourishes, shadows, movement, and
 
 ## Read the guide
 
-Start with [the core principles](guide/principles/00-core-principles.md), then choose the layer the task requires:
+A person learning interaction design follows the [reading path](guide/README.md#reading-path-for-people)—stance first, then the disciplines in order, the applied layer last. An agent (or a reader with a task in hand) starts with [the core principles](guide/principles/00-core-principles.md), then chooses the layer the task requires:
 
 - [Principles](guide/principles/README.md) are the theory: how I approach and judge interface design. Use them by default, including when working inside an existing visual system.
 - [Methods](guide/methods/README.md) and [structured foundations](data/foundations.json) are the applied layer: my design system, expressed as recipes for type, color, spacing, and motion plus machine-readable tokens. Use them when building or deliberately replacing a system. The layer works as a scaffold for getting new work up and running quickly.

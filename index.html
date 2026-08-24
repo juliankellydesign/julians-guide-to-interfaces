@@ -32,7 +32,7 @@
       </a>
       <div class="header-meta">
         <span class="status"><i aria-hidden="true"></i> Living handbook</span>
-        <span>v0.51</span>
+        <span>v0.54</span>
       </div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span>Index</span><i aria-hidden="true"></i>
@@ -115,7 +115,7 @@
           </ol>
         </div>
         <div class="human-judgment lab-panel">
-          <div class="human-judgment-intro">
+          <div class="divided wide panel-intro human-judgment-intro">
             <span class="eyebrow">Human judgment</span>
             <h3>Use math, then judge the result</h3>
             <p>Grids, scales, curves, and timing systems establish consistency. They cannot fully model every display, eye, culture, or context.</p>
@@ -126,7 +126,20 @@
             <article><span>Layout</span><strong>Break alignment when the content needs a different relationship</strong></article>
             <article><span>Motion</span><strong>Move keyframes when equal timing feels too mechanical</strong></article>
           </div>
-          <div class="judgment-rule"><span>Rule</span><strong>Question how it feels, but do not discard how it feels</strong></div>
+          <div class="panel-rule judgment-rule"><span>Rule</span><strong>Question how it feels, but do not discard how it feels</strong></div>
+        </div>
+        <div class="process-guide lab-panel">
+          <div class="divided panel-intro process-intro">
+            <span class="eyebrow">Process</span>
+            <h3>Change altitude, hold the user’s voice, earn the simple result</h3>
+            <p>How I approach the work itself: jump between the super narrow view and the super wide view—make close to the pixels, edit from above. Know which of a product’s three voices is yours. And explore the crazy stuff, because simple, obvious solutions are earned by everything that was tried on the way.</p>
+          </div>
+          <div class="process-cards">
+            <article><span>Altitude</span><strong>Make low, edit high</strong><p>Stay close to the pixels while making; pull up to ask whether it works and who it serves; zoom back in and adjust. Harsh on the work in critique, gentle on yourself while making—ideas are fragile.</p></article>
+            <article><span>Three voices</span><strong>You are the voice of the user</strong><p>Engineering asks how it gets built. Product asks how it serves the business. Design asks how it becomes the best experience for the people using it. The tension between them is healthy.</p></article>
+            <article><span>Exploration</span><strong>Simplicity is earned</strong><p>“Least effort for the best result” is the business voice talking. Try the crazy versions and show them to people—the simple, obvious answer is a conclusion of exploration, even when it was the first thing you tried.</p></article>
+          </div>
+          <div class="panel-rule judgment-rule"><span>Warning sign</span><strong>When the exploration stops, that’s burnout, not efficiency</strong></div>
         </div>
       </section>
 
@@ -145,7 +158,7 @@
           <article><span>03</span><h3>Justify the style</h3><p>Use tone, emphasis, metaphor, or humor only when it adds meaning.</p></article>
         </div>
         <div class="case-punctuation lab-panel">
-          <div class="case-punctuation-intro">
+          <div class="panel-intro case-punctuation-intro">
             <span class="eyebrow">Method default</span>
             <h3>Capitalization and punctuation</h3>
             <p>Use one scheme consistently. Change capitalization or punctuation only when the change communicates a different role or interaction.</p>
@@ -167,7 +180,7 @@
           </div>
         </div>
         <div class="dash-reference lab-panel">
-          <div class="dash-reference-intro">
+          <div class="panel-intro dash-reference-intro">
             <span class="eyebrow">Dash reference</span>
             <h3>Choose the dash by function</h3>
             <p>Use an em dash to change direction, an en dash to communicate a range, and a hyphen to join parts of a word.</p>
@@ -233,7 +246,7 @@
           <p class="formula"><span>tracking</span> = shift + tapered raw + caps + manual <i>all caps +4% · manual correction allowed</i></p>
         </div>
         <div class="responsive-type-lab lab-panel">
-          <div class="responsive-type-intro">
+          <div class="wide panel-intro responsive-type-intro">
             <span class="eyebrow">Responsive typography</span>
             <h3>Recalculate from the rendered size</h3>
             <p>Font size, letter spacing, and line height are one system. When the rendered size changes, recalculate the other properties instead of preserving values chosen for a different size.</p>
@@ -246,7 +259,7 @@
           <p class="formula"><span>line height</span> = round((rendered size × role ratio) ÷ grid) × grid <i>2px through 20px · 4px above 20px</i></p>
         </div>
         <div class="weight-lab lab-panel">
-          <div class="weight-lab-intro">
+          <div class="divided wide panel-intro weight-lab-intro">
             <span class="eyebrow">Font weight roles</span>
             <h3>Increase weight with function</h3>
             <p>Begin with regular for body content. Add only enough weight to communicate hierarchy, interactivity, or strong attention.</p>
@@ -254,17 +267,17 @@
           <div class="weight-role-grid" aria-label="Default font weight roles">
             <article class="weight-regular"><span>Regular</span><strong>Body content</strong><small>Default reading weight</small></article>
             <article class="weight-medium"><span>Medium</span><strong>Headers</strong><small>Subtle hierarchy or optical correction</small></article>
-            <article class="weight-semibold"><span>Semibold</span><strong>Interactive</strong><small>Buttons and actionable text</small></article>
+            <article class="weight-semibold"><span>Semibold</span><strong>Interactive</strong><small>Buttons and actionable text. Karl ships no semibold, so this role takes the nearest face—exactly the adaptation the rule below describes.</small></article>
             <article class="weight-bold"><span>Bold</span><strong>Attention</strong><small>Reserved for strong emphasis</small></article>
           </div>
-          <div class="button-weight-rule">
+          <div class="panel-rule button-weight-rule">
             <div class="light-button-sample"><span>Button label</span><small>At least medium</small></div>
             <div class="dark-button-sample"><span>Button label</span><small>White on dark · at least semibold</small></div>
           </div>
           <p class="weight-system-note"><span>System rule</span><strong>The typeface, brand, and design system determine how far each role needs to move</strong></p>
         </div>
         <div class="caps-lab lab-panel">
-          <div class="caps-lab-intro">
+          <div class="panel-intro caps-lab-intro">
             <span class="eyebrow">All caps</span>
             <h3>Use all caps for compact legibility</h3>
             <p>Use all caps when a label must remain legible at a size where sentence case no longer works. It is a functional response to limited space, not a stylistic choice.</p>
@@ -286,10 +299,10 @@
               <small>Unit or abbreviated time information</small>
             </article>
           </div>
-          <p class="caps-spacing-rule"><span>Letter spacing</span><strong>Start with the tracking curve, add a flat 4 percentage points for all caps, then correct individual roles manually when needed.</strong></p>
+          <p class="panel-rule caps-spacing-rule"><span>Letter spacing</span><strong>Start with the tracking curve, add a flat 4 percentage points for all caps, then correct individual roles manually when needed.</strong></p>
         </div>
         <div class="figure-lab lab-panel">
-          <div class="figure-lab-intro">
+          <div class="panel-intro figure-lab-intro">
             <span class="eyebrow">Numeric figures</span>
             <h3>Choose figures by behavior</h3>
             <p>Tabular and proportional describe width. Lining and oldstyle describe height and vertical position. Most interfaces use lining figures, then choose the width behavior that fits the content.</p>
@@ -311,10 +324,10 @@
               <p>Use proportional figures when a fixed number appears in text. Align a single value according to its context.</p>
             </article>
           </div>
-          <p class="figure-rule"><span>Rule</span><strong>Use tabular lining figures when stability or comparison matters; use proportional lining figures when a fixed number needs to flow with text.</strong></p>
+          <p class="panel-rule figure-rule"><span>Rule</span><strong>Use tabular lining figures when stability or comparison matters; use proportional lining figures when a fixed number needs to flow with text.</strong></p>
         </div>
         <div class="punctuation-lab lab-panel">
-          <div class="punctuation-lab-intro">
+          <div class="panel-intro punctuation-lab-intro">
             <span class="eyebrow">Quotation marks, apostrophes, and primes</span>
             <h3>Use the glyph that matches the function</h3>
             <p>Quotation marks surround quotations. Apostrophes mark contractions, possession, and omitted characters. Prime marks denote measurements.</p>
@@ -324,10 +337,10 @@
             <article><span>Apostrophe</span><strong>don’t &nbsp; ’26</strong><p>Use the right apostrophe for contractions and truncated years. Do not use <s>‘26</s>.</p></article>
             <article><span>Prime</span><strong>5′ 11″</strong><p>Use prime and double prime marks for measurements.</p></article>
           </div>
-          <p class="punctuation-rule"><span>Fallback</span><strong>When correct curly punctuation cannot be guaranteed, use a consistent straight or prime-like mark instead of a curly mark facing the wrong direction.</strong></p>
+          <p class="panel-rule punctuation-rule"><span>Fallback</span><strong>When correct curly punctuation cannot be guaranteed, use a consistent straight or prime-like mark instead of a curly mark facing the wrong direction.</strong></p>
         </div>
         <div class="alignment-lab lab-panel">
-          <div class="alignment-lab-intro">
+          <div class="panel-intro alignment-lab-intro">
             <span class="eyebrow">Left-to-right languages</span>
             <h3>Align text according to its role</h3>
             <p>Begin with left alignment. Change alignment when the content’s role or the relationship between elements requires it.</p>
@@ -417,7 +430,7 @@
           </div>
         </div>
         <div class="rhythm-demo">
-          <div class="grid-rule lab-panel">
+          <div class="panel-rule grid-rule lab-panel">
             <span class="eyebrow">Spacing rule</span>
             <div class="grid-statement"><strong>2</strong><span>px grid<br /><i>≤ 20px</i></span><b>→</b><strong>4</strong><span>px grid<br /><i>&gt; 20px</i></span></div>
             <div class="rhythm-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -450,7 +463,7 @@
             <article class="swing-section"><span>Section 03 · Key decision</span><strong>Purposeful exception</strong><i aria-hidden="true"></i><i aria-hidden="true"></i></article>
             <article><span>Section 04</span><strong>Shared structure</strong><i aria-hidden="true"></i><i aria-hidden="true"></i></article>
           </div>
-          <div class="rhythm-swing-rule">
+          <div class="panel-rule rhythm-swing-rule">
             <span>Rule</span>
             <strong>Use the smallest deviation that communicates the reason</strong>
           </div>
@@ -466,16 +479,16 @@
               <div class="weight-copy" aria-hidden="true"><i style="width:88%"></i><i style="width:76%"></i><i style="width:82%"></i><i style="width:64%"></i><i style="width:71%"></i></div>
               <button type="button" class="weight-primary">Buy now</button>
             </div>
-            <p class="morph-rule"><span>Rule</span><strong>Most real estate, quietest voice; least real estate, loudest voice</strong></p>
+            <p class="panel-rule morph-rule"><span>Rule</span><strong>Most real estate, quietest voice; least real estate, loudest voice</strong></p>
           </div>
         </div>
         <div class="balance-guide lab-panel">
-          <div class="balance-intro">
+          <div class="panel-intro balance-intro">
             <span class="eyebrow">Balancing alignment</span>
             <h3>One right-aligned element fixes a left-heavy layout</h3>
             <p>In conversational AI interfaces, the user’s message sits in a bubble and the AI’s reply floats as free text. When a reply needs to render a card with controls, full width would be too much card—but left aligned it can look really left-heavy. The fix is simple: a single thing aligned to the right balances the composition, and it’s often the chat bubble that’s already there.</p>
           </div>
-          <div class="balance-compare">
+          <div class="panel-compare balance-compare">
             <figure>
               <figcaption><span>Left-heavy</span><strong>The contained card tips the layout</strong></figcaption>
               <div class="balance-stage" aria-label="Free-floating reply text and a left-aligned card with controls, leaving the right side empty">
@@ -505,15 +518,15 @@
               </div>
             </figure>
           </div>
-          <p class="morph-rule add-style-rule"><span>Rule</span><strong>One counterweight is enough—often it’s the chat bubble</strong></p>
+          <p class="panel-rule morph-rule add-style-rule"><span>Rule</span><strong>One counterweight is enough—often it’s the chat bubble</strong></p>
         </div>
         <div class="scroll-under-guide lab-panel">
-          <div class="scroll-under-intro">
+          <div class="panel-intro scroll-under-intro">
             <span class="eyebrow">Scrolling layers</span>
             <h3>Offset the padding of scrolling layers</h3>
             <p>When content scrolls under a fixed element, the two layers should not share the exact same edge padding. On a 402px-wide device, search results padded 16px scroll under nav circles inset 16px—the edges perfectly hit, and the accidental join reads as designed, then breaks. Offset one layer decisively and judge it in motion. Within a single plane, shared edges remain the rule.</p>
           </div>
-          <div class="scroll-under-compare" aria-label="Equal padding creating an awkward join versus offset padding passing cleanly">
+          <div class="panel-compare scroll-under-compare" aria-label="Equal padding creating an awkward join versus offset padding passing cleanly">
             <figure>
               <figcaption><span>Equal padding</span><strong>16 under 16—the edges kiss</strong></figcaption>
               <div class="device-mock same">
@@ -532,24 +545,24 @@
           </div>
         </div>
         <div class="add-style-guide lab-panel">
-          <div class="add-style-intro">
+          <div class="panel-intro add-style-intro">
             <span class="eyebrow">Adding a style</span>
             <h3>Ask twice before adding a style</h3>
             <p>A new style gets two questions. The first looks backward and reuses an already-taught pattern; the second designs the addition as a type that earns its future uses. Attention shadows, icon sizes, and color meanings all enforce the same underlying rule in their own disciplines.</p>
           </div>
-          <div class="add-style-questions">
+          <div class="panel-compare add-style-questions">
             <article><span>01 / Backward</span><strong>Have I seen something similar elsewhere in this interface?</strong><p>Reuse it and strengthen the pattern.</p></article>
             <article><span>02 / Forward</span><strong>Can the new thing be repurposed elsewhere?</strong><p>Design it as a type, not a one-off.</p></article>
           </div>
-          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Treatments bind to types, never to instances</strong></p>
+          <p class="panel-rule morph-rule add-style-rule"><span>Rule</span><strong>Treatments bind to types, never to instances</strong></p>
         </div>
         <div class="pad-guide lab-panel">
-          <div class="pad-intro">
+          <div class="panel-intro pad-intro">
             <span class="eyebrow">Margins and padding</span>
             <h3>Keep padding consistent</h3>
             <p>Padding is part of a component’s identity: the same card keeps the same interior space on every screen, so its rhythm and keylines hold. The change in available space belongs to margins and layout—gutters compress and columns drop while the inside of components stays put. The same consistency runs across components: two elements of the same size share the same padding, so their contents land on the same keylines.</p>
           </div>
-          <div class="pad-compare">
+          <div class="panel-compare pad-compare">
             <figure>
               <figcaption><span>Wide screen</span><strong>Generous margins, same padding</strong></figcaption>
               <div class="pad-stage"><div class="pad-card wide"><span class="pad-line"></span><i style="width:64%"></i><i style="width:84%"></i><i style="width:52%"></i></div></div>
@@ -560,21 +573,21 @@
             </figure>
           </div>
           <div class="pad-siblings">
-            <figcaption class="pad-siblings-caption"><span>Same size, same padding</span><strong>A button and an input at the same size hold their contents with the same interior space</strong></figcaption>
+            <figcaption class="panel-caption pad-siblings-caption"><span>Same size, same padding</span><strong>A button and an input at the same size hold their contents with the same interior space</strong></figcaption>
             <div class="pad-stage pad-siblings-stage">
               <div class="pad-control pad-control-button"><span class="pad-line"></span><i style="width:56px"></i></div>
               <div class="pad-control pad-control-input"><span class="pad-line"></span><i style="width:96px"></i></div>
             </div>
           </div>
           <div class="pad-modal">
-            <figcaption class="pad-siblings-caption"><span>Modals</span><strong>A little more interior padding than inline components—24 to this card’s 20</strong></figcaption>
+            <figcaption class="panel-caption pad-siblings-caption"><span>Modals</span><strong>A little more interior padding than inline components—24 to this card’s 20</strong></figcaption>
             <div class="pad-stage pad-modal-stage">
               <div class="pad-card"><span class="pad-line"></span><i style="width:72%"></i><i style="width:52%"></i></div>
               <div class="pad-modal-el"><span class="pad-line pad-line-24"></span><i style="width:72%"></i><i style="width:52%"></i></div>
             </div>
           </div>
           <div class="pad-text">
-            <figcaption class="pad-siblings-caption"><span>Text spacing</span><strong>Same-size text keeps consistent gaps on both axes; headings take more space above than below</strong></figcaption>
+            <figcaption class="panel-caption pad-siblings-caption"><span>Text spacing</span><strong>Same-size text keeps consistent gaps on both axes; headings take more space above than below</strong></figcaption>
             <div class="pad-stage pad-text-stage">
               <div class="pad-doc">
                 <div class="pad-doc-inline"><i></i><i></i><i></i><i></i></div>
@@ -589,7 +602,7 @@
             </div>
           </div>
           <div class="pad-text">
-            <figcaption class="pad-siblings-caption"><span>Title, subtitle, body</span><strong>Less space between title and subtitle; more before the body—gaps grow as the relationship loosens</strong></figcaption>
+            <figcaption class="panel-caption pad-siblings-caption"><span>Title, subtitle, body</span><strong>Less space between title and subtitle; more before the body—gaps grow as the relationship loosens</strong></figcaption>
             <div class="pad-stage pad-text-stage">
               <div class="pad-doc">
                 <b class="pad-doc-title" style="width:56%"></b>
@@ -602,15 +615,15 @@
               </div>
             </div>
           </div>
-          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Margins absorb the screen; padding belongs to the component—and to the size</strong></p>
+          <p class="panel-rule morph-rule add-style-rule"><span>Rule</span><strong>Margins absorb the screen; padding belongs to the component—and to the size</strong></p>
         </div>
         <div class="size-rhythm-guide lab-panel">
-          <div class="size-rhythm-intro">
+          <div class="panel-intro size-rhythm-intro">
             <span class="eyebrow">Sizing rhythm</span>
             <h3>Size even unrelated elements to one rhythm</h3>
             <p>An avatar, a button, and a card thumbnail may never sit in the same group today, but interfaces get rearranged. When sizes already share a rhythm, seemingly unrelated elements fall onto the same keylines the moment they meet—aligning them later is much easier. Sizing to the rhythm is an investment in layouts that don’t exist yet.</p>
           </div>
-          <div class="size-rhythm-compare">
+          <div class="panel-compare size-rhythm-compare">
             <figure>
               <figcaption><span>Arbitrary sizes</span><strong>Aligned by hand, edge by edge</strong></figcaption>
               <div class="size-stage" aria-label="Three unrelated elements with arbitrary heights missing the keylines">
@@ -632,10 +645,10 @@
               </div>
             </figure>
           </div>
-          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Elements that share a sizing rhythm align themselves later</strong></p>
+          <p class="panel-rule morph-rule add-style-rule"><span>Rule</span><strong>Elements that share a sizing rhythm align themselves later</strong></p>
         </div>
         <div class="rhythm-meaning lab-panel">
-          <div class="rhythm-meaning-intro">
+          <div class="panel-intro rhythm-meaning-intro">
             <span class="eyebrow">Repeated gestures</span>
             <h3>Repetition builds meaning</h3>
             <p>The same gesture, repeated in comparable contexts with the same outcome, becomes a pattern the person can recognize.</p>
@@ -662,10 +675,10 @@
               <small>Gesture carries meaning</small>
             </article>
           </div>
-          <div class="rhythm-meaning-rule"><span>Rule</span><strong>Preserve the gesture, context, and outcome so each repetition strengthens the convention</strong></div>
+          <div class="panel-rule rhythm-meaning-rule"><span>Rule</span><strong>Preserve the gesture, context, and outcome so each repetition strengthens the convention</strong></div>
         </div>
         <div class="rhythm-scope lab-panel">
-          <div class="rhythm-scope-intro">
+          <div class="panel-intro rhythm-scope-intro">
             <span class="eyebrow">Contextual grouping</span>
             <h3>Group actions by scope</h3>
             <p>Visual grouping implies functional grouping. Actions placed together should share a context, object, or scope.</p>
@@ -703,7 +716,7 @@
               <p>The send action stays inside the field’s visual group and follows the input in left-to-right reading order.</p>
             </article>
           </div>
-          <div class="rhythm-scope-rule"><span>Rule</span><strong>Make visual relationships match functional relationships</strong></div>
+          <div class="panel-rule rhythm-scope-rule"><span>Rule</span><strong>Make visual relationships match functional relationships</strong></div>
         </div>
       </section>
 
@@ -721,8 +734,28 @@
           <article><span>02 / Interaction</span><h3>Define the core interaction</h3><p>Specify the action and the interface response.</p></article>
           <article><span>03 / Visuals</span><h3>Define what must be visible</h3><p>Choose the visual elements required to make the interaction clear.</p></article>
         </div>
+        <div class="ask-guide lab-panel">
+          <div class="panel-intro ask-intro">
+            <span class="eyebrow">Interrogate the ask</span>
+            <h3>Every element earns its spot</h3>
+            <p>An ask arrives at some altitude—“design a chat interface for this bot” prescribes the interface; “add AI to my product” prescribes almost nothing. Step back and work the chain: what is the value, what capabilities does it give users—the things they want done by the system—and only then, what surface serves them best. A prescribed interface is one candidate. And when a conventional interface gains novel elements, each one earns its spot with proof; a pattern never gets in because it’s shorthand for the technology behind it.</p>
+          </div>
+          <div class="ask-chain" aria-label="From ask to value to capabilities to interface">
+            <article><span>01 / Ask</span><strong>“Add AI” · “Make it a chat”</strong><p>Whatever the altitude, don’t start drawing yet.</p></article>
+            <article><span>02 / Value</span><strong>What is this actually adding?</strong><p>If the capability is weak, fix the capability—don’t dress it in a novel interface.</p></article>
+            <article><span>03 / Capabilities</span><strong>What do users want done?</strong><p>Name the things the system can now do for people.</p></article>
+            <article><span>04 / Interface</span><strong>What surfaces them best?</strong><p>Maybe the prescribed one. Maybe not. Then keep asking at lower altitudes.</p></article>
+          </div>
+          <div class="ask-example">
+            <div class="panel-caption ask-example-caption"><span>Worked example</span><strong>Let search be search</strong></div>
+            <div class="ask-example-body">
+              <p>A product wanted AI-powered search, and the first guess was a chat interface for it—chat as shorthand for AI. Users trying to search got something not-quite-like search, slower, with results that weren’t much better. The honest fix: make search good, AI-powered if needed. Then let conversational elements in one at a time as each proves itself—reply-to-refine first, no bubbles, no prose; generative text separately; a real chat only where chat is natural, like asking about the thing you’re already looking at.</p>
+            </div>
+          </div>
+          <p class="panel-rule morph-rule add-style-rule"><span>Rule</span><strong>Reuse what people understand; make every departure demonstrate its value</strong></p>
+        </div>
         <div class="action-hierarchy lab-panel">
-          <div class="action-hierarchy-intro">
+          <div class="panel-intro action-hierarchy-intro">
             <span class="eyebrow">Action hierarchy</span>
             <h3>Make one action primary</h3>
             <p>A surface can contain as many secondary actions as it needs, but only one action should read as primary. Reduce every other action according to its role.</p>
@@ -761,7 +794,7 @@
           </div>
         </div>
         <div class="control-size-guide lab-panel">
-          <div class="control-size-intro">
+          <div class="panel-intro control-size-intro">
             <span class="eyebrow">Method default</span>
             <h3>Size controls for the input method</h3>
             <p>Mouse input supports dense controls. Touch input requires a reliable finger-sized target even when the visible affordance is smaller. Adaptation is an obligation: mobile sizes carried onto desktop feel mushy, and desktop density carried onto touch is hostile. Roles stay constant; values change with the input.</p>
@@ -794,12 +827,12 @@
           </div>
         </div>
         <div class="action-repetition lab-panel">
-          <div class="action-repetition-intro">
+          <div class="panel-intro action-repetition-intro">
             <span class="eyebrow">Repeated actions</span>
             <h3>Repeat actions only when repetition adds meaning</h3>
             <p>Identical controls with different outcomes create ambiguity. Repetition is useful when the same control preserves one meaning and teaches a convention.</p>
           </div>
-          <div class="duplicate-action-comparison">
+          <div class="panel-compare duplicate-action-comparison">
             <article class="ambiguous-actions">
               <span>Ambiguous</span>
               <div><button type="button"><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-plus"></use></svg> Add</button><button type="button"><svg class="lucide-icon" aria-hidden="true"><use href="#lucide-plus"></use></svg> Add</button></div>
@@ -825,15 +858,15 @@
           </div>
         </div>
         <div class="anatomy-guide lab-panel">
-          <div class="anatomy-intro">
+          <div class="panel-intro anatomy-intro">
             <span class="eyebrow">Top and bottom</span>
             <h3>Wayfinding at the top, primary actions at the bottom</h3>
             <p>A rule of thumb for the vertical anatomy of a screen or container: broader navigation controls, settings, and anything answering “where am I” go at the top. Primary actions—submit, save, continue, send—go at the bottom, where the task ends. Reading order becomes interaction order: orient, act, complete. The same holds inside a modal.</p>
           </div>
           <div class="anatomy-demo">
             <div class="anatomy-labels">
-              <div class="anatomy-label"><span>Top</span><strong>Broader navigation, settings, and wayfinding—where am I</strong></div>
-              <div class="anatomy-label"><span>Bottom</span><strong>Primary actions—submit, save, continue, send</strong></div>
+              <div class="panel-caption anatomy-label"><span>Top</span><strong>Broader navigation, settings, and wayfinding—where am I</strong></div>
+              <div class="panel-caption anatomy-label"><span>Bottom</span><strong>Primary actions—submit, save, continue, send</strong></div>
             </div>
             <div class="anatomy-stage">
               <div class="anatomy-screen" aria-label="A screen with navigation and title at the top, content in the middle, and a primary action at the bottom">
@@ -843,15 +876,15 @@
               </div>
             </div>
           </div>
-          <p class="morph-rule add-style-rule"><span>Rule</span><strong>Orient at the top, complete at the bottom</strong></p>
+          <p class="panel-rule morph-rule add-style-rule"><span>Rule</span><strong>Orient at the top, complete at the bottom</strong></p>
         </div>
         <div class="corner-radius-guide lab-panel">
-          <div class="corner-radius-intro">
+          <div class="panel-intro corner-radius-intro">
             <span class="eyebrow">Corner rounding</span>
             <h3>Use radius as interface language</h3>
             <p>The amount of rounding is a matter of taste. Large nested corners need a clearer concentric relationship, and rounded controls can act as familiar shorthand for interactivity.</p>
           </div>
-          <div class="nested-radius-examples" aria-label="Nested corner radius calculation and optical adjustment">
+          <div class="panel-compare nested-radius-examples" aria-label="Nested corner radius calculation and optical adjustment">
             <article>
               <span>Calculated</span>
               <div class="radius-modal"><div class="radius-field radius-field-calculated">Text field</div></div>
@@ -876,18 +909,18 @@
           </div>
         </div>
         <div class="shadow-guide lab-panel">
-          <div class="shadow-intro">
+          <div class="panel-intro shadow-intro">
             <span class="eyebrow">Shadows</span>
             <h3>Use shadows as a tool</h3>
             <p>Shadows are a tool, not a theme—never all-or-nothing. Hold one meaning per shadow everywhere it applies and leave everything else flat; strokes follow the same selective consistency. A shadow must also read apart from its container: 20% black around a container at 20% lightness lands on the container’s own color, and the interface goes muddy. Tonality can be painterly, but hard edges keep the definition—when the two blend, ask whether the shadow is needed at all.</p>
           </div>
-          <div class="shadow-uses" aria-label="When an element gets a shadow">
+          <div class="panel-caption shadow-uses" aria-label="When an element gets a shadow">
             <div><span>On top</span><strong>Sheets + modals, with a scrim</strong></div>
             <div><span>On media</span><strong>Controls over imagery</strong></div>
             <div><span>Physical</span><strong>Draggable elements</strong></div>
             <div><span>Attention</span><strong>Applied type-wide</strong></div>
           </div>
-          <div class="shadow-compare">
+          <div class="panel-compare shadow-compare">
             <figure>
               <figcaption><span>Blended</span><strong>20% black on a 20-lightness container: muddy</strong></figcaption>
               <div class="shadow-stage"><div class="shadow-card shadow-muddy">Container</div></div>
@@ -899,7 +932,7 @@
           </div>
         </div>
         <div class="map-landscape-guide lab-panel">
-          <div class="map-landscape-intro">
+          <div class="panel-intro map-landscape-intro">
             <span class="eyebrow">Conventions</span>
             <h3>Design both the map and the landscape</h3>
             <p>The product’s functionality is the landscape. The interface is the map that explains how to move through it.</p>
@@ -915,10 +948,10 @@
             <article><span>02</span><strong>Define a local convention</strong><p>Create a clear system when the functionality has no familiar shorthand.</p></article>
             <article><span>03</span><strong>Teach and repeat it</strong><p>Show the full meaning first, then keep the abbreviated signal consistent.</p></article>
           </div>
-          <p class="map-landscape-rule"><span>Rule</span><strong>Consistency does not make an arbitrary choice universally familiar; it makes the local map learnable</strong></p>
+          <p class="panel-rule map-landscape-rule"><span>Rule</span><strong>Consistency does not make an arbitrary choice universally familiar; it makes the local map learnable</strong></p>
         </div>
         <div class="state-guide lab-panel">
-          <div class="state-intro">
+          <div class="panel-intro state-intro">
             <span class="eyebrow">Empty and error states</span>
             <h3>Treat dead ends as opportunities</h3>
             <p>Empty states, 404s, and no-network pages can offer a little delight and teach how the product works. The explanation leads; the flourish softens the moment. The no-network page deserves particular care—the person is waiting with nothing to do, so I usually invest in a really great animation there.</p>
@@ -954,7 +987,7 @@
           </div>
         </div>
         <div class="button-scaffold lab-panel">
-          <div class="button-scaffold-intro">
+          <div class="panel-intro button-scaffold-intro">
             <span class="eyebrow">Token scaffold</span>
             <h3>Five sizes, three styles</h3>
             <p>Consistent sizing keeps elements on shared keylines and out of each other’s way; consistent color keeps meaning attached to emphasis. My button scaffold: heights 24, 32, 40, 48, 56—XS through XL—and Primary, Secondary, Tertiary styles. The finite ranges are the alarm: needing a sixth size or a Quaternary style means too many variants. On web and desktop the heights get nudged to fit the screen—a nudge changes a value, never adds a role. A slotted-in design system overrules these values.</p>
@@ -971,15 +1004,15 @@
             <button type="button" class="btn-secondary">Secondary</button>
             <button type="button" class="btn-tertiary">Tertiary</button>
           </div>
-          <p class="morph-rule"><span>Rule</span><strong>Needing Quaternary means you’re too far out in the woods</strong></p>
+          <p class="panel-rule morph-rule"><span>Rule</span><strong>Needing Quaternary means you’re too far out in the woods</strong></p>
         </div>
         <div class="nest-guide lab-panel">
-          <div class="nest-intro">
+          <div class="panel-intro nest-intro">
             <span class="eyebrow">Musing</span>
             <h3>Nesting buttons in inputs</h3>
             <p>An open lean, not a settled principle: I often wonder whether the right move is to nest a button inside an input or have it exist outside. Buttons are best nested inside inputs when they take action on the content within. Nesting is the strongest grouping claim an interface can make—placing a button inside the input’s boundary says this button acts on this content—so a button whose action reaches beyond the input stays outside.</p>
           </div>
-          <div class="nest-compare">
+          <div class="panel-compare nest-compare">
             <figure>
               <figcaption><span>Acts on the content within</span><strong>Nest it</strong></figcaption>
               <div class="nest-stage"><div class="nest-input"><i style="width:52%"></i><b class="nest-btn">Send</b></div></div>
@@ -989,7 +1022,7 @@
               <div class="nest-stage"><div class="nest-row"><div class="nest-input"><i style="width:60%"></i></div><b class="nest-btn nest-outside">Filters</b></div></div>
             </figure>
           </div>
-          <p class="morph-rule add-style-rule"><span>Musing</span><strong>Nested means “this button acts on this content”</strong></p>
+          <p class="panel-rule morph-rule add-style-rule"><span>Musing</span><strong>Nested means “this button acts on this content”</strong></p>
         </div>
         <div class="taste-scaffold lab-panel">
           <div>
@@ -1072,7 +1105,7 @@
           </figure>
         </div>
         <div class="icon-taper-guide lab-panel">
-          <div class="icon-taper-intro">
+          <div class="panel-intro icon-taper-intro">
             <span class="eyebrow">Icon sizes</span>
             <h3>Mostly 20, tapering off</h3>
             <p>Icon sizes follow a tapering frequency: mostly one workhorse size, a few in a second, one or two in a third. I use 20 for most icons, sprinkle in 16 and 24, and keep 12 and 32 rare. An icon that accompanies text derives its size from that text and holds the pairing everywhere—a 20 icon always goes with 16 text—unless it’s a chevron or arrow being tuned optically against its phrase.</p>
@@ -1109,11 +1142,11 @@
             <div><span class="eyebrow">Touch response</span><strong>Fluid + physical</strong><small>Continuity under the finger</small></div>
             <button type="button" data-motion="touch"><span>Try it</span><i aria-hidden="true"></i></button>
           </div>
-          <p class="performance-rule"><span>Performance</span><strong>Protect responsiveness before adding motion</strong></p>
-          <p class="performance-rule"><span>Input fidelity</span><strong>The fidelity of the input must match the user interface</strong></p>
+          <p class="panel-rule performance-rule"><span>Performance</span><strong>Protect responsiveness before adding motion</strong></p>
+          <p class="panel-rule performance-rule"><span>Input fidelity</span><strong>The fidelity of the input must match the user interface</strong></p>
         </div>
         <div class="morph-guide lab-panel">
-          <div class="morph-intro">
+          <div class="panel-intro morph-intro">
             <span class="eyebrow">Continuous transitions</span>
             <h3>Continuously transition only between elements that do the same thing</h3>
             <p>A continuous transition communicates that an element is the same—it is just moving, growing, or changing form. The floating chip and the reply bar are one object: tapping either begins a reply that refines the search, so the chip becomes the bar. The tab bar does something different, so no transition connects it to the composer—it makes room by moving out of the way, staying itself the whole time. The tab bar and the composer are the same size, so static designs could never explain how one replaces the other; the chip’s change in size is what makes the transition legible.</p>
@@ -1123,11 +1156,11 @@
               <div class="morph-tabbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
               <div class="morph-el"><span>Refine search</span></div>
             </div>
-            <p class="morph-rule"><span>Rule</span><strong>The chip becomes the composer because they do the same thing; the tab bar just moves out of the way</strong></p>
+            <p class="panel-rule morph-rule"><span>Rule</span><strong>The chip becomes the composer because they do the same thing; the tab bar just moves out of the way</strong></p>
           </div>
         </div>
         <div class="level-guide lab-panel">
-          <div class="level-intro">
+          <div class="panel-intro level-intro">
             <span class="eyebrow">Transition levels</span>
             <h3>Animate the level that changes</h3>
             <p>A tab switch fades through with a small x translation, giving sibling tabs a spatial relationship. The search bar searches the whole app, so it does not fade or move when the tab changes—it sits at a level above the content, just like the tab bar. What moves reads as content; what stays reads as structure.</p>
@@ -1141,16 +1174,16 @@
               </div>
               <div class="level-tabs" aria-hidden="true"><u></u><i></i><i></i><i></i><i></i></div>
             </div>
-            <p class="morph-rule"><span>Rule</span><strong>The search bar doesn’t move because it doesn’t belong to the tab</strong></p>
+            <p class="panel-rule morph-rule"><span>Rule</span><strong>The search bar doesn’t move because it doesn’t belong to the tab</strong></p>
           </div>
         </div>
         <div class="press-guide lab-panel">
-          <div class="press-intro">
+          <div class="panel-intro press-intro">
             <span class="eyebrow">Press states</span>
             <h3>Give controls a juicy press state</h3>
             <p>A press state is the interface acknowledging contact, and it is so often overlooked. It matters most on touch, where there is no hover—press is the only feedback between intent and result, and a control without one feels dead under the finger. The response is immediate; the juice comes from the quality of the motion, not its duration.</p>
           </div>
-          <div class="press-compare">
+          <div class="panel-compare press-compare">
             <figure>
               <figcaption><span>Overlooked</span><strong>No press state—dead under the finger</strong></figcaption>
               <div class="press-stage" aria-label="A touch point lands on a button that does not respond"><span class="press-dot" aria-hidden="true"></span><button type="button" class="press-btn press-none">Send</button></div>
@@ -1160,10 +1193,10 @@
               <div class="press-stage" aria-label="A touch point lands on a button that scales down to 0.9 while pressed"><span class="press-dot" aria-hidden="true"></span><button type="button" class="press-btn press-juicy">Send</button></div>
             </figure>
           </div>
-          <p class="morph-rule add-style-rule"><span>Scaffold</span><strong>Scale a pressed control down to 0.9</strong></p>
+          <p class="panel-rule morph-rule add-style-rule"><span>Scaffold</span><strong>Scale a pressed control down to 0.9</strong></p>
         </div>
         <div class="tempo-lab lab-panel">
-          <div class="tempo-intro">
+          <div class="divided panel-intro tempo-intro">
             <span class="eyebrow">Complex animation scaffold</span>
             <h3>48 frames at 60 fps equals 0.8 seconds</h3>
             <p>This loop corresponds to 75 BPM. Divide it into four 12-frame intervals, then move selected internal keyframes when the motion needs a less mechanical rhythm.</p>
@@ -1181,7 +1214,7 @@
             <li><i aria-hidden="true"></i><strong>36</strong><span>0.600s</span></li>
             <li><i aria-hidden="true"></i><strong>48</strong><span>0.800s</span></li>
           </ol>
-          <div class="tempo-rule"><span>Swing</span><strong>Move selected internal keyframes while keeping the full loop aligned to 48 frames</strong></div>
+          <div class="panel-rule tempo-rule"><span>Swing</span><strong>Move selected internal keyframes while keeping the full loop aligned to 48 frames</strong></div>
         </div>
       </section>
 

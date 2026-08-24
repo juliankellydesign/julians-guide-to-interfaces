@@ -40,7 +40,7 @@ See [`rhythm-and-swing.md`](rhythm-and-swing.md) for the full principle and a fo
 
 Repeated gestures create rhythm as well as visual consistency. When the same gesture appears in comparable contexts and produces the same outcome, each repetition strengthens its meaning and reduces how much explanation later instances require.
 
-Teach the complete meaning in one clear instance, then preserve the gesture and outcome as it repeats. See [`repetition-builds-meaning.md`](repetition-builds-meaning.md) for the full principle.
+Teach the complete meaning in one clear instance, then preserve the gesture and outcome as it repeats. The same mechanism governs repeating controls: repetition clarifies when meaning stays consistent, and identical-looking controls with different outcomes get separated by proximity, specific labels, or progressive disclosure. See [`repetition-builds-meaning.md`](repetition-builds-meaning.md) for the full principle.
 
 ## Keep elements consistent so variation carries meaning
 

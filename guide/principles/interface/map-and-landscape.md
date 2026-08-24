@@ -32,3 +32,5 @@ Consistency does not make an arbitrary choice universally familiar. It makes the
 - Define a consistent local convention when no familiar shorthand exists.
 - Teach a new convention clearly before relying on its abbreviated form.
 - Keep the meaning of a local convention stable throughout the interface.
+
+This principle covers communicating through conventions. For the rigor of departing from them—novel elements entering a conventional interface one at a time, with proof—see [`every-element-earns-its-spot.md`](every-element-earns-its-spot.md); for the same rigor applied to visual styles, see [`../rhythm/adding-styles.md`](../rhythm/adding-styles.md).

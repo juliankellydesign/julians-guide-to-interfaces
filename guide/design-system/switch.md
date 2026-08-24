@@ -6,6 +6,10 @@ scaffold: true
 
 # Switch
 
+## When to use it
+
+For a binary setting that takes effect immediately—no confirm step. If the choice is part of a form submitted later, or one of several options, it is not a switch.
+
 ## Sources
 
 Track height from the touch minimum visible affordance; thumb from the workhorse icon size; on-color from the highlight scaffold; drag shadow from the shadows principle; press from the press scale. Dimensions are a first pass—the methods do not yet document a switch.
