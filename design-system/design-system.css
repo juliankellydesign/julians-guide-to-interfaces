@@ -25,6 +25,37 @@
   /* Scrim (methods/interface/scrim): 20% white from the transparent-white scale */
   --scrim: rgb(255 255 255 / 0.2);
 
+  /* Semantic color roles. Raw scales stop here; components use only roles. */
+  --color-canvas: var(--gray-50);
+  --color-surface: var(--gray-0);
+  --color-surface-subtle: var(--gray-50);
+  --color-surface-raised: var(--gray-0);
+  --color-surface-disabled: var(--gray-100);
+  --color-surface-inverse: var(--gray-1000);
+  --color-text-primary: var(--gray-1000);
+  --color-text-secondary: var(--gray-600);
+  --color-text-placeholder: var(--gray-500);
+  --color-text-disabled: var(--gray-500);
+  --color-text-inverse: var(--gray-0);
+  --color-border-subtle: var(--gray-100);
+  --color-border-default: var(--gray-300);
+  --color-border-strong: var(--gray-500);
+  --color-border-focus: var(--highlight);
+  --color-action-primary: var(--highlight);
+  --color-action-primary-hover: var(--highlight-strong);
+  --color-action-secondary: var(--gray-100);
+  --color-action-secondary-hover: var(--gray-200);
+  --color-action-quiet-hover: var(--gray-50);
+  --color-success: oklch(0.45 0.13 145);
+  --color-success-subtle: oklch(0.95 0.04 145);
+  --color-warning: oklch(0.48 0.12 75);
+  --color-warning-subtle: oklch(0.96 0.05 85);
+  --color-danger: oklch(0.52 0.18 28);
+  --color-danger-subtle: oklch(0.96 0.04 28);
+  --color-focus-ring: var(--highlight);
+  --color-overlay-scrim: var(--scrim);
+  --color-shadow: rgb(0 0 0 / 0.14);
+
   /* Control shape (design-system/button spec) */
   --control-radius: 10px;
 
@@ -34,7 +65,8 @@
   /* Modal (design-system/modal spec) */
   --modal-padding: 24px;
   --modal-radius: 16px;
-  --modal-shadow: 0 12px 32px rgb(0 0 0 / 0.14);
+  --shadow-overlay: 0 12px 32px var(--color-shadow);
+  --shadow-control: 0 1px 3px rgb(0 0 0 / 0.25);
 
   --font: "Karl", -apple-system, sans-serif;
 }
@@ -58,7 +90,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 .ds-button:active { transform: scale(var(--press-scale)); }
-.ds-button:focus-visible { outline: 2px solid var(--highlight); outline-offset: 2px; }
+.ds-button:focus-visible { outline: 2px solid var(--color-action-primary); outline-offset: 2px; }
 .ds-button:disabled { opacity: 0.4; cursor: default; }
 .ds-button:disabled:active { transform: none; }
 
@@ -70,15 +102,15 @@
 .ds-button-xl { height: 56px; padding: 0 24px; font-size: 17px; }
 
 /* Styles: one primary per surface */
-.ds-button-primary { background: var(--highlight); color: var(--gray-0); font-weight: 600; }
-.ds-button-secondary { background: var(--gray-100); color: var(--gray-900); }
-.ds-button-tertiary { background: transparent; color: var(--gray-900); box-shadow: inset 0 0 0 1px var(--gray-300); }
-.ds-button-ghost { background: transparent; color: var(--gray-900); }
+.ds-button-primary { background: var(--color-action-primary); color: var(--color-surface); font-weight: 600; }
+.ds-button-secondary { background: var(--color-action-secondary); color: var(--color-text-primary); }
+.ds-button-tertiary { background: transparent; color: var(--color-text-primary); box-shadow: inset 0 0 0 1px var(--color-border-default); }
+.ds-button-ghost { background: transparent; color: var(--color-text-primary); }
 
 @media (hover: hover) {
-  .ds-button-primary:hover:not(:disabled) { background: var(--highlight-strong); }
-  .ds-button-secondary:hover:not(:disabled) { background: var(--gray-200); }
-  .ds-button-tertiary:hover:not(:disabled), .ds-button-ghost:hover:not(:disabled) { background: var(--gray-50); }
+  .ds-button-primary:hover:not(:disabled) { background: var(--color-action-primary-hover); }
+  .ds-button-secondary:hover:not(:disabled) { background: var(--color-action-secondary-hover); }
+  .ds-button-tertiary:hover:not(:disabled), .ds-button-ghost:hover:not(:disabled) { background: var(--color-surface-subtle); }
 }
 
 /* ---------- Input ---------- */
@@ -86,16 +118,16 @@
 .ds-input {
   box-sizing: border-box;
   width: 100%;
-  border: 1px solid var(--gray-300);
+  border: 1px solid var(--color-border-default);
   border-radius: var(--control-radius);
-  background: var(--gray-0);
-  color: var(--gray-1000);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
   font-family: var(--font);
   font-weight: 400;
 }
-.ds-input::placeholder { color: var(--gray-500); }
-.ds-input:focus { outline: 2px solid var(--highlight); outline-offset: 0; border-color: var(--highlight); }
-.ds-input:disabled { background: var(--gray-50); opacity: 0.4; }
+.ds-input::placeholder { color: var(--color-text-placeholder); }
+.ds-input:focus { outline: 2px solid var(--color-action-primary); outline-offset: 0; border-color: var(--color-action-primary); }
+.ds-input:disabled { background: var(--color-surface-subtle); opacity: 0.4; }
 
 .ds-input-s { height: 32px; padding: 0 12px; font-size: 14px; }
 .ds-input-m { height: 40px; padding: 0 16px; font-size: 16px; }
@@ -116,7 +148,7 @@
 .ds-scrim {
   position: fixed;
   inset: 0;
-  background: var(--scrim);
+  background: var(--color-overlay-scrim);
   transition: opacity 0.16s ease;
 }
 .ds-scrim[data-starting-style], .ds-scrim[data-ending-style] { opacity: 0; }
@@ -130,10 +162,10 @@
   width: min(480px, calc(100vw - 32px));
   padding: var(--modal-padding);
   border-radius: var(--modal-radius);
-  background: var(--gray-0);
-  box-shadow: var(--modal-shadow);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-overlay);
   font-family: var(--font);
-  color: var(--gray-1000);
+  color: var(--color-text-primary);
   transition: transform 0.16s ease, opacity 0.16s ease;
 }
 .ds-modal[data-starting-style], .ds-modal[data-ending-style] {
@@ -144,8 +176,8 @@
 /* Anatomy: title top, body middle, primary action bottom.
    Title sits closer to its subtitle than the subtitle sits to the body. */
 .ds-modal-title { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.2; }
-.ds-modal-subtitle { margin: 6px 0 0; font-size: 14px; color: var(--gray-600); line-height: 1.5; }
-.ds-modal-body { margin: 16px 0 0; font-size: 16px; line-height: 1.55; color: var(--gray-800); }
+.ds-modal-subtitle { margin: 6px 0 0; font-size: 14px; color: var(--color-text-secondary); line-height: 1.5; }
+.ds-modal-body { margin: 16px 0 0; font-size: 16px; line-height: 1.55; color: var(--color-text-primary); }
 .ds-modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -164,26 +196,64 @@
   padding: 2px;
   border: 0;
   border-radius: 9999px;
-  background: var(--gray-300);
+  background: var(--color-border-default);
   cursor: pointer;
   transition: background-color 0.16s ease, transform 0.1s ease;
   -webkit-tap-highlight-color: transparent;
 }
-.ds-switch[data-checked] { background: var(--highlight); }
+.ds-switch[data-checked] { background: var(--color-action-primary); }
 .ds-switch:active { transform: scale(var(--press-scale)); }
-.ds-switch:focus-visible { outline: 2px solid var(--highlight); outline-offset: 2px; }
+.ds-switch:focus-visible { outline: 2px solid var(--color-action-primary); outline-offset: 2px; }
 
 .ds-switch-thumb {
   display: block;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--gray-0);
-  box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-control);
   transition: transform 0.16s ease;
 }
 .ds-switch[data-checked] .ds-switch-thumb { transform: translateX(16px); }
 
 @media (prefers-reduced-motion: reduce) {
   .ds-switch, .ds-switch-thumb { transition: none; }
+}
+
+
+/* ---------- Extended fields ---------- */
+.ds-field { display: grid; gap: 8px; width: min(360px, 100%); }
+.ds-label { color: var(--color-text-primary); font-size: 14px; font-weight: 500; }
+.ds-help { margin: -2px 0 0; color: var(--color-text-secondary); font-size: 13px; line-height: 1.4; }
+.ds-help-danger { color: var(--color-danger); }
+.ds-textarea { min-height: 96px; height: auto; padding: 12px 16px; line-height: 1.5; resize: vertical; }
+.ds-input[aria-invalid="true"] { border-color: var(--color-danger); }
+.ds-select-wrap { position: relative; }
+.ds-select { appearance: none; padding-right: 40px; }
+.ds-select-wrap::after { content: "⌄"; position: absolute; right: 16px; top: 50%; color: var(--color-text-secondary); pointer-events: none; transform: translateY(-55%); }
+.ds-choice { display: inline-flex; align-items: center; gap: 10px; min-height: 32px; color: var(--color-text-primary); font-size: 14px; cursor: pointer; }
+.ds-choice input { width: 20px; height: 20px; margin: 0; accent-color: var(--color-action-primary); }
+.ds-choice input:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+
+/* ---------- Content and navigation ---------- */
+.ds-card { padding: 20px; border: 1px solid var(--color-border-subtle); border-radius: 16px; background: var(--color-surface); color: var(--color-text-primary); }
+.ds-card h3 { margin: 0; font-size: 17px; }
+.ds-card p { margin: 8px 0 0; color: var(--color-text-secondary); font-size: 14px; line-height: 1.5; }
+.ds-tabs { display: flex; gap: 20px; overflow-x: auto; border-bottom: 1px solid var(--color-border-subtle); }
+.ds-tab { min-height: 40px; padding: 0; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--color-text-secondary); font: 500 14px var(--font); white-space: nowrap; }
+.ds-tab[aria-selected="true"] { border-color: var(--color-action-primary); color: var(--color-text-primary); }
+.ds-badge { display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 9999px; background: var(--color-action-secondary); color: var(--color-text-primary); font-size: 12px; font-weight: 600; }
+.ds-badge-success { background: var(--color-success-subtle); color: var(--color-success); }
+.ds-badge-warning { background: var(--color-warning-subtle); color: var(--color-warning); }
+.ds-badge-danger { background: var(--color-danger-subtle); color: var(--color-danger); }
+.ds-alert { padding: 16px; border-radius: 12px; background: var(--color-danger-subtle); color: var(--color-danger); font-size: 14px; line-height: 1.5; }
+
+@media (pointer: coarse), (max-width: 640px) {
+  .ds-choice { min-height: 44px; }
+  .ds-tab { min-height: 44px; }
+  .ds-card { padding: 16px; }
+  .ds-modal { top: auto; bottom: 8px; transform: translateX(-50%); width: calc(100vw - 16px); }
+  .ds-modal[data-starting-style], .ds-modal[data-ending-style] { transform: translate(-50%, 12px); }
+  .ds-modal-actions { flex-direction: column-reverse; }
+  .ds-modal-actions .ds-button { width: 100%; height: 48px; }
 }
