@@ -135,12 +135,12 @@ function DeleteAlert() {
       </AlertDialog.Trigger>
       <AlertDialog.Portal>
         <AlertDialog.Backdrop className="ds-scrim" />
-        <AlertDialog.Popup className="ds-modal ds-alert">
+        <AlertDialog.Popup className="ds-modal ds-alert-dialog">
           <AlertDialog.Title className="ds-modal-title">Delete 3 projects?</AlertDialog.Title>
           <AlertDialog.Description className="ds-modal-body">
             Their runs, logs, and shared links go with them. This cannot be undone.
           </AlertDialog.Description>
-          <div className="ds-alert-actions">
+          <div className="ds-alert-dialog-actions">
             <AlertDialog.Close className="ds-button ds-button-m ds-button-secondary">
               Cancel
             </AlertDialog.Close>
