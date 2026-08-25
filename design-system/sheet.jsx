@@ -2,12 +2,14 @@
    not part of any component spec. */
 import * as React from "react";
 
+const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 export function Section({ eyebrow, title, note, children }) {
   return (
-    <section className="sheet-section">
+    <section className="sheet-section" id={slug(eyebrow)} aria-labelledby={slug(eyebrow) + "-title"}>
       <header>
         <span className="eyebrow">{eyebrow}</span>
-        <h2>{title}</h2>
+        <h2 id={slug(eyebrow) + "-title"}>{title}</h2>
         {note ? <p>{note}</p> : null}
       </header>
       {children}

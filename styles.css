@@ -177,6 +177,12 @@ a { text-decoration: none; font-weight: var(--w-medium); }
 .site-nav a:hover, .site-nav a.active { transform: translateX(6px); font-weight: var(--w-medium); }
 .site-nav a.active::before { height: 18px; }
 .site-nav a span { color: var(--muted); font-size: var(--t-micro); font-weight: var(--w-body); }
+/* The index lists scroll targets; "Elsewhere" lists destinations. Two different
+   outcomes must not share one look — the repetition principle, applied to the nav. */
+.nav-label-secondary { margin-top: 32px; }
+.nav-links { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.nav-links a { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; max-width: 174px; font-size: var(--t-support); font-weight: var(--w-medium); color: var(--muted); transition: color var(--quick) var(--ease); }
+.nav-links a:hover { color: var(--ink); }
 .nav-note { position: absolute; bottom: 32px; max-width: 174px; margin: 0; color: var(--muted); font-size: var(--t-micro); font-weight: var(--w-body); line-height: var(--lh-body); }
 
 main, footer { margin-left: calc(var(--nav-w) + var(--page-x)); }

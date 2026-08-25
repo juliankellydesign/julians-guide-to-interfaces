@@ -106,9 +106,31 @@ The implementation lives in [`/design-system/`](../../design-system/) at the rep
 - `parts/*.jsx` — the demos, one file per component group
 - `app.jsx` — composes the parts into the sheet
 - `app.js` — the committed bundle (esbuild), so the page serves statically with no build step
-- `components.html` — the rendered component sheet
+- `components.html` — the rendered component reference
+
+The reference page shares the handbook's chrome and tokens: same header, same index in the left rail, same type scale. It is a second surface of one site, not a second site. The handbook's index lists scroll targets; links that leave the page sit apart from it under "Elsewhere," so a numbered item always scrolls and a destination always looks like one.
 
 Validation errors, destructive items and a meter past its threshold use the `danger` and `warning` semantic roles.
+
+## Platform coverage
+
+This set is derived from Base UI, so it covers the web comprehensively and the Apple HIG partially — roughly half of the HIG's component list, measured across its non-macOS groups.
+
+What transfers to a native app today is the visual language: colour scales and semantic roles, the type scale, the spacing and radius ladders, control heights and styles, motion timing, press states, shadows and the scrim. The iOS playground in [`/App/`](../../App/) already runs the colour, type, spacing, icon and motion methods natively.
+
+What is missing is the structural half of an iOS app, and it is not a rounding error:
+
+| Not yet specified | Nearest thing here | Why it is not the same |
+| --- | --- | --- |
+| Lists and table rows | — | Nothing covers them; they are the backbone of most iOS screens |
+| Tab bar | [`tabs.md`](tabs.md) | A row of text tabs, not a bottom bar of icon-and-label items |
+| Navigation bar | [`navigation-menu.md`](navigation-menu.md) | A web navigation menu, not a bar with a back affordance and a large title |
+| Search field | [`input.md`](input.md) | Search on iOS is its own pattern, not a styled text field |
+| Segmented control | [`toggle-group.md`](toggle-group.md) | Related, but a different control with its own conventions |
+| Action sheet | [`drawer.md`](drawer.md) | Both are edge-anchored; an action sheet is a list of choices, not a surface |
+| Page control, activity indicator, rating | — | Small, but absent |
+
+Dimensions are also web-first where the two platforms disagree: the M control height is 40 against a 44pt iOS minimum target, and the switch is specified at 24×40 against UISwitch's fixed 31×51. The guide has no policy yet on whether a native build should use the platform's control and take its dimensions, or draw the spec's. That question is open, and the [`interrogate the ask`](../principles/00-core-principles.md) and [`every element earns its spot`](../principles/interface/every-element-earns-its-spot.md) principles both bear on it.
 
 Rebuild the bundle after editing `app.jsx`: `npm run build:ds`.
 

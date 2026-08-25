@@ -3,39 +3,94 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Design system components · Julian’s Guide to Interfaces</title>
+  <title>Components · Julian’s Guide to Interfaces</title>
+  <!-- The handbook's chrome and tokens first, then the component layer. One system, two pages. -->
+  <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="design-system.css" />
   <style>
-    /* Sheet chrome — presentation of the demo page, not part of the component spec. */
-    @font-face { font-family: "Karl"; src: url("https://jfk.works/karl-regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
-    @font-face { font-family: "Karl"; src: url("https://jfk.works/karl-medium.otf") format("opentype"); font-weight: 500; font-display: swap; }
-    @font-face { font-family: "Karl"; src: url("https://jfk.works/karl-medium.otf") format("opentype"); font-weight: 600; font-display: swap; }
-    @font-face { font-family: "Karl"; src: url("https://jfk.works/karl-bold.otf") format("opentype"); font-weight: 700; font-display: swap; }
-    @font-face { font-family: "Karl"; src: url("https://jfk.works/karl-black.otf") format("opentype"); font-weight: 800; font-display: swap; }
-
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--color-canvas); color: var(--color-text-primary); font-family: var(--font); }
-    .sheet { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
-    .eyebrow { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-placeholder); }
-    .sheet-header { margin-bottom: 48px; }
-    .sheet-header h1 { margin: 10px 0 0; font-size: clamp(32px, 5vw, 48px); font-weight: 800; line-height: 1.05; }
-    .sheet-header p { max-width: 620px; margin: 16px 0 0; font-size: 15px; line-height: 1.65; color: var(--color-text-secondary); }
-    .sheet-header code { font-size: 13px; background: var(--color-border-subtle); padding: 1px 5px; border-radius: 4px; }
-    .sheet-section { margin-top: 40px; border: 1px solid var(--color-border-subtle); border-radius: 16px; background: var(--color-surface); overflow: hidden; }
-    .sheet-section > header { padding: 24px 28px; border-bottom: 1px solid var(--color-border-subtle); }
-    .sheet-section > header .eyebrow { color: var(--color-action-primary); }
-    .sheet-section h2 { margin: 8px 0 0; font-size: 24px; font-weight: 700; line-height: 1.1; }
-    .sheet-section > header p { max-width: 560px; margin: 10px 0 0; font-size: 13px; line-height: 1.6; color: var(--color-text-secondary); }
-    .sheet-row { display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: start; margin: 0; padding: 24px 28px; border-bottom: 1px solid var(--color-border-subtle); }
+    /* Sheet chrome only — presentation of the reference page, not part of any spec.
+       Type, colour, radius and spacing all come from the handbook's tokens. */
+    .sheet { padding: clamp(40px, 5vw, 72px) var(--page-x) 96px; }
+    .sheet-header { max-width: 62ch; margin-bottom: 48px; }
+    .sheet-header h1 { margin: 12px 0 0; font-size: var(--t-section); font-weight: var(--w-medium); line-height: var(--lh-heading); }
+    .sheet-header p { margin: 16px 0 0; font-size: var(--t-base); line-height: var(--lh-body); color: var(--muted); }
+    .sheet-header code { font-size: var(--t-support); padding: 2px 6px; border-radius: var(--r-inline); background: var(--paper-deep); }
+    .sheet-section { margin-top: 16px; overflow: hidden; border: 1px solid var(--line-strong); border-radius: var(--r-container); background: var(--gray-50); scroll-margin-top: 96px; }
+    .sheet-section > header { padding: 28px; border-bottom: 1px solid var(--line); }
+    .sheet-section h2 { margin: 8px 0 0; font-size: var(--t-title); font-weight: var(--w-medium); line-height: var(--lh-heading); }
+    .sheet-section > header p { max-width: 62ch; margin: 10px 0 0; font-size: var(--t-support); line-height: var(--lh-body); color: var(--muted); }
+    .sheet-row { display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: start; margin: 0; padding: 24px 28px; border-bottom: 1px solid var(--line); }
     .sheet-row:last-child { border-bottom: 0; }
-    .sheet-row figcaption { padding-top: 8px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); }
-    .sheet-stage { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px; border: 1px solid var(--color-border-default); border-radius: 12px; background: var(--color-canvas); }
+    .sheet-row figcaption { padding-top: 8px; font-size: var(--t-support); font-weight: var(--w-medium); color: var(--muted); }
+    .sheet-stage { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px; border: 1px solid var(--line-strong); border-radius: var(--r-panel); background: var(--paper); }
     .sheet-col { display: flex; flex-direction: column; gap: 12px; width: min(360px, 100%); }
-    @media (max-width: 640px) { .sheet-row { grid-template-columns: 1fr; gap: 8px; } }
+    @media (max-width: 720px) { .sheet-row { grid-template-columns: 1fr; gap: 8px; } }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#content">Skip to components</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Julian’s Guide to Interfaces, home">
+      <span class="wordmark-mark" aria-hidden="true">J</span>
+      <span>Julian’s Guide<br />to Interfaces</span>
+    </a>
+    <div class="header-meta">
+      <span class="status"><i aria-hidden="true"></i> Component reference</span>
+      <span>v0.55</span>
+    </div>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span>Index</span><i aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <nav class="site-nav" id="site-nav" aria-label="Component index">
+    <span class="nav-label">Components</span>
+    <ol>
+      <li><a href="#button" data-section="button"><span>01</span> Button</a></li>
+      <li><a href="#input" data-section="input"><span>02</span> Input</a></li>
+      <li><a href="#selection" data-section="selection"><span>03</span> Selection</a></li>
+      <li><a href="#choosers" data-section="choosers"><span>04</span> Choosers</a></li>
+      <li><a href="#forms" data-section="forms"><span>05</span> Forms</a></li>
+      <li><a href="#modal" data-section="modal"><span>06</span> Modal</a></li>
+      <li><a href="#overlays" data-section="overlays"><span>07</span> Overlays</a></li>
+      <li><a href="#menus-and-navigation" data-section="menus-and-navigation"><span>08</span> Menus</a></li>
+      <li><a href="#disclosure" data-section="disclosure"><span>09</span> Disclosure</a></li>
+      <li><a href="#feedback-and-display" data-section="feedback-and-display"><span>10</span> Feedback</a></li>
+      <li><a href="#switch" data-section="switch"><span>11</span> Switch</a></li>
+      <li><a href="#content" data-section="content"><span>12</span> Content</a></li>
+    </ol>
+    <span class="nav-label nav-label-secondary">Elsewhere</span>
+    <ul class="nav-links">
+      <li><a href="../index.html">The handbook <span aria-hidden="true">↖</span></a></li>
+    </ul>
+    <p class="nav-note">Behaviour and accessibility come from Base UI. The written specs are the source of truth.</p>
+  </nav>
+
   <div id="root"></div>
   <script type="module" src="app.js"></script>
+  <script>
+    // Same nav behaviour as the handbook: the menu button, and scroll-spy on the index.
+    const menuButton = document.querySelector(".menu-button");
+    const siteNav = document.querySelector(".site-nav");
+    menuButton?.addEventListener("click", () => {
+      const open = siteNav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(open));
+    });
+    const navLinks = [...document.querySelectorAll(".site-nav a[data-section]")];
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => link.classList.toggle("active", link.dataset.section === entry.target.id));
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    // sections are rendered by React, so observe once they exist
+    new MutationObserver((_, obs) => {
+      const sections = document.querySelectorAll("main.sheet section[id]");
+      if (!sections.length) return;
+      sections.forEach((s) => spy.observe(s));
+      obs.disconnect();
+    }).observe(document.getElementById("root"), { childList: true, subtree: true });
+  </script>
 </body>
 </html>
