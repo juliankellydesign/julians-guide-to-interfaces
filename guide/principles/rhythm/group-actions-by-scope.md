@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm, interface]
+---
+
 # Group actions by scope
 
 ## In brief

@@ -1,5 +1,6 @@
 ---
 type: component-spec
+tags: [interface]
 prompt: opt-in
 scaffold: true
 ---

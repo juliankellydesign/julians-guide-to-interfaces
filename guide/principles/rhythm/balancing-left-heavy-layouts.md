@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm]
+---
+
 # Balance a left-heavy layout with one right-aligned element
 
 ## In brief

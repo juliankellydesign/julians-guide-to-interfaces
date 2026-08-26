@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [imagery, typography]
+---
+
 # Relate icons to type by function
 
 ## In brief

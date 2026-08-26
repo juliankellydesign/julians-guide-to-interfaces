@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [imagery, typography]
+---
+
 # Taper icon sizes and pair them with text
 
 ## In brief

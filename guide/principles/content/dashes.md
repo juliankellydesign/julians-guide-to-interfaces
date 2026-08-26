@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [content]
+---
+
 # Use em dashes, en dashes, and hyphens by function
 
 ## In brief

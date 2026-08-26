@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm]
+---
+
 # Rhythm and swing
 
 ## In brief

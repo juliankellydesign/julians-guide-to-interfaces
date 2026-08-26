@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [process]
+---
+
 # Be the voice of the user
 
 ## In brief

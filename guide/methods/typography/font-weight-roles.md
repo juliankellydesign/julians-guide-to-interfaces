@@ -1,5 +1,6 @@
 ---
 type: method
+tags: [typography]
 prompt: opt-in
 scaffold: true
 ---

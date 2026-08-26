@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [process]
+---
+
 # Explore the crazy stuff; simplicity is earned
 
 ## In brief

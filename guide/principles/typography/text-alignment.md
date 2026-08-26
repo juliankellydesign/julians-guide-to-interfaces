@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [typography, rhythm]
+---
+
 # Align text according to its role
 
 ## In brief

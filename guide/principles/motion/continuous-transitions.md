@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [motion]
+---
+
 # Continuously transition only between elements that do the same thing
 
 ## In brief

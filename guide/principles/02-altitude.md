@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [process]
+---
+
 # Change your altitude
 
 ## In brief

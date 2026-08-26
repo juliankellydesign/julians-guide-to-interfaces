@@ -1,5 +1,6 @@
 ---
 type: method
+tags: [motion, interface]
 prompt: opt-in
 scaffold: true
 ---

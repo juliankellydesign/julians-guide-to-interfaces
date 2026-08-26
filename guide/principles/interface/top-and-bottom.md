@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface, rhythm]
+---
+
 # Put wayfinding at the top and primary actions at the bottom
 
 ## In brief

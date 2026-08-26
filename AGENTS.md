@@ -10,7 +10,7 @@ Do not read the entire repository by default.
 
 1. Read `guide/principles/00-core-principles.md` for the governing philosophy.
 2. Read `guide/README.md` to choose the relevant layer.
-3. Read `guide/principles/README.md` and only the relevant principle file(s) for the task.
+3. Read `guide/principles/README.md` and only the relevant principle file(s) for the task, selecting them by the discipline tags in their frontmatter and the index's tag table.
 4. Read `guide/methods/README.md` only when the task requires constructing or replacing a system, applying Julian’s defaults, or retrieving exact values.
 5. Use `data/foundations.json` only after selecting an applicable method and when exact starting values are required.
 
@@ -24,6 +24,7 @@ Do not read `guide/asides/` by default. Asides provide context for people but ar
 - Explain what a choice communicates, not only what it looks like.
 - Distinguish a principle from a useful default. Defaults can be changed when context gives a reason.
 - Classify guidance about how to judge or approach a decision as a principle. Classify a repeatable recipe, generated system, or exact default as a method.
+- Give every principle, method, and component-spec file frontmatter with a `type` and a `tags` list drawn from the taxonomy in `guide/README.md`. Tags are the retrieval index: give a file every discipline tag its idea belongs to—an idea can be both rhythm and motion—rather than forcing one.
 - Keep one primary idea per file. Split a file before it becomes expensive for an agent to retrieve.
 - Prefer exact values, examples, and comparisons over vague adjectives.
 - Keep working rules as the only normative kernel of a file. Examples are illustrative applications, never rules: put substantial ones under an `## Example:` heading, end each with a one-line transferable point naming the abstraction it teaches, and never cite an example's verdict as a rule—verdicts that depend on what users currently understand carry an "as of" year, because conventions move.

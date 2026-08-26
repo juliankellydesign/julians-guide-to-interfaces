@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm, color]
+---
+
 # Keep elements consistent so variation carries meaning
 
 ## In brief

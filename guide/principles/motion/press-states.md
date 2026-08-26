@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [motion, interface]
+---
+
 # Give controls a juicy press state
 
 ## In brief

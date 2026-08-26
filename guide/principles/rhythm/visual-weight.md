@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm]
+---
+
 # Concentrate visual weight by importance
 
 ## In brief

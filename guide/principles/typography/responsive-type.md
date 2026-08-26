@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [typography]
+---
+
 # Treat responsive type as one system
 
 ## In brief

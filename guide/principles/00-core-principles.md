@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [process]
+---
+
 # Core principles
 
 ## In brief

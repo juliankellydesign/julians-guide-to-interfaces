@@ -1,5 +1,6 @@
 ---
 type: method
+tags: [content]
 prompt: opt-in
 scaffold: true
 ---
