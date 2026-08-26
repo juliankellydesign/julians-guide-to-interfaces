@@ -2,7 +2,7 @@
 
 ## In brief
 
-Start with a clear problem or a specific interaction—and when the work is someone else's brief, interrogate the ask first (see [`../00-core-principles.md`](../00-core-principles.md)). Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, vertical placement, control size, corner language, conventions, responsiveness, perceived speed, and deliberate empty and error states all communicate how the interface should be used. Repeating controls is governed by rhythm's repetition principle: repetition clarifies when meaning stays consistent (see [`../rhythm/repetition-builds-meaning.md`](../rhythm/repetition-builds-meaning.md)).
+Start with a clear problem or a specific interaction—and when the work is someone else's brief, interrogate the ask first (see [`../core-principles.md`](../core-principles.md)). Define the core interaction and core visual elements before styling the whole surface. Action hierarchy, vertical placement, control size, corner language, conventions, responsiveness, perceived speed, and deliberate empty and error states all communicate how the interface should be used. Repeating controls is governed by rhythm's repetition principle: repetition clarifies when meaning stays consistent (see [`../rhythm/repetition-builds-meaning.md`](../rhythm/repetition-builds-meaning.md)).
 
 ## Start with the problem or interaction
 

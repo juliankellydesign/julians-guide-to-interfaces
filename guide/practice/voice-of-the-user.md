@@ -1,6 +1,6 @@
 ---
-type: principle
-tags: [process]
+type: practice
+prompt: exclude
 ---
 
 # Be the voice of the user

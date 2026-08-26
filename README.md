@@ -14,7 +14,7 @@ This is not an argument for stark minimalism. Flourishes, shadows, movement, and
 
 ## Read the guide
 
-A person learning interaction design follows the [reading path](guide/README.md#reading-path-for-people)—stance first, then the disciplines in order, the applied layer last. An agent (or a reader with a task in hand) starts with [the core principles](guide/principles/00-core-principles.md), then chooses the layer the task requires:
+A person learning interaction design follows the [reading path](guide/README.md#reading-path-for-people)—stance first, then the disciplines in order, the applied layer last. An agent (or a reader with a task in hand) starts with [the core principles](guide/principles/core-principles.md), then chooses the layer the task requires:
 
 - [Principles](guide/principles/README.md) are the theory: how I approach and judge interface design. Use them by default, including when working inside an existing visual system.
 - [Methods](guide/methods/README.md) and [structured foundations](data/foundations.json) are the applied layer: my design system, expressed as recipes for type, color, spacing, and motion plus machine-readable tokens. Use them when building or deliberately replacing a system. The layer works as a scaffold for getting new work up and running quickly.
@@ -44,10 +44,10 @@ No install step is required. The site uses plain HTML, CSS, and JavaScript, with
 ├── guide/
 │   ├── README.md             # Router: the two modules, the tag taxonomy, reading paths
 │   ├── asides/               # Context excluded from agent prompts
+│   ├── practice/             # Guidance for the designer, excluded from agent prompts
 │   ├── principles/           # The theory layer, passable on its own
-│   │   ├── 00-core-principles.md # The thesis and default decision rules
-│   │   ├── 01-human-judgment.md  # Math as a tool and feeling as evidence
-│   │   ├── 02–04                 # Altitude, voice of the user, earned simplicity
+│   │   ├── core-principles.md    # The thesis and default decision rules
+│   │   ├── human-judgment.md     # Math as a tool and feeling as evidence
 │   │   ├── content/          # Interface writing and communication
 │   │   ├── typography/       # Type and typographic spacing
 │   │   ├── rhythm/           # Spatial relationships, Gestalt, and optical alignment

@@ -130,7 +130,7 @@ What is missing is the structural half of an iOS app, and it is not a rounding e
 | Action sheet | [`drawer.md`](drawer.md) | Both are edge-anchored; an action sheet is a list of choices, not a surface |
 | Page control, activity indicator, rating | — | Small, but absent |
 
-Dimensions are also web-first where the two platforms disagree: the M control height is 40 against a 44pt iOS minimum target, and the switch is specified at 24×40 against UISwitch's fixed 31×51. The guide has no policy yet on whether a native build should use the platform's control and take its dimensions, or draw the spec's. That question is open, and the [`interrogate the ask`](../principles/00-core-principles.md) and [`every element earns its spot`](../principles/interface/every-element-earns-its-spot.md) principles both bear on it.
+Dimensions are also web-first where the two platforms disagree: the M control height is 40 against a 44pt iOS minimum target, and the switch is specified at 24×40 against UISwitch's fixed 31×51. The guide has no policy yet on whether a native build should use the platform's control and take its dimensions, or draw the spec's. That question is open, and the [`interrogate the ask`](../principles/core-principles.md) and [`every element earns its spot`](../principles/interface/every-element-earns-its-spot.md) principles both bear on it.
 
 Rebuild the bundle after editing `app.jsx`: `npm run build:ds`.
 

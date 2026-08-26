@@ -70,7 +70,7 @@ The numerical systems in this guide are strong defaults, not laws. They create c
 
 Grids, color curves, type scales, and timing systems are tools. They are simplified representations of perception and cannot account for every display, eye, culture, or context.
 
-When something feels better outside the system, question the feeling but do not discard it. It may identify information the mathematical model missed. See [`01-human-judgment.md`](01-human-judgment.md) for the full principle.
+When something feels better outside the system, question the feeling but do not discard it. It may identify information the mathematical model missed. See [`human-judgment.md`](human-judgment.md) for the full principle.
 
 ## Use personal taste as scaffolding
 

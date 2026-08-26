@@ -12,13 +12,12 @@ Every principle file carries `type: principle` and a `tags` list in its frontmat
 
 ## Foundations
 
-The stance files carry the `process` tag: how to approach the work before any pixels.
+The `process` tag marks the always-loaded judgment kernel: discipline-independent rules that change what gets made on every task.
 
-- [`00-core-principles.md`](00-core-principles.md) — purpose, problems, interactions, interrogating the ask, restraint, and performance
-- [`01-human-judgment.md`](01-human-judgment.md) — math as a tool, feeling as evidence, and swing across disciplines
-- [`02-altitude.md`](02-altitude.md) — jumping between the narrow view and the wide view; make low, edit high
-- [`03-voice-of-the-user.md`](03-voice-of-the-user.md) — three archetypes, healthy tension, and holding the user's question
-- [`04-earned-simplicity.md`](04-earned-simplicity.md) — exploring the crazy stuff; simple results are earned by exploration
+- [`core-principles.md`](core-principles.md) — purpose, problems, interactions, interrogating the ask, restraint, and performance. Read it first on every task.
+- [`human-judgment.md`](human-judgment.md) — math as a tool, feeling as evidence, and optical judgment across disciplines.
+
+Guidance about sustaining the work itself—altitude, the three voices, earned simplicity—is [practice](../practice/README.md), not principle: normative for the designer rather than the design, and excluded from agent prompts.
 
 ## Disciplines
 

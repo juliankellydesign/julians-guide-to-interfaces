@@ -8,7 +8,7 @@ This repository is Julian Kelly’s evolving interface-design handbook. Preserve
 
 Do not read the entire repository by default.
 
-1. Read `guide/principles/00-core-principles.md` for the governing philosophy.
+1. Read `guide/principles/core-principles.md` for the governing philosophy.
 2. Read `guide/README.md` to choose the relevant layer.
 3. Read `guide/principles/README.md` and only the relevant principle file(s) for the task, selecting them by the discipline tags in their frontmatter and the index's tag table.
 4. Read `guide/methods/README.md` only when the task requires constructing or replacing a system, applying Julian’s defaults, or retrieving exact values.
@@ -16,14 +16,14 @@ Do not read the entire repository by default.
 
 Principles are the default layer. For an existing interface, preserve its established type, color, spacing, and motion systems unless Julian asks to change them. Do not load methods or structured foundations merely because the task involves the same discipline.
 
-Do not read `guide/asides/` by default. Asides provide context for people but are excluded from agent prompts and working guidance.
+Do not read `guide/asides/` or `guide/practice/` by default. Asides provide context for people, and practice files are normative guidance for the designer rather than the design; both are excluded from agent prompts and working guidance.
 
 ## Writing rules
 
 - Treat “everything serves a purpose” as the through-line, not as a slogan pasted into every section.
 - Explain what a choice communicates, not only what it looks like.
 - Distinguish a principle from a useful default. Defaults can be changed when context gives a reason.
-- Classify guidance about how to judge or approach a decision as a principle. Classify a repeatable recipe, generated system, or exact default as a method.
+- Classify guidance about how to judge or approach a decision as a principle. Classify a repeatable recipe, generated system, or exact default as a method. Classify normative guidance about the designer's own working process—sustaining, structuring, or pacing the work—as practice: it changes the person, not the design, so it lives in `guide/practice/` with `type: practice` and `prompt: exclude`.
 - Give every principle, method, and component-spec file frontmatter with a `type` and a `tags` list drawn from the taxonomy in `guide/README.md`. Tags are the retrieval index: give a file every discipline tag its idea belongs to—an idea can be both rhythm and motion—rather than forcing one.
 - Keep one primary idea per file. Split a file before it becomes expensive for an agent to retrieve.
 - Prefer exact values, examples, and comparisons over vague adjectives.
@@ -84,6 +84,15 @@ Preserve this separability when writing. A principle file must stay understandab
 - Do not use a method as a migration requirement. Its values remain defaults unless Julian explicitly asks to replace an existing system.
 - If a note mixes an approach with a recipe, split the principle from the method.
 - If the classification is unclear and would change what an agent modifies, ask Julian before proceeding.
+
+## Practice
+
+Practice files are normative guidance for the designer, not the design—how to sustain, structure, and pace the work. The test for the class: a person following the guidance designs better, but an agent reading it does nothing differently.
+
+- Store practice files in `guide/practice/` with `type: practice` and `prompt: exclude` in the frontmatter, and no tags.
+- Do not include practice content in agent prompts, discipline summaries, working rules, normative agent guidance, or `data/foundations.json`.
+- The website may teach practice content, presented as guidance for the designer rather than rules for the interface.
+- If a practice note contains a kernel that would change an agent's design decisions, move that kernel into a principle and keep the designer-facing remainder in practice.
 
 ## Asides
 

@@ -15,13 +15,13 @@ Each module is self-contained. Pass an agent the principles alone for judgment i
 
 ## Tags
 
-Every principle, method, and component-spec file declares what it is and what it covers in its frontmatter: a `type` and a `tags` list drawn from one shared taxonomy. The two axes are deliberate—type says which module a file belongs to and when it loads; tags say which disciplines it informs. Tags are a list because an idea can belong to more than one discipline: grouping actions by scope is rhythm and interface, scroll-under alignment is rhythm and motion. Retrieve by tag, not by directory alone. Asides carry `type: aside` and no tags—they are excluded from retrieval entirely—and the README indexes carry no frontmatter.
+Every principle, method, and component-spec file declares what it is and what it covers in its frontmatter: a `type` and a `tags` list drawn from one shared taxonomy. The two axes are deliberate—type says which module a file belongs to and when it loads; tags say which disciplines it informs. Tags are a list because an idea can belong to more than one discipline: grouping actions by scope is rhythm and interface, scroll-under alignment is rhythm and motion. Retrieve by tag, not by directory alone. Practice files carry `type: practice` and asides carry `type: aside`, both without tags—they are excluded from agent retrieval entirely—and the README indexes carry no frontmatter.
 
 The taxonomy:
 
 | Tag | Covers | Principle index | Method directory |
 | --- | --- | --- | --- |
-| `process` | Stance and judgment before pixels: purpose, the ask, altitude, the user's voice, earned simplicity | [Foundations](principles/README.md#foundations) | — |
+| `process` | The always-loaded judgment kernel: purpose, the ask, restraint, performance, judging past the math | [Foundations](principles/README.md#foundations) | — |
 | `content` | Interface writing, labels, capitalization, punctuation | [`principles/content/`](principles/content/README.md) | [`methods/content/`](methods/content/) |
 | `typography` | Type hierarchy, weight, spacing, alignment, figures | [`principles/typography/`](principles/typography/README.md) | [`methods/typography/`](methods/typography/) |
 | `color` | Color scales and their use (methods only for now) | — | [`methods/color/`](methods/color/) |
@@ -46,7 +46,7 @@ The methods module now has an applied edge: semantic tokens and a cross-platform
 
 Agents get routed by task below; a person learning interaction design reads in concept order—each concept builds on the ones before it, so the sequence crosses disciplines where the dependencies do:
 
-1. **Stance** — how to approach the work before any pixels. [`principles/00-core-principles.md`](principles/00-core-principles.md) (everything serves a purpose; begin with the problem; interrogate the ask), then [`01-human-judgment.md`](principles/01-human-judgment.md), [`02-altitude.md`](principles/02-altitude.md), [`03-voice-of-the-user.md`](principles/03-voice-of-the-user.md), and [`04-earned-simplicity.md`](principles/04-earned-simplicity.md).
+1. **Stance** — how to approach the work before any pixels. [`principles/core-principles.md`](principles/core-principles.md) (everything serves a purpose; begin with the problem; interrogate the ask) and [`principles/human-judgment.md`](principles/human-judgment.md) (math as a tool, feeling as evidence), then the [practice files](practice/README.md)—guidance for the designer rather than the design: [`practice/altitude.md`](practice/altitude.md), [`practice/voice-of-the-user.md`](practice/voice-of-the-user.md), and [`practice/earned-simplicity.md`](practice/earned-simplicity.md).
 2. **Words** — the interface's words come before its visuals: [`principles/content/`](principles/content/README.md) for purpose-driven writing, directness, capitalization, and punctuation, with [`dashes.md`](principles/content/dashes.md) as the worked case.
 3. **How people see** — perception before construction. Gestalt and proximity in the [rhythm README](principles/rhythm/README.md), then [`visual-weight.md`](principles/rhythm/visual-weight.md) (weight and its sources), [`balancing-left-heavy-layouts.md`](principles/rhythm/balancing-left-heavy-layouts.md) (weight balancing a composition), [`consistency-and-keylines.md`](principles/rhythm/consistency-and-keylines.md) (why consistency reads as calm), and [`repetition-builds-meaning.md`](principles/rhythm/repetition-builds-meaning.md) (how patterns teach).
 4. **Typography** — hierarchy is visual weight applied to words: the [typography README](principles/typography/README.md) for hierarchy and weight, then [`text-alignment.md`](principles/typography/text-alignment.md), [`all-caps.md`](principles/typography/all-caps.md), [`responsive-type.md`](principles/typography/responsive-type.md), and the numeric and punctuation details ([`numeric-figures.md`](principles/typography/numeric-figures.md), [`quotation-apostrophe-prime-marks.md`](principles/typography/quotation-apostrophe-prime-marks.md)).
@@ -75,6 +75,10 @@ The per-file summaries live in the layer indexes: the [principles file index](pr
 
 The prose remains the source of truth. Structured foundations are an opt-in representation of methods.
 
+## Practice
+
+[`practice/`](practice/README.md) holds normative guidance for the designer rather than the design—altitude, the three voices, earned simplicity. A person following it designs better; an agent reading it does nothing differently, so like asides it is excluded from agent prompts, working guidance, and structured foundations. Do not read practice files by default.
+
 ## Asides
 
 [`asides/`](asides/README.md) contains personal and historical context that belongs in the documentation but is excluded from agent prompts and working guidance. Do not read asides by default.
@@ -85,7 +89,7 @@ Julian can add ideas in an unstructured or conversational form. An agent should 
 
 The agent should:
 
-1. Identify the primary idea, its discipline, and whether it is a principle or method.
+1. Identify the primary idea, its discipline, and whether it is a principle, a method, practice, or an aside. Guidance that changes the design is a principle or method; normative guidance about the designer's own working process is practice.
 2. Preserve Julian’s opinion while rewriting it as direct, informative guidance.
 3. Separate principles from methods, defaults, examples, and unresolved questions.
 4. Keep one primary idea per file so future agents can retrieve it independently.
