@@ -55,7 +55,7 @@ See [`input-fidelity.md`](input-fidelity.md) for the full principle.
 
 ## Put wayfinding at the top and primary actions at the bottom
 
-A rule of thumb for the vertical anatomy of a screen or container: broader navigation controls, settings, and wayfinding content—anything answering "where am I"—go at the top. Primary actions—submit, save, continue, send—go at the bottom, where the task ends. Orient at the top, complete at the bottom, and the same holds inside a modal.
+A rule of thumb for the vertical anatomy of a screen or container: broader navigation controls, settings, and wayfinding content—anything answering "where am I"—go at the top. Primary actions—submit, save, continue, send—go at the bottom, where the task ends. Orient at the top, complete at the bottom, and the same holds inside a modal. A bottom button is anchored to the container's bottom edge with equal margin to the bottom and the side—both sides when it is full width—so it reads as part of the container's frame, not the trailing end of the content.
 
 See [`top-and-bottom.md`](top-and-bottom.md) for the full principle.
 

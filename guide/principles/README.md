@@ -63,7 +63,7 @@ Color has no principles yet; it exists only in the methods module for now.
 | [`interface/nesting-buttons-in-inputs.md`](interface/nesting-buttons-in-inputs.md) | interface, rhythm | A musing: nest a button only when it acts on the content |
 | [`interface/personal-taste-as-scaffolding.md`](interface/personal-taste-as-scaffolding.md) | process, interface | Taste as starting constraints, never as justification |
 | [`interface/shadows.md`](interface/shadows.md) | interface | Shadows as a selective tool with one consistent meaning |
-| [`interface/top-and-bottom.md`](interface/top-and-bottom.md) | interface, rhythm | Orient at the top, complete at the bottom |
+| [`interface/top-and-bottom.md`](interface/top-and-bottom.md) | interface, rhythm | Orient at the top, complete at the bottom; anchor the bottom action with equal margins |
 | [`imagery/iconography-and-type.md`](imagery/iconography-and-type.md) | imagery, typography | An icon's role sets its relationship to type |
 | [`imagery/icon-sizing.md`](imagery/icon-sizing.md) | imagery, typography | Tapered icon sizes with consistent text pairings |
 | [`motion/continuous-transitions.md`](motion/continuous-transitions.md) | motion | Continuity only between elements that do the same thing |

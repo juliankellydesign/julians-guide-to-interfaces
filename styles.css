@@ -598,7 +598,8 @@ code { font-size: var(--t-micro); font-weight: var(--w-body); padding: 4px 6px; 
 .anatomy-title { height: 10px; width: 38%; margin: 0 auto; border-radius: var(--r-inline); background: var(--gray-700); }
 .anatomy-body { display: flex; flex-direction: column; gap: 12px; padding: 20px 16px; }
 .anatomy-body i { height: 9px; border-radius: var(--r-inline); background: var(--gray-200); }
-.anatomy-bottom { padding: 12px 16px; background: color-mix(in srgb, var(--signal) 10%, var(--paper)); }
+/* The anchored bottom action keeps equal margin to the bottom and both sides. */
+.anatomy-bottom { padding: 16px; background: color-mix(in srgb, var(--signal) 10%, var(--paper)); }
 .anatomy-cta { display: flex; align-items: center; justify-content: center; height: 44px; border-radius: var(--r-panel); background: var(--gray-900); color: var(--paper); font-size: var(--t-support); font-weight: var(--w-medium); }
 .press-compare figure:last-child { border-right: 0; }
 .press-stage { position: relative; display: flex; justify-content: center; align-items: center; height: 140px; border: 1px solid var(--line-strong); border-radius: var(--r-panel); background: var(--gray-50); }
