@@ -1,3 +1,8 @@
+---
+type: practice
+prompt: exclude
+---
+
 # Be the voice of the user
 
 ## In brief

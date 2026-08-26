@@ -8,22 +8,23 @@ This repository is Julian Kelly’s evolving interface-design handbook. Preserve
 
 Do not read the entire repository by default.
 
-1. Read `guide/principles/00-core-principles.md` for the governing philosophy.
+1. Read `guide/principles/core-principles.md` for the governing philosophy.
 2. Read `guide/README.md` to choose the relevant layer.
-3. Read `guide/principles/README.md` and only the relevant principle file(s) for the task.
+3. Read `guide/principles/README.md` and only the relevant principle file(s) for the task, selecting them by the discipline tags in their frontmatter and the index's tag table.
 4. Read `guide/methods/README.md` only when the task requires constructing or replacing a system, applying Julian’s defaults, or retrieving exact values.
 5. Use `data/foundations.json` only after selecting an applicable method and when exact starting values are required.
 
 Principles are the default layer. For an existing interface, preserve its established type, color, spacing, and motion systems unless Julian asks to change them. Do not load methods or structured foundations merely because the task involves the same discipline.
 
-Do not read `guide/asides/` by default. Asides provide context for people but are excluded from agent prompts and working guidance.
+Do not read `guide/asides/` or `guide/practice/` by default. Asides provide context for people, and practice files are normative guidance for the designer rather than the design; both are excluded from agent prompts and working guidance.
 
 ## Writing rules
 
 - Treat “everything serves a purpose” as the through-line, not as a slogan pasted into every section.
 - Explain what a choice communicates, not only what it looks like.
 - Distinguish a principle from a useful default. Defaults can be changed when context gives a reason.
-- Classify guidance about how to judge or approach a decision as a principle. Classify a repeatable recipe, generated system, or exact default as a method.
+- Classify guidance about how to judge or approach a decision as a principle. Classify a repeatable recipe, generated system, or exact default as a method. Classify normative guidance about the designer's own working process—sustaining, structuring, or pacing the work—as practice: it changes the person, not the design, so it lives in `guide/practice/` with `type: practice` and `prompt: exclude`.
+- Give every principle, method, and component-spec file frontmatter with a `type` and a `tags` list drawn from the taxonomy in `guide/README.md`. Tags are the retrieval index: give a file every discipline tag its idea belongs to—an idea can be both rhythm and motion—rather than forcing one.
 - Keep one primary idea per file. Split a file before it becomes expensive for an agent to retrieve.
 - Prefer exact values, examples, and comparisons over vague adjectives.
 - Keep working rules as the only normative kernel of a file. Examples are illustrative applications, never rules: put substantial ones under an `## Example:` heading, end each with a one-line transferable point naming the abstraction it teaches, and never cite an example's verdict as a rule—verdicts that depend on what users currently understand carry an "as of" year, because conventions move.
@@ -34,6 +35,10 @@ Do not read `guide/asides/` by default. Asides provide context for people but ar
 - Update `guide/README.md` whenever files are added, moved, or renamed.
 - Update the relevant layer index whenever a principle or method is added, moved, or renamed.
 - Update `data/foundations.json` whenever a documented foundation changes.
+- Regenerate `/adapters/` (`python3 scripts/generate-adapters.py`) whenever `data/foundations.json` or a component-spec value it delivers changes. Adapters are generated representations of the methods module, never hand-edited into disagreement with the guide.
+- Update the repository map in `README.md` whenever a directory or a file the map shows is added, moved, or renamed.
+- Treat the maps as part of the change, not cleanup: a structural edit is not finished until the router, the layer index's tag table, and the repository map agree with the files on disk.
+- When moving or renaming a file, update every inbound reference—index tables, cross-references between principles and methods, `APPLY.md`, and website copy. Search for the old path before finishing.
 
 ## Turning notes into documentation
 
@@ -58,8 +63,9 @@ For every addition or revision, the guide Markdown must change before the websit
 2. Update any applicable method files and method indexes.
 3. Reread the resulting guide documentation as the current source material.
 4. Derive `data/foundations.json` from documented methods when exact values changed.
-5. Derive the website representation from the updated guide files.
-6. Verify that the representations do not introduce guidance, examples, or certainty absent from the guide.
+5. Regenerate the adapters in `/adapters/` when foundations or component-spec values changed: `python3 scripts/generate-adapters.py`. Generated adapter files are never hand-edited.
+6. Derive the website representation from the updated guide files.
+7. Verify that the representations do not introduce guidance, examples, or certainty absent from the guide.
 
 Once the documentation pass is complete, do not use the original conversational note to draft the website. This separation is deliberate: it tests whether the documented principles are clear enough to propagate on their own.
 
@@ -80,6 +86,15 @@ Preserve this separability when writing. A principle file must stay understandab
 - Do not use a method as a migration requirement. Its values remain defaults unless Julian explicitly asks to replace an existing system.
 - If a note mixes an approach with a recipe, split the principle from the method.
 - If the classification is unclear and would change what an agent modifies, ask Julian before proceeding.
+
+## Practice
+
+Practice files are normative guidance for the designer, not the design—how to sustain, structure, and pace the work. The test for the class: a person following the guidance designs better, but an agent reading it does nothing differently.
+
+- Store practice files in `guide/practice/` with `type: practice` and `prompt: exclude` in the frontmatter, and no tags.
+- Do not include practice content in agent prompts, discipline summaries, working rules, normative agent guidance, or `data/foundations.json`.
+- The website may teach practice content, presented as guidance for the designer rather than rules for the interface.
+- If a practice note contains a kernel that would change an agent's design decisions, move that kernel into a principle and keep the designer-facing remainder in practice.
 
 ## Asides
 
@@ -107,4 +122,4 @@ Exact type, color, spacing, and motion values belong to the opt-in methods layer
 
 ## Source of truth
 
-The prose in `guide/` is the source of truth. The website and machine-readable data are downstream representations of it and should stay synchronized. Never update a representation first and backfill the guide afterward.
+The prose in `guide/` is the source of truth. The website, machine-readable data, and adapters are downstream representations of it and should stay synchronized. Never update a representation first and backfill the guide afterward.

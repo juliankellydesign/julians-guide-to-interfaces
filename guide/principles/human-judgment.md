@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [process]
+---
+
 # Human judgment and mathematical systems
 
 ## In brief

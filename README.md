@@ -4,7 +4,7 @@ An evolving record of what I know about designing interfaces, from first princip
 
 The guide serves two purposes deliberately. It is a **tool for working with agents**: each module is self-contained, so an agent can receive just the principles for judgment inside an existing system, or the principles and methods together to build in my style. And it is a **teaching guide**: the same material—principles, examples, demos, and the website—supports teaching an introduction to interaction design. The two readings share one source: working rules and specs are the normative kernel agents consume; prose, examples, and demos carry the teaching.
 
-To use it as a drop-in, clone or vendor this repository into a project and point an agent at [`APPLY.md`](APPLY.md)—the playbook for restyling a host project until it looks like something Julian designed.
+To use it as a drop-in, clone or vendor this repository into a project and point an agent at [`APPLY.md`](APPLY.md)—the playbook for restyling a host project until it looks like something Julian designed. For stacks with an [adapter](adapters/README.md), the foundations apply in one step: a shadcn/ui + Tailwind theme installable with one `npx shadcn add` command, and JulianKit, a Swift package for UIKit.
 
 The guide begins with one rule:
 
@@ -14,7 +14,7 @@ This is not an argument for stark minimalism. Flourishes, shadows, movement, and
 
 ## Read the guide
 
-A person learning interaction design follows the [reading path](guide/README.md#reading-path-for-people)—stance first, then the disciplines in order, the applied layer last. An agent (or a reader with a task in hand) starts with [the core principles](guide/principles/00-core-principles.md), then chooses the layer the task requires:
+A person learning interaction design follows the [reading path](guide/README.md#reading-path-for-people)—stance first, then the disciplines in order, the applied layer last. An agent (or a reader with a task in hand) starts with [the core principles](guide/principles/core-principles.md), then chooses the layer the task requires:
 
 - [Principles](guide/principles/README.md) are the theory: how I approach and judge interface design. Use them by default, including when working inside an existing visual system.
 - [Methods](guide/methods/README.md) and [structured foundations](data/foundations.json) are the applied layer: my design system, expressed as recipes for type, color, spacing, and motion plus machine-readable tokens. Use them when building or deliberately replacing a system. The layer works as a scaffold for getting new work up and running quickly.
@@ -40,24 +40,38 @@ No install step is required. The site uses plain HTML, CSS, and JavaScript, with
 ```text
 .
 ├── AGENTS.md                 # How an agent should navigate and extend the guide
+├── APPLY.md                  # Drop-in playbook for restyling a host project
 ├── guide/
+│   ├── README.md             # Router: the two modules, the tag taxonomy, reading paths
 │   ├── asides/               # Context excluded from agent prompts
+│   ├── practice/             # Guidance for the designer, excluded from agent prompts
 │   ├── principles/           # The theory layer, passable on its own
-│   │   ├── 00-core-principles.md # The thesis and default decision rules
-│   │   ├── 01-human-judgment.md  # Math as a tool and feeling as evidence
+│   │   ├── core-principles.md    # The thesis and default decision rules
+│   │   ├── human-judgment.md     # Math as a tool and feeling as evidence
 │   │   ├── content/          # Interface writing and communication
 │   │   ├── typography/       # Type and typographic spacing
 │   │   ├── rhythm/           # Spatial relationships, Gestalt, and optical alignment
 │   │   ├── interface/        # Interaction-led product design
 │   │   ├── imagery/          # Image and art-direction principles
 │   │   └── motion/           # Motion principles by platform
-│   └── methods/              # The applied layer: opt-in recipes and numerical defaults
+│   ├── methods/              # The applied layer: opt-in recipes and numerical defaults
+│   └── design-system/        # Component specs assembled from the methods
 ├── data/
-│   └── foundations.json      # Machine-readable tokens, grouped by discipline
+│   ├── foundations.json      # Machine-readable tokens, grouped by discipline
+│   └── foundations.schema.json
+├── adapters/
+│   ├── shadcn/               # One-command shadcn/ui + Tailwind theme (registry item + CSS)
+│   └── uikit/                # JulianKit: Swift package of tokens and controls
+├── scripts/
+│   └── generate-adapters.py  # Derives adapter color values from foundations.json
+├── design-system/            # Base UI reference implementation of the component specs
+├── App/                      # Native iOS playground for the methods
 ├── index.html                # Interactive guide
 ├── styles.css
 └── script.js
 ```
+
+Every principle, method, and component-spec file carries `type` and `tags` frontmatter; the tag taxonomy in [`guide/README.md`](guide/README.md#tags) is how agents retrieve guidance across disciplines.
 
 ## Status
 

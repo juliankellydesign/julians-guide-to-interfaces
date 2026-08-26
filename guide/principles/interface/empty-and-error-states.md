@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface, content, motion]
+---
+
 # Treat empty and error states as opportunities
 
 ## In brief

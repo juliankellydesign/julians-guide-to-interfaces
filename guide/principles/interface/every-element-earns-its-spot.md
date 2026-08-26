@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface, process]
+---
+
 # Every element earns its spot
 
 ## In brief

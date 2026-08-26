@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [typography]
+---
+
 # Choose figure styles by behavior
 
 ## In brief

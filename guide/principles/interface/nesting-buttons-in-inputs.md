@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface, rhythm]
+---
+
 # Nest a button inside an input when it acts on the content within
 
 ## Status

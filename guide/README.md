@@ -13,6 +13,25 @@ Use this file as a router. The guide is deliberately dual-purpose: a tool for ag
 
 Each module is self-contained. Pass an agent the principles alone for judgment inside an existing visual system, the methods alone to build from my starting values, or both for greenfield work in my style.
 
+## Tags
+
+Every principle, method, and component-spec file declares what it is and what it covers in its frontmatter: a `type` and a `tags` list drawn from one shared taxonomy. The two axes are deliberate—type says which module a file belongs to and when it loads; tags say which disciplines it informs. Tags are a list because an idea can belong to more than one discipline: grouping actions by scope is rhythm and interface, scroll-under alignment is rhythm and motion. Retrieve by tag, not by directory alone. Practice files carry `type: practice` and asides carry `type: aside`, both without tags—they are excluded from agent retrieval entirely—and the README indexes carry no frontmatter.
+
+The taxonomy:
+
+| Tag | Covers | Principle index | Method directory |
+| --- | --- | --- | --- |
+| `process` | The always-loaded judgment kernel: purpose, the ask, restraint, performance, judging past the math | [Foundations](principles/README.md#foundations) | — |
+| `content` | Interface writing, labels, capitalization, punctuation | [`principles/content/`](principles/content/README.md) | [`methods/content/`](methods/content/) |
+| `typography` | Type hierarchy, weight, spacing, alignment, figures | [`principles/typography/`](principles/typography/README.md) | [`methods/typography/`](methods/typography/) |
+| `color` | Color scales and their use (methods only for now) | — | [`methods/color/`](methods/color/) |
+| `rhythm` | Spacing, Gestalt, alignment, keylines, visual weight | [`principles/rhythm/`](principles/rhythm/README.md) | [`methods/layout/`](methods/layout/) |
+| `interface` | Actions, controls, conventions, states, product framing | [`principles/interface/`](principles/interface/README.md) | [`methods/interface/`](methods/interface/) |
+| `imagery` | Iconography and imagery in relation to type and interface | [`principles/imagery/`](principles/imagery/README.md) | [`methods/iconography/`](methods/iconography/) |
+| `motion` | Animation purpose, continuity, timing, press feedback | [`principles/motion/`](principles/motion/README.md) | [`methods/motion/`](methods/motion/) |
+
+To retrieve guidance: identify the task's tags, filter by `type` (principles by default, methods opt-in), then match `tags` in frontmatter. The layer indexes carry per-file tag tables—[principles](principles/README.md#file-index) and [methods](methods/README.md#current-methods)—and each discipline README summarizes its principles and points to its paired methods.
+
 ## Scaffolds
 
 When a method explicitly lays out a system—the type scale, the gray curve, the spacing ladder, button sizes—those exact values are a scaffold: a starting point, not a requirement. Method files carry `scaffold: true` in their frontmatter, and `data/foundations.json` is the machine-readable form of the scaffold values, grouped by discipline.
@@ -23,11 +42,13 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 
 The methods module now has an applied edge: semantic tokens and a cross-platform set of design system components in [`design-system/`](design-system/README.md). Each component is a written visual spec assembled from the methods' values, plus a web reference implementation in [`/design-system/`](../design-system/) and a native iOS playground in [`/App/`](../App/). The spec is the contract; on platforms where an implementation cannot run, implement the spec natively. Load component specs only when building or restyling those components.
 
+For delivering the look into another project's stack, generated adapters in [`/adapters/`](../adapters/) package the foundations as a shadcn/ui + Tailwind theme and a UIKit Swift package; the [design-system README](design-system/README.md#adapters) documents the contract, and `APPLY.md` treats them as the fast path.
+
 ## Reading path for people
 
 Agents get routed by task below; a person learning interaction design reads in concept order—each concept builds on the ones before it, so the sequence crosses disciplines where the dependencies do:
 
-1. **Stance** — how to approach the work before any pixels. [`principles/00-core-principles.md`](principles/00-core-principles.md) (everything serves a purpose; begin with the problem; interrogate the ask), then [`01-human-judgment.md`](principles/01-human-judgment.md), [`02-altitude.md`](principles/02-altitude.md), [`03-voice-of-the-user.md`](principles/03-voice-of-the-user.md), and [`04-earned-simplicity.md`](principles/04-earned-simplicity.md).
+1. **Stance** — how to approach the work before any pixels. [`principles/core-principles.md`](principles/core-principles.md) (everything serves a purpose; begin with the problem; interrogate the ask) and [`principles/human-judgment.md`](principles/human-judgment.md) (math as a tool, feeling as evidence), then the [practice files](practice/README.md)—guidance for the designer rather than the design: [`practice/altitude.md`](practice/altitude.md), [`practice/voice-of-the-user.md`](practice/voice-of-the-user.md), and [`practice/earned-simplicity.md`](practice/earned-simplicity.md).
 2. **Words** — the interface's words come before its visuals: [`principles/content/`](principles/content/README.md) for purpose-driven writing, directness, capitalization, and punctuation, with [`dashes.md`](principles/content/dashes.md) as the worked case.
 3. **How people see** — perception before construction. Gestalt and proximity in the [rhythm README](principles/rhythm/README.md), then [`visual-weight.md`](principles/rhythm/visual-weight.md) (weight and its sources), [`balancing-left-heavy-layouts.md`](principles/rhythm/balancing-left-heavy-layouts.md) (weight balancing a composition), [`consistency-and-keylines.md`](principles/rhythm/consistency-and-keylines.md) (why consistency reads as calm), and [`repetition-builds-meaning.md`](principles/rhythm/repetition-builds-meaning.md) (how patterns teach).
 4. **Typography** — hierarchy is visual weight applied to words: the [typography README](principles/typography/README.md) for hierarchy and weight, then [`text-alignment.md`](principles/typography/text-alignment.md), [`all-caps.md`](principles/typography/all-caps.md), [`responsive-type.md`](principles/typography/responsive-type.md), and the numeric and punctuation details ([`numeric-figures.md`](principles/typography/numeric-figures.md), [`quotation-apostrophe-prime-marks.md`](principles/typography/quotation-apostrophe-prime-marks.md)).
@@ -45,34 +66,20 @@ Each principle file has one normative kernel: its working rules. Everything else
 
 ## Choose by task
 
-- Foundations now include process principles: change altitude deliberately (make at low altitude, edit at high; be harsh on the work, gentle on yourself), hold the designer's role as the voice of the user against the engineering and business voices, and treat simple results as earned by exploration—the crazy versions get explored and shown.
-- Core principles interrogate the ask before accepting the interface: work from the ask to the value to the capabilities—the things a user wants done by the system—before choosing the surface, treating a prescribed interface as one candidate.
-- Interface principles require novel elements added to a conventional interface to earn their spot one at a time, with proof; a pattern is never admitted because it is shorthand for the technology behind it, and a weak capability gets fixed rather than dressed in a novel interface.
-- For an existing product, read the relevant principles and preserve its established visual system.
-- For greenfield work, read the relevant principles, then add only the methods needed to build the system.
-- To retrieve exact defaults, select the relevant method before reading [`../data/foundations.json`](../data/foundations.json).
-- Do not load methods solely because a task mentions typography, color, layout, or motion.
-- Typography principles explain what weight communicates. Load the font-weight method only when assigning or changing weight roles.
-- Typography principles also define all caps as a functional choice for compact legibility. Load the tracking-curve method only when constructing or replacing size-dependent letter spacing.
-- Responsive typography principles keep size, tracking, and line height coupled. Load the responsive-type method only when constructing or replacing that behavior.
-- Typography principles also cover numeric figure styles, numeric alignment, quotation marks, apostrophes, and primes. Apply these within the existing type system.
-- Text-alignment principles assume a left-to-right language. Adapt the starting edge and reading flow for other writing directions.
-- Interface principles define how primary, secondary, and tertiary actions communicate priority. Apply that hierarchy through the product’s established control styles.
-- Interface principles also cover sizing controls for mouse and touch input. Load the control-size method only when exact numerical starting points are needed. Deciding when repeated controls clarify or confuse lives in rhythm's repetition principle.
-- Interface principles put broader navigation, settings, and wayfinding content at the top of a screen or container, and primary actions—submit, save, continue, send—at the bottom, so the vertical order runs orient, act, complete.
-- Interface principles require the interface to match the fidelity of the input: control sizes, density, and motion timing change with input method and screen size, while roles and hierarchy stay constant.
-- Interface principles also treat empty states, 404s, and no-network pages as opportunities for delight and user education.
-- Corner rounding and interface conventions are principles. Load the radius-scale and nested-radius methods only when constructing or replacing a radius system.
-- Interface principles treat shadows as a selectively applied tool with consistent meaning—overlays, elements on media, physicality, and type-wide attention—never all-or-nothing, and the same goes for strokes. A shadow that would blend muddily into its container is questioned rather than tuned. Load the scrim method only for the exact scrim default.
-- Color exists only as methods for now. Load the gray-scale and color-scale methods only when constructing or replacing a color system; the color scales share the gray scale's stops and endpoints but distribute lightness with their own curve.
-- Rhythm principles cover Gestalt, spacing relationships, alignment, contextual action grouping, repetition that builds meaning, purposeful exceptions, ranking importance and concentrating visual weight (size, color, and motion as addable sources, balanced with white space), balancing a left-heavy layout with a single right-aligned element—in conversational interfaces where a reply renders a card that would look awkward full width, often the user's chat bubble—offsetting the padding of layers that scroll under each other, keeping elements consistent so keylines emerge and variation carries meaning—sizing even seemingly unrelated elements to one rhythm, since later alignment comes almost free— asking twice before adding a style—reuse a similar treatment, or design the new one for repurposing, binding treatments to types rather than instances—and keeping padding consistent—the same across screens while margins absorb the change, the same across components of the same size so contents share keylines, and the same between same-size text on both axes, with headings taking more space above than below and titles sitting closer to their subtitles than subtitles sit to body text. Modal interiors get a little more padding than inline components; load the modal-padding method only for the exact default. Load the spacing-grid method only when constructing or replacing the spatial system.
-- Load the button-scaffold method only when sizing or styling buttons from my starting values: five t-shirt sizes and three styles.
-- Content principles explain why capitalization and punctuation should be consistent and functional, including the distinct jobs of em dashes, en dashes, and hyphens. Load the capitalization and punctuation method only when establishing or changing the interface writing system.
-- Find iconography principles under Imagery, including tapered icon sizing paired consistently with text. Load the control-padding method only when constructing or changing controls, and the icon-size method only when my exact sizes and pairings are needed.
-- Motion principles cover continuity, causality, responsiveness, accessibility, continuously transitioning only between elements that do or mean the same thing, animating only the level that changes, and giving every control a juicy press state—most important on touch, where there is no hover. Load the timing and animation-scaffold methods only when exact durations or the 48-frame structure are needed, and the press-scale method only for the exact pressed-scale default.
-- One interface note is an open musing rather than a settled principle: lean toward nesting a button inside an input only when it acts on the input's content, and keep it outside otherwise.
+1. Identify the task's tags from the [taxonomy](#tags).
+2. For an existing product, read the matching principles and preserve its established visual system.
+3. For greenfield work or an explicit system-building task, add the matching methods.
+4. Load a method only when constructing or replacing that system, or when my exact defaults are requested—never merely because the task mentions the discipline. Each principle file points to its paired method when one exists.
+5. To retrieve exact defaults, select the relevant method before reading [`../data/foundations.json`](../data/foundations.json).
+6. Load a component spec only when building or restyling that component.
+
+The per-file summaries live in the layer indexes: the [principles file index](principles/README.md#file-index) and the [methods table](methods/README.md#current-methods), each carrying tags. The discipline READMEs are the per-tag summaries, naming their principles and pointing to their paired methods.
 
 The prose remains the source of truth. Structured foundations are an opt-in representation of methods.
+
+## Practice
+
+[`practice/`](practice/README.md) holds normative guidance for the designer rather than the design—altitude, the three voices, earned simplicity. A person following it designs better; an agent reading it does nothing differently, so like asides it is excluded from agent prompts, working guidance, and structured foundations. Do not read practice files by default.
 
 ## Asides
 
@@ -84,17 +91,18 @@ Julian can add ideas in an unstructured or conversational form. An agent should 
 
 The agent should:
 
-1. Identify the primary idea, its discipline, and whether it is a principle or method.
+1. Identify the primary idea, its discipline, and whether it is a principle, a method, practice, or an aside. Guidance that changes the design is a principle or method; normative guidance about the designer's own working process is practice.
 2. Preserve Julian’s opinion while rewriting it as direct, informative guidance.
 3. Separate principles from methods, defaults, examples, and unresolved questions.
 4. Keep one primary idea per file so future agents can retrieve it independently.
-5. Complete the applicable principle Markdown and indexes before updating methods or representations.
-6. Complete any applicable method Markdown and indexes before updating representations.
-7. Reread the updated guide files, then derive the website and structured data from those files rather than the original note.
-8. Update `data/foundations.json` only when a documented method or exact foundation changes.
-9. Avoid inventing guidance where Julian has not formed an opinion.
-10. Ask follow-up questions when a note is ambiguous, and especially when it appears to contradict a documented principle or method. Raise the tension instead of silently resolving it; Julian decides whether the older guidance is revised or the conflict stays documented as open.
-11. Put material Julian identifies as an aside in `asides/` and exclude it from prompts, summaries, working rules, and structured foundations.
-12. Split mixed notes into normative guidance and aside context. Ask Julian when the distinction is unclear and would change agent behavior.
+5. Give every new or moved file `type` and `tags` frontmatter from the [taxonomy](#tags), and reflect it in its layer index's tag table.
+6. Complete the applicable principle Markdown and indexes before updating methods or representations.
+7. Complete any applicable method Markdown and indexes before updating representations.
+8. Reread the updated guide files, then derive the website and structured data from those files rather than the original note.
+9. Update `data/foundations.json` only when a documented method or exact foundation changes.
+10. Avoid inventing guidance where Julian has not formed an opinion.
+11. Ask follow-up questions when a note is ambiguous, and especially when it appears to contradict a documented principle or method. Raise the tension instead of silently resolving it; Julian decides whether the older guidance is revised or the conflict stays documented as open.
+12. Put material Julian identifies as an aside in `asides/` and exclude it from prompts, summaries, working rules, and structured foundations.
+13. Split mixed notes into normative guidance and aside context. Ask Julian when the distinction is unclear and would change agent behavior.
 
 This order is mandatory. The separation tests whether the guide documentation is precise enough to propagate into the website without relying on the original conversation.

@@ -1,5 +1,6 @@
 ---
 type: method
+tags: [interface, color]
 prompt: opt-in
 scaffold: true
 ---

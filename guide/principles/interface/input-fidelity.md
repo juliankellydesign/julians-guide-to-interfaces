@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface, motion]
+---
+
 # Match the interface to the fidelity of the input
 
 ## In brief

@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm]
+---
+
 # Keep padding consistent
 
 ## In brief

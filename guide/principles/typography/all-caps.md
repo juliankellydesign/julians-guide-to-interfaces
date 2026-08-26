@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [typography]
+---
+
 # Use all caps for compact legibility
 
 ## In brief

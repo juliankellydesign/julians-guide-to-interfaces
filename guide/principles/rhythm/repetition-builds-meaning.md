@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm, interface]
+---
+
 # Repetition builds meaning
 
 ## In brief

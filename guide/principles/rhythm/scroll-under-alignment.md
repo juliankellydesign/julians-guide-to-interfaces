@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm, motion]
+---
+
 # Offset the padding of scrolling layers
 
 ## In brief

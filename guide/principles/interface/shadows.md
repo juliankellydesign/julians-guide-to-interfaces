@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface]
+---
+
 # Use shadows as a tool
 
 ## In brief

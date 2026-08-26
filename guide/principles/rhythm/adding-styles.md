@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [rhythm, process]
+---
+
 # Ask twice before adding a style
 
 ## In brief

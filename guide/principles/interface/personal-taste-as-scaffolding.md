@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [process, interface]
+---
+
 # Personal taste as scaffolding
 
 ## In brief

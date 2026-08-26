@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface]
+---
+
 # Design both the map and the landscape
 
 ## In brief

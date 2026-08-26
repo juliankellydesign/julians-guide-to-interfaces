@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface]
+---
+
 # Size controls for the input method
 
 ## In brief

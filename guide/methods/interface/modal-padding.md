@@ -1,5 +1,6 @@
 ---
 type: method
+tags: [interface, rhythm]
 prompt: opt-in
 scaffold: true
 ---

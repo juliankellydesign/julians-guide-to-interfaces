@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface]
+---
+
 # Use corner rounding as interface language
 
 ## In brief

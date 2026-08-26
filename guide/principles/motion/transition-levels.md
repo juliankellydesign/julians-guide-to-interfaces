@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [motion]
+---
+
 # Animate the level that changes
 
 ## In brief

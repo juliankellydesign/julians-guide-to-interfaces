@@ -1,3 +1,8 @@
+---
+type: principle
+tags: [interface]
+---
+
 # Give actions a clear hierarchy
 
 ## In brief

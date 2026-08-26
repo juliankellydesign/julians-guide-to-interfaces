@@ -1,3 +1,8 @@
+---
+type: practice
+prompt: exclude
+---
+
 # Change your altitude
 
 ## In brief
