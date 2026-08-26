@@ -112,6 +112,19 @@ The reference page shares the handbook's chrome and tokens: same header, same in
 
 Validation errors, destructive items and a meter past its threshold use the `danger` and `warning` semantic roles.
 
+## Adapters
+
+The specs describe the look; an adapter delivers it through another stack's own override mechanism, so applying it to an existing project is one install instead of a translation project. Adapters live in [`/adapters/`](../../adapters/) at the repository root. They are downstream representations of the methods module, the same standing as the website and `data/foundations.json`: generated from the documented foundations and these specs, never edited into disagreement with them. `scripts/generate-adapters.py` derives every color value from `data/foundations.json`—regenerate, don't hand-edit.
+
+Two adapters exist:
+
+- **shadcn/ui + Tailwind** — [`adapters/shadcn/`](../../adapters/shadcn/). A `registry:theme` item mapping the [semantic roles](semantic-tokens.md) onto shadcn's theme tokens, installable with one `npx shadcn add` command, plus a plain CSS file for projects that use Tailwind without the registry. The role-by-role mapping is documented in the adapter's README.
+- **UIKit** — [`adapters/uikit/`](../../adapters/uikit/). JulianKit, a Swift package carrying the gray and color scales, the semantic roles, the type scale with the tracking taper, the spacing and radius ladders, motion timing, and a `JulianButton` implementing the button spec. A first pass: foundations plus the flagship control, not the full component set.
+
+Adapters inherit scaffold semantics. Installing one is the "principles and methods both" mode of `APPLY.md` compressed into a package—it replaces the host's arbitrary values with the foundations, and the pass is still needed afterward for everything tokens cannot reach: rhythm, action hierarchy, optical judgment. The brand-hue exception survives too: when the host has a real brand hue, feed it through the color-scale recipe and regenerate the highlight tokens rather than shipping blue 500.
+
+One open question the adapters surface: the guide documents no dark-mode opinion, and both target platforms expect one. The adapters ship a mechanical dark mapping—the same scales with the semantic roles mirrored around the midpoint—marked as a first pass. It is a placeholder for a documented dark method, not a position.
+
 ## Platform coverage
 
 This set is derived from Base UI, so it covers the web comprehensively and the Apple HIG partially — roughly half of the HIG's component list, measured across its non-macOS groups.

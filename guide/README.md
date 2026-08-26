@@ -42,6 +42,8 @@ A design system slotted in alongside the guide overrules scaffold values whereve
 
 The methods module now has an applied edge: semantic tokens and a cross-platform set of design system components in [`design-system/`](design-system/README.md). Each component is a written visual spec assembled from the methods' values, plus a web reference implementation in [`/design-system/`](../design-system/) and a native iOS playground in [`/App/`](../App/). The spec is the contract; on platforms where an implementation cannot run, implement the spec natively. Load component specs only when building or restyling those components.
 
+For delivering the look into another project's stack, generated adapters in [`/adapters/`](../adapters/) package the foundations as a shadcn/ui + Tailwind theme and a UIKit Swift package; the [design-system README](design-system/README.md#adapters) documents the contract, and `APPLY.md` treats them as the fast path.
+
 ## Reading path for people
 
 Agents get routed by task below; a person learning interaction design reads in concept order—each concept builds on the ones before it, so the sequence crosses disciplines where the dependencies do:

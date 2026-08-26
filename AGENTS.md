@@ -35,6 +35,7 @@ Do not read `guide/asides/` or `guide/practice/` by default. Asides provide cont
 - Update `guide/README.md` whenever files are added, moved, or renamed.
 - Update the relevant layer index whenever a principle or method is added, moved, or renamed.
 - Update `data/foundations.json` whenever a documented foundation changes.
+- Regenerate `/adapters/` (`python3 scripts/generate-adapters.py`) whenever `data/foundations.json` or a component-spec value it delivers changes. Adapters are generated representations of the methods module, never hand-edited into disagreement with the guide.
 - Update the repository map in `README.md` whenever a directory or a file the map shows is added, moved, or renamed.
 - Treat the maps as part of the change, not cleanup: a structural edit is not finished until the router, the layer index's tag table, and the repository map agree with the files on disk.
 - When moving or renaming a file, update every inbound reference—index tables, cross-references between principles and methods, `APPLY.md`, and website copy. Search for the old path before finishing.
@@ -62,8 +63,9 @@ For every addition or revision, the guide Markdown must change before the websit
 2. Update any applicable method files and method indexes.
 3. Reread the resulting guide documentation as the current source material.
 4. Derive `data/foundations.json` from documented methods when exact values changed.
-5. Derive the website representation from the updated guide files.
-6. Verify that the representations do not introduce guidance, examples, or certainty absent from the guide.
+5. Regenerate the adapters in `/adapters/` when foundations or component-spec values changed: `python3 scripts/generate-adapters.py`. Generated adapter files are never hand-edited.
+6. Derive the website representation from the updated guide files.
+7. Verify that the representations do not introduce guidance, examples, or certainty absent from the guide.
 
 Once the documentation pass is complete, do not use the original conversational note to draft the website. This separation is deliberate: it tests whether the documented principles are clear enough to propagate on their own.
 
@@ -120,4 +122,4 @@ Exact type, color, spacing, and motion values belong to the opt-in methods layer
 
 ## Source of truth
 
-The prose in `guide/` is the source of truth. The website and machine-readable data are downstream representations of it and should stay synchronized. Never update a representation first and backfill the guide afterward.
+The prose in `guide/` is the source of truth. The website, machine-readable data, and adapters are downstream representations of it and should stay synchronized. Never update a representation first and backfill the guide afterward.

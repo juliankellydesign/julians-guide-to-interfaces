@@ -4,7 +4,7 @@ An evolving record of what I know about designing interfaces, from first princip
 
 The guide serves two purposes deliberately. It is a **tool for working with agents**: each module is self-contained, so an agent can receive just the principles for judgment inside an existing system, or the principles and methods together to build in my style. And it is a **teaching guide**: the same material—principles, examples, demos, and the website—supports teaching an introduction to interaction design. The two readings share one source: working rules and specs are the normative kernel agents consume; prose, examples, and demos carry the teaching.
 
-To use it as a drop-in, clone or vendor this repository into a project and point an agent at [`APPLY.md`](APPLY.md)—the playbook for restyling a host project until it looks like something Julian designed.
+To use it as a drop-in, clone or vendor this repository into a project and point an agent at [`APPLY.md`](APPLY.md)—the playbook for restyling a host project until it looks like something Julian designed. For stacks with an [adapter](adapters/README.md), the foundations apply in one step: a shadcn/ui + Tailwind theme installable with one `npx shadcn add` command, and JulianKit, a Swift package for UIKit.
 
 The guide begins with one rule:
 
@@ -59,6 +59,11 @@ No install step is required. The site uses plain HTML, CSS, and JavaScript, with
 ├── data/
 │   ├── foundations.json      # Machine-readable tokens, grouped by discipline
 │   └── foundations.schema.json
+├── adapters/
+│   ├── shadcn/               # One-command shadcn/ui + Tailwind theme (registry item + CSS)
+│   └── uikit/                # JulianKit: Swift package of tokens and controls
+├── scripts/
+│   └── generate-adapters.py  # Derives adapter color values from foundations.json
 ├── design-system/            # Base UI reference implementation of the component specs
 ├── App/                      # Native iOS playground for the methods
 ├── index.html                # Interactive guide
