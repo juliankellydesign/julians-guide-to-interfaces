@@ -35,6 +35,9 @@ Do not read `guide/asides/` by default. Asides provide context for people but ar
 - Update `guide/README.md` whenever files are added, moved, or renamed.
 - Update the relevant layer index whenever a principle or method is added, moved, or renamed.
 - Update `data/foundations.json` whenever a documented foundation changes.
+- Update the repository map in `README.md` whenever a directory or a file the map shows is added, moved, or renamed.
+- Treat the maps as part of the change, not cleanup: a structural edit is not finished until the router, the layer index's tag table, and the repository map agree with the files on disk.
+- When moving or renaming a file, update every inbound reference—index tables, cross-references between principles and methods, `APPLY.md`, and website copy. Search for the old path before finishing.
 
 ## Turning notes into documentation
 

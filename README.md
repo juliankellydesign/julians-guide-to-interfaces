@@ -40,24 +40,33 @@ No install step is required. The site uses plain HTML, CSS, and JavaScript, with
 ```text
 .
 ├── AGENTS.md                 # How an agent should navigate and extend the guide
+├── APPLY.md                  # Drop-in playbook for restyling a host project
 ├── guide/
+│   ├── README.md             # Router: the two modules, the tag taxonomy, reading paths
 │   ├── asides/               # Context excluded from agent prompts
 │   ├── principles/           # The theory layer, passable on its own
 │   │   ├── 00-core-principles.md # The thesis and default decision rules
 │   │   ├── 01-human-judgment.md  # Math as a tool and feeling as evidence
+│   │   ├── 02–04                 # Altitude, voice of the user, earned simplicity
 │   │   ├── content/          # Interface writing and communication
 │   │   ├── typography/       # Type and typographic spacing
 │   │   ├── rhythm/           # Spatial relationships, Gestalt, and optical alignment
 │   │   ├── interface/        # Interaction-led product design
 │   │   ├── imagery/          # Image and art-direction principles
 │   │   └── motion/           # Motion principles by platform
-│   └── methods/              # The applied layer: opt-in recipes and numerical defaults
+│   ├── methods/              # The applied layer: opt-in recipes and numerical defaults
+│   └── design-system/        # Component specs assembled from the methods
 ├── data/
-│   └── foundations.json      # Machine-readable tokens, grouped by discipline
+│   ├── foundations.json      # Machine-readable tokens, grouped by discipline
+│   └── foundations.schema.json
+├── design-system/            # Base UI reference implementation of the component specs
+├── App/                      # Native iOS playground for the methods
 ├── index.html                # Interactive guide
 ├── styles.css
 └── script.js
 ```
+
+Every principle, method, and component-spec file carries `type` and `tags` frontmatter; the tag taxonomy in [`guide/README.md`](guide/README.md#tags) is how agents retrieve guidance across disciplines.
 
 ## Status
 
